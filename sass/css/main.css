@@ -1,0 +1,12 @@
+/* Main SASS Document */
+/* line 3, ../sass/main.sass */
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 8, ../sass/main.sass */
+body {
+  background-color: yellow;
+}
