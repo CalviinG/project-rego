@@ -1,0 +1,33 @@
+/*
+ * Base Sass Document
+ *
+ */
+/* line 7, ../sass/base.sass */
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 13, ../sass/base.sass */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 19, ../sass/base.sass */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 25, ../sass/base.sass */
+.clear-after:after {
+  content: "";
+  display: block;
+  clear: both;
+}
