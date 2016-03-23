@@ -12,9 +12,21 @@
   .navigation__main,
   .navigation__sub
     height: calc(#{$navigationHeight} / 2)
+    color: white
+    p
+      display: inline-block
+      margin-right: 10px
 
   .navigation__main
     background-color: $dark-1
+    .main-link
+      color: $dark-4
+    .active-link
+      color: $mainColor
 
   .navigation__sub
     background-color: $dark-2
+    .sub-link
+      color: $dark-3
+    .active-link
+      color: $mainColor
