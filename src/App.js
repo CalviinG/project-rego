@@ -25,6 +25,9 @@ const App = React.createClass({
   	render() {
   		const linksData = [
             [
+                'Home',
+            ],
+            [
                 'Play',
                 'Casual',
                 'Arms Race',
@@ -44,7 +47,6 @@ const App = React.createClass({
                 'Store',
                 'Marketplace',
                 'Keys',
-                'Crates',
             ],
             [
                 'Watch',

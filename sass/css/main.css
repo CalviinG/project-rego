@@ -50,45 +50,157 @@ body {
  * Navigation Component
  *
  */
-/* line 7, ../sass/components/navigation.sass */
+/* line 10, ../sass/components/navigation.sass */
 .navigation {
   position: relative;
   height: 160px;
   width: 100%;
+  /* Nav Icons */
 }
-/* line 12, ../sass/components/navigation.sass */
+/* line 15, ../sass/components/navigation.sass */
 .navigation .navigation__main,
-.navigation .navigation__sub {
+.navigation .navigation__sub,
+.navigation .navigation__wrapper {
   height: calc(160px / 2);
-  color: white;
-}
-/* line 16, ../sass/components/navigation.sass */
-.navigation .navigation__main p,
-.navigation .navigation__sub p {
-  display: inline-block;
-  margin-right: 10px;
 }
 /* line 20, ../sass/components/navigation.sass */
+.navigation .navigation__wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* line 26, ../sass/components/navigation.sass */
+.navigation .home-button {
+  display: block;
+  float: left;
+  position: relative;
+  height: calc(160px / 2);
+  width: calc(160px / 2);
+  background-color: #0091EA;
+  text-align: center;
+  margin: 0 20px;
+  cursor: pointer;
+}
+/* line 36, ../sass/components/navigation.sass */
+.navigation .home-button .home-icon {
+  font-size: 28px;
+  line-height: calc(160px / 2);
+  color: white;
+}
+/* line 40, ../sass/components/navigation.sass */
+.navigation .home-button:before, .navigation .home-button:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  height: 0;
+  width: 0;
+}
+/* line 48, ../sass/components/navigation.sass */
+.navigation .home-button:before {
+  right: 100%;
+  border-top: calc(160px / 4) solid #0091EA;
+  border-bottom: calc(160px / 4) solid transparent;
+  border-left: calc(160px / 16) solid #0091EA;
+  border-right: calc(160px / 16) solid transparent;
+  transform: rotate(180deg);
+}
+/* line 55, ../sass/components/navigation.sass */
+.navigation .home-button:after {
+  left: 100%;
+  border-top: calc(160px / 4) solid #0091EA;
+  border-bottom: calc(160px / 4) solid transparent;
+  border-left: calc(160px / 16) solid #0091EA;
+  border-right: calc(160px / 16) solid transparent;
+}
+/* line 62, ../sass/components/navigation.sass */
+.navigation .home-button:hover .home-icon {
+  text-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+/* line 65, ../sass/components/navigation.sass */
+.navigation .nav-icon {
+  display: block;
+  line-height: 24px;
+  font-size: 28px;
+  color: #424242;
+  cursor: pointer;
+}
+/* line 71, ../sass/components/navigation.sass */
+.navigation .nav-icon:hover {
+  color: #757575;
+}
+/* line 73, ../sass/components/navigation.sass */
+.navigation .nav-icon.exit-button {
+  float: right;
+  margin: 28px 20px;
+}
+/* line 76, ../sass/components/navigation.sass */
+.navigation .nav-icon.browse-button {
+  float: left;
+  margin: 28px 5px;
+  padding: 0 5px;
+}
+/* line 80, ../sass/components/navigation.sass */
+.navigation .nav-icon.browse-button.back-browse {
+  margin-left: 20px;
+}
+/* line 82, ../sass/components/navigation.sass */
+.navigation .nav-icon.browse-button.forward-browse {
+  margin-right: 20px;
+}
+/* line 85, ../sass/components/navigation.sass */
+.navigation .main-link,
+.navigation .sub-link {
+  text-transform: uppercase;
+  float: left;
+  line-height: 40px;
+  font-weight: 700;
+  cursor: pointer;
+}
+/* line 93, ../sass/components/navigation.sass */
 .navigation .navigation__main {
   background-color: #22272A;
 }
-/* line 22, ../sass/components/navigation.sass */
+/* line 95, ../sass/components/navigation.sass */
 .navigation .navigation__main .main-link {
   color: #616161;
+  font-size: 26px;
+  margin: 20px;
 }
-/* line 24, ../sass/components/navigation.sass */
-.navigation .navigation__main .active-link {
-  color: #0091EA;
+/* line 99, ../sass/components/navigation.sass */
+.navigation .navigation__main .main-link:hover {
+  color: #9E9E9E;
 }
-/* line 27, ../sass/components/navigation.sass */
+/* line 101, ../sass/components/navigation.sass */
+.navigation .navigation__main .main-link.active-link {
+  color: #E0E0E0;
+  cursor: default;
+}
+/* line 105, ../sass/components/navigation.sass */
 .navigation .navigation__sub {
   background-color: #191D1F;
 }
-/* line 29, ../sass/components/navigation.sass */
+/* line 107, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link {
+  position: relative;
   color: #424242;
+  font-size: 18px;
+  margin: 20px 15px;
+  /* Animation Properties */
+  left: -50px;
+  opacity: 0;
+  transition: opacity 0.125s cubic-bezier(0.17, 0.67, 0.21, 1), left 0.135s cubic-bezier(0.17, 0.67, 0.21, 1);
 }
-/* line 31, ../sass/components/navigation.sass */
-.navigation .navigation__sub .active-link {
+/* line 116, ../sass/components/navigation.sass */
+.navigation .navigation__sub .sub-link:hover {
+  color: #757575;
+}
+/* line 118, ../sass/components/navigation.sass */
+.navigation .navigation__sub .sub-link.active-link {
   color: #0091EA;
+  cursor: default;
+}
+/* line 122, ../sass/components/navigation.sass */
+.navigation .navigation__sub .sub-link.sub-link-is-showing {
+  left: 0;
+  opacity: 1;
 }

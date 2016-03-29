@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$navigationHeight".
-        on line 9 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass
+        on line 12 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass
 
-4:  *
-5:  *\/
-6: 
-7: .navigation
-8:   position: relative
-9:   height: $navigationHeight
-10:   width: 100%
-11: 
-12:   .navigation__main,
-13:   .navigation__sub
-14:     height: calc(#{$navigationHeight} / 2)
+7: // margin: calc(100% - (90px + 120px + 66px)) /* Browse Buttons, Home Button, Exit Button *\/
+8: $subBezier: cubic-bezier(.17,.67,.21,1)
+9: 
+10: .navigation
+11:   position: relative
+12:   height: $navigationHeight
+13:   width: 100%
+14: 
+15:   .navigation__main,
+16:   .navigation__sub,
+17:   .navigation__wrapper
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass:9
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass:12
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
@@ -70,4 +70,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$navigationHeight\".\A         on line 9 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass\A \A 4:  *\A 5:  */\A 6: \A 7: .navigation\A 8:   position: relative\A 9:   height: $navigationHeight\A 10:   width: 100%\A 11: \A 12:   .navigation__main,\A 13:   .navigation__sub\A 14:     height: calc(#{$navigationHeight} / 2)"; }
+  content: "Error: Undefined variable: \"$navigationHeight\".\A         on line 12 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass\A \A 7: // margin: calc(100% - (90px + 120px + 66px)) /* Browse Buttons, Home Button, Exit Button */\A 8: $subBezier: cubic-bezier(.17,.67,.21,1)\A 9: \A 10: .navigation\A 11:   position: relative\A 12:   height: $navigationHeight\A 13:   width: 100%\A 14: \A 15:   .navigation__main,\A 16:   .navigation__sub,\A 17:   .navigation__wrapper"; }

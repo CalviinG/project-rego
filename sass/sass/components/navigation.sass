@@ -4,29 +4,121 @@
  *
  */
 
+// margin: calc(100% - (90px + 120px + 66px)) /* Browse Buttons, Home Button, Exit Button */
+$subBezier: cubic-bezier(.17,.67,.21,1)
+
 .navigation
   position: relative
   height: $navigationHeight
   width: 100%
 
   .navigation__main,
-  .navigation__sub
+  .navigation__sub,
+  .navigation__wrapper
     height: calc(#{$navigationHeight} / 2)
-    color: white
-    p
-      display: inline-block
-      margin-right: 10px
+
+  .navigation__wrapper
+    width: $appWidth
+    margin: 0 auto
+
+  /* Nav Icons */
+
+  .home-button
+    display: block
+    float: left
+    position: relative
+    height: calc(#{$navigationHeight} / 2)
+    width: calc(#{$navigationHeight} / 2)
+    background-color: $mainColor
+    text-align: center
+    margin: 0 20px
+    cursor: pointer
+    .home-icon
+      font-size: 28px
+      line-height: calc(#{$navigationHeight} / 2)
+      color: white
+    &:before,
+    &:after
+      position: absolute
+      display: block
+      content: ''
+      top: 0
+      height: 0
+      width: 0
+    &:before
+      right: 100%
+      border-top:    calc(#{$navigationHeight} / 4) solid $mainColor
+      border-bottom: calc(#{$navigationHeight} / 4) solid transparent
+      border-left:   calc(#{$navigationHeight} / 16) solid $mainColor
+      border-right:  calc(#{$navigationHeight} / 16) solid transparent
+      transform: rotate(180deg)
+    &:after
+      left: 100%
+      border-top:    calc(#{$navigationHeight} / 4) solid $mainColor
+      border-bottom: calc(#{$navigationHeight} / 4) solid transparent
+      border-left:   calc(#{$navigationHeight} / 16) solid $mainColor
+      border-right:  calc(#{$navigationHeight} / 16) solid transparent
+    &:hover
+      .home-icon
+        text-shadow: 0 0 25px rgba(black, .5)
+
+  .nav-icon
+    display: block
+    line-height: 24px
+    font-size: 28px
+    color: $grey-800
+    cursor: pointer
+    &:hover
+      color: $grey-600
+    &.exit-button
+      float: right
+      margin: 28px 20px
+    &.browse-button
+      float: left
+      margin: 28px 5px
+      padding: 0 5px
+      &.back-browse
+        margin-left: 20px
+      &.forward-browse
+        margin-right: 20px
+
+  .main-link,
+  .sub-link
+    text-transform: uppercase
+    float: left
+    line-height: 40px
+    font-weight: 700
+    cursor: pointer
 
   .navigation__main
     background-color: $dark-1
     .main-link
-      color: $dark-4
-    .active-link
-      color: $mainColor
+      color: $grey-700
+      font-size: 26px
+      margin: 20px
+      &:hover
+        color: $grey-500
+      &.active-link
+        color: $grey-300
+        cursor: default
 
   .navigation__sub
     background-color: $dark-2
     .sub-link
-      color: $dark-3
-    .active-link
-      color: $mainColor
+      position: relative
+      color: $grey-800
+      font-size: 18px
+      margin: 20px 15px
+      /* Animation Properties */
+      left: -50px
+      opacity: 0
+      transition: opacity .125s $subBezier, left .135s $subBezier
+      &:hover
+        color: $grey-600
+      &.active-link
+        color: $mainColor
+        cursor: default
+
+      &.sub-link-is-showing
+        left: 0
+        opacity: 1
