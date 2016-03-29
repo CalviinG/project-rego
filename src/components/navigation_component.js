@@ -12,34 +12,18 @@ const NavigationComponent = React.createClass({
 
     getInitialState() {
         return {
-            activeMain: 0,
-            activeSub: 0,
+            sameMain: false,
         };
     },
 
-    componentWillReceiveProps() {
-        console.log('componentWillRecieveProps');
-        console.log('this.props.activeMain', this.props.activeMain);
-        console.log('this.state.activeMain', this.state.activeMain);
-        if (this.props.activeMain != this.state.activeMain) {
-            console.log('new main');
-            this.setState({ activeMain: this.props.activeMain });
-        }
-        if (this.props.activeSub != this.state.activeSub) {
-            console.log('new sub');
-            this.setState({ activeSub: this.props.activeSub });
-        }
-    },
-
     componentDidUpdate() {
-        this._animateSubLinks(); 
+        if (!this.state.sameMain) {
+            this._animateSubLinks();
+        }
     },
 
     _animateSubLinks() {
-        console.log('activeMain', this.state.activeMain);
-        console.log('activeSub', this.state.activeSub);
-        console.log('/////////////////////');
-
+        console.log('lets animate!');
         let showingSubrefs = this.props.linksData[this.props.activeMain].length - 1;
         let $animateRef;
 
@@ -48,7 +32,7 @@ const NavigationComponent = React.createClass({
             setTimeout(() => {
                 $animateRef = $(this.refs['subLinkRef' + i]);
                 $animateRef.addClass('sub-link-is-showing'); 
-            }, (i + 1) * 100);
+            }, (i + 1) * 75);
         };
     },
 
@@ -57,39 +41,38 @@ const NavigationComponent = React.createClass({
             this.props.onChange('main', index);
         }
 
-        this.setState({
-            activeMain: index,
-            activeSub: 0,
-        });
+        this.setState({ sameMain: false });
     },
 
-    _onSubClick(index) {
+    _onSubClick(index, target) {
+
         if (typeof this.props.onChange === 'function') {
             this.props.onChange('sub', index);
         }
 
-        this.setState({ activeSub: index });
+        this.setState({ sameMain: true });
     },
 
     render() {
-        console.log('Render');
         const mainLinks = _(this.props.linksData).map((key, value) => {
             const mainClass = classNames('main-link', {
-                'active-link': (value === this.state.activeMain),
+                'active-link': (value === this.props.activeMain),
             });
             if (value > 0) {
                 return <p className={mainClass} key={value} onClick={this._onMainClick.bind(this, value)}>{key[0]}</p>;
             }    
         });
 
-        let subLinks = null;
+        let subLinks;
         _(this.props.linksData).map((key, value) => {
-            if (value === this.state.activeMain) {
+            console.log('re rendering sublinks');
+            if (value === this.props.activeMain) {
                 subLinks = _(key).map((value, index) => {
                     if (index > 0) {
                         let i = index - 1
                         const subClass = classNames('sub-link', {
-                            'active-link': (i === this.state.activeSub),
+                            'active-link': (i === this.props.activeSub),
+                            'sub-link-is-showing': this.state.sameMain,
                         });
                         return <p ref={'subLinkRef' + i} className={subClass} key={value+index} onClick={this._onSubClick.bind(this, i)}>{value}</p>;
                     }  
