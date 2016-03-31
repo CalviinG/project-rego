@@ -54,25 +54,19 @@ const NavigationComponent = React.createClass({
         this.setState({ sameMain: true });
     },
 
-    _browseHistory(type) {
+    _browseHistory(type, event) {
         if (typeof this.props.onChange === 'function') {
             let currentMain = parseInt(_.first(this.props.linkHistory.history[this.props.linkHistory.position]));
             let upcomingMain;
 
             // Browsing back
             if (type === 'back') {
-                console.log('Going back');
                 if (!this.props.linkHistory.stopBack) {
                     this.props.onChange('back', this.props.linkHistory.history[this.props.linkHistory.position - 1]);
-                    if (this.props.linkHistory.length === 1) {
-                        upcomingMain = parseInt(_.first(this.props.linkHistory.history[this.props.linkHistory.position]));
-                    } else {
-                        upcomingMain = parseInt(_.first(this.props.linkHistory.history[this.props.linkHistory.position - 1]));
-                    }
-                }
+                    upcomingMain = parseInt(_.first(this.props.linkHistory.history[this.props.linkHistory.position]));
+                } 
             // Browsing forward
             } else if (type === 'forward') {
-                console.log('Going forward');
                 if (!this.props.linkHistory.stopForward) {
                     this.props.onChange('forward', this.props.linkHistory.history[this.props.linkHistory.position + 1]);
                     if (this.props.linkHistory.position === this.props.linkHistory.history.length - 1) {
@@ -94,6 +88,7 @@ const NavigationComponent = React.createClass({
     },
 
     render() {
+        /* Main Navigation Links */
         const mainLinks = _(this.props.linksData).map((key, value) => {
             const mainClass = classNames('main-link', {
                 'active-link': (value === this.props.activeMain),
@@ -103,6 +98,7 @@ const NavigationComponent = React.createClass({
             }    
         });
 
+        /* Sub Navigation Links */
         let subLinks;
         _(this.props.linksData).map((key, value) => {
             if (value === this.props.activeMain) {
@@ -119,12 +115,20 @@ const NavigationComponent = React.createClass({
             }
         });
 
+        /* Browse History Buttons */
+        const browseBackClass = classNames('nav-icon browse-button back-browse fa fa-angle-left', {
+            'browse-is-disabled': this.props.linkHistory.stopBack,
+        });
+        const browseForwardClass = classNames('nav-icon browse-button forward-browse fa fa-angle-right', {
+            'browse-is-disabled': this.props.linkHistory.stopForward,
+        });
+
         return (
             <div className='navigation'>
                 <div className='navigation__main'>
                     <div className='navigation__wrapper'>
-                        <i className='nav-icon browse-button back-browse fa fa-angle-left' onClick={this._browseHistory.bind(this, 'back')} />
-                        <i className='nav-icon browse-button forward-browse fa fa-angle-right' onClick={this._browseHistory.bind(this, 'forward')} />
+                        <i className={browseBackClass} onClick={this._browseHistory.bind(this, 'back')} />
+                        <i className={browseForwardClass} onClick={this._browseHistory.bind(this, 'forward')} />
                         <div className='home-button'><i className='home-icon fa fa-steam' /></div>
                         {mainLinks}
                         <i className='nav-icon exit-button fa fa-power-off' />

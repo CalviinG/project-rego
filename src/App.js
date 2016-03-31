@@ -48,25 +48,16 @@ const App = React.createClass({
                         : this._updateViewHistoryPosition(+1, false),
                 });
             }
-        } else if (type === 'back') {
-            console.log('went back to', index);
+        } else if (type === 'back' || type === 'forward') {
             // Split index to main & sub
             const newMain = parseInt(_.first(index));
             const newSub = parseInt(_.last(index)) ;
             this.setState({
                 activeMain: newMain,
                 activeSub: newSub,
-                viewHistory: this._updateViewHistoryPosition(-1, false),
-            });
-        } else if (type === 'forward') {
-            console.log('went forward to', index);
-            // Split index to main & sub
-            const newMain = parseInt(_.first(index));
-            const newSub = parseInt(_.last(index)) ;
-            this.setState({
-                activeMain: newMain,
-                activeSub: newSub,
-                viewHistory: this._updateViewHistoryPosition(+1, false),
+                viewHistory: (type === 'back')
+                    ? this._updateViewHistoryPosition(-1, false)
+                    : this._updateViewHistoryPosition(+1, false),
             });
         }
     },
@@ -144,8 +135,6 @@ const App = React.createClass({
                 'Advanced',
             ],
         ];
-
-        console.log('viewHistory', this.state.viewHistory);
 
 	    return (
 	      	<div className='app-wrapper'>

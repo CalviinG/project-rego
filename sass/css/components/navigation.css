@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$navigationHeight".
-        on line 12 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass
+        on line 17 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass
 
-7: // margin: calc(100% - (90px + 120px + 66px)) /* Browse Buttons, Home Button, Exit Button *\/
-8: $subBezier: cubic-bezier(.17,.67,.21,1)
-9: 
-10: .navigation
-11:   position: relative
-12:   height: $navigationHeight
-13:   width: 100%
+12:     box-shadow: 0 0 0 15px white
+13: 
 14: 
-15:   .navigation__main,
-16:   .navigation__sub,
-17:   .navigation__wrapper
+15: .navigation
+16:   position: relative
+17:   height: $navigationHeight
+18:   width: 100%
+19: 
+20:   .navigation__main,
+21:   .navigation__sub,
+22:   .navigation__wrapper
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass:12
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass:17
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
@@ -70,4 +70,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$navigationHeight\".\A         on line 12 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass\A \A 7: // margin: calc(100% - (90px + 120px + 66px)) /* Browse Buttons, Home Button, Exit Button */\A 8: $subBezier: cubic-bezier(.17,.67,.21,1)\A 9: \A 10: .navigation\A 11:   position: relative\A 12:   height: $navigationHeight\A 13:   width: 100%\A 14: \A 15:   .navigation__main,\A 16:   .navigation__sub,\A 17:   .navigation__wrapper"; }
+  content: "Error: Undefined variable: \"$navigationHeight\".\A         on line 17 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass\A \A 12:     box-shadow: 0 0 0 15px white\A 13: \A 14: \A 15: .navigation\A 16:   position: relative\A 17:   height: $navigationHeight\A 18:   width: 100%\A 19: \A 20:   .navigation__main,\A 21:   .navigation__sub,\A 22:   .navigation__wrapper"; }

@@ -4,8 +4,13 @@
  *
  */
 
-// margin: calc(100% - (90px + 120px + 66px)) /* Browse Buttons, Home Button, Exit Button */
 $subBezier: cubic-bezier(.17,.67,.21,1)
+@-webkit-keyframes browse-button-click-animation
+  0%
+    box-shadow: 0 0 0 0px white
+  100%
+    box-shadow: 0 0 0 15px white
+
 
 .navigation
   position: relative
@@ -45,31 +50,32 @@ $subBezier: cubic-bezier(.17,.67,.21,1)
       top: 0
       height: 0
       width: 0
-    &:before
-      right: 100%
       border-top:    calc(#{$navigationHeight} / 4) solid $mainColor
       border-bottom: calc(#{$navigationHeight} / 4) solid transparent
       border-left:   calc(#{$navigationHeight} / 16) solid $mainColor
       border-right:  calc(#{$navigationHeight} / 16) solid transparent
+    &:before
+      right: 100%
       transform: rotate(180deg)
     &:after
       left: 100%
-      border-top:    calc(#{$navigationHeight} / 4) solid $mainColor
-      border-bottom: calc(#{$navigationHeight} / 4) solid transparent
-      border-left:   calc(#{$navigationHeight} / 16) solid $mainColor
-      border-right:  calc(#{$navigationHeight} / 16) solid transparent
     &:hover
-      .home-icon
-        text-shadow: 0 0 25px rgba(black, .5)
+      background-color: $mainColorHover
+      &:before,
+      &:after
+        border-top-color: $mainColorHover
+        border-left-color: $mainColorHover
+        
 
   .nav-icon
+    position: relative
     display: block
     line-height: 24px
     font-size: 28px
-    color: $grey-800
+    color: $grey-600
     cursor: pointer
     &:hover
-      color: $grey-600
+      color: $grey-400
     &.exit-button
       float: right
       margin: 28px 20px
@@ -81,6 +87,9 @@ $subBezier: cubic-bezier(.17,.67,.21,1)
         margin-left: 20px
       &.forward-browse
         margin-right: 20px
+      &.browse-is-disabled
+        cursor: default
+        color: $grey-800
 
   .main-link,
   .sub-link
