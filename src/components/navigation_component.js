@@ -56,19 +56,39 @@ const NavigationComponent = React.createClass({
 
     _browseHistory(type) {
         if (typeof this.props.onChange === 'function') {
+            let currentMain = parseInt(_.first(this.props.linkHistory.history[this.props.linkHistory.position]));
+            let upcomingMain;
+
             // Browsing back
             if (type === 'back') {
                 console.log('Going back');
-                if (this.props.linkHistory.history.length === 1 || this.props.linkHistory.position === 0) {
-                    // Can't go back further
-                    console.log('you cant go further back!');
-                } else if (this.props.linkHistory.history.length > 1) {
-                    this.props.onChange('back', this.props.linkHistory.history[this.props.linkHistory.position - 1]);  
+                if (!this.props.linkHistory.stopBack) {
+                    this.props.onChange('back', this.props.linkHistory.history[this.props.linkHistory.position - 1]);
+                    if (this.props.linkHistory.length === 1) {
+                        upcomingMain = parseInt(_.first(this.props.linkHistory.history[this.props.linkHistory.position]));
+                    } else {
+                        upcomingMain = parseInt(_.first(this.props.linkHistory.history[this.props.linkHistory.position - 1]));
+                    }
                 }
-
             // Browsing forward
             } else if (type === 'forward') {
                 console.log('Going forward');
+                if (!this.props.linkHistory.stopForward) {
+                    this.props.onChange('forward', this.props.linkHistory.history[this.props.linkHistory.position + 1]);
+                    if (this.props.linkHistory.position === this.props.linkHistory.history.length - 1) {
+                        upcomingMain = parseInt(_.first(this.props.linkHistory.history[this.props.linkHistory.position]));
+                    } else {
+                        upcomingMain = parseInt(_.first(this.props.linkHistory.history[this.props.linkHistory.position + 1]));
+                    }
+                } else {
+                    return ;
+                }
+            }
+
+            if (currentMain != upcomingMain) {
+                this.setState({ sameMain: false });
+            } else {
+                this.setState({ sameMain: true });
             }
         } 
     },
