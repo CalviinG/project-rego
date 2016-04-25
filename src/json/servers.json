@@ -1,0 +1,28 @@
+[
+	{
+		"id": 				"1001",
+		"name": 			"Lanzone Stockholm Dust2 24/7",
+		"location":			"Sweden",
+		"curPlayers": 		"12",
+		"maxPlayers": 		"24",
+		"map":				"de_dust2",
+		"mode":				"casual",
+		"vac":				"true",
+		"blacklisted":		"false",
+		"favorited":		"false",
+		"latency":			"50"
+	},
+	{
+		"id": 				"1002",
+		"name": 			"Lanzone Stockholm Dust2 24/7",
+		"location":			"Sweden",
+		"curPlayers": 		"12",
+		"maxPlayers": 		"24",
+		"map":				"de_dust2",
+		"mode":				"casual",
+		"vac":				"true",
+		"blacklisted":		"false",
+		"favorited":		"false",
+		"latency":			"50"
+	}
+]

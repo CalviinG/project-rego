@@ -129,9 +129,10 @@ const NavigationComponent = React.createClass({
                     <div className='navigation__wrapper'>
                         <i className={browseBackClass} onClick={this._browseHistory.bind(this, 'back')} />
                         <i className={browseForwardClass} onClick={this._browseHistory.bind(this, 'forward')} />
-                        <div className='home-button'><i className='home-icon fa fa-steam' /></div>
+                        <div className='home-button' onClick={this._onMainClick.bind(this, 0)}><i className='home-icon fa fa-steam' /></div>
                         {mainLinks}
                         <i className='nav-icon exit-button fa fa-power-off' />
+                        <i className='nav-icon profile-button fa fa-user' />
                     </div>
                 </div>
                 <div className='navigation__sub'>

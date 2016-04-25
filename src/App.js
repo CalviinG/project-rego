@@ -3,6 +3,7 @@ import _                    from 'underscore';
 
 // Components
 import NavigationComponent from './components/navigation_component.js';
+import ViewComponent       from './components/view_component.js';
 
 const App = React.createClass({
     getInitialState() {
@@ -143,8 +144,10 @@ const App = React.createClass({
                     linkHistory={this.state.viewHistory}
                     activeMain={this.state.activeMain}
                     activeSub={this.state.activeSub}
-                    onChange={this._onViewChange}
-                    />
+                    onChange={this._onViewChange} />
+                <ViewComponent
+                    activeMain={this.state.activeMain}
+                    activeSub={this.state.activeSub} />
 	      	</div>
 	    );
   	},

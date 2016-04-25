@@ -2,6 +2,16 @@
 /* Base */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+/* Lib */
+/*
+ * Color Library
+ *
+ */
+/*
+ * Variable Library
+ *
+ */
+/* Base */
 /*
  * Base Sass Document
  *
@@ -20,31 +30,53 @@ body {
   font-weight: 400;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* line 19, ../sass/base.sass */
+/* line 22, ../sass/base.sass */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* line 25, ../sass/base.sass */
-.clear-after:after {
+/* line 28, ../sass/base.sass */
+.clear-after:after, .browse-view .rego-table-wrapper .rt-row:after, .rui-select-wrapper .select-button-holder:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* Lib */
+/* line 34, ../sass/base.sass */
+.app-wrapper .content {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* Common */
 /*
- * Color Library
+ * Animation Holder Component
  *
  */
-/*
- * Variable Library
- *
- */
+/* line 7, ../sass/common/animation_holder.sass */
+.animation-holder {
+  transition: all 0.25s ease;
+  opacity: 0;
+  transform: translate(0%, 0%);
+}
+/* line 12, ../sass/common/animation_holder.sass */
+.animation-holder.enter-animation {
+  opacity: 1;
+  transform: translate(0%, 20%);
+}
+/* line 16, ../sass/common/animation_holder.sass */
+.animation-holder.leave-animation {
+  opacity: 0;
+  transform: translate(20%, 20%);
+}
+
 /* Components */
 /*
  * Navigation Component
@@ -125,7 +157,7 @@ body {
   border-top-color: #00B0FF;
   border-left-color: #00B0FF;
 }
-/* line 70, ../sass/components/navigation.sass */
+/* line 69, ../sass/components/navigation.sass */
 .navigation .nav-icon {
   position: relative;
   display: block;
@@ -134,12 +166,12 @@ body {
   color: #757575;
   cursor: pointer;
 }
-/* line 77, ../sass/components/navigation.sass */
+/* line 76, ../sass/components/navigation.sass */
 .navigation .nav-icon:hover {
   color: #BDBDBD;
 }
-/* line 79, ../sass/components/navigation.sass */
-.navigation .nav-icon.exit-button {
+/* line 78, ../sass/components/navigation.sass */
+.navigation .nav-icon.exit-button, .navigation .nav-icon.profile-button {
   float: right;
   margin: 28px 20px;
 }
@@ -218,4 +250,59 @@ body {
 .navigation .navigation__sub .sub-link.sub-link-is-showing {
   left: 0;
   opacity: 1;
+}
+
+/* Views */
+/*
+ * Browse View
+ *
+ */
+/* line 7, ../sass/views/browse_view.sass */
+.browse-view {
+  /* Filter Styling */
+  /* Table Styling */
+}
+/* line 18, ../sass/views/browse_view.sass */
+.browse-view .rego-table-wrapper .rt-row .rt-col {
+  padding: 20px;
+  float: left;
+}
+
+/* Rui */
+/*
+ * Rui Select
+ *
+ */
+/* line 7, ../sass/ui/rui_select.sass */
+.rui-select-wrapper {
+  font-size: 14px;
+}
+/* line 10, ../sass/ui/rui_select.sass */
+.rui-select-wrapper .select-button-holder {
+  line-height: 20px;
+  padding: 15px 20px;
+  color: white;
+  background-color: #191D1F;
+  cursor: pointer;
+}
+/* line 17, ../sass/ui/rui_select.sass */
+.rui-select-wrapper .select-button-holder .button-icon,
+.rui-select-wrapper .select-button-holder .button-label {
+  float: left;
+  opacity: 0.5;
+}
+/* line 21, ../sass/ui/rui_select.sass */
+.rui-select-wrapper .select-button-holder .button-label {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 10px;
+}
+/* line 25, ../sass/ui/rui_select.sass */
+.rui-select-wrapper .select-button-holder .button-arrow {
+  float: right;
+  opacity: 0.25;
+}
+/* line 32, ../sass/ui/rui_select.sass */
+.rui-select-wrapper .select-dropdown-holder .dropdown-option .option-label {
+  font-weight: 500;
 }
