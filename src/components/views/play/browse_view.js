@@ -28,6 +28,12 @@ const BrowseView = React.createClass({
         console.log(ServerData);
     },
 
+    _updateFilter(type, value) {
+        console.log('Filter Updated');
+        console.log('Type', type);
+        console.log('Value', value);
+    },
+
     render() {
         // Map through all the servers
         const serverList = _.map(ServerData, (server, i) => {
@@ -52,12 +58,20 @@ const BrowseView = React.createClass({
 
         // Filter Dropdowns
         const locationOptions = ['Location', 'Europe', 'North America', 'Asia'];
+        const vacOptions = ['Anti-Cheat', 'With Vac', 'No Vac'];
+        const passwordOptions = ['Password', 'With Password', 'No Password'];
+        const latencyOptions = ['Latency', '0 - 50 MS', '0 - 100 MS', '0 - 150 MS', '0 - 200 MS', '200 + MS'];
+        const serverOptions = ['Server Status', 'Active', 'Not Full', 'Active & Not Full'];
 
         return (
             <div className='browse-view'>
-                <AnimationHolder>
+                <AnimationHolder zIndex={1}>
                     <div className='browse-filter-block'>
-                        <RuiSelect options={locationOptions} icon='fa-globe' />
+                        <RuiSelect options={locationOptions} icon='fa-map-marker' onChange={this._updateFilter.bind(this, 'Location')} />
+                        <RuiSelect options={vacOptions} icon='fa-shield' onChange={this._updateFilter.bind(this, 'Vac')} />
+                        <RuiSelect options={passwordOptions} icon='fa-lock' onChange={this._updateFilter.bind(this, 'Password')} />
+                        <RuiSelect options={latencyOptions} icon='fa-globe' onChange={this._updateFilter.bind(this, 'Latency')} />
+                        <RuiSelect options={serverOptions} icon='fa-user' onChange={this._updateFilter.bind(this, 'Server')} />
                     </div>
                 </AnimationHolder>
 

@@ -6,15 +6,21 @@
 
 .browse-view
 
-	/* Filter Styling */
+  /* Filter Styling */
 
-	.browse-filter-block
-	
-	/* Table Styling */
+  .browse-filter-block
+    @extend .clear-after
+    .rui-select-wrapper
+      float: left
+      width: calc(20% - 8px)
+      &:not(:first-of-type)
+        margin-left: 10px
+  
+  /* Table Styling */
 
-	.rego-table-wrapper
-		.rt-row
-			@extend .clear-after
-			.rt-col
-				padding: 20px
-				float: left
+  .rego-table-wrapper
+    .rt-row
+      @extend .clear-after
+      .rt-col
+        padding: 20px
+        float: left

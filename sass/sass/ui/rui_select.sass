@@ -5,19 +5,34 @@
  */
 
 .rui-select-wrapper
+  position: relative
+  z-index: 1
   font-size: 14px
 
   .select-button-holder
     @extend .clear-after
+    position: relative
+    width: 100%
+    height: 50px
+    overflow: hidden
     line-height: 20px
     padding: 15px 20px
     color: white
-    background-color: $dark-2
+    background-color: $dark-1
     cursor: pointer
+    .button-icon,
+    .button-label,
+    .button-arrow
+      position: relative
+      z-index: 1
+      transition: opacity .125s ease
     .button-icon,
     .button-label
       float: left
       opacity: .5
+    .button-icon
+      width: 20px
+      text-align: center
     .button-label
       text-transform: uppercase
       font-weight: 700
@@ -25,9 +40,65 @@
     .button-arrow
       float: right 
       opacity: .25
+    .button-effect
+      position: absolute
+      z-index: 0
+      width: 20px
+      height: 20px
+      left: 20px
+      top: 15px
+      background-color: $mainColor
+      border-radius: 100%
+      opacity: 0
+      transform: scale(.2)
+      transition: all .2s cubic-bezier(.15, .55, .35, 1)
+    &:hover
+      .button-arrow
+        opacity: .75
+
 
   .select-dropdown-holder
+    position: absolute
+    z-index: 2
+    width: 100%
+    padding: 10px 0
+    background-color: $dark-2
+    box-sizing: content-box
+    overflow: hidden
+    padding: 0
+    height: 0
+    transition: all .225s cubic-bezier(.15, .65, .25, 1)
     .dropdown-option
+      font-size: 14px
+      padding: 5px 0 5px 20px
+      line-height: 15px
+      color: white
+      opacity: .5
+      cursor: pointer
+      &:hover
+        opacity: .75
       .option-icon
+        display: inline-block
+        margin-right: 5px
       .option-label
-        font-weight: 500
+        display: inline-block
+        text-transform: uppercase
+        font-weight: 700
+
+  /* Show Dropdown */
+
+  &.show-dropdown
+    .select-dropdown-holder
+      padding: 10px 0
+
+  /* Option Selected */
+
+  &.option-selected
+    .button-icon,
+    .button-label
+      opacity: 1
+    .button-effect
+      opacity: 1
+      transform: scale(25)
+    .select-dropdown-holder
+      background-color: $mainColorDark
