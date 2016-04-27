@@ -14,12 +14,11 @@ const BrowseView = React.createClass({
     getInitialState() {
         return {
             serverFilter: {
-                name: undefined,
-                map: undefined,
-                mode: undefined,
-                ping: undefined,
-                location: undefined,
-                vac: undefined,
+                Server: undefined,
+                Password: undefined,
+                Latency: undefined,
+                Location: undefined,
+                Vac: undefined,
             },
         };
     },
@@ -29,12 +28,41 @@ const BrowseView = React.createClass({
     },
 
     _updateFilter(type, value) {
-        console.log('Filter Updated');
-        console.log('Type', type);
-        console.log('Value', value);
+        let newServerFilter = this.state.serverFilter;
+        let newValue;
+
+        if (_.contains(['Location', 'Anti-Cheat', 'Password', 'Latency', 'Server Status'], value)) {
+            newValue = undefined;
+        } else {
+            newValue = value;
+        }
+
+        newServerFilter[type] = newValue;
+        this.setState({ serverFilter: newServerFilter });
+    },
+
+    _filterServer(server) {
+        const activeFilter = this.state.serverFilter;
+
+        // Server Status
+        if (activeFilter.Server != undefined) {
+            // Check for active servers
+            if (activeFilter.Server === 'Active') {
+                return (server.curPlayers > 0) ? true : false
+            // Check for full servers
+            } else if (activeFilter.Server === 'Not Full') {
+                return (server.curPlayers < server.maxPlayers) ? true : false
+            // Check for active server with open slots
+            } else if (activeFilter.Server === 'Active & Not Full') {
+                return (server.curPlayers > 0 && server.curPlayers != server.maxPlayers) ? true : false
+            } 
+        }
+
+        return true
     },
 
     render() {
+        console.log('new server render');
         // Map through all the servers
         const serverList = _.map(ServerData, (server, i) => {
             // VAC
@@ -43,17 +71,21 @@ const BrowseView = React.createClass({
                 vacStatus = <div className='rt-col'><i className='fa fa-shield' />VAC</div>;
             }
 
-            return (
-                <div className='rt-row' key={i}>
-                    <div className='rt-col'>{server.name}</div>
-                    <div className='rt-col'>{server.map}</div>
-                    <div className='rt-col'>{server.mode}</div>
-                    <div className='rt-col'><i className='fa fa-user' />{server.curPlayers} / {server.maxPlayers}</div>
-                    <div className='rt-col'><i className='fa fa-globe' />{server.latency} MS</div>
-                    <div className='rt-col'><i className='fa fa-map-marker' />{server.location}</div>
-                    {vacStatus}
-                </div>
-            );
+            if(this._filterServer(server)) {
+                return (
+                    <div className='rt-row' key={i}>
+                        <div className='rt-col'>{server.name}</div>
+                        <div className='rt-col'>{server.map}</div>
+                        <div className='rt-col'>{server.mode}</div>
+                        <div className='rt-col'><i className='fa fa-user' />{server.curPlayers} / {server.maxPlayers}</div>
+                        <div className='rt-col'><i className='fa fa-globe' />{server.latency} MS</div>
+                        <div className='rt-col'><i className='fa fa-map-marker' />{server.location}</div>
+                        {vacStatus}
+                    </div>
+                );
+            } else {
+                return
+            }
         });
 
         // Filter Dropdowns

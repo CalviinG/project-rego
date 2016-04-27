@@ -1,28 +1,41 @@
 [
 	{
-		"id": 				"1001",
+		"id": 				1001,
 		"name": 			"Lanzone Stockholm Dust2 24/7",
 		"location":			"Sweden",
-		"curPlayers": 		"12",
-		"maxPlayers": 		"24",
+		"curPlayers": 		12,
+		"maxPlayers": 		24,
 		"map":				"de_dust2",
 		"mode":				"casual",
 		"vac":				"true",
 		"blacklisted":		"false",
 		"favorited":		"false",
-		"latency":			"50"
+		"latency":			50
 	},
 	{
-		"id": 				"1002",
-		"name": 			"Lanzone Stockholm Dust2 24/7",
+		"id": 				1002,
+		"name": 			"Lanzone Malmö Dust2 24/7",
 		"location":			"Sweden",
-		"curPlayers": 		"12",
-		"maxPlayers": 		"24",
+		"curPlayers": 		24,
+		"maxPlayers": 		24,
 		"map":				"de_dust2",
 		"mode":				"casual",
 		"vac":				"true",
 		"blacklisted":		"false",
 		"favorited":		"false",
-		"latency":			"50"
+		"latency":			100
+	},
+	{
+		"id": 				1003,
+		"name": 			"Lanzone Göteborg Dust2 24/7",
+		"location":			"Sweden",
+		"curPlayers": 		0,
+		"maxPlayers": 		24,
+		"map":				"de_dust2",
+		"mode":				"casual",
+		"vac":				"true",
+		"blacklisted":		"false",
+		"favorited":		"false",
+		"latency":			75
 	}
 ]

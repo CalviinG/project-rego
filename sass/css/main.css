@@ -350,7 +350,7 @@ body {
 .rui-select-wrapper .select-button-holder:hover .button-arrow {
   opacity: 0.75;
 }
-/* line 60, ../sass/ui/rui_select.sass */
+/* line 59, ../sass/ui/rui_select.sass */
 .rui-select-wrapper .select-dropdown-holder {
   position: absolute;
   z-index: 2;
@@ -363,7 +363,7 @@ body {
   height: 0;
   transition: all 0.225s cubic-bezier(0.15, 0.65, 0.25, 1);
 }
-/* line 71, ../sass/ui/rui_select.sass */
+/* line 70, ../sass/ui/rui_select.sass */
 .rui-select-wrapper .select-dropdown-holder .dropdown-option {
   font-size: 14px;
   padding: 5px 0 5px 20px;
@@ -372,36 +372,36 @@ body {
   opacity: 0.5;
   cursor: pointer;
 }
-/* line 78, ../sass/ui/rui_select.sass */
+/* line 77, ../sass/ui/rui_select.sass */
 .rui-select-wrapper .select-dropdown-holder .dropdown-option:hover {
   opacity: 0.75;
 }
-/* line 80, ../sass/ui/rui_select.sass */
+/* line 79, ../sass/ui/rui_select.sass */
 .rui-select-wrapper .select-dropdown-holder .dropdown-option .option-icon {
   display: inline-block;
   margin-right: 5px;
 }
-/* line 83, ../sass/ui/rui_select.sass */
+/* line 82, ../sass/ui/rui_select.sass */
 .rui-select-wrapper .select-dropdown-holder .dropdown-option .option-label {
   display: inline-block;
   text-transform: uppercase;
   font-weight: 700;
 }
-/* line 91, ../sass/ui/rui_select.sass */
+/* line 90, ../sass/ui/rui_select.sass */
 .rui-select-wrapper.show-dropdown .select-dropdown-holder {
   padding: 10px 0;
 }
-/* line 97, ../sass/ui/rui_select.sass */
+/* line 96, ../sass/ui/rui_select.sass */
 .rui-select-wrapper.option-selected .button-icon,
 .rui-select-wrapper.option-selected .button-label {
   opacity: 1;
 }
-/* line 100, ../sass/ui/rui_select.sass */
+/* line 99, ../sass/ui/rui_select.sass */
 .rui-select-wrapper.option-selected .button-effect {
   opacity: 1;
   transform: scale(25);
 }
-/* line 103, ../sass/ui/rui_select.sass */
+/* line 102, ../sass/ui/rui_select.sass */
 .rui-select-wrapper.option-selected .select-dropdown-holder {
   background-color: #0082D2;
 }
