@@ -9,6 +9,7 @@ import AnimationHolder from '../../common/animation_holder.js';
 
 // Rui
 import RuiSelect from '../../ui/rui_select.js';
+import RuiSearch from '../../ui/rui_search.js';
 
 const BrowseView = React.createClass({
     getInitialState() {
@@ -58,11 +59,75 @@ const BrowseView = React.createClass({
             } 
         }
 
+        // Password 
+        if (activeFilter.Password != undefined) {
+            // Check for servers without password
+            if (activeFilter.Password === 'With Password') {
+                return (server.password) ? true : false
+            // Check for servers without password
+            } else if (activeFilter.Password === 'No Password') {
+                return (!server.password) ? true : false
+            }
+        }
+
+        // Vac
+        if (activeFilter.Vac != undefined) {
+            // Check for vac protected servers
+            if (activeFilter.Vac === 'With Vac') {
+                return (server.vac) ? true : false
+            // Check for servers without vac protection
+            } else if (activeFilter.Vac === 'No Vac') {
+                return (!server.vac) ? true : false
+            }
+        }
+
+        // Location
+        if (activeFilter.Location != undefined) {
+            // Check for servers in Europe
+            if (activeFilter.Location === 'Europe') {
+                return (_.contains(['Sweden', 'Germany', 'France', 'Denmark', 'United Kingdom'], server.location)) ? true : false
+            // Check for servers in America
+            } else if (activeFilter.Location === 'America') {
+                return (_.contains([''], server.location)) ? true : false
+            // Check for servers in Australia
+            } else if (activeFilter.Location === 'Australia') {
+                return (_.contains([''], server.location)) ? true : false
+            // Check for servers in Russia
+            } else if (activeFilter.Location === 'Russia') {
+                return (_.contains([''], server.location)) ? true : false
+            // Check for servers in Australia
+            } else if (activeFilter.Location === 'Asia') {
+                return (_.contains([''], server.location)) ? true : false
+            // Everything not matching should return false
+            } else {
+                return false
+            }
+        }
+
+        // Latency
+        if (activeFilter.Latency != undefined) {
+            // Check for less than 50 ms
+            if (activeFilter.Latency === '< 50 MS') {
+                return (server.latency < 50) ? true : false
+            // Check for less than 100 ms
+            } else if (activeFilter.Latency === '< 100 MS') {
+                return (server.latency < 100) ? true : false
+            // Check for less than 150 ms
+            } else if (activeFilter.Latency === '< 150 MS') {
+                return (server.latency < 150) ? true : false
+            // Check for less than 250 ms
+            } else if (activeFilter.Latency === '< 250 MS') {
+                return (server.latency < 250) ? true : false
+            // Check for less than 500 ms
+            } else if (activeFilter.Latency === '< 500 MS') {
+                return (server.latency < 500) ? true : false
+            }
+        }
+
         return true
     },
 
     render() {
-        console.log('new server render');
         // Map through all the servers
         const serverList = _.map(ServerData, (server, i) => {
             // VAC
@@ -89,15 +154,18 @@ const BrowseView = React.createClass({
         });
 
         // Filter Dropdowns
-        const locationOptions = ['Location', 'Europe', 'North America', 'Asia'];
+        const locationOptions = ['Location', 'Europe', 'America', 'Australia', 'Russia', 'Asia' ];
         const vacOptions = ['Anti-Cheat', 'With Vac', 'No Vac'];
         const passwordOptions = ['Password', 'With Password', 'No Password'];
-        const latencyOptions = ['Latency', '0 - 50 MS', '0 - 100 MS', '0 - 150 MS', '0 - 200 MS', '200 + MS'];
+        const latencyOptions = ['Latency', '< 50 MS', '< 100 MS', '< 150 MS', '< 250 MS', '< 500 MS'];
         const serverOptions = ['Server Status', 'Active', 'Not Full', 'Active & Not Full'];
 
         return (
             <div className='browse-view'>
                 <AnimationHolder zIndex={1}>
+                    <div className='browse-search-block'>
+                        <RuiSearch />
+                    </div>
                     <div className='browse-filter-block'>
                         <RuiSelect options={locationOptions} icon='fa-map-marker' onChange={this._updateFilter.bind(this, 'Location')} />
                         <RuiSelect options={vacOptions} icon='fa-shield' onChange={this._updateFilter.bind(this, 'Vac')} />

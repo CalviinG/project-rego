@@ -7,10 +7,11 @@
 		"maxPlayers": 		24,
 		"map":				"de_dust2",
 		"mode":				"casual",
-		"vac":				"true",
-		"blacklisted":		"false",
-		"favorited":		"false",
-		"latency":			50
+		"vac":				true,
+		"blacklisted":		false,
+		"favorited":		false,
+		"latency":			50,
+		"password":			false
 	},
 	{
 		"id": 				1002,
@@ -20,10 +21,11 @@
 		"maxPlayers": 		24,
 		"map":				"de_dust2",
 		"mode":				"casual",
-		"vac":				"true",
-		"blacklisted":		"false",
-		"favorited":		"false",
-		"latency":			100
+		"vac":				true,
+		"blacklisted":		false,
+		"favorited":		false,
+		"latency":			100,
+		"password":			false
 	},
 	{
 		"id": 				1003,
@@ -33,9 +35,10 @@
 		"maxPlayers": 		24,
 		"map":				"de_dust2",
 		"mode":				"casual",
-		"vac":				"true",
-		"blacklisted":		"false",
-		"favorited":		"false",
-		"latency":			75
+		"vac":				false,
+		"blacklisted":		false,
+		"favorited":		false,
+		"latency":			75,
+		"password":			true
 	}
 ]
