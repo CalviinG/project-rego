@@ -11,6 +11,6 @@ Based on [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplat
 npm install
 npm start
 webpack --watch
-compass watch inside sass/sass
+compass watch inside /sass
 open http://localhost:3000
 ```
