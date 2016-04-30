@@ -20,6 +20,7 @@ const BrowseView = React.createClass({
                 Latency: undefined,
                 Location: undefined,
                 Vac: undefined,
+                Keywords: [],
             },
         };
     },
@@ -49,13 +50,13 @@ const BrowseView = React.createClass({
         if (activeFilter.Server != undefined) {
             // Check for active servers
             if (activeFilter.Server === 'Active') {
-                return (server.curPlayers > 0) ? true : false
+                if (!(server.curPlayers > 0)) { return false }
             // Check for full servers
             } else if (activeFilter.Server === 'Not Full') {
-                return (server.curPlayers < server.maxPlayers) ? true : false
+                if (!(server.curPlayers < server.maxPlayers)) { return false }
             // Check for active server with open slots
             } else if (activeFilter.Server === 'Active & Not Full') {
-                return (server.curPlayers > 0 && server.curPlayers != server.maxPlayers) ? true : false
+                if (!(server.curPlayers > 0 && server.curPlayers != server.maxPlayers)) { return false }
             } 
         }
 
@@ -63,10 +64,10 @@ const BrowseView = React.createClass({
         if (activeFilter.Password != undefined) {
             // Check for servers without password
             if (activeFilter.Password === 'With Password') {
-                return (server.password) ? true : false
+                if (!server.password) { return false }
             // Check for servers without password
             } else if (activeFilter.Password === 'No Password') {
-                return (!server.password) ? true : false
+                if (server.password) { return false }
             }
         }
 
@@ -74,10 +75,10 @@ const BrowseView = React.createClass({
         if (activeFilter.Vac != undefined) {
             // Check for vac protected servers
             if (activeFilter.Vac === 'With Vac') {
-                return (server.vac) ? true : false
+                if (!server.vac) { return false }
             // Check for servers without vac protection
             } else if (activeFilter.Vac === 'No Vac') {
-                return (!server.vac) ? true : false
+                if (server.vac) { return false }
             }
         }
 
@@ -85,19 +86,19 @@ const BrowseView = React.createClass({
         if (activeFilter.Location != undefined) {
             // Check for servers in Europe
             if (activeFilter.Location === 'Europe') {
-                return (_.contains(['Sweden', 'Germany', 'France', 'Denmark', 'United Kingdom'], server.location)) ? true : false
+                if (!(_.contains(['Sweden', 'Germany', 'France', 'Denmark', 'United Kingdom'], server.location))) { return false }
             // Check for servers in America
             } else if (activeFilter.Location === 'America') {
-                return (_.contains([''], server.location)) ? true : false
+                if (!(_.contains([''], server.location))) { return false }
             // Check for servers in Australia
             } else if (activeFilter.Location === 'Australia') {
-                return (_.contains([''], server.location)) ? true : false
+                if (!(_.contains([''], server.location))) { return false }
             // Check for servers in Russia
             } else if (activeFilter.Location === 'Russia') {
-                return (_.contains([''], server.location)) ? true : false
+                if (!(_.contains([''], server.location))) { return false }
             // Check for servers in Australia
             } else if (activeFilter.Location === 'Asia') {
-                return (_.contains([''], server.location)) ? true : false
+                if (!(_.contains([''], server.location))) { return false }
             // Everything not matching should return false
             } else {
                 return false
@@ -108,23 +109,48 @@ const BrowseView = React.createClass({
         if (activeFilter.Latency != undefined) {
             // Check for less than 50 ms
             if (activeFilter.Latency === '< 50 MS') {
-                return (server.latency < 50) ? true : false
+                if (!(server.latency < 50)) { return false }
             // Check for less than 100 ms
             } else if (activeFilter.Latency === '< 100 MS') {
-                return (server.latency < 100) ? true : false
+                if (!(server.latency < 100)) { return false }
             // Check for less than 150 ms
             } else if (activeFilter.Latency === '< 150 MS') {
-                return (server.latency < 150) ? true : false
+                if (!(server.latency < 150)) { return false }
             // Check for less than 250 ms
             } else if (activeFilter.Latency === '< 250 MS') {
-                return (server.latency < 250) ? true : false
+                if (!(server.latency < 250)) { return false }
             // Check for less than 500 ms
             } else if (activeFilter.Latency === '< 500 MS') {
-                return (server.latency < 500) ? true : false
+                if (!(server.latency < 500)) { return false }
             }
         }
 
+        // Keywords
+        if (activeFilter.Keywords.length > 0) {
+            // Stash all keywords to look for in an array
+            let keywordsArray = server.name.split(' ');
+            keywordsArray.push(server.mode);
+            keywordsArray.push(server.map);
+
+            // Turn the keywords to lowercase
+            let serverKeywords = [];
+            _.each(keywordsArray, (value) => {
+                serverKeywords.push(value.toLowerCase());
+            });
+
+            // Check if a keyword matches (fix me)
+            return _.find(activeFilter.Keywords, (keyword) => {
+                return _.contains(serverKeywords, keyword);
+            });
+        }
+
         return true
+    },
+
+    _searchServerUpdate(keywords) {
+        let updatedFilter = this.state.serverFilter;
+        updatedFilter.Keywords = keywords;
+        this.setState({ serverFilter: updatedFilter });
     },
 
     render() {
@@ -164,7 +190,7 @@ const BrowseView = React.createClass({
             <div className='browse-view'>
                 <AnimationHolder zIndex={1}>
                     <div className='browse-search-block'>
-                        <RuiSearch />
+                        <RuiSearch hint='Add Keywords' onUpdate={this._searchServerUpdate} />
                     </div>
                     <div className='browse-filter-block'>
                         <RuiSelect options={locationOptions} icon='fa-map-marker' onChange={this._updateFilter.bind(this, 'Location')} />

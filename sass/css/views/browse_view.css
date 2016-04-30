@@ -5,7 +5,7 @@ Use "@extend .clear-after !optional" if the extend should be able to fail.
 
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/views/browse_view.sass:12
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/views/browse_view.sass:15
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/extend.rb:62:in `block in check_extends_fired!'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/util/subset_map.rb:105:in `block in each_value'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/util/subset_map.rb:105:in `each'

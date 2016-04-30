@@ -43,7 +43,7 @@ body {
 }
 
 /* line 28, ../sass/base.sass */
-.clear-after:after, .browse-view .browse-filter-block:after, .browse-view .rego-table-wrapper .rt-row:after, .rui-select-wrapper .select-button-holder:after {
+.clear-after:after, .browse-view .browse-filter-block:after, .browse-view .rego-table-wrapper .rt-row:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after {
   content: "";
   display: block;
   clear: both;
@@ -262,16 +262,20 @@ body {
   /* Filter Styling */
   /* Table Styling */
 }
-/* line 13, ../sass/views/browse_view.sass */
+/* line 11, ../sass/views/browse_view.sass */
+.browse-view .browse-search-block {
+  margin-bottom: 10px;
+}
+/* line 16, ../sass/views/browse_view.sass */
 .browse-view .browse-filter-block .rui-select-wrapper {
   float: left;
   width: calc(20% - 8px);
 }
-/* line 16, ../sass/views/browse_view.sass */
+/* line 19, ../sass/views/browse_view.sass */
 .browse-view .browse-filter-block .rui-select-wrapper:not(:first-of-type) {
   margin-left: 10px;
 }
-/* line 24, ../sass/views/browse_view.sass */
+/* line 27, ../sass/views/browse_view.sass */
 .browse-view .rego-table-wrapper .rt-row .rt-col {
   padding: 20px;
   float: left;
@@ -404,4 +408,126 @@ body {
 /* line 102, ../sass/ui/rui_select.sass */
 .rui-select-wrapper.option-selected .select-dropdown-holder {
   background-color: #0082D2;
+}
+
+/*
+ * Rui Search
+ *
+ */
+/* line 7, ../sass/ui/rui_search.sass */
+.rui-search-wrapper {
+  position: relative;
+  padding: 20px;
+  height: 70px;
+  background-color: #22272A;
+  /* Has Focus */
+  /* Has Value */
+}
+/* line 14, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-icon {
+  float: left;
+  display: block;
+  line-height: 30px;
+  width: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #9E9E9E;
+  margin-right: 20px;
+}
+/* line 24, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-hint,
+.rui-search-wrapper .search-field {
+  font-size: 18px;
+}
+/* line 28, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-hint {
+  position: absolute;
+  left: 60px;
+  z-index: 0;
+  line-height: 30px;
+  color: #616161;
+  opacity: 1;
+  transform: translate(0%, 0%);
+  transition: all 0.175s cubic-bezier(0.15, 0.55, 0.35, 1);
+}
+/* line 38, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-field {
+  float: left;
+  position: relative;
+  z-index: 1;
+  height: 30px;
+  color: #9E9E9E;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+/* line 49, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder {
+  float: right;
+}
+/* line 52, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder .search-keyword {
+  float: left;
+  position: relative;
+  color: white;
+  height: 30px;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 62, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder .search-keyword:not(:first-of-type) {
+  margin-left: 10px;
+}
+/* line 65, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder .search-keyword:hover .keyword-icon {
+  opacity: 1;
+}
+/* line 67, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder .search-keyword:hover .keyword-label {
+  opacity: 0.25;
+}
+/* line 69, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder .search-keyword .keyword-label,
+.rui-search-wrapper .search-keywords-holder .search-keyword .keyword-icon {
+  float: left;
+  line-height: 10px;
+  transition: all 0.175s ease;
+}
+/* line 74, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder .search-keyword .keyword-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+/* line 78, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder .search-keyword .keyword-icon {
+  position: absolute;
+  z-index: 1;
+  font-size: 14px;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+}
+/* line 86, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder .search-keyword.normal-type {
+  background-color: #424242;
+}
+/* line 89, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder .search-keyword.map-type {
+  background-color: #F44336;
+}
+/* line 92, ../sass/ui/rui_search.sass */
+.rui-search-wrapper .search-keywords-holder .search-keyword.mode-type {
+  background-color: #4CAF50;
+}
+/* line 99, ../sass/ui/rui_search.sass */
+.rui-search-wrapper.has-focus .search-hint {
+  color: #424242;
+}
+/* line 105, ../sass/ui/rui_search.sass */
+.rui-search-wrapper.has-value .search-hint {
+  opacity: 0;
+  transform: translate(25%, 0%);
 }

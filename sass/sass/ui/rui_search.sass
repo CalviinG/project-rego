@@ -5,3 +5,103 @@
  */
 
 .rui-search-wrapper
+  @extend .clear-after
+  position: relative
+  padding: 20px
+  height: 70px
+  background-color: $dark-1
+
+  .search-icon
+    float: left
+    display: block
+    line-height: 30px
+    width: 20px
+    text-align: center
+    font-size: 14px
+    color: $grey-500
+    margin-right: 20px
+
+  .search-hint,
+  .search-field
+    font-size: 18px
+
+  .search-hint
+    position: absolute
+    left: 60px
+    z-index: 0
+    line-height: 30px
+    color: $grey-700
+    opacity: 1
+    transform: translate(0%, 0%)
+    transition: all .175s cubic-bezier(.15, .55, .35, 1)
+
+  .search-field
+    float: left
+    position: relative
+    z-index: 1
+    height: 30px
+    color: $grey-500
+    border: none
+    outline: none
+    background-color: transparent
+    &:focus
+
+  .search-keywords-holder
+    @extend .clear-after
+    float: right
+    .search-keyword
+      @extend .clear-after
+      float: left
+      position: relative
+      color: white
+      height: 30px
+      padding: 10px
+      border-radius: 15px
+      text-align: center
+      cursor: pointer
+      &:not(:first-of-type)
+        margin-left: 10px
+      &:hover
+        .keyword-icon
+          opacity: 1
+        .keyword-label
+          opacity: .25
+      .keyword-label,
+      .keyword-icon
+        float: left
+        line-height: 10px
+        transition: all .175s ease
+      .keyword-label
+        font-size: 12px
+        text-transform: uppercase
+        font-weight: 700
+      .keyword-icon
+        position: absolute
+        z-index: 1
+        font-size: 14px
+        width: 100%
+        left: 0
+        opacity: 0
+
+      &.normal-type
+        background-color: $grey-800
+
+      &.map-type
+        background-color: $c-red
+
+      &.mode-type
+        background-color: $c-green
+
+
+  /* Has Focus */
+
+  &.has-focus
+    .search-hint
+      color: $grey-800
+
+  /* Has Value */
+
+  &.has-value
+    .search-hint
+      opacity: 0
+      transform: translate(25%, 0%)
