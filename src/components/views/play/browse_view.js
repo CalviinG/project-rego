@@ -1,5 +1,6 @@
-import React from 'react';
-import _     from 'underscore';
+import React      from 'react';
+import _          from 'underscore';
+import classNames from 'classnames';
 
 // Json
 import ServerData from '../../../json/servers.json';
@@ -156,22 +157,55 @@ const BrowseView = React.createClass({
     render() {
         // Map through all the servers
         const serverList = _.map(ServerData, (server, i) => {
+
+            // Password
+            const passwordClass = classNames('rt-col icon-col', {
+                'active-status': server.password,
+                'disabled-status': !server.password,
+            });
+
+            // Players
+            const playersClass = classNames('rt-col icon-col', {
+                'good-status': (server.curPlayers < server.maxPlayers),
+                'bad-status': (server.curPlayers === server.maxPlayers),
+                'normal-status': (server.curPlayers === 0),
+            });
+
+            // Latency
+            const latencyClass = classNames('rt-col icon-col', {
+                'good-status': (server.latency < 100),
+                'bad-status': (server.latency > 250),
+                'normal-status': (server.latency > 99 && server.latency < 251),
+            });
+
             // VAC
-            let vacStatus = <div className='rt-col' />;
-            if (server.vac) {
-                vacStatus = <div className='rt-col'><i className='fa fa-shield' />VAC</div>;
-            }
+            const vacClass = classNames('rt-col icon-col', {
+                'active-status': server.vac,
+                'disabled-status': !server.vac,
+            });
 
             if(this._filterServer(server)) {
                 return (
                     <div className='rt-row' key={i}>
-                        <div className='rt-col'>{server.name}</div>
-                        <div className='rt-col'>{server.map}</div>
-                        <div className='rt-col'>{server.mode}</div>
-                        <div className='rt-col'><i className='fa fa-user' />{server.curPlayers} / {server.maxPlayers}</div>
-                        <div className='rt-col'><i className='fa fa-globe' />{server.latency} MS</div>
-                        <div className='rt-col'><i className='fa fa-map-marker' />{server.location}</div>
-                        {vacStatus}
+                        <div className={passwordClass} style={{width: 20}}>
+                            <i className='col-icon fa fa-lock' />
+                        </div>
+                        <div className='rt-col' style={{width: 350}}>{server.name}</div>
+                        <div className='rt-col' style={{width: 150}}>{server.mode}</div>
+                        <div className='rt-col' style={{width: 200}}>{server.map}</div>
+                        <div className='rt-col' style={{width: 100}}>{server.location}</div>
+                        <div className={playersClass} style={{width: 100}}>
+                            <i className='col-icon fa fa-circle-o' />
+                            <p className='col-text'>{server.curPlayers} / {server.maxPlayers}</p>
+                        </div>
+                        <div className={latencyClass} style={{width: 100}}>
+                            <i className='col-icon fa fa-circle-o' />
+                            <p className='col-text'>{server.latency} MS</p>
+                        </div>
+                        <div className={vacClass} style={{width: 100}}>
+                            <i className='col-icon fa fa-shield' />
+                            <p className='col-text'>VAC</p>
+                        </div>
                     </div>
                 );
             } else {

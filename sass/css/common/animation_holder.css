@@ -11,10 +11,10 @@
 /* line 12, ../../sass/common/animation_holder.sass */
 .animation-holder.enter-animation {
   opacity: 1;
-  transform: translate(0%, 20%);
+  transform: translate(0%, 20px);
 }
 /* line 16, ../../sass/common/animation_holder.sass */
 .animation-holder.leave-animation {
   opacity: 0;
-  transform: translate(20%, 20%);
+  transform: translate(20%, 20px);
 }

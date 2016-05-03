@@ -27,7 +27,7 @@ const RuiSelect = React.createClass({
 	_toggleDropdown() {
 		const $oH = $(this.refs.optionsHolder);
 		if (!this.state.showOptions) {
-			$oH.css({ 'height': $oH.children().length * 25 });
+			$oH.css({ 'height': $oH.children().length * 35 });
 		} else {
 			$oH.css({ 'height': 0 });
 		}

@@ -13,6 +13,7 @@
 
   .browse-filter-block
     @extend .clear-after
+    margin-bottom: 10px
     .rui-select-wrapper
       float: left
       width: calc(20% - 8px)
@@ -24,6 +25,37 @@
   .rego-table-wrapper
     .rt-row
       @extend .clear-after
+      color: $grey-300
+      line-height: 20px
+      margin-bottom: 2px
+      background-color: $dark-2
       .rt-col
         padding: 20px
         float: left
+        &.icon-col
+          @extend .clear-after
+          .col-icon
+            float: left
+            font-size: 14px
+            line-height: inherit
+            margin-right: 5px
+          .col-text
+            float: left
+            font-size: 12px
+            font-weight: 700
+          &.good-status
+            .col-icon
+              color: $c-green
+          &.normal-status
+            .col-icon
+              color: $c-orange
+          &.bad-status
+            .col-icon
+              color: $c-red
+          &.active-status
+            .col-icon
+              color: $mainColor
+          &.disabled-status
+            .col-icon,
+            .col-text
+              color: $grey-800

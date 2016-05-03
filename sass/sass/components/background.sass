@@ -1,0 +1,41 @@
+/*
+ *
+ * Background Component
+ *
+ */
+
+.background
+  position: absolute
+  z-index: -1
+  top: 80px
+  left: 0
+
+  /* Base */
+  .background-overlay-blue,
+  .background-overlay-black,
+  .background-image
+    position: absolute
+    width: 100vw
+    height: 100vh
+    top: 0
+    left: 0
+
+  /* Overlays */
+
+  .background-overlay-blue
+    z-index: 3
+    background-color: rgba($mainColor, .075)
+
+  .background-overlay-black
+    z-index: 2
+    background-color: rgba(black, .85)
+
+  /* Background Image */
+
+  .background-image
+    z-index: 1
+    background-image: url('../images/background.png')
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: cover
+    

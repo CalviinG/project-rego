@@ -4,6 +4,7 @@ import _                    from 'underscore';
 // Components
 import NavigationComponent from './components/navigation_component.js';
 import ViewComponent       from './components/view_component.js';
+import BackgroundComponent from './components/background_component.js';
 
 const App = React.createClass({
     getInitialState() {
@@ -148,6 +149,7 @@ const App = React.createClass({
                 <ViewComponent
                     activeMain={this.state.activeMain}
                     activeSub={this.state.activeSub} />
+                <BackgroundComponent />
 	      	</div>
 	    );
   	},
