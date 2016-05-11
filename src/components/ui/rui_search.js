@@ -98,7 +98,6 @@ const RuiSearch = React.createClass({
 			value: this.state.value,
 		};
 
-
 		// Keywords
 		const mapKeys = [
 			'de_aztec', 

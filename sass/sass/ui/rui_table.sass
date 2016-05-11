@@ -1,0 +1,88 @@
+/*
+ *
+ * Rui Table
+ *
+ */
+
+.rui-table-wrapper
+
+  /* Global Table Styling */
+
+  .table-header,
+  .body-row
+    padding: 0 20px
+
+  .table-icon
+    font-size: 14px
+    text-align: center
+    width: 20px
+
+  .header-value,
+  .row-icon-holder,
+  .row-value
+    float: left
+    height: 60px
+    padding: 19px 0
+
+  .header-icon,
+  .header-text,
+  .row-icon,
+  .row-text,
+    line-height: 20px
+
+  /* Header */
+
+  .table-header
+    @extend .clear-after
+    position: relative
+    z-index: 1
+    background: linear-gradient($mainColorLight, $mainColor)
+    box-shadow: 0 4px 16px 2px rgba(black, .25)
+
+    .header-icon,
+    .header-text
+      color: white
+
+    .header-text
+      font-size: 12px
+      font-weight: 700
+
+  /* Rows */
+
+  .table-body
+    .body-row
+      @extend .clear-after
+      background-color: $dark-2
+      margin-top: 2px
+
+      .row-icon,
+      .row-text
+        display: inline-block
+
+      .row-text
+        font-size: 14px
+        color: $grey-400
+
+      .row-icon-holder
+        .row-text
+          font-size: 12px
+          font-weight: 700
+          margin-left: 5px
+
+        .status-circle
+          display: inline-block
+          width: 10px
+          height: 10px
+          border-radius: 100%
+          background-color: transparent
+
+        &.is-disabled > .row-icon
+          color: $grey-800
+        &.is-active > .row-icon
+          color: $mainColor
+        &.is-good > .status-circle
+          box-shadow: inset 0 0 0 2px $c-green
+        &.is-normal > .status-circle
+          box-shadow: inset 0 0 0 2px $c-orange
+        &.is-bad > .status-circle
+          box-shadow: inset 0 0 0 2px $c-red

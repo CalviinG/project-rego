@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$mainColor".
-        on line 27 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/background.sass
+        on line 29 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/background.sass
 
-22: 
-23:   /* Overlays *\/
 24: 
-25:   .background-overlay-blue
-26:     z-index: 3
-27:     background-color: rgba($mainColor, .075)
-28: 
-29:   .background-overlay-black
-30:     z-index: 2
-31:     background-color: rgba(black, .85)
-32: 
+25:   /* Overlays *\/
+26: 
+27:   .background-overlay-blue
+28:     z-index: 3
+29:     background-color: rgba($mainColor, .075)
+30: 
+31:   .background-overlay-black
+32:     z-index: 2
+33:     background-color: rgba(black, .85)
+34: 
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/components/background.sass:27
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/components/background.sass:29
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:170:in `perform_arg'
@@ -89,4 +89,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$mainColor\".\A         on line 27 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/background.sass\A \A 22: \A 23:   /* Overlays */\A 24: \A 25:   .background-overlay-blue\A 26:     z-index: 3\A 27:     background-color: rgba($mainColor, .075)\A 28: \A 29:   .background-overlay-black\A 30:     z-index: 2\A 31:     background-color: rgba(black, .85)\A 32: "; }
+  content: "Error: Undefined variable: \"$mainColor\".\A         on line 29 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/background.sass\A \A 24: \A 25:   /* Overlays */\A 26: \A 27:   .background-overlay-blue\A 28:     z-index: 3\A 29:     background-color: rgba($mainColor, .075)\A 30: \A 31:   .background-overlay-black\A 32:     z-index: 2\A 33:     background-color: rgba(black, .85)\A 34: "; }

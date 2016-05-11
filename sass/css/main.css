@@ -20,8 +20,8 @@
 html,
 body,
 #app {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* line 13, ../sass/base.sass */
@@ -30,27 +30,27 @@ body {
   font-weight: 400;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  width: 100vw;
-  height: 100vh;
   overflow: hidden;
 }
 
-/* line 22, ../sass/base.sass */
+/* line 20, ../sass/base.sass */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* line 28, ../sass/base.sass */
-.clear-after:after, .browse-view .browse-filter-block:after, .browse-view .rego-table-wrapper .rt-row:after, .browse-view .rego-table-wrapper .rt-row .rt-col.icon-col:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after {
+/* line 26, ../sass/base.sass */
+.clear-after:after, .browse-view .browse-filter-block:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 34, ../sass/base.sass */
+/* line 32, ../sass/base.sass */
 .app-wrapper .content {
+  position: relative;
+  z-index: 1;
   width: 1200px;
   margin: 0 auto;
 }
@@ -93,22 +93,23 @@ body {
 /* line 15, ../sass/components/navigation.sass */
 .navigation {
   position: relative;
+  z-index: 2;
   height: 160px;
   width: 100%;
   /* Nav Icons */
 }
-/* line 20, ../sass/components/navigation.sass */
+/* line 21, ../sass/components/navigation.sass */
 .navigation .navigation__main,
 .navigation .navigation__sub,
 .navigation .navigation__wrapper {
   height: calc(160px / 2);
 }
-/* line 25, ../sass/components/navigation.sass */
+/* line 26, ../sass/components/navigation.sass */
 .navigation .navigation__wrapper {
   width: 1200px;
   margin: 0 auto;
 }
-/* line 31, ../sass/components/navigation.sass */
+/* line 32, ../sass/components/navigation.sass */
 .navigation .home-button {
   display: block;
   float: left;
@@ -120,13 +121,13 @@ body {
   margin: 0 20px;
   cursor: pointer;
 }
-/* line 41, ../sass/components/navigation.sass */
+/* line 42, ../sass/components/navigation.sass */
 .navigation .home-button .home-icon {
   font-size: 28px;
   line-height: calc(160px / 2);
   color: white;
 }
-/* line 45, ../sass/components/navigation.sass */
+/* line 46, ../sass/components/navigation.sass */
 .navigation .home-button:before, .navigation .home-button:after {
   position: absolute;
   display: block;
@@ -139,25 +140,25 @@ body {
   border-left: calc(160px / 16) solid #0091EA;
   border-right: calc(160px / 16) solid transparent;
 }
-/* line 57, ../sass/components/navigation.sass */
+/* line 58, ../sass/components/navigation.sass */
 .navigation .home-button:before {
   right: 100%;
   transform: rotate(180deg);
 }
-/* line 60, ../sass/components/navigation.sass */
+/* line 61, ../sass/components/navigation.sass */
 .navigation .home-button:after {
   left: 100%;
 }
-/* line 62, ../sass/components/navigation.sass */
+/* line 63, ../sass/components/navigation.sass */
 .navigation .home-button:hover {
   background-color: #00B0FF;
 }
-/* line 64, ../sass/components/navigation.sass */
+/* line 65, ../sass/components/navigation.sass */
 .navigation .home-button:hover:before, .navigation .home-button:hover:after {
   border-top-color: #00B0FF;
   border-left-color: #00B0FF;
 }
-/* line 69, ../sass/components/navigation.sass */
+/* line 70, ../sass/components/navigation.sass */
 .navigation .nav-icon {
   position: relative;
   display: block;
@@ -166,35 +167,35 @@ body {
   color: #757575;
   cursor: pointer;
 }
-/* line 76, ../sass/components/navigation.sass */
+/* line 77, ../sass/components/navigation.sass */
 .navigation .nav-icon:hover {
   color: #BDBDBD;
 }
-/* line 78, ../sass/components/navigation.sass */
+/* line 79, ../sass/components/navigation.sass */
 .navigation .nav-icon.exit-button, .navigation .nav-icon.profile-button {
   float: right;
   margin: 28px 20px;
 }
-/* line 82, ../sass/components/navigation.sass */
+/* line 83, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button {
   float: left;
   margin: 28px 5px;
   padding: 0 5px;
 }
-/* line 86, ../sass/components/navigation.sass */
+/* line 87, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button.back-browse {
   margin-left: 20px;
 }
-/* line 88, ../sass/components/navigation.sass */
+/* line 89, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button.forward-browse {
   margin-right: 20px;
 }
-/* line 90, ../sass/components/navigation.sass */
+/* line 91, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button.browse-is-disabled {
   cursor: default;
   color: #424242;
 }
-/* line 94, ../sass/components/navigation.sass */
+/* line 95, ../sass/components/navigation.sass */
 .navigation .main-link,
 .navigation .sub-link {
   text-transform: uppercase;
@@ -203,30 +204,30 @@ body {
   font-weight: 700;
   cursor: pointer;
 }
-/* line 102, ../sass/components/navigation.sass */
+/* line 103, ../sass/components/navigation.sass */
 .navigation .navigation__main {
   background-color: #22272A;
 }
-/* line 104, ../sass/components/navigation.sass */
+/* line 105, ../sass/components/navigation.sass */
 .navigation .navigation__main .main-link {
   color: #616161;
   font-size: 26px;
   margin: 20px;
 }
-/* line 108, ../sass/components/navigation.sass */
+/* line 109, ../sass/components/navigation.sass */
 .navigation .navigation__main .main-link:hover {
   color: #9E9E9E;
 }
-/* line 110, ../sass/components/navigation.sass */
+/* line 111, ../sass/components/navigation.sass */
 .navigation .navigation__main .main-link.active-link {
   color: #E0E0E0;
   cursor: default;
 }
-/* line 114, ../sass/components/navigation.sass */
+/* line 115, ../sass/components/navigation.sass */
 .navigation .navigation__sub {
   background-color: #191D1F;
 }
-/* line 116, ../sass/components/navigation.sass */
+/* line 117, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link {
   position: relative;
   color: #424242;
@@ -237,16 +238,16 @@ body {
   opacity: 0;
   transition: opacity 0.125s cubic-bezier(0.17, 0.67, 0.21, 1), left 0.135s cubic-bezier(0.17, 0.67, 0.21, 1);
 }
-/* line 125, ../sass/components/navigation.sass */
+/* line 126, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link:hover {
   color: #757575;
 }
-/* line 127, ../sass/components/navigation.sass */
+/* line 128, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link.active-link {
   color: #0091EA;
   cursor: default;
 }
-/* line 131, ../sass/components/navigation.sass */
+/* line 132, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link.sub-link-is-showing {
   left: 0;
   opacity: 1;
@@ -259,34 +260,36 @@ body {
 /* line 7, ../sass/components/background.sass */
 .background {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
   top: 80px;
   left: 0;
   /* Base */
   /* Overlays */
   /* Background Image */
 }
-/* line 14, ../sass/components/background.sass */
+/* line 16, ../sass/components/background.sass */
 .background .background-overlay-blue,
 .background .background-overlay-black,
 .background .background-image {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
 }
-/* line 25, ../sass/components/background.sass */
+/* line 27, ../sass/components/background.sass */
 .background .background-overlay-blue {
   z-index: 3;
   background-color: rgba(0, 145, 234, 0.075);
 }
-/* line 29, ../sass/components/background.sass */
+/* line 31, ../sass/components/background.sass */
 .background .background-overlay-black {
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.85);
 }
-/* line 35, ../sass/components/background.sass */
+/* line 37, ../sass/components/background.sass */
 .background .background-image {
   z-index: 1;
   background-image: url("../images/background.png");
@@ -303,7 +306,7 @@ body {
 /* line 7, ../sass/views/browse_view.sass */
 .browse-view {
   /* Filter Styling */
-  /* Table Styling */
+  /* Server List Styling */
 }
 /* line 11, ../sass/views/browse_view.sass */
 .browse-view .browse-search-block {
@@ -311,7 +314,7 @@ body {
 }
 /* line 14, ../sass/views/browse_view.sass */
 .browse-view .browse-filter-block {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 /* line 17, ../sass/views/browse_view.sass */
 .browse-view .browse-filter-block .rui-select-wrapper {
@@ -321,52 +324,6 @@ body {
 /* line 20, ../sass/views/browse_view.sass */
 .browse-view .browse-filter-block .rui-select-wrapper:not(:first-of-type) {
   margin-left: 10px;
-}
-/* line 26, ../sass/views/browse_view.sass */
-.browse-view .rego-table-wrapper .rt-row {
-  color: #E0E0E0;
-  line-height: 20px;
-  margin-bottom: 2px;
-  background-color: #191D1F;
-}
-/* line 32, ../sass/views/browse_view.sass */
-.browse-view .rego-table-wrapper .rt-row .rt-col {
-  padding: 20px;
-  float: left;
-}
-/* line 37, ../sass/views/browse_view.sass */
-.browse-view .rego-table-wrapper .rt-row .rt-col.icon-col .col-icon {
-  float: left;
-  font-size: 14px;
-  line-height: inherit;
-  margin-right: 5px;
-}
-/* line 42, ../sass/views/browse_view.sass */
-.browse-view .rego-table-wrapper .rt-row .rt-col.icon-col .col-text {
-  float: left;
-  font-size: 12px;
-  font-weight: 700;
-}
-/* line 47, ../sass/views/browse_view.sass */
-.browse-view .rego-table-wrapper .rt-row .rt-col.icon-col.good-status .col-icon {
-  color: #4CAF50;
-}
-/* line 50, ../sass/views/browse_view.sass */
-.browse-view .rego-table-wrapper .rt-row .rt-col.icon-col.normal-status .col-icon {
-  color: #FF9800;
-}
-/* line 53, ../sass/views/browse_view.sass */
-.browse-view .rego-table-wrapper .rt-row .rt-col.icon-col.bad-status .col-icon {
-  color: #F44336;
-}
-/* line 56, ../sass/views/browse_view.sass */
-.browse-view .rego-table-wrapper .rt-row .rt-col.icon-col.active-status .col-icon {
-  color: #0091EA;
-}
-/* line 59, ../sass/views/browse_view.sass */
-.browse-view .rego-table-wrapper .rt-row .rt-col.icon-col.disabled-status .col-icon,
-.browse-view .rego-table-wrapper .rt-row .rt-col.icon-col.disabled-status .col-text {
-  color: #424242;
 }
 
 /* Rui */
@@ -613,11 +570,11 @@ body {
 }
 /* line 89, ../sass/ui/rui_search.sass */
 .rui-search-wrapper .search-keywords-holder .search-keyword.map-type {
-  background-color: #F44336;
+  background-color: #0082D2;
 }
 /* line 92, ../sass/ui/rui_search.sass */
 .rui-search-wrapper .search-keywords-holder .search-keyword.mode-type {
-  background-color: #4CAF50;
+  background-color: #00B0FF;
 }
 /* line 99, ../sass/ui/rui_search.sass */
 .rui-search-wrapper.has-focus .search-hint {
@@ -627,4 +584,107 @@ body {
 .rui-search-wrapper.has-value .search-hint {
   opacity: 0;
   transform: translate(25%, 0%);
+}
+
+/*
+ * Rui Table
+ *
+ */
+/* line 7, ../sass/ui/rui_table.sass */
+.rui-table-wrapper {
+  /* Global Table Styling */
+  /* Header */
+  /* Rows */
+}
+/* line 11, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-header,
+.rui-table-wrapper .body-row {
+  padding: 0 20px;
+}
+/* line 15, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-icon {
+  font-size: 14px;
+  text-align: center;
+  width: 20px;
+}
+/* line 20, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .header-value,
+.rui-table-wrapper .row-icon-holder,
+.rui-table-wrapper .row-value {
+  float: left;
+  height: 60px;
+  padding: 19px 0;
+}
+/* line 27, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .header-icon,
+.rui-table-wrapper .header-text,
+.rui-table-wrapper .row-icon,
+.rui-table-wrapper .row-text {
+  line-height: 20px;
+}
+/* line 35, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-header {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(#00B0FF, #0091EA);
+  box-shadow: 0 4px 16px 2px rgba(0, 0, 0, 0.25);
+}
+/* line 42, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-header .header-icon,
+.rui-table-wrapper .table-header .header-text {
+  color: white;
+}
+/* line 46, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-header .header-text {
+  font-size: 12px;
+  font-weight: 700;
+}
+/* line 53, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-body .body-row {
+  background-color: #191D1F;
+  margin-top: 2px;
+}
+/* line 58, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-body .body-row .row-icon,
+.rui-table-wrapper .table-body .body-row .row-text {
+  display: inline-block;
+}
+/* line 62, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-body .body-row .row-text {
+  font-size: 14px;
+  color: #BDBDBD;
+}
+/* line 67, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-body .body-row .row-icon-holder .row-text {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+/* line 72, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-body .body-row .row-icon-holder .status-circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: transparent;
+}
+/* line 79, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-body .body-row .row-icon-holder.is-disabled > .row-icon {
+  color: #424242;
+}
+/* line 81, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-body .body-row .row-icon-holder.is-active > .row-icon {
+  color: #0091EA;
+}
+/* line 83, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-body .body-row .row-icon-holder.is-good > .status-circle {
+  box-shadow: inset 0 0 0 2px #4CAF50;
+}
+/* line 85, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-body .body-row .row-icon-holder.is-normal > .status-circle {
+  box-shadow: inset 0 0 0 2px #FF9800;
+}
+/* line 87, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-body .body-row .row-icon-holder.is-bad > .status-circle {
+  box-shadow: inset 0 0 0 2px #F44336;
 }

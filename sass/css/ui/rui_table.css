@@ -1,18 +1,30 @@
 /*
-Error: Undefined variable: "$appWidth".
-        on line 35 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass
+Error: Undefined variable: "$mainColorLight".
+        on line 39 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_table.sass
 
-30: 
-31: .app-wrapper
-32:   .content
-33:     position: relative
-34:     z-index: 1
-35:     width: $appWidth
-36:     margin: 0 auto
+34: 
+35:   .table-header
+36:     @extend .clear-after
+37:     position: relative
+38:     z-index: 1
+39:     background: linear-gradient($mainColorLight, $mainColor)
+40:     box-shadow: 0 4px 16px 2px rgba(black, .25)
+41: 
+42:     .header-icon,
+43:     .header-text
+44:       color: white
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass:35
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_table.sass:39
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:170:in `perform_arg'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `each'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `each_with_index'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `each'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `map'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `_perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
@@ -77,4 +89,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$appWidth\".\A         on line 35 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass\A \A 30: \A 31: .app-wrapper\A 32:   .content\A 33:     position: relative\A 34:     z-index: 1\A 35:     width: $appWidth\A 36:     margin: 0 auto"; }
+  content: "Error: Undefined variable: \"$mainColorLight\".\A         on line 39 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_table.sass\A \A 34: \A 35:   .table-header\A 36:     @extend .clear-after\A 37:     position: relative\A 38:     z-index: 1\A 39:     background: linear-gradient($mainColorLight, $mainColor)\A 40:     box-shadow: 0 4px 16px 2px rgba(black, .25)\A 41: \A 42:     .header-icon,\A 43:     .header-text\A 44:       color: white"; }

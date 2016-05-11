@@ -11,6 +11,7 @@ import AnimationHolder from '../../common/animation_holder.js';
 // Rui
 import RuiSelect from '../../ui/rui_select.js';
 import RuiSearch from '../../ui/rui_search.js';
+import RuiTable  from '../../ui/rui_table.js';
 
 const BrowseView = React.createClass({
     getInitialState() {
@@ -27,7 +28,7 @@ const BrowseView = React.createClass({
     },
 
     componentDidMount() {
-        console.log(ServerData);
+
     },
 
     _updateFilter(type, value) {
@@ -155,63 +156,69 @@ const BrowseView = React.createClass({
     },
 
     render() {
-        // Map through all the servers
+        /*
+         *
+         * Server List
+         *
+         */
+
+        // Create Table Header
+        const tableHeader = [
+            ['icon', 'fa-lock'],
+            'Name',
+            'Game Mode',
+            'Map',
+            'Location',
+            'Players',
+            'Latency',
+            'VAC',
+        ];
+
+        // Get Table Rows
         const serverList = _.map(ServerData, (server, i) => {
-
-            // Password
-            const passwordClass = classNames('rt-col icon-col', {
-                'active-status': server.password,
-                'disabled-status': !server.password,
-            });
-
-            // Players
-            const playersClass = classNames('rt-col icon-col', {
-                'good-status': (server.curPlayers < server.maxPlayers),
-                'bad-status': (server.curPlayers === server.maxPlayers),
-                'normal-status': (server.curPlayers === 0),
-            });
-
-            // Latency
-            const latencyClass = classNames('rt-col icon-col', {
-                'good-status': (server.latency < 100),
-                'bad-status': (server.latency > 250),
-                'normal-status': (server.latency > 99 && server.latency < 251),
-            });
-
-            // VAC
-            const vacClass = classNames('rt-col icon-col', {
-                'active-status': server.vac,
-                'disabled-status': !server.vac,
-            });
-
             if(this._filterServer(server)) {
-                return (
-                    <div className='rt-row' key={i}>
-                        <div className={passwordClass} style={{width: 20}}>
-                            <i className='col-icon fa fa-lock' />
-                        </div>
-                        <div className='rt-col' style={{width: 350}}>{server.name}</div>
-                        <div className='rt-col' style={{width: 150}}>{server.mode}</div>
-                        <div className='rt-col' style={{width: 200}}>{server.map}</div>
-                        <div className='rt-col' style={{width: 100}}>{server.location}</div>
-                        <div className={playersClass} style={{width: 100}}>
-                            <i className='col-icon fa fa-circle-o' />
-                            <p className='col-text'>{server.curPlayers} / {server.maxPlayers}</p>
-                        </div>
-                        <div className={latencyClass} style={{width: 100}}>
-                            <i className='col-icon fa fa-circle-o' />
-                            <p className='col-text'>{server.latency} MS</p>
-                        </div>
-                        <div className={vacClass} style={{width: 100}}>
-                            <i className='col-icon fa fa-shield' />
-                            <p className='col-text'>VAC</p>
-                        </div>
-                    </div>
-                );
+                const passwordStatus = (server.password) ? 'active' : 'disabled' ;
+
+                const playersStatus = classNames({
+                    'good': (server.curPlayers > 0 && server.curPlayers < server.maxPlayers),
+                    'normal': (server.curPlayers === 0),
+                    'bad': (server.curPlayers === server.maxPlayers),
+                });
+
+                const latecncyStatus = classNames({
+                    'good': (server.latency < 100),
+                    'normal': (server.latency > 99 && server.latency < 250),
+                    'bad': (server.latency > 249),
+                });
+
+                const vacStatus = classNames({
+                    'active': (server.vac),
+                    'disabled': (!server.vac),
+                });
+
+                return {
+                    password: [passwordStatus, '', 'fa-lock'],
+                    name: server.name,
+                    mode: server.mode,
+                    map: server.map,
+                    location: server.location,
+                    players: [playersStatus, `${server.curPlayers} / ${server.maxPlayers}`],
+                    latency: [latecncyStatus, `${server.latency} MS`],
+                    vac: [vacStatus, 'VAC', 'fa-shield'],
+                };
             } else {
                 return
             }
         });
+
+        // Table Width Values
+        const tableWidthValues = [40, 300, 180, 180, 160, 100, 100, 100]; // Values must be equal or lower than 1160
+
+        /*
+         *
+         * Server Filter
+         *
+         */ 
 
         // Filter Dropdowns
         const locationOptions = ['Location', 'Europe', 'America', 'Australia', 'Russia', 'Asia' ];
@@ -236,9 +243,7 @@ const BrowseView = React.createClass({
                 </AnimationHolder>
 
                 <AnimationHolder>
-                    <div className='rego-table-wrapper'>
-                        {serverList}
-                    </div>
+                    <RuiTable header={tableHeader} rows={serverList} widthValues={tableWidthValues} />
                 </AnimationHolder>
             </div>
         );

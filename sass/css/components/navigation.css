@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$navigationHeight".
-        on line 17 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass
+        on line 18 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass
 
-12:     box-shadow: 0 0 0 15px white
 13: 
 14: 
 15: .navigation
 16:   position: relative
-17:   height: $navigationHeight
-18:   width: 100%
-19: 
-20:   .navigation__main,
-21:   .navigation__sub,
-22:   .navigation__wrapper
+17:   z-index: 2
+18:   height: $navigationHeight
+19:   width: 100%
+20: 
+21:   .navigation__main,
+22:   .navigation__sub,
+23:   .navigation__wrapper
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass:17
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass:18
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
@@ -70,4 +70,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$navigationHeight\".\A         on line 17 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass\A \A 12:     box-shadow: 0 0 0 15px white\A 13: \A 14: \A 15: .navigation\A 16:   position: relative\A 17:   height: $navigationHeight\A 18:   width: 100%\A 19: \A 20:   .navigation__main,\A 21:   .navigation__sub,\A 22:   .navigation__wrapper"; }
+  content: "Error: Undefined variable: \"$navigationHeight\".\A         on line 18 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/components/navigation.sass\A \A 13: \A 14: \A 15: .navigation\A 16:   position: relative\A 17:   z-index: 2\A 18:   height: $navigationHeight\A 19:   width: 100%\A 20: \A 21:   .navigation__main,\A 22:   .navigation__sub,\A 23:   .navigation__wrapper"; }
