@@ -6,7 +6,7 @@ Error: Undefined variable: "$mainColorLight".
 35:   .table-header
 36:     @extend .clear-after
 37:     position: relative
-38:     z-index: 1
+38:     z-index: 2
 39:     background: linear-gradient($mainColorLight, $mainColor)
 40:     box-shadow: 0 4px 16px 2px rgba(black, .25)
 41: 
@@ -89,4 +89,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$mainColorLight\".\A         on line 39 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_table.sass\A \A 34: \A 35:   .table-header\A 36:     @extend .clear-after\A 37:     position: relative\A 38:     z-index: 1\A 39:     background: linear-gradient($mainColorLight, $mainColor)\A 40:     box-shadow: 0 4px 16px 2px rgba(black, .25)\A 41: \A 42:     .header-icon,\A 43:     .header-text\A 44:       color: white"; }
+  content: "Error: Undefined variable: \"$mainColorLight\".\A         on line 39 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_table.sass\A \A 34: \A 35:   .table-header\A 36:     @extend .clear-after\A 37:     position: relative\A 38:     z-index: 2\A 39:     background: linear-gradient($mainColorLight, $mainColor)\A 40:     box-shadow: 0 4px 16px 2px rgba(black, .25)\A 41: \A 42:     .header-icon,\A 43:     .header-text\A 44:       color: white"; }

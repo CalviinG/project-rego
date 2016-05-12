@@ -1,18 +1,75 @@
 /*
-Sass::SyntaxError: ".browse-view .browse-filter-block" failed to @extend ".clear-after".
-The selector ".clear-after" was not found.
-Use "@extend .clear-after !optional" if the extend should be able to fail.
+Error: Undefined variable: "$grey-700".
+        on line 51 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/views/browse_view.sass
 
+46:       color: white
+47: 
+48:     .list-action-button
+49:       float: left
+50:       font-size: 18px
+51:       color: $grey-700
+52:       cursor: pointer
+53:       transition: color .125s ease
+54:       &:hover
+55:         color: $grey-500
+56:       &:not(:last-of-type)
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/views/browse_view.sass:15
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/extend.rb:62:in `block in check_extends_fired!'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/util/subset_map.rb:105:in `block in each_value'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/util/subset_map.rb:105:in `each'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/util/subset_map.rb:105:in `each_value'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/extend.rb:51:in `check_extends_fired!'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/extend.rb:16:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/root_node.rb:39:in `css_tree'
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/views/browse_view.sass:51
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/root_node.rb:36:in `css_tree'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/root_node.rb:20:in `render'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/engine.rb:278:in `render'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
@@ -35,4 +92,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Sass::SyntaxError: \".browse-view .browse-filter-block\" failed to @extend \".clear-after\".\A The selector \".clear-after\" was not found.\A Use \"@extend .clear-after !optional\" if the extend should be able to fail.\A "; }
+  content: "Error: Undefined variable: \"$grey-700\".\A         on line 51 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/views/browse_view.sass\A \A 46:       color: white\A 47: \A 48:     .list-action-button\A 49:       float: left\A 50:       font-size: 18px\A 51:       color: $grey-700\A 52:       cursor: pointer\A 53:       transition: color .125s ease\A 54:       &:hover\A 55:         color: $grey-500\A 56:       &:not(:last-of-type)"; }

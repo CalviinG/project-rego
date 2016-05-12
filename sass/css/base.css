@@ -1,17 +1,18 @@
 /*
 Error: Undefined variable: "$appWidth".
-        on line 35 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass
+        on line 31 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass
 
-30: 
-31: .app-wrapper
-32:   .content
-33:     position: relative
-34:     z-index: 1
-35:     width: $appWidth
-36:     margin: 0 auto
+26: 
+27: .app-wrapper
+28:   .content
+29:     position: relative
+30:     z-index: 1
+31:     width: $appWidth
+32:     height: calc(100vh - #{$navigationHeight})
+33:     margin: 0 auto
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass:35
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass:31
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
@@ -77,4 +78,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$appWidth\".\A         on line 35 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass\A \A 30: \A 31: .app-wrapper\A 32:   .content\A 33:     position: relative\A 34:     z-index: 1\A 35:     width: $appWidth\A 36:     margin: 0 auto"; }
+  content: "Error: Undefined variable: \"$appWidth\".\A         on line 31 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass\A \A 26: \A 27: .app-wrapper\A 28:   .content\A 29:     position: relative\A 30:     z-index: 1\A 31:     width: $appWidth\A 32:     height: calc(100vh - #{$navigationHeight})\A 33:     margin: 0 auto"; }

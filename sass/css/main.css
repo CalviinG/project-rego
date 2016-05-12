@@ -17,41 +17,36 @@
  *
  */
 /* line 7, ../sass/base.sass */
-html,
-body,
-#app {
-  width: 100vw;
-  height: 100vh;
-}
-
-/* line 13, ../sass/base.sass */
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
-/* line 20, ../sass/base.sass */
+/* line 16, ../sass/base.sass */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* line 26, ../sass/base.sass */
-.clear-after:after, .browse-view .browse-filter-block:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after {
+/* line 22, ../sass/base.sass */
+.clear-after:after, .browse-view .browse-filter-block:after, .browse-view .browse-list-actions-block:after, .browse-view .browse-list-actions-block .list-actions-right:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 32, ../sass/base.sass */
+/* line 28, ../sass/base.sass */
 .app-wrapper .content {
   position: relative;
   z-index: 1;
   width: 1200px;
+  height: calc(100vh - 160px);
   margin: 0 auto;
 }
 
@@ -263,7 +258,7 @@ body {
   z-index: 0;
   width: 100vw;
   height: 100vh;
-  top: 80px;
+  top: 0;
   left: 0;
   /* Base */
   /* Overlays */
@@ -305,25 +300,74 @@ body {
  */
 /* line 7, ../sass/views/browse_view.sass */
 .browse-view {
-  /* Filter Styling */
-  /* Server List Styling */
+  /* Search */
+  /* Filter */
+  /* List Actions */
 }
 /* line 11, ../sass/views/browse_view.sass */
 .browse-view .browse-search-block {
   margin-bottom: 10px;
 }
-/* line 14, ../sass/views/browse_view.sass */
+/* line 16, ../sass/views/browse_view.sass */
 .browse-view .browse-filter-block {
   margin-bottom: 20px;
 }
-/* line 17, ../sass/views/browse_view.sass */
+/* line 19, ../sass/views/browse_view.sass */
 .browse-view .browse-filter-block .rui-select-wrapper {
   float: left;
   width: calc(20% - 8px);
 }
-/* line 20, ../sass/views/browse_view.sass */
+/* line 22, ../sass/views/browse_view.sass */
 .browse-view .browse-filter-block .rui-select-wrapper:not(:first-of-type) {
   margin-left: 10px;
+}
+/* line 27, ../sass/views/browse_view.sass */
+.browse-view .browse-list-actions-block {
+  padding: 20px;
+}
+/* line 31, ../sass/views/browse_view.sass */
+.browse-view .browse-list-actions-block .list-actions-left {
+  float: left;
+}
+/* line 34, ../sass/views/browse_view.sass */
+.browse-view .browse-list-actions-block .list-actions-right {
+  float: right;
+}
+/* line 38, ../sass/views/browse_view.sass */
+.browse-view .browse-list-actions-block .list-action-label,
+.browse-view .browse-list-actions-block .list-action-button {
+  display: block;
+  line-height: 30px;
+}
+/* line 43, ../sass/views/browse_view.sass */
+.browse-view .browse-list-actions-block .list-action-label {
+  font-size: 24px;
+  font-weight: 300;
+  color: white;
+}
+/* line 48, ../sass/views/browse_view.sass */
+.browse-view .browse-list-actions-block .list-action-button {
+  float: left;
+  font-size: 18px;
+  color: #616161;
+  cursor: pointer;
+  transition: color 0.125s ease;
+}
+/* line 54, ../sass/views/browse_view.sass */
+.browse-view .browse-list-actions-block .list-action-button:hover {
+  color: #9E9E9E;
+}
+/* line 56, ../sass/views/browse_view.sass */
+.browse-view .browse-list-actions-block .list-action-button:not(:last-of-type) {
+  margin-right: 20px;
+}
+/* line 58, ../sass/views/browse_view.sass */
+.browse-view .browse-list-actions-block .list-action-button.is-selected {
+  color: white;
+}
+/* line 60, ../sass/views/browse_view.sass */
+.browse-view .browse-list-actions-block .list-action-button.is-selected:hover {
+  color: white;
 }
 
 /* Rui */
@@ -625,7 +669,7 @@ body {
 /* line 35, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-header {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   background: linear-gradient(#00B0FF, #0091EA);
   box-shadow: 0 4px 16px 2px rgba(0, 0, 0, 0.25);
 }
@@ -643,24 +687,25 @@ body {
 .rui-table-wrapper .table-body .body-row {
   background-color: #191D1F;
   margin-top: 2px;
+  cursor: pointer;
 }
-/* line 58, ../sass/ui/rui_table.sass */
+/* line 59, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon,
 .rui-table-wrapper .table-body .body-row .row-text {
   display: inline-block;
 }
-/* line 62, ../sass/ui/rui_table.sass */
+/* line 63, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-text {
   font-size: 14px;
   color: #BDBDBD;
 }
-/* line 67, ../sass/ui/rui_table.sass */
+/* line 68, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder .row-text {
   font-size: 12px;
   font-weight: 700;
   margin-left: 5px;
 }
-/* line 72, ../sass/ui/rui_table.sass */
+/* line 73, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder .status-circle {
   display: inline-block;
   width: 10px;
@@ -668,23 +713,23 @@ body {
   border-radius: 100%;
   background-color: transparent;
 }
-/* line 79, ../sass/ui/rui_table.sass */
+/* line 80, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder.is-disabled > .row-icon {
   color: #424242;
 }
-/* line 81, ../sass/ui/rui_table.sass */
+/* line 82, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder.is-active > .row-icon {
   color: #0091EA;
 }
-/* line 83, ../sass/ui/rui_table.sass */
+/* line 84, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder.is-good > .status-circle {
   box-shadow: inset 0 0 0 2px #4CAF50;
 }
-/* line 85, ../sass/ui/rui_table.sass */
+/* line 86, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder.is-normal > .status-circle {
   box-shadow: inset 0 0 0 2px #FF9800;
 }
-/* line 87, ../sass/ui/rui_table.sass */
+/* line 88, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder.is-bad > .status-circle {
   box-shadow: inset 0 0 0 2px #F44336;
 }

@@ -16,6 +16,14 @@ import RuiTable  from '../../ui/rui_table.js';
 const BrowseView = React.createClass({
     getInitialState() {
         return {
+            serverLabels: [
+                'Internet',
+                'Favorites',
+                'Friends',
+                'LAN',
+                'Blacklisted',
+            ],
+            selectedServerLabel: 0,
             serverFilter: {
                 Server: undefined,
                 Password: undefined,
@@ -146,6 +154,11 @@ const BrowseView = React.createClass({
             });
         }
 
+        // Server Labels
+        if (this.state.selectedServerLabel !== 0) {
+            console.log('selectedServerLabel', this.state.selectedServerLabel);
+        }
+
         return true
     },
 
@@ -153,6 +166,10 @@ const BrowseView = React.createClass({
         let updatedFilter = this.state.serverFilter;
         updatedFilter.Keywords = keywords;
         this.setState({ serverFilter: updatedFilter });
+    },
+
+    _selectListLabel(index) {
+        this.setState({ selectedServerLabel: index });
     },
 
     render() {
@@ -176,6 +193,9 @@ const BrowseView = React.createClass({
 
         // Get Table Rows
         const serverList = _.map(ServerData, (server, i) => {
+            
+            server.labels = this.state.serverLabels;
+
             if(this._filterServer(server)) {
                 const passwordStatus = (server.password) ? 'active' : 'disabled' ;
 
@@ -207,12 +227,19 @@ const BrowseView = React.createClass({
                     vac: [vacStatus, 'VAC', 'fa-shield'],
                 };
             } else {
-                return
+                return null
             }
         });
 
         // Table Width Values
         const tableWidthValues = [40, 300, 180, 180, 160, 100, 100, 100]; // Values must be equal or lower than 1160
+
+        // Table Quick Actions
+        const tableQuickActions = [
+            ['Add to favorites', 'fa-star'],
+            ['Blacklist server', 'fa-ban'],
+            ['Spectate game', 'fa-eye'],
+        ];
 
         /*
          *
@@ -226,6 +253,32 @@ const BrowseView = React.createClass({
         const passwordOptions = ['Password', 'With Password', 'No Password'];
         const latencyOptions = ['Latency', '< 50 MS', '< 100 MS', '< 150 MS', '< 250 MS', '< 500 MS'];
         const serverOptions = ['Server Status', 'Active', 'Not Full', 'Active & Not Full'];
+
+        /*
+         *
+         * Server List Actions
+         *
+         */
+
+        // List Label Buttons
+        const listLabels = _.map(this.state.serverLabels, (label, index) => {
+            const labelClass = classNames('list-action-button', {
+                'is-selected': index === this.state.selectedServerLabel,
+            });
+
+            return (
+                <p key={'listLabel' + index} className={labelClass} onClick={this._selectListLabel.bind(this, index)}>{label}</p>
+            );
+        });
+
+        // Display nr of currently showing servers
+        let nrOfservers = 0
+        _.each(serverList, (server) => {
+            if (server !== null) {
+                nrOfservers += 1;
+            }
+        });
+        const serversFoundString = (nrOfservers === 1) ? `1 Server found` : `${nrOfservers} Servers found` ;
 
         return (
             <div className='browse-view'>
@@ -243,7 +296,19 @@ const BrowseView = React.createClass({
                 </AnimationHolder>
 
                 <AnimationHolder>
-                    <RuiTable header={tableHeader} rows={serverList} widthValues={tableWidthValues} />
+                    <div className='browse-list-actions-block'>
+                        <div className='list-actions-left'>
+                            <p className='list-action-label'>{serversFoundString}</p>
+                        </div>
+                        <div className='list-actions-right'>
+                            {listLabels}
+                        </div>    
+                    </div>
+                    <RuiTable
+                        header={tableHeader}
+                        rows={serverList}
+                        widthValues={tableWidthValues}
+                        quickActions={tableQuickActions} />
                 </AnimationHolder>
             </div>
         );

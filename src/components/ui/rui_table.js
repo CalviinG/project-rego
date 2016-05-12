@@ -6,6 +6,7 @@ const Table = React.createClass({
 		header: React.PropTypes.array.isRequired,
 		rows: React.PropTypes.array.isRequired,
 		widthValues: React.PropTypes.array,
+		quickActions: React.PropTypes.array,
 	},
 
 	_createHeader(headerData) {
