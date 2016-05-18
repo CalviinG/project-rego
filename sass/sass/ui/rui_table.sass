@@ -52,6 +52,7 @@
   .table-body
     .body-row
       @extend .clear-after
+      position: relative
       background-color: $dark-2
       margin-top: 2px
       cursor: pointer
@@ -87,3 +88,63 @@
           box-shadow: inset 0 0 0 2px $c-orange
         &.is-bad > .status-circle
           box-shadow: inset 0 0 0 2px $c-red
+
+  /* Table Quick Actions */
+
+  .table-quick-actions-wrapper
+    position: absolute
+    top: 20px
+    left: 20px
+
+    /* Hidden Styling */
+
+    display: none
+
+    /* Open Button */
+
+    .quick-actions-popup-button
+      @extend .clear-after
+      width: 24px
+      height: 20px
+      padding: 2px 3px
+      border-radius: 4px
+      background-color: $grey-800
+      .button-circle
+        float: left
+        height: 4px
+        width: 4px
+        margin: 6px 1px
+        border-radius: 2px
+        background-color: $dark-2
+
+    /* Popup Actions */
+
+    .quick-actions-popup-holder
+      display: none
+      position: absolute
+      z-index: 5
+      background-color: white
+      .action-button
+        padding: 10px 20px
+        white-space: nowrap
+        .button-icon,
+        .button-text
+          display: inline-block
+          font-size: 14px
+
+    /* Is Showing Styling */
+
+    &.is-showing
+      display: block
+
+      .quick-actions-popup-button:hover
+        .button-circle
+          background-color: $mainColor
+
+    /* Show Actions Styling */
+
+    &.show-actions
+
+      .quick-actions-popup-holder
+        display: block
+

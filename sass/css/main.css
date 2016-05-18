@@ -35,7 +35,7 @@ body {
 }
 
 /* line 22, ../sass/base.sass */
-.clear-after:after, .browse-view .browse-filter-block:after, .browse-view .browse-list-actions-block:after, .browse-view .browse-list-actions-block .list-actions-right:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after {
+.clear-after:after, .browse-view .browse-filter-block:after, .browse-view .browse-list-actions-block:after, .browse-view .browse-list-actions-block .list-actions-right:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
   content: "";
   display: block;
   clear: both;
@@ -639,6 +639,7 @@ body {
   /* Global Table Styling */
   /* Header */
   /* Rows */
+  /* Table Quick Actions */
 }
 /* line 11, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-header,
@@ -685,27 +686,28 @@ body {
 }
 /* line 53, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row {
+  position: relative;
   background-color: #191D1F;
   margin-top: 2px;
   cursor: pointer;
 }
-/* line 59, ../sass/ui/rui_table.sass */
+/* line 60, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon,
 .rui-table-wrapper .table-body .body-row .row-text {
   display: inline-block;
 }
-/* line 63, ../sass/ui/rui_table.sass */
+/* line 64, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-text {
   font-size: 14px;
   color: #BDBDBD;
 }
-/* line 68, ../sass/ui/rui_table.sass */
+/* line 69, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder .row-text {
   font-size: 12px;
   font-weight: 700;
   margin-left: 5px;
 }
-/* line 73, ../sass/ui/rui_table.sass */
+/* line 74, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder .status-circle {
   display: inline-block;
   width: 10px;
@@ -713,23 +715,82 @@ body {
   border-radius: 100%;
   background-color: transparent;
 }
-/* line 80, ../sass/ui/rui_table.sass */
+/* line 81, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder.is-disabled > .row-icon {
   color: #424242;
 }
-/* line 82, ../sass/ui/rui_table.sass */
+/* line 83, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder.is-active > .row-icon {
   color: #0091EA;
 }
-/* line 84, ../sass/ui/rui_table.sass */
+/* line 85, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder.is-good > .status-circle {
   box-shadow: inset 0 0 0 2px #4CAF50;
 }
-/* line 86, ../sass/ui/rui_table.sass */
+/* line 87, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder.is-normal > .status-circle {
   box-shadow: inset 0 0 0 2px #FF9800;
 }
-/* line 88, ../sass/ui/rui_table.sass */
+/* line 89, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-body .body-row .row-icon-holder.is-bad > .status-circle {
   box-shadow: inset 0 0 0 2px #F44336;
+}
+/* line 94, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  /* Hidden Styling */
+  display: none;
+  /* Open Button */
+  /* Popup Actions */
+  /* Is Showing Styling */
+  /* Show Actions Styling */
+}
+/* line 105, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button {
+  width: 24px;
+  height: 20px;
+  padding: 2px 3px;
+  border-radius: 4px;
+  background-color: #424242;
+}
+/* line 112, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button .button-circle {
+  float: left;
+  height: 4px;
+  width: 4px;
+  margin: 6px 1px;
+  border-radius: 2px;
+  background-color: #191D1F;
+}
+/* line 122, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  background-color: white;
+}
+/* line 127, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder .action-button {
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+/* line 130, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder .action-button .button-icon,
+.rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder .action-button .button-text {
+  display: inline-block;
+  font-size: 14px;
+}
+/* line 137, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper.is-showing {
+  display: block;
+}
+/* line 141, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper.is-showing .quick-actions-popup-button:hover .button-circle {
+  background-color: #0091EA;
+}
+/* line 148, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper.show-actions .quick-actions-popup-holder {
+  display: block;
 }

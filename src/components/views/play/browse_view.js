@@ -9,9 +9,9 @@ import ServerData from '../../../json/servers.json';
 import AnimationHolder from '../../common/animation_holder.js';
 
 // Rui
-import RuiSelect from '../../ui/rui_select.js';
-import RuiSearch from '../../ui/rui_search.js';
-import RuiTable  from '../../ui/rui_table.js';
+import RuiSelect from '../../ui/select';
+import RuiSearch from '../../ui/search';
+import RuiTable  from '../../ui/table';
 
 const BrowseView = React.createClass({
     getInitialState() {
@@ -172,6 +172,10 @@ const BrowseView = React.createClass({
         this.setState({ selectedServerLabel: index });
     },
 
+    _onQuickActions() {
+        console.log('this is actually working, holy fucking shit!');
+    },
+
     render() {
         /*
          *
@@ -308,7 +312,8 @@ const BrowseView = React.createClass({
                         header={tableHeader}
                         rows={serverList}
                         widthValues={tableWidthValues}
-                        quickActions={tableQuickActions} />
+                        quickActions={tableQuickActions}
+                        onQuickAction={this._onQuickActions} />
                 </AnimationHolder>
             </div>
         );
