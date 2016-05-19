@@ -22,21 +22,54 @@ const TableQuickActions = React.createClass({
 	},
 
 	componentWillReceiveProps(newProps) {
-		if (newProps.hidden === false) {
-			this._enterAnimation();
+		if (this.state.showActions === true) {
+			// Do nothing
+		} else if (newProps.hidden === false) {
+			window.addEventListener('click', this._checkClick);
+			this.setState({ hidden: newProps.hidden });
+		} else {
+			this.setState({ hidden: true })
 		}
+	},
 
-		this.setState({ hidden: newProps.hidden });
+	componentWillUnmount() {
+        window.removeEventListener('click', this._checkClick);
+    },
+
+	_openActions() {
+		this._enterAnimation();
+		this.setState({ showActions: true });
 	},
 
 	_enterAnimation() {
 		const $parent = $(this.refs.popupParent);
 		const $popup = $(this.refs.popupChild);
 
-		window.setTimeout(() => {
-			const newTop = ($popup.outerHeight(true) / 2) - ($parent.outerHeight(true) / 2);
-			$popup.css({ top: -newTop });
-		}, 10);	
+		// Get correct height
+		const newTop = ($popup.outerHeight(true) / 2) - ($parent.outerHeight(true) / 2);
+		$popup.css({ top: -newTop });
+	},
+
+	_checkClick(e) {
+		const $target = $(e.target);
+		const $parent = $(this.refs.popupParent);
+
+		if (this.state.showActions) {
+			if ($target.parents().is($parent) || $target.is($parent)) {
+				// Do nothing
+			} else {
+				if ($target.parents().is('.action-button')) {
+					// Hmm?
+				}
+				this.setState({ showActions: false });
+			}
+		}
+	},
+
+	_onAction(index) {
+		if (typeof this.props.quickActions[index][2] === 'function') {
+			this.props.quickActions[index][2](this.props.indexKey);
+		}
 	},
 
 	render() {
@@ -48,7 +81,7 @@ const TableQuickActions = React.createClass({
 		// this.props.quickActions
 		const quickActionButtons = _.map(this.props.quickActions, (action, index) => {
 			return (
-				<div key={'actionButton' + index} className='action-button'>
+				<div key={'actionButton' + index} className='action-button' onClick={this._onAction.bind(this, index)}>
 					<i className={'button-icon fa ' + action[1]} />
 					<p className='button-text'>{action[0]}</p>
 				</div>
@@ -57,7 +90,7 @@ const TableQuickActions = React.createClass({
 
 		return (
 			<div className={parentClass}>
-				<div className='quick-actions-popup-button' ref='popupParent'>
+				<div className='quick-actions-popup-button' ref='popupParent' onClick={this._openActions}>
 					<div className='button-circle circle-one' />
 					<div className='button-circle circle-two' />
 					<div className='button-circle circle-three' />

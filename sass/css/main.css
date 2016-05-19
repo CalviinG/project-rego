@@ -766,31 +766,60 @@ body {
 }
 /* line 122, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder {
-  display: none;
   position: absolute;
   z-index: 5;
-  background-color: white;
+  background-color: #22272A;
+  padding: 10px 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 2px rgba(0, 0, 0, 0.3);
+  cursor: default;
+  /* Animation Properties */
+  opacity: 0;
+  transform: scale(0.75);
+  transition: all 0.155s cubic-bezier(0, 1.55, 0, 1.1);
 }
-/* line 127, ../sass/ui/rui_table.sass */
+/* line 134, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder .action-button {
   padding: 10px 20px;
   white-space: nowrap;
+  cursor: pointer;
+  background-color: #22272A;
+  transition: background-color 0.085s ease;
 }
-/* line 130, ../sass/ui/rui_table.sass */
+/* line 140, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder .action-button:hover {
+  background-color: #191D1F;
+}
+/* line 142, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder .action-button:hover .button-text {
+  color: white;
+}
+/* line 144, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder .action-button .button-icon,
 .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder .action-button .button-text {
   display: inline-block;
   font-size: 14px;
 }
-/* line 137, ../sass/ui/rui_table.sass */
+/* line 148, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder .action-button .button-icon {
+  color: #0082D2;
+  margin-right: 10px;
+}
+/* line 151, ../sass/ui/rui_table.sass */
+.rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-holder .action-button .button-text {
+  color: #BDBDBD;
+  transition: color 0.085s ease;
+}
+/* line 157, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-quick-actions-wrapper.is-showing {
   display: block;
 }
-/* line 141, ../sass/ui/rui_table.sass */
+/* line 161, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-quick-actions-wrapper.is-showing .quick-actions-popup-button:hover .button-circle {
   background-color: #0091EA;
 }
-/* line 148, ../sass/ui/rui_table.sass */
+/* line 168, ../sass/ui/rui_table.sass */
 .rui-table-wrapper .table-quick-actions-wrapper.show-actions .quick-actions-popup-holder {
-  display: block;
+  opacity: 1;
+  transform: scale(1);
 }

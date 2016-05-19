@@ -172,8 +172,14 @@ const BrowseView = React.createClass({
         this.setState({ selectedServerLabel: index });
     },
 
-    _onQuickActions() {
-        console.log('this is actually working, holy fucking shit!');
+    _onQuickActions(type, index) {
+        console.log('index', index);
+        
+        if (type === 'favorite') {
+            console.log('favorite action');
+        } else if (type === 'blacklist') {
+            console.log('blacklist action');
+        }
     },
 
     render() {
@@ -240,8 +246,8 @@ const BrowseView = React.createClass({
 
         // Table Quick Actions
         const tableQuickActions = [
-            ['Add to favorites', 'fa-star'],
-            ['Blacklist server', 'fa-ban'],
+            ['Add to favorites', 'fa-star', this._onQuickActions.bind(this, 'favorite')],
+            ['Blacklist server', 'fa-ban', this._onQuickActions.bind(this, 'blacklist')],
             ['Spectate game', 'fa-eye'],
         ];
 

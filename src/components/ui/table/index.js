@@ -61,7 +61,7 @@ const TableRow = React.createClass({
 		// this.props.quickActions
 		let quickActions = null;
 		if (_.isArray(this.props.quickActions) && this.props.quickActions.length > 0) {
-			quickActions = <TableQuickActions quickActions={this.props.quickActions} hidden={!this.state.showQuickActions} />
+			quickActions = <TableQuickActions quickActions={this.props.quickActions} hidden={!this.state.showQuickActions} indexKey={rowNumber} />
 		}
 
 		return (

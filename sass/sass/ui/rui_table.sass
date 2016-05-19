@@ -120,17 +120,37 @@
     /* Popup Actions */
 
     .quick-actions-popup-holder
-      display: none
       position: absolute
       z-index: 5
-      background-color: white
+      background-color: $dark-1
+      padding: 10px 0
+      border-radius: 4px
+      box-shadow: 0 2px 12px 2px rgba(black, .3)
+      cursor: default
+      /* Animation Properties */
+      opacity: 0
+      transform: scale(.75)
+      transition: all .155s cubic-bezier(0, 1.55, 0, 1.1)
       .action-button
         padding: 10px 20px
         white-space: nowrap
+        cursor: pointer
+        background-color: $dark-1
+        transition: background-color .085s ease
+        &:hover
+          background-color: $dark-2
+          .button-text
+            color: white
         .button-icon,
         .button-text
           display: inline-block
           font-size: 14px
+        .button-icon
+          color: $mainColorDark
+          margin-right: 10px
+        .button-text
+          color: $grey-400
+          transition: color .085s ease
 
     /* Is Showing Styling */
 
@@ -146,5 +166,6 @@
     &.show-actions
 
       .quick-actions-popup-holder
-        display: block
+        opacity: 1
+        transform: scale(1)
 
