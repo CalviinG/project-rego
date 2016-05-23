@@ -8,7 +8,6 @@ const TableRow = React.createClass({
 		row: React.PropTypes.object.isRequired,
 		rowKey: React.PropTypes.number.isRequired,
 		widthValues: React.PropTypes.array.isRequired,
-		quickActions: React.PropTypes.array,
 	},
 
 	getInitialState() {
@@ -19,7 +18,7 @@ const TableRow = React.createClass({
 
 	_onMouseEnter() {
 		this.setState({ 
-			showQuickActions: (_.isArray(this.props.quickActions) && this.props.quickActions.length > 0) ? true : false
+			showQuickActions: true,
 		});
 	},
 
@@ -30,7 +29,8 @@ const TableRow = React.createClass({
 	render() {
 		const rowData = this.props.row;
 		const rowNumber = this.props.rowKey;
-
+		
+		let quickActions = null;
 		let rowColumnCounter = -1; // Great initial value ..
 
 		// Builds the row
@@ -39,16 +39,21 @@ const TableRow = React.createClass({
 			const columnWidth = ({width: this.props.widthValues[rowColumnCounter]});
 
 			if (_.isArray(key)) {
-				const statusCircle = (key.length === 2) ? <div className='status-circle' /> : null ;
-				const statusIcon = (key[2]) ? <i className={'table-icon row-icon fa ' + key[2]} /> : null ;
-				const statusText = (key[1]) ? <p className='row-text'>{key[1]}</p> : null ;
-				return (
-					<div key={'rowKey' + key} className={'row-icon-holder is-' + key[0]} style={columnWidth}>
-						{statusCircle}
-						{statusIcon}
-						{statusText}
-					</div>
-				);
+				// Check for quickActions
+				if (_.isObject(key[0])) {
+					quickActions = key;
+				} else {
+					const statusCircle = (key.length === 2) ? <div className='status-circle' /> : null ;
+					const statusIcon = (key[2]) ? <i className={'table-icon row-icon fa ' + key[2]} /> : null ;
+					const statusText = (key[1]) ? <p className='row-text'>{key[1]}</p> : null ;
+					return (
+						<div key={'rowKey' + key} className={'row-icon-holder is-' + key[0]} style={columnWidth}>
+							{statusCircle}
+							{statusIcon}
+							{statusText}
+						</div>
+					);
+				}	
 			} else {
 				return (
 					<div key={'rowKey' + key} className='row-value' style={columnWidth}>
@@ -59,15 +64,15 @@ const TableRow = React.createClass({
 		});
 
 		// this.props.quickActions
-		let quickActions = null;
-		if (_.isArray(this.props.quickActions) && this.props.quickActions.length > 0) {
-			quickActions = <TableQuickActions quickActions={this.props.quickActions} hidden={!this.state.showQuickActions} indexKey={rowNumber} />
+		let quickActionsRender = null;
+		if (_.isArray(quickActions) && quickActions.length > 0) {
+			quickActionsRender = <TableQuickActions quickActions={quickActions} hidden={!this.state.showQuickActions} indexKey={rowNumber} />
 		}
 
 		return (
 			<div key={'tableRow' + rowNumber} className='body-row' onMouseEnter={this._onMouseEnter} onMouseLeave={this._onMouseLeave}>
 				{row}
-				{quickActions}
+				{quickActionsRender}
 			</div>
 		);
 	},
@@ -78,7 +83,6 @@ const Table = React.createClass({
 		header: React.PropTypes.array.isRequired,
 		rows: React.PropTypes.array.isRequired,
 		widthValues: React.PropTypes.array.isRequired,
-		quickActions: React.PropTypes.array,
 	},
 
 	_createHeader(headerData) {
@@ -112,8 +116,7 @@ const Table = React.createClass({
 					key={'row' + index}
 					row={row}
 					rowKey={index}
-					widthValues={this.props.widthValues}
-					quickActions={this.props.quickActions} />
+					widthValues={this.props.widthValues} />
 			);
 		});
 

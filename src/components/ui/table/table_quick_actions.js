@@ -67,8 +67,8 @@ const TableQuickActions = React.createClass({
 	},
 
 	_onAction(index) {
-		if (typeof this.props.quickActions[index][2] === 'function') {
-			this.props.quickActions[index][2](this.props.indexKey);
+		if (typeof this.props.quickActions[index].action === 'function') {
+			this.props.quickActions[index].action(this.props.indexKey);
 		}
 	},
 
@@ -82,8 +82,8 @@ const TableQuickActions = React.createClass({
 		const quickActionButtons = _.map(this.props.quickActions, (action, index) => {
 			return (
 				<div key={'actionButton' + index} className='action-button' onClick={this._onAction.bind(this, index)}>
-					<i className={'button-icon fa ' + action[1]} />
-					<p className='button-text'>{action[0]}</p>
+					<i className={'button-icon fa ' + action.icon} />
+					<p className='button-text'>{action.label}</p>
 				</div>
 			);
 		});

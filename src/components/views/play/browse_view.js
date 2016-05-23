@@ -157,6 +157,10 @@ const BrowseView = React.createClass({
         // Server Labels
         if (this.state.selectedServerLabel !== 0) {
             console.log('selectedServerLabel', this.state.selectedServerLabel);
+            // Favorites
+            if (this.state.selectedServerLabel === 1) {
+                if (!server.labels.Favorites) { return false }
+            }
         }
 
         return true
@@ -169,14 +173,21 @@ const BrowseView = React.createClass({
     },
 
     _selectListLabel(index) {
-        this.setState({ selectedServerLabel: index });
+        if (index != this.state.selectedServerLabel) {
+            this.setState({ selectedServerLabel: index });
+        }
     },
 
     _onQuickActions(type, index) {
-        console.log('index', index);
-        
+        const actionServer = ServerData[index];
+
+        console.log('name', actionServer.name);
+
         if (type === 'favorite') {
             console.log('favorite action');
+            actionServer.labels.Favorites = !actionServer.labels.Favorites;
+            this.forceUpdate();
+            console.log(ServerData[index]);
         } else if (type === 'blacklist') {
             console.log('blacklist action');
         }
@@ -203,8 +214,38 @@ const BrowseView = React.createClass({
 
         // Get Table Rows
         const serverList = _.map(ServerData, (server, i) => {
-            
-            server.labels = this.state.serverLabels;
+
+            // Adding labels to the servers
+            if (!_.isObject(server.labels)) {
+                server.labels = {};
+            }
+            _.each(this.state.serverLabels, (label) => {
+                if (server.labels[label] === true) {
+                    // Remain true
+                } else {
+                    server.labels[label] = false;
+                }
+            });
+
+            console.log('server', server.labels.Favorites); 
+
+            // Table Quick Actions
+            let rowQuickActions = [
+                {
+                    label: (server.labels.Favorites) ? 'Remove from favorites' : 'Add to favorites',
+                    icon: 'fa-star',
+                    action: this._onQuickActions.bind(this, 'favorite'),
+                },
+                {
+                    label: 'Blacklist server',
+                    icon: 'fa-ban',
+                    action: this._onQuickActions.bind(this, 'blacklist'),
+                },
+                {
+                    label: 'Spectate game',
+                    icon: 'fa-eye',
+                }
+            ];
 
             if(this._filterServer(server)) {
                 const passwordStatus = (server.password) ? 'active' : 'disabled' ;
@@ -235,6 +276,7 @@ const BrowseView = React.createClass({
                     players: [playersStatus, `${server.curPlayers} / ${server.maxPlayers}`],
                     latency: [latecncyStatus, `${server.latency} MS`],
                     vac: [vacStatus, 'VAC', 'fa-shield'],
+                    quickActions: rowQuickActions,
                 };
             } else {
                 return null
@@ -243,13 +285,6 @@ const BrowseView = React.createClass({
 
         // Table Width Values
         const tableWidthValues = [40, 300, 180, 180, 160, 100, 100, 100]; // Values must be equal or lower than 1160
-
-        // Table Quick Actions
-        const tableQuickActions = [
-            ['Add to favorites', 'fa-star', this._onQuickActions.bind(this, 'favorite')],
-            ['Blacklist server', 'fa-ban', this._onQuickActions.bind(this, 'blacklist')],
-            ['Spectate game', 'fa-eye'],
-        ];
 
         /*
          *
@@ -317,9 +352,7 @@ const BrowseView = React.createClass({
                     <RuiTable
                         header={tableHeader}
                         rows={serverList}
-                        widthValues={tableWidthValues}
-                        quickActions={tableQuickActions}
-                        onQuickAction={this._onQuickActions} />
+                        widthValues={tableWidthValues} />
                 </AnimationHolder>
             </div>
         );
