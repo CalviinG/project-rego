@@ -530,7 +530,7 @@ body {
   text-align: center;
   font-size: 14px;
   color: #9E9E9E;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 /* line 24, ../sass/ui/rui_search.sass */
 .rui-search-wrapper .search-hint,
@@ -540,7 +540,7 @@ body {
 /* line 28, ../sass/ui/rui_search.sass */
 .rui-search-wrapper .search-hint {
   position: absolute;
-  left: 60px;
+  left: 50px;
   z-index: 0;
   line-height: 30px;
   color: #616161;

@@ -161,6 +161,21 @@ const BrowseView = React.createClass({
             if (this.state.selectedServerLabel === 1) {
                 if (!server.labels.Favorites) { return false }
             }
+            // Friends
+            if (this.state.selectedServerLabel === 2) {
+                return false
+            }
+            // LAN
+            if (this.state.selectedServerLabel === 3) {
+                return false
+            }
+            // Blacklist
+            if (this.state.selectedServerLabel === 4) {
+                if (!server.labels.Blacklist) { return false }
+            }
+        } else {
+            // Don't show Blacklisted servers under the Internet label
+            if (server.labels.Blacklist) { return false }
         }
 
         return true
@@ -181,16 +196,15 @@ const BrowseView = React.createClass({
     _onQuickActions(type, index) {
         const actionServer = ServerData[index];
 
-        console.log('name', actionServer.name);
-
         if (type === 'favorite') {
-            console.log('favorite action');
             actionServer.labels.Favorites = !actionServer.labels.Favorites;
-            this.forceUpdate();
-            console.log(ServerData[index]);
+            actionServer.labels.Blacklist = false;
         } else if (type === 'blacklist') {
-            console.log('blacklist action');
+            actionServer.labels.Blacklist = !actionServer.labels.Blacklist;
+            actionServer.labels.Favorites = false;
         }
+
+        this.forceUpdate();
     },
 
     render() {
@@ -227,8 +241,6 @@ const BrowseView = React.createClass({
                 }
             });
 
-            console.log('server', server.labels.Favorites); 
-
             // Table Quick Actions
             let rowQuickActions = [
                 {
@@ -237,7 +249,7 @@ const BrowseView = React.createClass({
                     action: this._onQuickActions.bind(this, 'favorite'),
                 },
                 {
-                    label: 'Blacklist server',
+                    label: (server.labels.Blacklist) ? 'Unmark as blacklisted' : 'Mark as blacklisted',
                     icon: 'fa-ban',
                     action: this._onQuickActions.bind(this, 'blacklist'),
                 },
