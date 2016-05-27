@@ -3,15 +3,16 @@ import _          from 'underscore';
 import classNames from 'classnames';
 
 // Json
-import ServerData from '../../../json/servers.json';
+import ServerData from '../../../../json/servers.json';
 
 // Components
-import AnimationHolder from '../../common/animation_holder.js';
+import AnimationHolder from '../../../common/animation_holder.js';
 
 // Rui
-import RuiSelect from '../../ui/select';
-import RuiSearch from '../../ui/search';
-import RuiTable  from '../../ui/table';
+import {Select, Search, Table} from '../../../ui';
+// import RuiSelect from '../../../ui/select';
+// import RuiSearch from '../../../ui/search';
+// import RuiTable  from '../../../ui/table';
 
 const BrowseView = React.createClass({
     getInitialState() {
@@ -338,17 +339,17 @@ const BrowseView = React.createClass({
         const serversFoundString = (nrOfservers === 1) ? `1 Server found` : `${nrOfservers} Servers found` ;
 
         return (
-            <div className='browse-view'>
+            <div className='play-browse-view'>
                 <AnimationHolder zIndex={1}>
                     <div className='browse-search-block'>
-                        <RuiSearch hint='Add Keywords' onUpdate={this._searchServerUpdate} />
+                        <Search hint='Add Keywords' onUpdate={this._searchServerUpdate} />
                     </div>
                     <div className='browse-filter-block'>
-                        <RuiSelect options={locationOptions} icon='fa-map-marker' onChange={this._updateFilter.bind(this, 'Location')} />
-                        <RuiSelect options={vacOptions} icon='fa-shield' onChange={this._updateFilter.bind(this, 'Vac')} />
-                        <RuiSelect options={passwordOptions} icon='fa-lock' onChange={this._updateFilter.bind(this, 'Password')} />
-                        <RuiSelect options={latencyOptions} icon='fa-globe' onChange={this._updateFilter.bind(this, 'Latency')} />
-                        <RuiSelect options={serverOptions} icon='fa-user' onChange={this._updateFilter.bind(this, 'Server')} />
+                        <Select options={locationOptions} icon='fa-map-marker' onChange={this._updateFilter.bind(this, 'Location')} />
+                        <Select options={vacOptions} icon='fa-shield' onChange={this._updateFilter.bind(this, 'Vac')} />
+                        <Select options={passwordOptions} icon='fa-lock' onChange={this._updateFilter.bind(this, 'Password')} />
+                        <Select options={latencyOptions} icon='fa-globe' onChange={this._updateFilter.bind(this, 'Latency')} />
+                        <Select options={serverOptions} icon='fa-user' onChange={this._updateFilter.bind(this, 'Server')} />
                     </div>
                 </AnimationHolder>
 
@@ -361,7 +362,7 @@ const BrowseView = React.createClass({
                             {listLabels}
                         </div>    
                     </div>
-                    <RuiTable
+                    <Table
                         header={tableHeader}
                         rows={serverList}
                         widthValues={tableWidthValues} />

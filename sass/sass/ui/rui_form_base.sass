@@ -1,0 +1,49 @@
+/*
+ *
+ * Rui Form Base
+ *
+ */
+
+%label-base
+  font-size: 14px
+  width: 20px
+  height: 20px
+  line-height: 20px
+  text-align: center
+
+.rui-form-base
+  @extend .clear-after
+  font-size: 20px
+  font-weight: 600
+  padding: 20px
+  line-height: 20px
+
+  .form-left
+    float: left
+
+  .form-right
+    float: right
+
+  /* [Select] */
+
+  .rui-form-select
+    position: relative
+    .select-label
+      @extend .clear-after
+      width: 240px
+      cursor: pointer
+      .label-text
+        float: left
+      .label-icon
+        @extend %label-base
+        float: right
+    .select-options
+      position: absolute
+      opacity: 0
+      transition: opacity .2s ease
+      .option-button
+        cursor: pointer
+
+    &.options-is-showing
+      .select-options
+        opacity: 1

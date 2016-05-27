@@ -35,7 +35,7 @@ body {
 }
 
 /* line 22, ../sass/base.sass */
-.clear-after:after, .browse-view .browse-filter-block:after, .browse-view .browse-list-actions-block:after, .browse-view .browse-list-actions-block .list-actions-right:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
+.clear-after:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base:after, .rui-form-base .rui-form-select .select-label:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
   content: "";
   display: block;
   clear: both;
@@ -295,82 +295,153 @@ body {
 
 /* Views */
 /*
- * Browse View
+ * Play Browse View
  *
  */
-/* line 7, ../sass/views/browse_view.sass */
-.browse-view {
+/* line 7, ../sass/views/play_browse_view.sass */
+.play-browse-view {
   /* Search */
   /* Filter */
   /* List Actions */
 }
-/* line 11, ../sass/views/browse_view.sass */
-.browse-view .browse-search-block {
+/* line 11, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-search-block {
   margin-bottom: 10px;
 }
-/* line 16, ../sass/views/browse_view.sass */
-.browse-view .browse-filter-block {
+/* line 16, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-filter-block {
   margin-bottom: 20px;
 }
-/* line 19, ../sass/views/browse_view.sass */
-.browse-view .browse-filter-block .rui-select-wrapper {
+/* line 19, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-filter-block .rui-select-wrapper {
   float: left;
   width: calc(20% - 8px);
 }
-/* line 22, ../sass/views/browse_view.sass */
-.browse-view .browse-filter-block .rui-select-wrapper:not(:first-of-type) {
+/* line 22, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-filter-block .rui-select-wrapper:not(:first-of-type) {
   margin-left: 10px;
 }
-/* line 27, ../sass/views/browse_view.sass */
-.browse-view .browse-list-actions-block {
+/* line 27, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-list-actions-block {
   padding: 20px;
 }
-/* line 31, ../sass/views/browse_view.sass */
-.browse-view .browse-list-actions-block .list-actions-left {
+/* line 31, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-list-actions-block .list-actions-left {
   float: left;
 }
-/* line 34, ../sass/views/browse_view.sass */
-.browse-view .browse-list-actions-block .list-actions-right {
+/* line 34, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-list-actions-block .list-actions-right {
   float: right;
 }
-/* line 38, ../sass/views/browse_view.sass */
-.browse-view .browse-list-actions-block .list-action-label,
-.browse-view .browse-list-actions-block .list-action-button {
+/* line 38, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-list-actions-block .list-action-label,
+.play-browse-view .browse-list-actions-block .list-action-button {
   display: block;
   line-height: 30px;
 }
-/* line 43, ../sass/views/browse_view.sass */
-.browse-view .browse-list-actions-block .list-action-label {
+/* line 43, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-list-actions-block .list-action-label {
   font-size: 24px;
   font-weight: 300;
   color: white;
 }
-/* line 48, ../sass/views/browse_view.sass */
-.browse-view .browse-list-actions-block .list-action-button {
+/* line 48, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-list-actions-block .list-action-button {
   float: left;
   font-size: 18px;
   color: #616161;
   cursor: pointer;
   transition: color 0.125s ease;
 }
-/* line 54, ../sass/views/browse_view.sass */
-.browse-view .browse-list-actions-block .list-action-button:hover {
+/* line 54, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-list-actions-block .list-action-button:hover {
   color: #9E9E9E;
 }
-/* line 56, ../sass/views/browse_view.sass */
-.browse-view .browse-list-actions-block .list-action-button:not(:last-of-type) {
+/* line 56, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-list-actions-block .list-action-button:not(:last-of-type) {
   margin-right: 20px;
 }
-/* line 58, ../sass/views/browse_view.sass */
-.browse-view .browse-list-actions-block .list-action-button.is-selected {
+/* line 58, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-list-actions-block .list-action-button.is-selected {
   color: white;
 }
-/* line 60, ../sass/views/browse_view.sass */
-.browse-view .browse-list-actions-block .list-action-button.is-selected:hover {
+/* line 60, ../sass/views/play_browse_view.sass */
+.play-browse-view .browse-list-actions-block .list-action-button.is-selected:hover {
   color: white;
 }
 
+/*
+ * Settings Advanced View
+ *
+ */
+/* line 7, ../sass/views/settings_advanced_view.sass */
+.settings-advanced-view {
+  color: white;
+  max-width: 800px;
+}
+
 /* Rui */
+/*
+ * Rui Form Base
+ *
+ */
+/* line 7, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-label .label-icon {
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+
+/* line 14, ../sass/ui/rui_form_base.sass */
+.rui-form-base {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px;
+  line-height: 20px;
+  /* [Select] */
+}
+/* line 21, ../sass/ui/rui_form_base.sass */
+.rui-form-base .form-left {
+  float: left;
+}
+/* line 24, ../sass/ui/rui_form_base.sass */
+.rui-form-base .form-right {
+  float: right;
+}
+/* line 29, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select {
+  position: relative;
+}
+/* line 31, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-label {
+  width: 240px;
+  cursor: pointer;
+}
+/* line 35, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-label .label-text {
+  float: left;
+}
+/* line 37, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-label .label-icon {
+  float: right;
+}
+/* line 40, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-options {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+/* line 44, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-options .option-button {
+  cursor: pointer;
+}
+/* line 48, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select.options-is-showing .select-options {
+  opacity: 1;
+}
+
 /*
  * Rui Select
  *

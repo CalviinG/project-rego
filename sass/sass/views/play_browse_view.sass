@@ -1,0 +1,61 @@
+/*
+ *
+ * Play Browse View
+ *
+ */
+
+.play-browse-view
+
+  /* Search */
+
+  .browse-search-block
+    margin-bottom: 10px
+
+  /* Filter */
+
+  .browse-filter-block
+    @extend .clear-after
+    margin-bottom: 20px
+    .rui-select-wrapper
+      float: left
+      width: calc(20% - 8px)
+      &:not(:first-of-type)
+        margin-left: 10px
+
+  /* List Actions */
+  
+  .browse-list-actions-block
+    padding: 20px
+    @extend .clear-after
+
+    .list-actions-left
+      float: left
+
+    .list-actions-right
+      @extend .clear-after
+      float: right
+
+    .list-action-label,
+    .list-action-button
+      display: block
+      line-height: 30px
+
+    .list-action-label
+      font-size: 24px
+      font-weight: 300
+      color: white
+
+    .list-action-button
+      float: left
+      font-size: 18px
+      color: $grey-700
+      cursor: pointer
+      transition: color .125s ease
+      &:hover
+        color: $grey-500
+      &:not(:last-of-type)
+        margin-right: 20px
+      &.is-selected
+        color: white
+        &:hover
+          color: white

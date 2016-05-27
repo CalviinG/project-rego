@@ -1,0 +1,9 @@
+/*
+ * Settings Advanced View
+ *
+ */
+/* line 7, ../../sass/views/settings_advanced_view.sass */
+.settings-advanced-view {
+  color: white;
+  max-width: 800px;
+}
