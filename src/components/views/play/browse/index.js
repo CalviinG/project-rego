@@ -297,7 +297,7 @@ const BrowseView = React.createClass({
         });
 
         // Table Width Values
-        const tableWidthValues = [40, 300, 180, 180, 160, 100, 100, 100]; // Values must be equal or lower than 1160
+        const tableWidthValues = [40, 320, 180, 180, 160, 100, 100, 80]; // Values must be equal or lower than 1160
 
         /*
          *

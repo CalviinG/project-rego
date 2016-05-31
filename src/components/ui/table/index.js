@@ -1,5 +1,6 @@
 import React from 'react';
 import _ 	 from 'underscore';
+import $ 	 from 'jquery';
 
 import TableQuickActions from './table_quick_actions.js';
 
@@ -16,14 +17,8 @@ const TableRow = React.createClass({
 		};
 	},
 
-	_onMouseEnter() {
-		this.setState({ 
-			showQuickActions: true,
-		});
-	},
-
-	_onMouseLeave() {
-		this.setState({ showQuickActions: false });
+	_rowMouseActions(type) {
+		this.setState({ showQuickActions: (type === 'enter') ? true : false });
 	},
 
 	render() {
@@ -36,7 +31,10 @@ const TableRow = React.createClass({
 		// Builds the row
 		const row = _.map(rowData, (key) => {
 			rowColumnCounter++;
-			const columnWidth = ({width: this.props.widthValues[rowColumnCounter]});
+
+			const columnWidth = ({ 
+				width: `${(this.props.widthValues[rowColumnCounter] / 1160) * 100}%`
+			});
 
 			if (_.isArray(key)) {
 				// Check for quickActions
@@ -70,7 +68,7 @@ const TableRow = React.createClass({
 		}
 
 		return (
-			<div key={'tableRow' + rowNumber} className='body-row' onMouseEnter={this._onMouseEnter} onMouseLeave={this._onMouseLeave}>
+			<div key={'tableRow' + rowNumber} ref='rowRef' className='body-row' onMouseEnter={this._rowMouseActions.bind(this, 'enter')} onMouseLeave={this._rowMouseActions.bind(this, 'leave')}>
 				{row}
 				{quickActionsRender}
 			</div>
@@ -91,8 +89,12 @@ const Table = React.createClass({
 				? <i className={'table-icon header-icon fa ' + label[1]} />
 				: <p className='header-text'>{label}</p> ;
 
+			const columnWidth = ({
+				width: `${(this.props.widthValues[index] / 1160) * 100}%`
+			});
+
 			return (
-				<div key={'headerLabel' + index} className='header-value' style={{width: this.props.widthValues[index]}}>
+				<div key={'headerLabel' + index} className='header-value' style={columnWidth}>
 					{headerLabel}
 				</div>
 			);

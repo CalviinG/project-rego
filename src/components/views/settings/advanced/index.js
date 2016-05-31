@@ -19,6 +19,9 @@ const AdvancedView = React.createClass({
 			<div className='settings-advanced-view'>
 				<AnimationHolder>
 					<FormSelect label='Global Shadow Quality' options={qualityOptions} />
+					<FormSelect label='Model / Texture Detail' options={qualityOptions} />
+					<FormSelect label='Effect Detail' options={qualityOptions} />
+					<FormSelect label='Shader Detail' options={qualityOptions} />
 				</AnimationHolder>
 			</div>
 		);
