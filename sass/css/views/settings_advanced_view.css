@@ -6,9 +6,9 @@
 .settings-advanced-view {
   margin-top: 100px;
   color: white;
-  max-width: 800px;
 }
-/* line 12, ../../sass/views/settings_advanced_view.sass */
+/* line 11, ../../sass/views/settings_advanced_view.sass */
 .settings-advanced-view .rui-form-base {
+  width: 700px;
   margin-bottom: 10px;
 }

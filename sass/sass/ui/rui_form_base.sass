@@ -5,8 +5,9 @@
  */
 
 $formWidth: 240px
+$formDarkOverlay: rgba(black, .5)
 
-%label-base
+%icon-base
   font-size: 14px
   width: 20px
   height: 20px
@@ -16,15 +17,16 @@ $formWidth: 240px
 .rui-form-base
   @extend .clear-after
   font-size: 18px
-  font-weight: 600
   line-height: 20px
 
   .form-left
     float: left
-    padding: 20px
+    font-weight: 400
+    padding: 15px 0
 
   .form-right
     float: right
+    font-weight: 700
 
   /* [Select] */
 
@@ -33,13 +35,19 @@ $formWidth: 240px
     width: $formWidth
     .select-label
       @extend .clear-after
-      padding: 20px
+      padding: 15px 20px
+      background-color: $mainColor
       cursor: pointer
+      &:hover
+        .label-icon
+          opacity: 1
       .label-text
         float: left
       .label-icon
-        @extend %label-base
+        @extend %icon-base
         float: right
+        opacity: .25
+        transition: opacity .125s ease
     .select-options
       position: absolute
       z-index: 2
@@ -48,17 +56,17 @@ $formWidth: 240px
       left: 0
       top: 0
       overflow: hidden
-      border-radius: 4px
-      background: linear-gradient($mainColorLight, $mainColor)
+      background-color: $mainColor
       /* Transition Properties */
       opacity: 0
       padding: 0
-      transition: opacity .15s ease
+      transition: opacity .15s ease, height .1s ease, padding .15s ease
       .option-button
-        padding: 10px 15px
+        padding: 10px 20px
+        color: $formDarkOverlay
         cursor: pointer
         &:hover
-          background-color: rgba(black, .25)
+          color: white
 
     &.options-is-showing
       .select-options

@@ -378,10 +378,10 @@ body {
 .settings-advanced-view {
   margin-top: 100px;
   color: white;
-  max-width: 800px;
 }
-/* line 12, ../sass/views/settings_advanced_view.sass */
+/* line 11, ../sass/views/settings_advanced_view.sass */
 .settings-advanced-view .rui-form-base {
+  width: 700px;
   margin-bottom: 10px;
 }
 
@@ -390,7 +390,7 @@ body {
  * Rui Form Base
  *
  */
-/* line 9, ../sass/ui/rui_form_base.sass */
+/* line 10, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-icon {
   font-size: 14px;
   width: 20px;
@@ -399,41 +399,49 @@ body {
   text-align: center;
 }
 
-/* line 16, ../sass/ui/rui_form_base.sass */
+/* line 17, ../sass/ui/rui_form_base.sass */
 .rui-form-base {
   font-size: 18px;
-  font-weight: 600;
   line-height: 20px;
   /* [Select] */
 }
 /* line 22, ../sass/ui/rui_form_base.sass */
 .rui-form-base .form-left {
   float: left;
-  padding: 20px;
+  font-weight: 400;
+  padding: 15px 0;
 }
-/* line 26, ../sass/ui/rui_form_base.sass */
+/* line 27, ../sass/ui/rui_form_base.sass */
 .rui-form-base .form-right {
   float: right;
+  font-weight: 700;
 }
-/* line 31, ../sass/ui/rui_form_base.sass */
+/* line 33, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select {
   position: relative;
   width: 240px;
 }
-/* line 34, ../sass/ui/rui_form_base.sass */
+/* line 36, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label {
-  padding: 20px;
+  padding: 15px 20px;
+  background-color: #0091EA;
   cursor: pointer;
 }
-/* line 38, ../sass/ui/rui_form_base.sass */
+/* line 42, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-label:hover .label-icon {
+  opacity: 1;
+}
+/* line 44, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-text {
   float: left;
 }
-/* line 40, ../sass/ui/rui_form_base.sass */
+/* line 46, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-icon {
   float: right;
+  opacity: 0.25;
+  transition: opacity 0.125s ease;
 }
-/* line 43, ../sass/ui/rui_form_base.sass */
+/* line 51, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options {
   position: absolute;
   z-index: 2;
@@ -442,23 +450,23 @@ body {
   left: 0;
   top: 0;
   overflow: hidden;
-  border-radius: 4px;
-  background: linear-gradient(#00B0FF, #0091EA);
+  background-color: #0091EA;
   /* Transition Properties */
   opacity: 0;
   padding: 0;
-  transition: opacity 0.15s ease;
-}
-/* line 57, ../sass/ui/rui_form_base.sass */
-.rui-form-base .rui-form-select .select-options .option-button {
-  padding: 10px 15px;
-  cursor: pointer;
-}
-/* line 60, ../sass/ui/rui_form_base.sass */
-.rui-form-base .rui-form-select .select-options .option-button:hover {
-  background-color: rgba(0, 0, 0, 0.25);
+  transition: opacity 0.15s ease, height 0.1s ease, padding 0.15s ease;
 }
 /* line 64, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-options .option-button {
+  padding: 10px 20px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+/* line 68, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-options .option-button:hover {
+  color: white;
+}
+/* line 72, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select.options-is-showing .select-options {
   padding: 5px 0;
   opacity: 1;
