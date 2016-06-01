@@ -3,7 +3,7 @@ import Search from './search';
 import Select from './select';
 import Table from './table';
 
-import {FormSelect} from './form';
+import {FormSelect, FormToggle} from './form';
 
 export {
 	Search,
@@ -11,4 +11,5 @@ export {
 	Table,
 	
 	FormSelect,
+	FormToggle,
 };

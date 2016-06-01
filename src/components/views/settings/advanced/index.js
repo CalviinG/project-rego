@@ -4,7 +4,7 @@ import React from 'react';
 import AnimationHolder from '../../../common/animation_holder.js';
 
 // Rui
-import {FormSelect} from '../../../ui';
+import {FormSelect, FormToggle} from '../../../ui';
 
 const AdvancedView = React.createClass({
 	render() {
@@ -22,6 +22,7 @@ const AdvancedView = React.createClass({
 					<FormSelect label='Model / Texture Detail' options={qualityOptions} />
 					<FormSelect label='Effect Detail' options={qualityOptions} />
 					<FormSelect label='Shader Detail' options={qualityOptions} />
+					<FormToggle label='Motion Blur' />
 				</AnimationHolder>
 			</div>
 		);

@@ -35,7 +35,7 @@ body {
 }
 
 /* line 22, ../sass/base.sass */
-.clear-after:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base:after, .rui-form-base .rui-form-select .select-label:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
+.clear-after:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
   content: "";
   display: block;
   clear: both;
@@ -400,48 +400,50 @@ body {
 }
 
 /* line 17, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-label, .rui-form-base .rui-form-toggle {
+  padding: 15px 20px;
+  background-color: #0091EA;
+  cursor: pointer;
+}
+
+/* line 23, ../sass/ui/rui_form_base.sass */
 .rui-form-base {
   font-size: 18px;
   line-height: 20px;
   /* [Select] */
+  /* [Toggle] */
 }
-/* line 22, ../sass/ui/rui_form_base.sass */
+/* line 28, ../sass/ui/rui_form_base.sass */
 .rui-form-base .form-left {
   float: left;
   font-weight: 400;
   padding: 15px 0;
 }
-/* line 27, ../sass/ui/rui_form_base.sass */
+/* line 33, ../sass/ui/rui_form_base.sass */
 .rui-form-base .form-right {
   float: right;
+  width: 240px;
   font-weight: 700;
 }
-/* line 33, ../sass/ui/rui_form_base.sass */
+/* line 40, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select {
   position: relative;
-  width: 240px;
 }
-/* line 36, ../sass/ui/rui_form_base.sass */
-.rui-form-base .rui-form-select .select-label {
-  padding: 15px 20px;
-  background-color: #0091EA;
-  cursor: pointer;
-}
-/* line 42, ../sass/ui/rui_form_base.sass */
+/* line 45, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label:hover .label-icon {
   opacity: 1;
 }
-/* line 44, ../sass/ui/rui_form_base.sass */
+/* line 47, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-text {
   float: left;
 }
-/* line 46, ../sass/ui/rui_form_base.sass */
+/* line 49, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-icon {
   float: right;
   opacity: 0.25;
   transition: opacity 0.125s ease;
 }
-/* line 51, ../sass/ui/rui_form_base.sass */
+/* line 54, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options {
   position: absolute;
   z-index: 2;
@@ -456,20 +458,63 @@ body {
   padding: 0;
   transition: opacity 0.15s ease, height 0.1s ease, padding 0.15s ease;
 }
-/* line 64, ../sass/ui/rui_form_base.sass */
+/* line 67, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options .option-button {
   padding: 10px 20px;
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-/* line 68, ../sass/ui/rui_form_base.sass */
+/* line 71, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options .option-button:hover {
   color: white;
 }
-/* line 72, ../sass/ui/rui_form_base.sass */
+/* line 75, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select.options-is-showing .select-options {
   padding: 5px 0;
   opacity: 1;
+}
+/* line 83, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle .toggle-label {
+  float: left;
+}
+/* line 85, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle .toggle-animation {
+  float: right;
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+/* line 90, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle .toggle-animation .animation-circle {
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  left: calc(100% - 16px - 2px);
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background-color: white;
+}
+/* line 99, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle .toggle-animation .animation-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 106, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle.is-disabled {
+  background-color: #22272A;
+}
+/* line 108, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle.is-disabled .toggle-label {
+  color: #616161;
+}
+/* line 110, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle.is-disabled .animation-circle {
+  left: 2px;
+  background-color: #424242;
 }
 
 /*

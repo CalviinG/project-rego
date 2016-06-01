@@ -1,46 +1,24 @@
 /*
 Error: Undefined variable: "$mainColor".
-        on line 39 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass
+        on line 20 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass
 
-34:     position: relative
-35:     width: $formWidth
-36:     .select-label
-37:       @extend .clear-after
-38:       padding: 15px 20px
-39:       background-color: $mainColor
-40:       cursor: pointer
-41:       &:hover
-42:         .label-icon
-43:           opacity: 1
-44:       .label-text
+15:   text-align: center
+16: 
+17: %form-component-base
+18:   @extend .clear-after
+19:   padding: 15px 20px
+20:   background-color: $mainColor
+21:   cursor: pointer
+22: 
+23: .rui-form-base
+24:   @extend .clear-after
+25:   font-size: 18px
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass:39
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass:20
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
@@ -92,4 +70,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$mainColor\".\A         on line 39 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass\A \A 34:     position: relative\A 35:     width: $formWidth\A 36:     .select-label\A 37:       @extend .clear-after\A 38:       padding: 15px 20px\A 39:       background-color: $mainColor\A 40:       cursor: pointer\A 41:       &:hover\A 42:         .label-icon\A 43:           opacity: 1\A 44:       .label-text"; }
+  content: "Error: Undefined variable: \"$mainColor\".\A         on line 20 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass\A \A 15:   text-align: center\A 16: \A 17: %form-component-base\A 18:   @extend .clear-after\A 19:   padding: 15px 20px\A 20:   background-color: $mainColor\A 21:   cursor: pointer\A 22: \A 23: .rui-form-base\A 24:   @extend .clear-after\A 25:   font-size: 18px"; }

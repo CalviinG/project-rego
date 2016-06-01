@@ -14,6 +14,12 @@ $formDarkOverlay: rgba(black, .5)
   line-height: 20px
   text-align: center
 
+%form-component-base
+  @extend .clear-after
+  padding: 15px 20px
+  background-color: $mainColor
+  cursor: pointer
+
 .rui-form-base
   @extend .clear-after
   font-size: 18px
@@ -26,18 +32,15 @@ $formDarkOverlay: rgba(black, .5)
 
   .form-right
     float: right
+    width: $formWidth
     font-weight: 700
 
   /* [Select] */
 
   .rui-form-select
     position: relative
-    width: $formWidth
     .select-label
-      @extend .clear-after
-      padding: 15px 20px
-      background-color: $mainColor
-      cursor: pointer
+      @extend %form-component-base
       &:hover
         .label-icon
           opacity: 1
@@ -72,3 +75,38 @@ $formDarkOverlay: rgba(black, .5)
       .select-options
         padding: 5px 0
         opacity: 1
+
+  /* [Toggle] */
+
+  .rui-form-toggle
+    @extend %form-component-base
+    .toggle-label
+      float: left
+    .toggle-animation
+      float: right
+      position: relative
+      width: 40px
+      height: 20px
+      .animation-circle
+        position: absolute
+        z-index: 1
+        top: 2px
+        left: calc(100% - 16px - 2px)
+        width: 16px
+        height: 16px
+        border-radius: 100%
+        background-color: white
+      .animation-background
+        position: relative
+        width: 100%
+        height: 100%
+        border-radius: 10px
+        background-color: $formDarkOverlay
+
+    &.is-disabled
+      background-color: $dark-1
+      .toggle-label
+        color: $grey-700
+      .animation-circle
+        left: 2px
+        background-color: $grey-800
