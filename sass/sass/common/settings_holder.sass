@@ -1,0 +1,61 @@
+/*
+ *
+ * Settings Holder Component
+ *
+ */
+
+$settingsHolderTransitionSpeed: .25s
+
+.settings-holder-wrapper
+  @extend .clear-after
+
+  .left-settings-labels
+    float: left
+    .label-button
+      @extend .clear-after
+      position: relative
+      z-index: 2
+      height: 60px
+      width: 260px
+      padding: 10px 15px
+      cursor: pointer
+      .button-icon,
+      .button-label
+        float: left
+      .button-icon
+        font-size: 20px
+        width: 40px
+        height: 40px
+        line-height: 40px
+        text-align: center
+        margin-right: 15px
+        opacity: 0
+        .label-icon
+          opacity: 0
+          transform: scale(.25)
+          transition: all .175s cubic-bezier( 0.1 , 1.8 , 0.4 , 1.0 )
+          transition-delay: $settingsHolderTransitionSpeed
+      .button-label
+        font-size: 30px
+        font-weight: 300
+        color: white
+        opacity: .65
+        line-height: 40px
+
+      &.is-selected
+        .button-icon
+          opacity: 1
+          .label-icon
+            opacity: 1
+            transform: scale(1)
+        .button-label
+          opacity: 1
+
+    .label-highlighter
+      position: absolute
+      z-index: 1
+      left: 0
+      height: 60px
+      width: 260px
+      background-color: $mainColor
+      transition: top $settingsHolderTransitionSpeed cubic-bezier( 0.1 , 1.4 , 0.2 , 1.0 )

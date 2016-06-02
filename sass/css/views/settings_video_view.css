@@ -1,0 +1,14 @@
+/*
+ * Settings Video View
+ *
+ */
+/* line 7, ../../sass/views/settings_video_view.sass */
+.settings-video-view {
+  margin-top: 100px;
+  color: white;
+}
+/* line 11, ../../sass/views/settings_video_view.sass */
+.settings-video-view .rui-form-base {
+  width: 700px;
+  margin-bottom: 10px;
+}

@@ -9,7 +9,7 @@ import TimerMixin from 'react-timer-mixin';
 // Play
 import BrowseView from './views/play/browse';
 // Settings
-import AdvancedView from './views/settings/advanced';
+import VideoView from './views/settings/video';
 
 const ViewComponent = React.createClass({
 	mixins: [TimerMixin],
@@ -111,7 +111,7 @@ const ViewComponent = React.createClass({
 				/* Settings */
 				null,
 				null,
-				<AdvancedView />,
+				<VideoView />,
 			],
 		];
 

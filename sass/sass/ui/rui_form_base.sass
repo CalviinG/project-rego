@@ -6,6 +6,7 @@
 
 $formWidth: 240px
 $formDarkOverlay: rgba(black, .5)
+$formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
 
 %icon-base
   font-size: 14px
@@ -50,7 +51,7 @@ $formDarkOverlay: rgba(black, .5)
         @extend %icon-base
         float: right
         opacity: .25
-        transition: opacity .125s ease
+        transition: $formTransition
     .select-options
       position: absolute
       z-index: 2
@@ -63,7 +64,7 @@ $formDarkOverlay: rgba(black, .5)
       /* Transition Properties */
       opacity: 0
       padding: 0
-      transition: opacity .15s ease, height .1s ease, padding .15s ease
+      transition: $formTransition
       .option-button
         padding: 10px 20px
         color: $formDarkOverlay
@@ -80,6 +81,7 @@ $formDarkOverlay: rgba(black, .5)
 
   .rui-form-toggle
     @extend %form-component-base
+    transition: $formTransition
     .toggle-label
       float: left
     .toggle-animation
@@ -96,6 +98,7 @@ $formDarkOverlay: rgba(black, .5)
         height: 16px
         border-radius: 100%
         background-color: white
+        transition: $formTransition
       .animation-background
         position: relative
         width: 100%
