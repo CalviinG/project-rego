@@ -65,6 +65,7 @@ $formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
       /* Transition Properties */
       opacity: 0
       padding: 0
+      box-shadow: 0 0 0px 0px rgba(black, .0)
       transition: $formTransition
       .option-button
         padding: 10px 20px
@@ -77,6 +78,7 @@ $formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
       .select-options
         padding: 5px 0
         opacity: 1
+        box-shadow: 0 0 24px 6px rgba(black, .5)
 
   /* [Toggle] */
 
@@ -98,7 +100,7 @@ $formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
         width: 16px
         height: 16px
         border-radius: 100%
-        background-color: white
+        background-color: $mainColorLight
         transition: $formTransition
       .animation-background
         position: relative
@@ -114,3 +116,7 @@ $formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
       .animation-circle
         left: 2px
         background-color: $grey-800
+
+    &:hover
+      .animation-circle
+        background-color: white

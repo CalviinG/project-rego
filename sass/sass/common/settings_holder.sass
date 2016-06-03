@@ -14,10 +14,17 @@ $settingsHolderTransitionSpeed: .25s
   color: white
 
   .rui-form-base
-    width: 400px
+    width: 600px
+    &:not(:last-of-type)
+      margin-bottom: 10px
+
+  .left-settings-labels,
+  .middle-settings-divider,
+  .right-settings-holder
+    float: left
+    height: inherit
 
   .left-settings-labels
-    float: left
     .label-button
       @extend .clear-after
       position: relative
@@ -71,15 +78,19 @@ $settingsHolderTransitionSpeed: .25s
       background-color: $mainColor
       transition: all $settingsHolderTransitionSpeed cubic-bezier( 0.1 , 1.4 , 0.2 , 1.0 )
 
+  .middle-settings-divider
+    width: 1px
+    margin: 0 100px
+    background: linear-gradient(rgba(white, .2), rgba(white, .0))
+
   .right-settings-holder
-    float: left
-    height: inherit
-    width: 500px
+    width: 600px
     .holder-block
       position: absolute
       height: 100%
-      width: 100%
-      opacity: .5
-      transition: all .5s cubic-bezier( 0.1 , 1.4 , 0.2 , 1.0 )
+      width: inherit
+      opacity: 0
+      transition: all .5s cubic-bezier( 0.1 , 1.2 , 0.2 , 1.0 )
       &.is-active
         opacity: 1
+

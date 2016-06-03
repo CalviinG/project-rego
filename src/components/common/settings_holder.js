@@ -35,7 +35,6 @@ const SettingsHolder = React.createClass({
 
 	_changeLabel(index) {
 		if (index !== this.state.selectedLabel) {
-			this.props.onChange(index);
 			this.setState({ selectedLabel: index });
 		}
 	},
@@ -55,7 +54,7 @@ const SettingsHolder = React.createClass({
 
 			// Positioning the blocks correct
 			const heightValue = window.innerHeight - 160;
-			const blockStyle = ({ transform: `translate(0px, ${(index * heightValue) - (this.state.selectedLabel * heightValue)}px` }); 
+			const blockStyle = ({ transform: `translate(0px, ${(index * heightValue) - (this.state.selectedLabel * heightValue)}px)` }); 
 
 			return <div key={'LabelBlock' + index} className={blockClass} style={blockStyle}>{label.block}</div>
 		});
@@ -66,6 +65,7 @@ const SettingsHolder = React.createClass({
 					{labels}
 					<div className='label-highlighter' style={highlighterStyle} />
 				</div>
+				<div className='middle-settings-divider' />
 				<div className='right-settings-holder'>
 					{blocks}
 				</div>

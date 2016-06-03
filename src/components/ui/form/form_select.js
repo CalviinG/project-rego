@@ -16,7 +16,7 @@ const FormSelect = React.createClass({
         return {
             showOptions: false,
             selectedOptionIndex: this.props.selectedOption,
-            selectedOptionLabel: null,
+            selectedOptionLabel: this.props.options[this.props.selectedOption],
         };
     },
 
