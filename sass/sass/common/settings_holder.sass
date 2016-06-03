@@ -8,6 +8,13 @@ $settingsHolderTransitionSpeed: .25s
 
 .settings-holder-wrapper
   @extend .clear-after
+  position: relative
+  height: calc(100vh - #{$navigationHeight} - 80px)
+
+  color: white
+
+  .rui-form-base
+    width: 400px
 
   .left-settings-labels
     float: left
@@ -18,6 +25,7 @@ $settingsHolderTransitionSpeed: .25s
       height: 60px
       width: 260px
       padding: 10px 15px
+      color: white
       cursor: pointer
       .button-icon,
       .button-label
@@ -38,9 +46,11 @@ $settingsHolderTransitionSpeed: .25s
       .button-label
         font-size: 30px
         font-weight: 300
-        color: white
         opacity: .65
         line-height: 40px
+        transition: opacity .115s ease
+        &:hover
+          opacity: 1
 
       &.is-selected
         .button-icon
@@ -54,8 +64,22 @@ $settingsHolderTransitionSpeed: .25s
     .label-highlighter
       position: absolute
       z-index: 1
+      top: 0
       left: 0
       height: 60px
       width: 260px
       background-color: $mainColor
-      transition: top $settingsHolderTransitionSpeed cubic-bezier( 0.1 , 1.4 , 0.2 , 1.0 )
+      transition: all $settingsHolderTransitionSpeed cubic-bezier( 0.1 , 1.4 , 0.2 , 1.0 )
+
+  .right-settings-holder
+    float: left
+    height: inherit
+    width: 500px
+    .holder-block
+      position: absolute
+      height: 100%
+      width: 100%
+      opacity: .5
+      transition: all .5s cubic-bezier( 0.1 , 1.4 , 0.2 , 1.0 )
+      &.is-active
+        opacity: 1

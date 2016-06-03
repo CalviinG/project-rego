@@ -10,6 +10,7 @@ Error: Undefined variable: "$appWidth".
 31:     width: $appWidth
 32:     height: calc(100vh - #{$navigationHeight})
 33:     margin: 0 auto
+34:     padding: 40px 0
 
 Backtrace:
 /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass:31
@@ -78,4 +79,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$appWidth\".\A         on line 31 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass\A \A 26: \A 27: .app-wrapper\A 28:   .content\A 29:     position: relative\A 30:     z-index: 1\A 31:     width: $appWidth\A 32:     height: calc(100vh - #{$navigationHeight})\A 33:     margin: 0 auto"; }
+  content: "Error: Undefined variable: \"$appWidth\".\A         on line 31 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass\A \A 26: \A 27: .app-wrapper\A 28:   .content\A 29:     position: relative\A 30:     z-index: 1\A 31:     width: $appWidth\A 32:     height: calc(100vh - #{$navigationHeight})\A 33:     margin: 0 auto\A 34:     padding: 40px 0"; }

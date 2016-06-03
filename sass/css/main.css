@@ -48,6 +48,7 @@ body {
   width: 1200px;
   height: calc(100vh - 160px);
   margin: 0 auto;
+  padding: 40px 0;
 }
 
 /* Common */
@@ -59,12 +60,12 @@ body {
 .animation-holder {
   transition: all 0.25s ease;
   opacity: 0;
-  transform: translate(0%, 0%);
+  transform: translate(0%, -20px);
 }
 /* line 12, ../sass/common/animation_holder.sass */
 .animation-holder.enter-animation {
   opacity: 1;
-  transform: translate(0%, 20px);
+  transform: translate(0%, 0px);
 }
 /* line 16, ../sass/common/animation_holder.sass */
 .animation-holder.leave-animation {
@@ -76,25 +77,36 @@ body {
  * Settings Holder Component
  *
  */
-/* line 12, ../sass/common/settings_holder.sass */
+/* line 9, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper {
+  position: relative;
+  height: calc(100vh - 160px - 80px);
+  color: white;
+}
+/* line 16, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .rui-form-base {
+  width: 400px;
+}
+/* line 19, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels {
   float: left;
 }
-/* line 14, ../sass/common/settings_holder.sass */
+/* line 21, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button {
   position: relative;
   z-index: 2;
   height: 60px;
   width: 260px;
   padding: 10px 15px;
+  color: white;
   cursor: pointer;
 }
-/* line 22, ../sass/common/settings_holder.sass */
+/* line 30, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button .button-icon,
 .settings-holder-wrapper .left-settings-labels .label-button .button-label {
   float: left;
 }
-/* line 25, ../sass/common/settings_holder.sass */
+/* line 33, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button .button-icon {
   font-size: 20px;
   width: 40px;
@@ -104,43 +116,66 @@ body {
   margin-right: 15px;
   opacity: 0;
 }
-/* line 33, ../sass/common/settings_holder.sass */
+/* line 41, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button .button-icon .label-icon {
   opacity: 0;
   transform: scale(0.25);
   transition: all 0.175s cubic-bezier(0.1, 1.8, 0.4, 1);
   transition-delay: 0.25s;
 }
-/* line 38, ../sass/common/settings_holder.sass */
+/* line 46, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button .button-label {
   font-size: 30px;
   font-weight: 300;
-  color: white;
   opacity: 0.65;
   line-height: 40px;
+  transition: opacity 0.115s ease;
 }
-/* line 46, ../sass/common/settings_holder.sass */
+/* line 52, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-button .button-label:hover {
+  opacity: 1;
+}
+/* line 56, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button.is-selected .button-icon {
   opacity: 1;
 }
-/* line 48, ../sass/common/settings_holder.sass */
+/* line 58, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button.is-selected .button-icon .label-icon {
   opacity: 1;
   transform: scale(1);
 }
-/* line 51, ../sass/common/settings_holder.sass */
+/* line 61, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button.is-selected .button-label {
   opacity: 1;
 }
-/* line 54, ../sass/common/settings_holder.sass */
+/* line 64, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-highlighter {
   position: absolute;
   z-index: 1;
+  top: 0;
   left: 0;
   height: 60px;
   width: 260px;
   background-color: #0091EA;
-  transition: top 0.25s cubic-bezier(0.1, 1.4, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0.1, 1.4, 0.2, 1);
+}
+/* line 74, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder {
+  float: left;
+  height: inherit;
+  width: 500px;
+}
+/* line 78, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .holder-block {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  transition: all 0.5s cubic-bezier(0.1, 1.4, 0.2, 1);
+}
+/* line 84, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .holder-block.is-active {
+  opacity: 1;
 }
 
 /* Components */
@@ -447,13 +482,8 @@ body {
  */
 /* line 7, ../sass/views/settings_video_view.sass */
 .settings-video-view {
-  margin-top: 100px;
-  color: white;
-}
-/* line 11, ../sass/views/settings_video_view.sass */
-.settings-video-view .rui-form-base {
-  width: 700px;
-  margin-bottom: 10px;
+  position: relative;
+  height: 100%;
 }
 
 /* Rui */
@@ -481,40 +511,41 @@ body {
 .rui-form-base {
   font-size: 18px;
   line-height: 20px;
+  color: white;
   /* [Select] */
   /* [Toggle] */
 }
-/* line 29, ../sass/ui/rui_form_base.sass */
+/* line 30, ../sass/ui/rui_form_base.sass */
 .rui-form-base .form-left {
   float: left;
   font-weight: 400;
   padding: 15px 0;
 }
-/* line 34, ../sass/ui/rui_form_base.sass */
+/* line 35, ../sass/ui/rui_form_base.sass */
 .rui-form-base .form-right {
   float: right;
   width: 240px;
   font-weight: 700;
 }
-/* line 41, ../sass/ui/rui_form_base.sass */
+/* line 42, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select {
   position: relative;
 }
-/* line 46, ../sass/ui/rui_form_base.sass */
+/* line 47, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label:hover .label-icon {
   opacity: 1;
 }
-/* line 48, ../sass/ui/rui_form_base.sass */
+/* line 49, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-text {
   float: left;
 }
-/* line 50, ../sass/ui/rui_form_base.sass */
+/* line 51, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-icon {
   float: right;
   opacity: 0.25;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 55, ../sass/ui/rui_form_base.sass */
+/* line 56, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options {
   position: absolute;
   z-index: 2;
@@ -529,37 +560,37 @@ body {
   padding: 0;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 68, ../sass/ui/rui_form_base.sass */
+/* line 69, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options .option-button {
   padding: 10px 20px;
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-/* line 72, ../sass/ui/rui_form_base.sass */
+/* line 73, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options .option-button:hover {
   color: white;
 }
-/* line 76, ../sass/ui/rui_form_base.sass */
+/* line 77, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select.options-is-showing .select-options {
   padding: 5px 0;
   opacity: 1;
 }
-/* line 82, ../sass/ui/rui_form_base.sass */
+/* line 83, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle {
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 85, ../sass/ui/rui_form_base.sass */
+/* line 86, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-label {
   float: left;
 }
-/* line 87, ../sass/ui/rui_form_base.sass */
+/* line 88, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-animation {
   float: right;
   position: relative;
   width: 40px;
   height: 20px;
 }
-/* line 92, ../sass/ui/rui_form_base.sass */
+/* line 93, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-animation .animation-circle {
   position: absolute;
   z-index: 1;
@@ -571,7 +602,7 @@ body {
   background-color: white;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 102, ../sass/ui/rui_form_base.sass */
+/* line 103, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-animation .animation-background {
   position: relative;
   width: 100%;
@@ -579,15 +610,15 @@ body {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 109, ../sass/ui/rui_form_base.sass */
+/* line 110, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle.is-disabled {
   background-color: #22272A;
 }
-/* line 111, ../sass/ui/rui_form_base.sass */
+/* line 112, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle.is-disabled .toggle-label {
   color: #616161;
 }
-/* line 113, ../sass/ui/rui_form_base.sass */
+/* line 114, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle.is-disabled .animation-circle {
   left: 2px;
   background-color: #424242;
