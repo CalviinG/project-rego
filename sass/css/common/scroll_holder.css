@@ -1,0 +1,55 @@
+/*
+ * Scroll Holder Component
+ *
+ */
+/* line 7, ../../sass/common/scroll_holder.sass */
+.scroll-holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* line 13, ../../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-content,
+.scroll-holder .scroll-indicator {
+  height: 100%;
+}
+/* line 17, ../../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-content {
+  position: absolute;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+/* line 22, ../../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-content::-webkit-scrollbar {
+  display: none;
+}
+/* line 25, ../../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-indicator {
+  position: absolute;
+  width: 8px;
+  left: 0;
+  top: 0;
+}
+/* line 31, ../../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-indicator .indicator-bar,
+.scroll-holder .scroll-indicator .indicator-area {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-radius: 4px;
+}
+/* line 38, ../../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-indicator .indicator-bar {
+  z-index: 2;
+  transform: translate(0px, 0px);
+  background-color: white;
+}
+/* line 43, ../../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-indicator .indicator-area {
+  z-index: 1;
+  top: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}

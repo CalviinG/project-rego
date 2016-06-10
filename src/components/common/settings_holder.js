@@ -3,6 +3,10 @@ import $		  from 'jquery';
 import _	 	  from 'underscore';
 import classNames from 'classnames';
 
+// Common Components
+import AnimationHolder from './animation_holder.js';
+import ScrollHolder    from './scroll_holder.js';
+
 const SettingsHolder = React.createClass({
 	propTypes: {
 		labels: React.PropTypes.array.isRequired,
@@ -56,7 +60,13 @@ const SettingsHolder = React.createClass({
 			const heightValue = window.innerHeight - 160;
 			const blockStyle = ({ transform: `translate(0px, ${(index * heightValue) - (this.state.selectedLabel * heightValue)}px)` }); 
 
-			return <div key={'LabelBlock' + index} className={blockClass} style={blockStyle}>{label.block}</div>
+			return (
+				<div key={'LabelBlock' + index} className={blockClass} style={blockStyle}>
+					<ScrollHolder>
+					{label.block}
+					</ScrollHolder>
+				</div>
+			);
 		});
 
 		return (

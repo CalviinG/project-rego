@@ -43,6 +43,11 @@ const VideoAdvancedComponent = React.createClass({
 				<FormToggle label='FXAA Anti-Aliasing' />
 				<FormSelect label='Wait for Vertical Sync' options={verticalSyncOptions} />
 				<FormToggle label='Motion Blur' />
+				<FormToggle label='Motion Blur' />
+				<FormToggle label='Motion Blur' />
+				<FormToggle label='Motion Blur' />
+				<FormToggle label='Motion Blur' />
+				<FormToggle label='Motion Blur' />
 			</div>
 		);
 	},
