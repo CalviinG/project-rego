@@ -8,6 +8,9 @@ $formWidth: 240px
 $formDarkOverlay: rgba(black, .5)
 $formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
 
+$disabledBackgroundColor: $dark-1
+$disabledTextColor: $grey-700
+
 %icon-base
   font-size: 14px
   width: 20px
@@ -110,9 +113,9 @@ $formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
         background-color: $formDarkOverlay
 
     &.is-disabled
-      background-color: $dark-1
+      background-color: $disabledBackgroundColor
       .toggle-label
-        color: $grey-700
+        color: $disabledTextColor
       .animation-circle
         left: 2px
         background-color: $grey-800
@@ -120,3 +123,55 @@ $formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
     &:hover
       .animation-circle
         background-color: white
+
+/*
+ * Form Button
+ */
+
+.rui-form-button
+  padding: 15px 20px
+  cursor: pointer
+  &,
+  .button-icon,
+  .button-label
+    display: inline-block
+    transition: all .06s ease
+  .button-icon
+    @extend %icon-base
+  .button-label
+    font-size: 14px
+    font-weight: 700
+    line-height: 20px
+    text-transform: uppercase
+
+  &.is-primary,
+  &.is-secondary
+    color: white
+
+  &.is-primary
+    background-color: $mainColor
+    &:hover
+      background-color: $mainColorLight
+    &:active
+      background-color: $mainColorDark
+  
+  &.is-secondary
+    &:hover 
+      .button-label
+        color: $mainColorLight
+    &:active
+      .button-label
+        color: $mainColorDark
+
+  &.is-disabled
+    color: $disabledTextColor
+    cursor: default
+    &.is-primary
+      background-color: $disabledBackgroundColor
+      &:hover
+        background-color: $disabledBackgroundColor
+    &.is-secondary  
+      &:hover
+        .button-icon
+        .button-label
+          color: $disabledTextColor

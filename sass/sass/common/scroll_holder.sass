@@ -17,6 +17,7 @@
   .scroll-content
     position: absolute
     left: 0
+    width: 100%
     overflow-x: hidden
     overflow-y: scroll
     &::-webkit-scrollbar
@@ -25,7 +26,7 @@
   .scroll-indicator
     position: absolute
     width: 8px
-    left: 0
+    right: 0
     top: 0
 
     .indicator-bar,
@@ -33,15 +34,19 @@
       position: absolute
       left: 0
       width: 100%
-      border-radius: 4px
+      border-radius: 3px
 
     .indicator-bar
       z-index: 2
       transform: translate(0px, 0px)
-      background-color: white
+      background-color: rgba($dark-1, .75)
 
     .indicator-area
       z-index: 1
       top: 0
       height: 100%
-      background-color: rgba(white, .5)
+      background-color: rgba(black, .0)
+
+    &:hover
+      .indicator-area
+        background-color: rgba(black, .4)

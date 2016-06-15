@@ -85,7 +85,7 @@ body {
 }
 /* line 16, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .rui-form-base {
-  width: 600px;
+  width: 100%;
 }
 /* line 18, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .rui-form-base:not(:last-of-type) {
@@ -95,10 +95,11 @@ body {
 .settings-holder-wrapper .left-settings-labels,
 .settings-holder-wrapper .middle-settings-divider,
 .settings-holder-wrapper .right-settings-holder {
+  position: relative;
   float: left;
   height: inherit;
 }
-/* line 28, ../sass/common/settings_holder.sass */
+/* line 29, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button {
   position: relative;
   z-index: 2;
@@ -108,12 +109,12 @@ body {
   color: white;
   cursor: pointer;
 }
-/* line 37, ../sass/common/settings_holder.sass */
+/* line 38, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button .button-icon,
 .settings-holder-wrapper .left-settings-labels .label-button .button-label {
   float: left;
 }
-/* line 40, ../sass/common/settings_holder.sass */
+/* line 41, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button .button-icon {
   font-size: 20px;
   width: 40px;
@@ -123,14 +124,14 @@ body {
   margin-right: 15px;
   opacity: 0;
 }
-/* line 48, ../sass/common/settings_holder.sass */
+/* line 49, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button .button-icon .label-icon {
   opacity: 0;
   transform: scale(0.25);
   transition: all 0.175s cubic-bezier(0.1, 1.8, 0.4, 1);
   transition-delay: 0.25s;
 }
-/* line 53, ../sass/common/settings_holder.sass */
+/* line 54, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button .button-label {
   font-size: 30px;
   font-weight: 300;
@@ -138,24 +139,24 @@ body {
   line-height: 40px;
   transition: opacity 0.115s ease;
 }
-/* line 59, ../sass/common/settings_holder.sass */
+/* line 60, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button .button-label:hover {
   opacity: 1;
 }
-/* line 63, ../sass/common/settings_holder.sass */
+/* line 64, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button.is-selected .button-icon {
   opacity: 1;
 }
-/* line 65, ../sass/common/settings_holder.sass */
+/* line 66, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button.is-selected .button-icon .label-icon {
   opacity: 1;
   transform: scale(1);
 }
-/* line 68, ../sass/common/settings_holder.sass */
+/* line 69, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-button.is-selected .button-label {
   opacity: 1;
 }
-/* line 71, ../sass/common/settings_holder.sass */
+/* line 72, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .left-settings-labels .label-highlighter {
   position: absolute;
   z-index: 1;
@@ -166,28 +167,47 @@ body {
   background-color: #0091EA;
   transition: all 0.25s cubic-bezier(0.1, 1.4, 0.2, 1);
 }
-/* line 81, ../sass/common/settings_holder.sass */
+/* line 82, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .middle-settings-divider {
   width: 1px;
   margin: 0 100px;
   background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
 }
-/* line 86, ../sass/common/settings_holder.sass */
+/* line 87, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .right-settings-holder {
   width: 600px;
+  height: 100%;
+}
+/* line 90, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .blocks-holder {
+  position: relative;
+  width: 600px;
+  height: calc(100% - 70px);
   overflow: hidden;
 }
-/* line 89, ../sass/common/settings_holder.sass */
-.settings-holder-wrapper .right-settings-holder .holder-block {
+/* line 95, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .blocks-holder .holder-block {
   position: absolute;
   height: 100%;
   width: inherit;
   opacity: 0;
-  transition: all 0.5s cubic-bezier(0.1, 1.2, 0.2, 1);
+  transition: opacity 0.425s cubic-bezier(0.1, 1.2, 0.2, 1) 0.075s, transform 0.5s cubic-bezier(0.1, 1.2, 0.2, 1);
 }
-/* line 95, ../sass/common/settings_holder.sass */
-.settings-holder-wrapper .right-settings-holder .holder-block.is-active {
+/* line 101, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .blocks-holder .holder-block.is-active {
   opacity: 1;
+}
+/* line 103, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .holder-action-buttons {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: right;
+}
+/* line 110, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .holder-action-buttons .rui-form-button:not(:first-of-type) {
+  margin-left: 10px;
 }
 
 /*
@@ -210,40 +230,45 @@ body {
 .scroll-holder .scroll-content {
   position: absolute;
   left: 0;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
 }
-/* line 22, ../sass/common/scroll_holder.sass */
+/* line 23, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-content::-webkit-scrollbar {
   display: none;
 }
-/* line 25, ../sass/common/scroll_holder.sass */
+/* line 26, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-indicator {
   position: absolute;
   width: 8px;
-  left: 0;
+  right: 0;
   top: 0;
 }
-/* line 31, ../sass/common/scroll_holder.sass */
+/* line 32, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-indicator .indicator-bar,
 .scroll-holder .scroll-indicator .indicator-area {
   position: absolute;
   left: 0;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 3px;
 }
-/* line 38, ../sass/common/scroll_holder.sass */
+/* line 39, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-indicator .indicator-bar {
   z-index: 2;
   transform: translate(0px, 0px);
-  background-color: white;
+  background-color: rgba(34, 39, 42, 0.75);
 }
-/* line 43, ../sass/common/scroll_holder.sass */
+/* line 44, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-indicator .indicator-area {
   z-index: 1;
   top: 0;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+/* line 51, ../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-indicator:hover .indicator-area {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Components */
@@ -559,8 +584,8 @@ body {
  * Rui Form Base
  *
  */
-/* line 11, ../sass/ui/rui_form_base.sass */
-.rui-form-base .rui-form-select .select-label .label-icon {
+/* line 14, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-label .label-icon, .rui-form-button .button-icon {
   font-size: 14px;
   width: 20px;
   height: 20px;
@@ -568,14 +593,14 @@ body {
   text-align: center;
 }
 
-/* line 18, ../sass/ui/rui_form_base.sass */
+/* line 21, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label, .rui-form-base .rui-form-toggle {
   padding: 15px 20px;
   background-color: #0091EA;
   cursor: pointer;
 }
 
-/* line 24, ../sass/ui/rui_form_base.sass */
+/* line 27, ../sass/ui/rui_form_base.sass */
 .rui-form-base {
   font-size: 18px;
   line-height: 20px;
@@ -583,37 +608,37 @@ body {
   /* [Select] */
   /* [Toggle] */
 }
-/* line 30, ../sass/ui/rui_form_base.sass */
+/* line 33, ../sass/ui/rui_form_base.sass */
 .rui-form-base .form-left {
   float: left;
   font-weight: 400;
   padding: 15px 0;
 }
-/* line 35, ../sass/ui/rui_form_base.sass */
+/* line 38, ../sass/ui/rui_form_base.sass */
 .rui-form-base .form-right {
   float: right;
   width: 240px;
   font-weight: 700;
 }
-/* line 42, ../sass/ui/rui_form_base.sass */
+/* line 45, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select {
   position: relative;
 }
-/* line 47, ../sass/ui/rui_form_base.sass */
+/* line 50, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label:hover .label-icon {
   opacity: 1;
 }
-/* line 49, ../sass/ui/rui_form_base.sass */
+/* line 52, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-text {
   float: left;
 }
-/* line 51, ../sass/ui/rui_form_base.sass */
+/* line 54, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-icon {
   float: right;
   opacity: 0.25;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 56, ../sass/ui/rui_form_base.sass */
+/* line 59, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options {
   position: absolute;
   z-index: 2;
@@ -629,38 +654,38 @@ body {
   box-shadow: 0 0 0px 0px transparent;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 70, ../sass/ui/rui_form_base.sass */
+/* line 73, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options .option-button {
   padding: 10px 20px;
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-/* line 74, ../sass/ui/rui_form_base.sass */
+/* line 77, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options .option-button:hover {
   color: white;
 }
-/* line 78, ../sass/ui/rui_form_base.sass */
+/* line 81, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select.options-is-showing .select-options {
   padding: 5px 0;
   opacity: 1;
   box-shadow: 0 0 24px 6px rgba(0, 0, 0, 0.5);
 }
-/* line 85, ../sass/ui/rui_form_base.sass */
+/* line 88, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle {
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 88, ../sass/ui/rui_form_base.sass */
+/* line 91, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-label {
   float: left;
 }
-/* line 90, ../sass/ui/rui_form_base.sass */
+/* line 93, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-animation {
   float: right;
   position: relative;
   width: 40px;
   height: 20px;
 }
-/* line 95, ../sass/ui/rui_form_base.sass */
+/* line 98, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-animation .animation-circle {
   position: absolute;
   z-index: 1;
@@ -672,7 +697,7 @@ body {
   background-color: #00B0FF;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 105, ../sass/ui/rui_form_base.sass */
+/* line 108, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-animation .animation-background {
   position: relative;
   width: 100%;
@@ -680,22 +705,85 @@ body {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 112, ../sass/ui/rui_form_base.sass */
+/* line 115, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle.is-disabled {
   background-color: #22272A;
 }
-/* line 114, ../sass/ui/rui_form_base.sass */
+/* line 117, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle.is-disabled .toggle-label {
   color: #616161;
 }
-/* line 116, ../sass/ui/rui_form_base.sass */
+/* line 119, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle.is-disabled .animation-circle {
   left: 2px;
   background-color: #424242;
 }
-/* line 121, ../sass/ui/rui_form_base.sass */
+/* line 124, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle:hover .animation-circle {
   background-color: white;
+}
+
+/* Form Button
+ */
+/* line 131, ../sass/ui/rui_form_base.sass */
+.rui-form-button {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+/* line 134, ../sass/ui/rui_form_base.sass */
+.rui-form-button,
+.rui-form-button .button-icon,
+.rui-form-button .button-label {
+  display: inline-block;
+  transition: all 0.06s ease;
+}
+/* line 141, ../sass/ui/rui_form_base.sass */
+.rui-form-button .button-label {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+/* line 147, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-primary, .rui-form-button.is-secondary {
+  color: white;
+}
+/* line 151, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-primary {
+  background-color: #0091EA;
+}
+/* line 153, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-primary:hover {
+  background-color: #00B0FF;
+}
+/* line 155, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-primary:active {
+  background-color: #0082D2;
+}
+/* line 160, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-secondary:hover .button-label {
+  color: #00B0FF;
+}
+/* line 163, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-secondary:active .button-label {
+  color: #0082D2;
+}
+/* line 166, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-disabled {
+  color: #616161;
+  cursor: default;
+}
+/* line 169, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-disabled.is-primary {
+  background-color: #22272A;
+}
+/* line 171, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-disabled.is-primary:hover {
+  background-color: #22272A;
+}
+/* line 176, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-disabled.is-secondary:hover .button-label {
+  color: #616161;
 }
 
 /*

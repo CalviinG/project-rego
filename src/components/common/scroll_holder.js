@@ -8,14 +8,10 @@ const ScrollHolder = React.createClass({
 
 	_listenOnScroll(e) {
 		const scrollTop = e.target.scrollTop;
-		const $content = $(this.refs.contentRef).children().eq(0);
 		const $scroll = $(this.refs.scrollRef);
 		const $bar = $(this.refs.barRef);
 
-		const cH = $content.outerHeight(true);
 		const sH = $scroll.outerHeight(true);
-		const bH = `${(sH / cH) * 100}%`;
-
 		const barTop = 100 / (sH / scrollTop);
 
 		// Update scrollbar transform translateY value

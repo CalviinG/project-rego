@@ -7,6 +7,9 @@ import classNames from 'classnames';
 import AnimationHolder from './animation_holder.js';
 import ScrollHolder    from './scroll_holder.js';
 
+// Rui Components
+import {FormButton} from '../ui';
+
 const SettingsHolder = React.createClass({
 	propTypes: {
 		labels: React.PropTypes.array.isRequired,
@@ -77,7 +80,14 @@ const SettingsHolder = React.createClass({
 				</div>
 				<div className='middle-settings-divider' />
 				<div className='right-settings-holder'>
-					{blocks}
+					<div className='blocks-holder'>
+						{blocks}
+					</div>
+					<div className='holder-action-buttons'>
+						<FormButton disabled label='Reset Settings' />
+						<FormButton label='Cancel' />
+						<FormButton primary label='Apply Changes' />
+					</div>
 				</div>
 			</div>
 		);

@@ -14,13 +14,14 @@ $settingsHolderTransitionSpeed: .25s
   color: white
 
   .rui-form-base
-    width: 600px
+    width: 100%
     &:not(:last-of-type)
       margin-bottom: 10px
 
   .left-settings-labels,
   .middle-settings-divider,
   .right-settings-holder
+    position: relative
     float: left
     height: inherit
 
@@ -85,13 +86,28 @@ $settingsHolderTransitionSpeed: .25s
 
   .right-settings-holder
     width: 600px
-    overflow: hidden
-    .holder-block
+    height: 100%
+    .blocks-holder
+      position: relative
+      width: 600px
+      height: calc(100% - 70px)
+      overflow: hidden
+      .holder-block
+        position: absolute
+        height: 100%
+        width: inherit
+        opacity: 0
+        transition: opacity .425s cubic-bezier( 0.1 , 1.2 , 0.2 , 1.0 ) .075s, transform .5s cubic-bezier( 0.1 , 1.2 , 0.2 , 1.0 )
+        &.is-active
+          opacity: 1
+    .holder-action-buttons
       position: absolute
-      height: 100%
-      width: inherit
-      opacity: 0
-      transition: all .5s cubic-bezier( 0.1 , 1.2 , 0.2 , 1.0 )
-      &.is-active
-        opacity: 1
+      width: 100%
+      bottom: 0
+      left: 0
+      text-align: right
+      .rui-form-button
+        &:not(:first-of-type)
+          margin-left: 10px
+
 

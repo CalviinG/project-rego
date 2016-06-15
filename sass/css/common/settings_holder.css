@@ -12,7 +12,7 @@ Error: Undefined variable: "$navigationHeight".
 14:   color: white
 15: 
 16:   .rui-form-base
-17:     width: 600px
+17:     width: 100%
 
 Backtrace:
 /Users/DanBilprospekt/workspace/project-rego/sass/sass/common/settings_holder.sass:12
@@ -72,4 +72,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$navigationHeight\".\A         on line 12 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/common/settings_holder.sass\A \A 7: $settingsHolderTransitionSpeed: .25s\A 8: \A 9: .settings-holder-wrapper\A 10:   @extend .clear-after\A 11:   position: relative\A 12:   height: calc(100vh - #{$navigationHeight} - 80px)\A 13: \A 14:   color: white\A 15: \A 16:   .rui-form-base\A 17:     width: 600px"; }
+  content: "Error: Undefined variable: \"$navigationHeight\".\A         on line 12 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/common/settings_holder.sass\A \A 7: $settingsHolderTransitionSpeed: .25s\A 8: \A 9: .settings-holder-wrapper\A 10:   @extend .clear-after\A 11:   position: relative\A 12:   height: calc(100vh - #{$navigationHeight} - 80px)\A 13: \A 14:   color: white\A 15: \A 16:   .rui-form-base\A 17:     width: 100%"; }
