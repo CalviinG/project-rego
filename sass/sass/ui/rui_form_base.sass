@@ -129,48 +129,42 @@ $disabledTextColor: $grey-700
  */
 
 .rui-form-button
-  padding: 15px 20px
+  padding: 10px 20px
   cursor: pointer
+  border-radius: 2px
+  color: white
   &,
   .button-icon,
   .button-label
     display: inline-block
-    transition: all .06s ease
+    transition: all .1s ease
   .button-icon
     @extend %icon-base
   .button-label
     font-size: 14px
-    font-weight: 700
+    font-weight: 600
     line-height: 20px
-    text-transform: uppercase
-
-  &.is-primary,
-  &.is-secondary
-    color: white
 
   &.is-primary
-    background-color: $mainColor
+    background-color: rgba($c-green, .9)
     &:hover
-      background-color: $mainColorLight
+      background-color: rgba($c-green, 1)
     &:active
-      background-color: $mainColorDark
+      background-color: rgba($c-green, .8)
   
   &.is-secondary
+    background-color: rgba($grey-800, .9)
     &:hover 
-      .button-label
-        color: $mainColorLight
+      background-color: rgba($grey-800, 1)
     &:active
-      .button-label
-        color: $mainColorDark
+      background-color: rgba($grey-800, .8)
 
   &.is-disabled
+    background-color: $disabledBackgroundColor
     color: $disabledTextColor
     cursor: default
-    &.is-primary
+    &:hover
       background-color: $disabledBackgroundColor
-      &:hover
-        background-color: $disabledBackgroundColor
-    &.is-secondary  
       &:hover
         .button-icon
         .button-label

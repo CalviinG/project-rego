@@ -30,6 +30,10 @@ const FormSelect = React.createClass({
         const $options = $(this.refs.optionsRef);
         $options.css({ height: 0 });
 
+        if (typeof this.props.onChange === 'function') {
+            this.props.onChange(index);
+        }
+
         this.setState({
             showOptions: false,
             selectedOptionIndex: index,

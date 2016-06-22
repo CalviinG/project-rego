@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$dark-1".
-        on line 42 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/common/scroll_holder.sass
+        on line 43 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/common/scroll_holder.sass
 
-37:       border-radius: 3px
-38: 
-39:     .indicator-bar
-40:       z-index: 2
-41:       transform: translate(0px, 0px)
-42:       background-color: rgba($dark-1, .75)
-43: 
-44:     .indicator-area
-45:       z-index: 1
-46:       top: 0
-47:       height: 100%
+38:       border-radius: 2px
+39: 
+40:     .indicator-bar
+41:       z-index: 2
+42:       transform: translate(0px, 0px)
+43:       background-color: rgba($dark-1, .85)
+44: 
+45:     .indicator-area
+46:       z-index: 1
+47:       top: 0
+48:       height: 100%
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/common/scroll_holder.sass:42
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/common/scroll_holder.sass:43
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:170:in `perform_arg'
@@ -100,4 +100,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$dark-1\".\A         on line 42 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/common/scroll_holder.sass\A \A 37:       border-radius: 3px\A 38: \A 39:     .indicator-bar\A 40:       z-index: 2\A 41:       transform: translate(0px, 0px)\A 42:       background-color: rgba($dark-1, .75)\A 43: \A 44:     .indicator-area\A 45:       z-index: 1\A 46:       top: 0\A 47:       height: 100%"; }
+  content: "Error: Undefined variable: \"$dark-1\".\A         on line 43 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/common/scroll_holder.sass\A \A 38:       border-radius: 2px\A 39: \A 40:     .indicator-bar\A 41:       z-index: 2\A 42:       transform: translate(0px, 0px)\A 43:       background-color: rgba($dark-1, .85)\A 44: \A 45:     .indicator-area\A 46:       z-index: 1\A 47:       top: 0\A 48:       height: 100%"; }

@@ -231,44 +231,41 @@ body {
   position: absolute;
   left: 0;
   width: 100%;
+  padding-right: 13px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
-/* line 23, ../sass/common/scroll_holder.sass */
+/* line 24, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-content::-webkit-scrollbar {
   display: none;
 }
-/* line 26, ../sass/common/scroll_holder.sass */
+/* line 27, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-indicator {
   position: absolute;
   width: 8px;
   right: 0;
   top: 0;
 }
-/* line 32, ../sass/common/scroll_holder.sass */
+/* line 33, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-indicator .indicator-bar,
 .scroll-holder .scroll-indicator .indicator-area {
   position: absolute;
   left: 0;
   width: 100%;
-  border-radius: 3px;
+  border-radius: 2px;
 }
-/* line 39, ../sass/common/scroll_holder.sass */
+/* line 40, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-indicator .indicator-bar {
   z-index: 2;
   transform: translate(0px, 0px);
-  background-color: rgba(34, 39, 42, 0.75);
+  background-color: rgba(34, 39, 42, 0.85);
 }
-/* line 44, ../sass/common/scroll_holder.sass */
+/* line 45, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-indicator .indicator-area {
   z-index: 1;
   top: 0;
   height: 100%;
-  background-color: transparent;
-}
-/* line 51, ../sass/common/scroll_holder.sass */
-.scroll-holder .scroll-indicator:hover .indicator-area {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(25, 29, 31, 0.85);
 }
 
 /* Components */
@@ -727,62 +724,60 @@ body {
  */
 /* line 131, ../sass/ui/rui_form_base.sass */
 .rui-form-button {
-  padding: 15px 20px;
+  padding: 10px 20px;
   cursor: pointer;
+  border-radius: 2px;
+  color: white;
 }
-/* line 134, ../sass/ui/rui_form_base.sass */
+/* line 136, ../sass/ui/rui_form_base.sass */
 .rui-form-button,
 .rui-form-button .button-icon,
 .rui-form-button .button-label {
   display: inline-block;
-  transition: all 0.06s ease;
+  transition: all 0.1s ease;
 }
-/* line 141, ../sass/ui/rui_form_base.sass */
+/* line 143, ../sass/ui/rui_form_base.sass */
 .rui-form-button .button-label {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 20px;
-  text-transform: uppercase;
 }
-/* line 147, ../sass/ui/rui_form_base.sass */
-.rui-form-button.is-primary, .rui-form-button.is-secondary {
-  color: white;
-}
-/* line 151, ../sass/ui/rui_form_base.sass */
+/* line 148, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-primary {
-  background-color: #0091EA;
+  background-color: rgba(76, 175, 80, 0.9);
 }
-/* line 153, ../sass/ui/rui_form_base.sass */
+/* line 150, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-primary:hover {
-  background-color: #00B0FF;
+  background-color: #4caf50;
+}
+/* line 152, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-primary:active {
+  background-color: rgba(76, 175, 80, 0.8);
 }
 /* line 155, ../sass/ui/rui_form_base.sass */
-.rui-form-button.is-primary:active {
-  background-color: #0082D2;
+.rui-form-button.is-secondary {
+  background-color: rgba(66, 66, 66, 0.9);
 }
-/* line 160, ../sass/ui/rui_form_base.sass */
-.rui-form-button.is-secondary:hover .button-label {
-  color: #00B0FF;
+/* line 157, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-secondary:hover {
+  background-color: #424242;
 }
-/* line 163, ../sass/ui/rui_form_base.sass */
-.rui-form-button.is-secondary:active .button-label {
-  color: #0082D2;
+/* line 159, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-secondary:active {
+  background-color: rgba(66, 66, 66, 0.8);
 }
-/* line 166, ../sass/ui/rui_form_base.sass */
+/* line 162, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-disabled {
+  background-color: #22272A;
   color: #616161;
   cursor: default;
 }
-/* line 169, ../sass/ui/rui_form_base.sass */
-.rui-form-button.is-disabled.is-primary {
+/* line 166, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-disabled:hover {
   background-color: #22272A;
 }
-/* line 171, ../sass/ui/rui_form_base.sass */
-.rui-form-button.is-disabled.is-primary:hover {
-  background-color: #22272A;
-}
-/* line 176, ../sass/ui/rui_form_base.sass */
-.rui-form-button.is-disabled.is-secondary:hover .button-label {
+/* line 170, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-disabled:hover:hover .button-label {
   color: #616161;
 }
 
