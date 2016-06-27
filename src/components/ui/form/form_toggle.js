@@ -15,6 +15,10 @@ const FormToggle = React.createClass({
     	};
     },
 
+    componentWillReceiveProps(newProps) {
+        this.setState({ enabled: newProps.enabled });
+    },
+
     getDefaultProps() {
     	return {
     		enabled: false,
@@ -25,7 +29,7 @@ const FormToggle = React.createClass({
     	this.setState({ enabled: !this.state.enabled });
 
     	if (typeof this.props.onChange === 'function') {
-    		this.props.onChange();
+    		this.props.onChange(!this.state.enabled);
     	}
     },
 

@@ -7,17 +7,38 @@ import {FormSelect, FormToggle} from '../../../ui';
 const VideoAdvancedComponent = React.createClass({
     getInitialState() {
         return {
-            initialValues: [2,0,0,0,2,0,0,0,2,0],
+            initialValues: [2,0,0,2,1,0,0,0,1,0],
             newValues: null,
         };
     },
 
+    updateValues(type) {
+        this.props.onChange(false);
+
+        if (type === 'save') {
+            this.setState({
+                initialValues: this.state.newValues,
+                newValues: null,
+            });
+        } else if (type === 'cancel') {
+            this.setState({
+                initialValues: this.state.initialValues,
+                newValues: null,
+            });
+        }
+    },
+
     _onChange(index, value) {
         const valuesToCheck = (this.state.newValues === null) ? this.state.initialValues : this.state.newValues ;
-        console.log('valuesToCheck', valuesToCheck);
         let newValues = (JSON.parse(JSON.stringify(valuesToCheck)));;
-        newValues[index] = value;
-        console.log('newValues    ', newValues);
+
+        if (value === true) {
+            newValues[index] = 1;
+        } else if (value === false) {
+            newValues[index] = 0;
+        } else {
+           newValues[index] = value; 
+        }
 
         let changesMade = false;
         _.each(newValues, (value, i) => {
@@ -26,10 +47,7 @@ const VideoAdvancedComponent = React.createClass({
             }
         });
 
-        console.log('changesMade', changesMade);
-
         this.props.onChange(changesMade);
-
         this.setState({ newValues: newValues });
     },
 
@@ -74,7 +92,9 @@ const VideoAdvancedComponent = React.createClass({
         ];
 
         const renderOptions = _.map(optionValues, (option, index) => {
-            optionValues[index].value = this.state.initialValues[index];
+            optionValues[index].value = (this.state.newValues) 
+                ? this.state.newValues[index]
+                : this.state.initialValues[index];
             const v = optionValues[index];
 
             if (v.type === 'select') {

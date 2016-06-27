@@ -175,13 +175,13 @@ body {
 }
 /* line 87, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .right-settings-holder {
-  width: 600px;
+  width: 739px;
   height: 100%;
 }
 /* line 90, ../sass/common/settings_holder.sass */
 .settings-holder-wrapper .right-settings-holder .blocks-holder {
   position: relative;
-  width: 600px;
+  width: 100%;
   height: calc(100% - 70px);
   overflow: hidden;
 }

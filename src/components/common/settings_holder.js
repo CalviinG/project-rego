@@ -52,6 +52,12 @@ const SettingsHolder = React.createClass({
         }
     },
 
+    _onEdit(type) {
+        if (this.props.changesMade === true) {
+            this.props.onEdit(type)
+        }
+    },
+
     render() {
         // Labels
         const labels = this._buildLabels(this.props.labels);
@@ -90,8 +96,8 @@ const SettingsHolder = React.createClass({
                         {blocks}
                     </div>
                     <div className='holder-action-buttons'>
-                        <FormButton disabled={!this.props.changesMade} label='Cancel' />
-                        <FormButton disabled={!this.props.changesMade} primary label='Save Changes' />
+                        <FormButton disabled={!this.props.changesMade} label='Cancel' onClick={this._onEdit.bind(this, 'cancel')} />
+                        <FormButton disabled={!this.props.changesMade} primary label='Save Changes' onClick={this._onEdit.bind(this, 'save')} />
                     </div>
                 </div>
             </div>

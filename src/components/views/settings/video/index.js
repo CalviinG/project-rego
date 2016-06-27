@@ -18,6 +18,10 @@ const VideoView = React.createClass({
         this.setState({ changesMade: value });
     },
 
+    _onEdit(type) {
+        this.refs.vac.updateValues(type);
+    },
+
     render() {
         const settingsLabels = [
             {
@@ -28,7 +32,7 @@ const VideoView = React.createClass({
             {
                 label: 'Advanced',
                 icon: 'fa-flash',
-                block: <VideoAdvancedComponent onChange={this._onChange} />,
+                block: <VideoAdvancedComponent ref='vac' onChange={this._onChange} />,
             },
             {
                 label: 'Misc.',
@@ -40,7 +44,7 @@ const VideoView = React.createClass({
         return (
             <div className='settings-video-view'>
                 <AnimationHolder>
-                    <SettingsHolder labels={settingsLabels} changesMade={this.state.changesMade} />
+                    <SettingsHolder labels={settingsLabels} changesMade={this.state.changesMade} onEdit={this._onEdit} />
                 </AnimationHolder>
             </div>
         );
