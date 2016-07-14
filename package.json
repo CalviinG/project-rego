@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "webpack --config webpack.production.config.js --progress --colors --profile"
+    "build": "webpack --config webpack.production.config.js --progress --colors --profile",
+    "dan": "cd build && mv bundle.js ../"
   },
   "repository": {
     "type": "git",
