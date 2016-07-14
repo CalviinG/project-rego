@@ -5,41 +5,57 @@
  */
 
 $formWidth: 240px
+$formDarkOverlay: rgba(black, .5)
+$formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
 
-%label-base
+$disabledBackgroundColor: $dark-1
+$disabledTextColor: $grey-700
+
+%icon-base
   font-size: 14px
   width: 20px
   height: 20px
   line-height: 20px
   text-align: center
 
+%form-component-base
+  @extend .clear-after
+  padding: 15px 20px
+  background-color: $mainColor
+  cursor: pointer
+
 .rui-form-base
   @extend .clear-after
   font-size: 18px
-  font-weight: 600
   line-height: 20px
+  color: white
 
   .form-left
     float: left
-    padding: 20px
+    font-weight: 400
+    padding: 15px 0
 
   .form-right
     float: right
+    width: $formWidth
+    font-weight: 700
 
   /* [Select] */
 
   .rui-form-select
     position: relative
-    width: $formWidth
     .select-label
-      @extend .clear-after
-      padding: 20px
-      cursor: pointer
+      @extend %form-component-base
+      &:hover
+        .label-icon
+          opacity: 1
       .label-text
         float: left
       .label-icon
-        @extend %label-base
+        @extend %icon-base
         float: right
+        opacity: .25
+        transition: $formTransition
     .select-options
       position: absolute
       z-index: 2
@@ -48,19 +64,108 @@ $formWidth: 240px
       left: 0
       top: 0
       overflow: hidden
-      border-radius: 4px
-      background: linear-gradient($mainColorLight, $mainColor)
+      background-color: $mainColor
       /* Transition Properties */
       opacity: 0
       padding: 0
-      transition: opacity .15s ease
+      box-shadow: 0 0 0px 0px rgba(black, .0)
+      transition: $formTransition
       .option-button
-        padding: 10px 15px
+        padding: 10px 20px
+        color: $formDarkOverlay
         cursor: pointer
         &:hover
-          background-color: rgba(black, .25)
+          color: white
 
     &.options-is-showing
       .select-options
         padding: 5px 0
         opacity: 1
+        box-shadow: 0 0 24px 6px rgba(black, .5)
+
+  /* [Toggle] */
+
+  .rui-form-toggle
+    @extend %form-component-base
+    transition: $formTransition
+    .toggle-label
+      float: left
+    .toggle-animation
+      float: right
+      position: relative
+      width: 40px
+      height: 20px
+      .animation-circle
+        position: absolute
+        z-index: 1
+        top: 2px
+        left: calc(100% - 16px - 2px)
+        width: 16px
+        height: 16px
+        border-radius: 100%
+        background-color: $mainColorLight
+        transition: $formTransition
+      .animation-background
+        position: relative
+        width: 100%
+        height: 100%
+        border-radius: 10px
+        background-color: $formDarkOverlay
+
+    &.is-disabled
+      background-color: $disabledBackgroundColor
+      .toggle-label
+        color: $disabledTextColor
+      .animation-circle
+        left: 2px
+        background-color: $grey-800
+
+    &:hover
+      .animation-circle
+        background-color: white
+
+/*
+ * Form Button
+ */
+
+.rui-form-button
+  padding: 10px 20px
+  cursor: pointer
+  border-radius: 2px
+  color: white
+  &,
+  .button-icon,
+  .button-label
+    display: inline-block
+    transition: all .1s ease
+  .button-icon
+    @extend %icon-base
+  .button-label
+    font-size: 14px
+    font-weight: 600
+    line-height: 20px
+
+  &.is-primary
+    background-color: rgba($c-green, .9)
+    &:hover
+      background-color: rgba($c-green, 1)
+    &:active
+      background-color: rgba($c-green, .8)
+  
+  &.is-secondary
+    background-color: rgba($grey-800, .9)
+    &:hover 
+      background-color: rgba($grey-800, 1)
+    &:active
+      background-color: rgba($grey-800, .8)
+
+  &.is-disabled
+    background-color: $disabledBackgroundColor
+    color: $disabledTextColor
+    cursor: default
+    &:hover
+      background-color: $disabledBackgroundColor
+      &:hover
+        .button-icon
+        .button-label
+          color: $disabledTextColor

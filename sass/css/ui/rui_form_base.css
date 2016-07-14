@@ -1,65 +1,24 @@
 /*
-Error: Undefined variable: "$mainColorLight".
-        on line 52 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass
+Error: Undefined variable: "$dark-1".
+        on line 11 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass
 
-47:       width: 100%
-48:       left: 0
-49:       top: 0
-50:       overflow: hidden
-51:       border-radius: 4px
-52:       background: linear-gradient($mainColorLight, $mainColor)
-53:       /* Transition Properties *\/
-54:       opacity: 0
-55:       padding: 0
-56:       transition: opacity .15s ease
-57:       .option-button
+6: 
+7: $formWidth: 240px
+8: $formDarkOverlay: rgba(black, .5)
+9: $formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
+10: 
+11: $disabledBackgroundColor: $dark-1
+12: $disabledTextColor: $grey-700
+13: 
+14: %icon-base
+15:   font-size: 14px
+16:   width: 20px
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass:52
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass:11
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:170:in `perform_arg'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `each'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `each_with_index'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `each'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `map'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `_perform'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:469:in `visit_variable'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
@@ -100,4 +59,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$mainColorLight\".\A         on line 52 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass\A \A 47:       width: 100%\A 48:       left: 0\A 49:       top: 0\A 50:       overflow: hidden\A 51:       border-radius: 4px\A 52:       background: linear-gradient($mainColorLight, $mainColor)\A 53:       /* Transition Properties */\A 54:       opacity: 0\A 55:       padding: 0\A 56:       transition: opacity .15s ease\A 57:       .option-button"; }
+  content: "Error: Undefined variable: \"$dark-1\".\A         on line 11 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/ui/rui_form_base.sass\A \A 6: \A 7: $formWidth: 240px\A 8: $formDarkOverlay: rgba(black, .5)\A 9: $formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )\A 10: \A 11: $disabledBackgroundColor: $dark-1\A 12: $disabledTextColor: $grey-700\A 13: \A 14: %icon-base\A 15:   font-size: 14px\A 16:   width: 20px"; }

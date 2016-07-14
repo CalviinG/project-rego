@@ -35,7 +35,7 @@ body {
 }
 
 /* line 22, ../sass/base.sass */
-.clear-after:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base:after, .rui-form-base .rui-form-select .select-label:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
+.clear-after:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
   content: "";
   display: block;
   clear: both;
@@ -48,6 +48,7 @@ body {
   width: 1200px;
   height: calc(100vh - 160px);
   margin: 0 auto;
+  padding: 40px 0;
 }
 
 /* Common */
@@ -59,17 +60,212 @@ body {
 .animation-holder {
   transition: all 0.25s ease;
   opacity: 0;
-  transform: translate(0%, 0%);
+  transform: translate(0%, -20px);
 }
 /* line 12, ../sass/common/animation_holder.sass */
 .animation-holder.enter-animation {
   opacity: 1;
-  transform: translate(0%, 20px);
+  transform: translate(0%, 0px);
 }
 /* line 16, ../sass/common/animation_holder.sass */
 .animation-holder.leave-animation {
   opacity: 0;
   transform: translate(20%, 20px);
+}
+
+/*
+ * Settings Holder Component
+ *
+ */
+/* line 9, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper {
+  position: relative;
+  height: calc(100vh - 160px - 80px);
+  color: white;
+}
+/* line 16, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .rui-form-base {
+  width: 100%;
+}
+/* line 18, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .rui-form-base:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+/* line 21, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels,
+.settings-holder-wrapper .middle-settings-divider,
+.settings-holder-wrapper .right-settings-holder {
+  position: relative;
+  float: left;
+  height: inherit;
+}
+/* line 29, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-button {
+  position: relative;
+  z-index: 2;
+  height: 60px;
+  width: 260px;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+}
+/* line 38, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-button .button-icon,
+.settings-holder-wrapper .left-settings-labels .label-button .button-label {
+  float: left;
+}
+/* line 41, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-button .button-icon {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-right: 15px;
+  opacity: 0;
+}
+/* line 49, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-button .button-icon .label-icon {
+  opacity: 0;
+  transform: scale(0.25);
+  transition: all 0.175s cubic-bezier(0.1, 1.8, 0.4, 1);
+  transition-delay: 0.25s;
+}
+/* line 54, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-button .button-label {
+  font-size: 30px;
+  font-weight: 300;
+  opacity: 0.65;
+  line-height: 40px;
+  transition: opacity 0.115s ease;
+}
+/* line 60, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-button .button-label:hover {
+  opacity: 1;
+}
+/* line 64, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-button.is-selected .button-icon {
+  opacity: 1;
+}
+/* line 66, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-button.is-selected .button-icon .label-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+/* line 69, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-button.is-selected .button-label {
+  opacity: 1;
+}
+/* line 72, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .left-settings-labels .label-highlighter {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 260px;
+  background-color: #0091EA;
+  transition: all 0.25s cubic-bezier(0.1, 1.4, 0.2, 1);
+}
+/* line 82, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .middle-settings-divider {
+  width: 1px;
+  margin: 0 100px;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+}
+/* line 87, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder {
+  width: 739px;
+  height: 100%;
+}
+/* line 90, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .blocks-holder {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 70px);
+  overflow: hidden;
+}
+/* line 95, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .blocks-holder .holder-block {
+  position: absolute;
+  height: 100%;
+  width: inherit;
+  opacity: 0;
+  transition: opacity 0.425s cubic-bezier(0.1, 1.2, 0.2, 1) 0.075s, transform 0.5s cubic-bezier(0.1, 1.2, 0.2, 1);
+}
+/* line 101, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .blocks-holder .holder-block.is-active {
+  opacity: 1;
+}
+/* line 103, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .holder-action-buttons {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: right;
+}
+/* line 110, ../sass/common/settings_holder.sass */
+.settings-holder-wrapper .right-settings-holder .holder-action-buttons .rui-form-button:not(:first-of-type) {
+  margin-left: 10px;
+}
+
+/*
+ * Scroll Holder Component
+ *
+ */
+/* line 7, ../sass/common/scroll_holder.sass */
+.scroll-holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* line 13, ../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-content,
+.scroll-holder .scroll-indicator {
+  height: 100%;
+}
+/* line 17, ../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-content {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding-right: 13px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+/* line 24, ../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-content::-webkit-scrollbar {
+  display: none;
+}
+/* line 27, ../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-indicator {
+  position: absolute;
+  width: 8px;
+  right: 0;
+  top: 0;
+}
+/* line 33, ../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-indicator .indicator-bar,
+.scroll-holder .scroll-indicator .indicator-area {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-radius: 2px;
+}
+/* line 40, ../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-indicator .indicator-bar {
+  z-index: 2;
+  transform: translate(0px, 0px);
+  background-color: rgba(34, 39, 42, 0.85);
+}
+/* line 45, ../sass/common/scroll_holder.sass */
+.scroll-holder .scroll-indicator .indicator-area {
+  z-index: 1;
+  top: 0;
+  height: 100%;
+  background-color: rgba(25, 29, 31, 0.85);
 }
 
 /* Components */
@@ -371,18 +567,13 @@ body {
 }
 
 /*
- * Settings Advanced View
+ * Settings Video View
  *
  */
-/* line 7, ../sass/views/settings_advanced_view.sass */
-.settings-advanced-view {
-  margin-top: 100px;
-  color: white;
-  max-width: 800px;
-}
-/* line 12, ../sass/views/settings_advanced_view.sass */
-.settings-advanced-view .rui-form-base {
-  margin-bottom: 10px;
+/* line 7, ../sass/views/settings_video_view.sass */
+.settings-video-view {
+  position: relative;
+  height: 100%;
 }
 
 /* Rui */
@@ -390,8 +581,8 @@ body {
  * Rui Form Base
  *
  */
-/* line 9, ../sass/ui/rui_form_base.sass */
-.rui-form-base .rui-form-select .select-label .label-icon {
+/* line 14, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-label .label-icon, .rui-form-button .button-icon {
   font-size: 14px;
   width: 20px;
   height: 20px;
@@ -399,41 +590,52 @@ body {
   text-align: center;
 }
 
-/* line 16, ../sass/ui/rui_form_base.sass */
-.rui-form-base {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 20px;
-  /* [Select] */
-}
-/* line 22, ../sass/ui/rui_form_base.sass */
-.rui-form-base .form-left {
-  float: left;
-  padding: 20px;
-}
-/* line 26, ../sass/ui/rui_form_base.sass */
-.rui-form-base .form-right {
-  float: right;
-}
-/* line 31, ../sass/ui/rui_form_base.sass */
-.rui-form-base .rui-form-select {
-  position: relative;
-  width: 240px;
-}
-/* line 34, ../sass/ui/rui_form_base.sass */
-.rui-form-base .rui-form-select .select-label {
-  padding: 20px;
+/* line 21, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-label, .rui-form-base .rui-form-toggle {
+  padding: 15px 20px;
+  background-color: #0091EA;
   cursor: pointer;
 }
+
+/* line 27, ../sass/ui/rui_form_base.sass */
+.rui-form-base {
+  font-size: 18px;
+  line-height: 20px;
+  color: white;
+  /* [Select] */
+  /* [Toggle] */
+}
+/* line 33, ../sass/ui/rui_form_base.sass */
+.rui-form-base .form-left {
+  float: left;
+  font-weight: 400;
+  padding: 15px 0;
+}
 /* line 38, ../sass/ui/rui_form_base.sass */
+.rui-form-base .form-right {
+  float: right;
+  width: 240px;
+  font-weight: 700;
+}
+/* line 45, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select {
+  position: relative;
+}
+/* line 50, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-select .select-label:hover .label-icon {
+  opacity: 1;
+}
+/* line 52, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-text {
   float: left;
 }
-/* line 40, ../sass/ui/rui_form_base.sass */
+/* line 54, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-icon {
   float: right;
+  opacity: 0.25;
+  transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 43, ../sass/ui/rui_form_base.sass */
+/* line 59, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options {
   position: absolute;
   z-index: 2;
@@ -442,26 +644,141 @@ body {
   left: 0;
   top: 0;
   overflow: hidden;
-  border-radius: 4px;
-  background: linear-gradient(#00B0FF, #0091EA);
+  background-color: #0091EA;
   /* Transition Properties */
   opacity: 0;
   padding: 0;
-  transition: opacity 0.15s ease;
+  box-shadow: 0 0 0px 0px transparent;
+  transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 57, ../sass/ui/rui_form_base.sass */
+/* line 73, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options .option-button {
-  padding: 10px 15px;
+  padding: 10px 20px;
+  color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-/* line 60, ../sass/ui/rui_form_base.sass */
+/* line 77, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options .option-button:hover {
-  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
 }
-/* line 64, ../sass/ui/rui_form_base.sass */
+/* line 81, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select.options-is-showing .select-options {
   padding: 5px 0;
   opacity: 1;
+  box-shadow: 0 0 24px 6px rgba(0, 0, 0, 0.5);
+}
+/* line 88, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle {
+  transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
+}
+/* line 91, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle .toggle-label {
+  float: left;
+}
+/* line 93, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle .toggle-animation {
+  float: right;
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+/* line 98, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle .toggle-animation .animation-circle {
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  left: calc(100% - 16px - 2px);
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background-color: #00B0FF;
+  transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
+}
+/* line 108, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle .toggle-animation .animation-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 115, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle.is-disabled {
+  background-color: #22272A;
+}
+/* line 117, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle.is-disabled .toggle-label {
+  color: #616161;
+}
+/* line 119, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle.is-disabled .animation-circle {
+  left: 2px;
+  background-color: #424242;
+}
+/* line 124, ../sass/ui/rui_form_base.sass */
+.rui-form-base .rui-form-toggle:hover .animation-circle {
+  background-color: white;
+}
+
+/* Form Button
+ */
+/* line 131, ../sass/ui/rui_form_base.sass */
+.rui-form-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 2px;
+  color: white;
+}
+/* line 136, ../sass/ui/rui_form_base.sass */
+.rui-form-button,
+.rui-form-button .button-icon,
+.rui-form-button .button-label {
+  display: inline-block;
+  transition: all 0.1s ease;
+}
+/* line 143, ../sass/ui/rui_form_base.sass */
+.rui-form-button .button-label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+/* line 148, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-primary {
+  background-color: rgba(76, 175, 80, 0.9);
+}
+/* line 150, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-primary:hover {
+  background-color: #4caf50;
+}
+/* line 152, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-primary:active {
+  background-color: rgba(76, 175, 80, 0.8);
+}
+/* line 155, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-secondary {
+  background-color: rgba(66, 66, 66, 0.9);
+}
+/* line 157, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-secondary:hover {
+  background-color: #424242;
+}
+/* line 159, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-secondary:active {
+  background-color: rgba(66, 66, 66, 0.8);
+}
+/* line 162, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-disabled {
+  background-color: #22272A;
+  color: #616161;
+  cursor: default;
+}
+/* line 166, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-disabled:hover {
+  background-color: #22272A;
+}
+/* line 170, ../sass/ui/rui_form_base.sass */
+.rui-form-button.is-disabled:hover:hover .button-label {
+  color: #616161;
 }
 
 /*

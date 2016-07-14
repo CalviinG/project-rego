@@ -1,0 +1,9 @@
+/*
+ * Settings Video View
+ *
+ */
+/* line 7, ../../sass/views/settings_video_view.sass */
+.settings-video-view {
+  position: relative;
+  height: 100%;
+}

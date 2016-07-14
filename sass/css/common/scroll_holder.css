@@ -1,22 +1,43 @@
 /*
-Error: Undefined variable: "$appWidth".
-        on line 31 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass
+Error: Undefined variable: "$dark-1".
+        on line 43 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/common/scroll_holder.sass
 
-26: 
-27: .app-wrapper
-28:   .content
-29:     position: relative
-30:     z-index: 1
-31:     width: $appWidth
-32:     height: calc(100vh - #{$navigationHeight})
-33:     margin: 0 auto
-34:     padding: 40px 0
+38:       border-radius: 2px
+39: 
+40:     .indicator-bar
+41:       z-index: 2
+42:       transform: translate(0px, 0px)
+43:       background-color: rgba($dark-1, .85)
+44: 
+45:     .indicator-area
+46:       z-index: 1
+47:       top: 0
+48:       height: 100%
 
 Backtrace:
-/Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass:31
+/Users/DanBilprospekt/workspace/project-rego/sass/sass/common/scroll_holder.sass:43
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:170:in `perform_arg'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `each'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `each_with_index'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `each'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `map'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/funcall.rb:124:in `_perform'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `map'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Users/DanBilprospekt/.rvm/gems/ruby-2.2.3/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
@@ -79,4 +100,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$appWidth\".\A         on line 31 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/base.sass\A \A 26: \A 27: .app-wrapper\A 28:   .content\A 29:     position: relative\A 30:     z-index: 1\A 31:     width: $appWidth\A 32:     height: calc(100vh - #{$navigationHeight})\A 33:     margin: 0 auto\A 34:     padding: 40px 0"; }
+  content: "Error: Undefined variable: \"$dark-1\".\A         on line 43 of /Users/DanBilprospekt/workspace/project-rego/sass/sass/common/scroll_holder.sass\A \A 38:       border-radius: 2px\A 39: \A 40:     .indicator-bar\A 41:       z-index: 2\A 42:       transform: translate(0px, 0px)\A 43:       background-color: rgba($dark-1, .85)\A 44: \A 45:     .indicator-area\A 46:       z-index: 1\A 47:       top: 0\A 48:       height: 100%"; }

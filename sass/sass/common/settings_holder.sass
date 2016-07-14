@@ -1,0 +1,113 @@
+/*
+ *
+ * Settings Holder Component
+ *
+ */
+
+$settingsHolderTransitionSpeed: .25s
+
+.settings-holder-wrapper
+  @extend .clear-after
+  position: relative
+  height: calc(100vh - #{$navigationHeight} - 80px)
+
+  color: white
+
+  .rui-form-base
+    width: 100%
+    &:not(:last-of-type)
+      margin-bottom: 10px
+
+  .left-settings-labels,
+  .middle-settings-divider,
+  .right-settings-holder
+    position: relative
+    float: left
+    height: inherit
+
+  .left-settings-labels
+    .label-button
+      @extend .clear-after
+      position: relative
+      z-index: 2
+      height: 60px
+      width: 260px
+      padding: 10px 15px
+      color: white
+      cursor: pointer
+      .button-icon,
+      .button-label
+        float: left
+      .button-icon
+        font-size: 20px
+        width: 40px
+        height: 40px
+        line-height: 40px
+        text-align: center
+        margin-right: 15px
+        opacity: 0
+        .label-icon
+          opacity: 0
+          transform: scale(.25)
+          transition: all .175s cubic-bezier( 0.1 , 1.8 , 0.4 , 1.0 )
+          transition-delay: $settingsHolderTransitionSpeed
+      .button-label
+        font-size: 30px
+        font-weight: 300
+        opacity: .65
+        line-height: 40px
+        transition: opacity .115s ease
+        &:hover
+          opacity: 1
+
+      &.is-selected
+        .button-icon
+          opacity: 1
+          .label-icon
+            opacity: 1
+            transform: scale(1)
+        .button-label
+          opacity: 1
+
+    .label-highlighter
+      position: absolute
+      z-index: 1
+      top: 0
+      left: 0
+      height: 60px
+      width: 260px
+      background-color: $mainColor
+      transition: all $settingsHolderTransitionSpeed cubic-bezier( 0.1 , 1.4 , 0.2 , 1.0 )
+
+  .middle-settings-divider
+    width: 1px
+    margin: 0 100px
+    background: linear-gradient(rgba(white, .2), rgba(white, .0))
+
+  .right-settings-holder
+    width: 739px
+    height: 100%
+    .blocks-holder
+      position: relative
+      width: 100%
+      height: calc(100% - 70px)
+      overflow: hidden
+      .holder-block
+        position: absolute
+        height: 100%
+        width: inherit
+        opacity: 0
+        transition: opacity .425s cubic-bezier( 0.1 , 1.2 , 0.2 , 1.0 ) .075s, transform .5s cubic-bezier( 0.1 , 1.2 , 0.2 , 1.0 )
+        &.is-active
+          opacity: 1
+    .holder-action-buttons
+      position: absolute
+      width: 100%
+      bottom: 0
+      left: 0
+      text-align: right
+      .rui-form-button
+        &:not(:first-of-type)
+          margin-left: 10px
+
+

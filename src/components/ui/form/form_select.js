@@ -16,19 +16,30 @@ const FormSelect = React.createClass({
         return {
             showOptions: false,
             selectedOptionIndex: this.props.selectedOption,
-            selectedOptionLabel: null,
+            selectedOptionLabel: this.props.options[0],
         };
     },
 
     getDefaultProps() {
         return {
-            selectedOption: 0,
+            selectedOption: null,
         };
+    },
+
+    componentWillReceiveProps(newProps) {
+        this.setState({
+            selectedOptionIndex: newProps.selectedOption,
+            selectedOptionLabel: this.props.options[newProps.selectedOption],
+        });
     },
 
     _selectOption(index) {
         const $options = $(this.refs.optionsRef);
         $options.css({ height: 0 });
+
+        if (typeof this.props.onChange === 'function') {
+            this.props.onChange(index);
+        }
 
         this.setState({
             showOptions: false,
@@ -48,9 +59,9 @@ const FormSelect = React.createClass({
     },
 
     render() {
-        const label = (this.state.selectedOptionLabel)
-            ? this.state.selectedOptionLabel
-            : this.props.options[0] ;
+        const label = (this.props.selectedOption)
+            ? this.props.options[this.props.selectedOption]
+            : this.state.selectedOptionLabel ;
 
         const options = _.map(this.props.options, (option, index) => {
             return (

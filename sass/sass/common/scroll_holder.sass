@@ -1,0 +1,49 @@
+/*
+ *
+ * Scroll Holder Component
+ *
+ */
+
+.scroll-holder
+  position: relative
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+  .scroll-content,
+  .scroll-indicator
+    height: 100%
+
+  .scroll-content
+    position: absolute
+    left: 0
+    width: 100%
+    padding-right: 13px
+    overflow-x: hidden
+    overflow-y: scroll
+    &::-webkit-scrollbar
+      display: none
+
+  .scroll-indicator
+    position: absolute
+    width: 8px
+    right: 0
+    top: 0
+
+    .indicator-bar,
+    .indicator-area
+      position: absolute
+      left: 0
+      width: 100%
+      border-radius: 2px
+
+    .indicator-bar
+      z-index: 2
+      transform: translate(0px, 0px)
+      background-color: rgba($dark-1, .85)
+
+    .indicator-area
+      z-index: 1
+      top: 0
+      height: 100%
+      background-color: rgba($dark-2, .85)

@@ -132,9 +132,9 @@ const App = React.createClass({
             ],
             [
                 'Settings',
-                'In-game',
+                'In-Game',
+                'Controls',
                 'Video',
-                'Advanced',
             ],
         ];
 
