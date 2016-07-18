@@ -3,7 +3,7 @@ project-rego
 
 Project REGO is just a project for fun.
 
-Based on [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate)
+Watch my progress at: http://calviing.github.io/project-rego/
 
 ### Usage
 
