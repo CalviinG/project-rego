@@ -1,7 +1,6 @@
 import React from 'react';
 
 // Components
-import VideoScreenComponent   from './video_screen_component.js';
 import VideoAdvancedComponent from './video_advanced_component.js';
 
 // Common Components
@@ -14,13 +13,12 @@ const VideoView = React.createClass({
             changesMade: false,
         };
     },
-    
+
     _onChange(value) {
         this.setState({ changesMade: value });
     },
 
     _onEdit(type) {
-        this.refs.vsc.updateValues(type);
         this.refs.vac.updateValues(type);
     },
 
@@ -29,7 +27,7 @@ const VideoView = React.createClass({
             {
                 label: 'Screen',
                 icon: 'fa-desktop',
-                block: <VideoScreenComponent ref='vsc' onChange={this._onChange} />, 
+                block: <p>Screen</p>,
             },
             {
                 label: 'Advanced',
