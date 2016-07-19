@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Components
-import VideoAdvancedComponent from './video_advanced_component.js';
+import SettingsComponent from '../settings_component.js';
 
 // Common Components
 import AnimationHolder from '../../../common/animation_holder.js';
@@ -14,12 +14,15 @@ const VideoView = React.createClass({
         };
     },
 
+    // This function runs when a value is changed in SettingsComponent
     _onChange(value) {
         this.setState({ changesMade: value });
     },
 
+    // This function runs when you press 'Cancel' or 'Save Changes'
     _onEdit(type) {
-        this.refs.vac.updateValues(type);
+        this.refs.screen.updateValues(type);
+        this.refs.advanced.updateValues(type);
     },
 
     render() {
@@ -27,17 +30,17 @@ const VideoView = React.createClass({
             {
                 label: 'Screen',
                 icon: 'fa-desktop',
-                block: <p>Screen</p>,
+                block: <SettingsComponent ref='screen' view='screen' onChange={this._onChange} />,
             },
             {
                 label: 'Advanced',
                 icon: 'fa-flash',
-                block: <VideoAdvancedComponent ref='vac' onChange={this._onChange} />,
+                block: <SettingsComponent ref='advanced' view='advanced' onChange={this._onChange} />,
             },
             {
                 label: 'Misc.',
                 icon: 'fa-gears',
-                block: <p>Misc.</p>,
+                block: <SettingsComponent view='misc' />,
             },
         ];
 
