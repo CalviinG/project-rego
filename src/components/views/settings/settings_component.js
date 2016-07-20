@@ -2,9 +2,7 @@ import React from 'react';
 import _     from 'underscore';
 
 // Rui
-import {FormSelect, FormToggle} from '../../ui';
-
-const array = ['a', 'b', 'c', 'd'];
+import {FormSelect, FormSlider, FormToggle} from '../../ui';
 
 // Setting Values
 const settingsValues = {
@@ -92,7 +90,7 @@ const settingsData = {
     // - Starting values for each setting
     'initialValues': {
         // Video Settings
-        'screen':   [1,4,3,1],
+        'screen':   [0,1,4,3,1],
         'advanced': [3,0,0,3,1,0,0,0,1,0],
         'misc':     [0],
     },
@@ -104,13 +102,21 @@ const settingsData = {
         'screen': [
             {
                 key: 0,
+                label: 'Brightness',
+                type: 'slider',
+                options: null,
+                listensTo: false,
+
+            },
+            {
+                key: 1,
                 label: 'Aspect Ratio',
                 type: 'select',
                 options: settingsValues.aspectRatioOptions,
                 listensTo: false,
             },
             {
-                key: 1,
+                key: 2,
                 label: 'Resolution',
                 type: 'select',
                 options: settingsValues.resolutionOptions[1],
@@ -120,14 +126,14 @@ const settingsData = {
                 },
             },
             {
-                key: 2,
+                key: 3,
                 label: 'Refresh Rate',
                 type: 'select',
                 options: settingsValues.refreshRateOptions,
                 listensTo: false,
             },
             {
-                key: 3,
+                key: 4,
                 label: 'Display Mode',
                 type: 'select',
                 options: settingsValues.displayModeOptions,
@@ -167,7 +173,7 @@ const settingsData = {
                 key: 4,
                 label: 'Multicore Rendering',
                 type: 'toggle',
-                options: array,
+                options: null,
                 listensTo: false,
             },
             {
@@ -188,7 +194,7 @@ const settingsData = {
                 key: 7,
                 label: 'FXAA Anti-Aliasing',
                 type: 'toggle',
-                options: array,
+                options: null,
                 listensTo: false,
             },
             {
@@ -202,7 +208,7 @@ const settingsData = {
                 key: 9,
                 label: 'Motion Blur',
                 type: 'toggle',
-                options: array,
+                options: null,
                 listensTo: false,
             },
         ],
@@ -314,6 +320,8 @@ const VideoSettingsComponent = React.createClass({
             } else if (setting.type === 'toggle') {
                 const enabled = (value === 0) ? false : true ;
                 return <FormToggle {...settingProps} enabled={enabled} />
+            } else if (setting.type === 'slider') {
+                return <FormSlider {...settingProps} />
             }
         });
 
