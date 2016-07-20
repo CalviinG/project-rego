@@ -23,6 +23,7 @@ const VideoView = React.createClass({
     _onEdit(type) {
         this.refs.screen.updateValues(type);
         this.refs.advanced.updateValues(type);
+        this.refs.misc.updateValues(type);
     },
 
     render() {
@@ -40,7 +41,7 @@ const VideoView = React.createClass({
             {
                 label: 'Misc.',
                 icon: 'fa-gears',
-                block: <SettingsComponent view='misc' />,
+                block: <SettingsComponent ref='misc' view='misc' onChange={this._onChange} />,
             },
         ];
 

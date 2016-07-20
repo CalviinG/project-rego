@@ -17,28 +17,40 @@ const settingsValues = {
     ],
     resolutionOptions: [
         [
-            '680x480',
-            '720x576',
-            '800x600',
-            '1024x768',
-            '1152x864',
-            '1280x960',
-            '1280x1024',
+            '680 x 480',
+            '720 x 576',
+            '800 x 600',
+            '1024 x 768',
+            '1152 x 864',
+            '1280 x 960',
+            '1280 x 1024',
         ],
         [
-            '1280x720',
-            '1360x768',
-            '1366x768',
-            '1600x900',
-            '1920x1080',
+            '1280 x 720',
+            '1360 x 768',
+            '1366 x 768',
+            '1600 x 900',
+            '1920 x 1080',
         ],
         [
-            '720x480',
-            '1280x768',
-            '1280x800',
-            '1600x1024',
-            '1680x1050',
+            '720 x 480',
+            '1280 x 768',
+            '1280 x 800',
+            '1600 x 1024',
+            '1680 x 1050',
         ],
+    ],
+    refreshRateOptions: [
+        '60 Hz',
+        '75 Hz',
+        '100 Hz',
+        '120 Hz',
+        '144 Hz',
+    ],
+    displayModeOptions: [
+        'Windowed',
+        'Fullscreen',
+        'Windowed Fullscreen',
     ],
     // Advanced
     qualityOptions: [
@@ -66,6 +78,12 @@ const settingsValues = {
         'Dubbled Buffered',
         'Tripple Buffered',
     ],
+    // Misc.
+    laptopPowerSavingsOptions: [
+        'Off',
+        'Half',
+        'Full',
+    ],
 };
 
 // Global Settings Data
@@ -74,9 +92,9 @@ const settingsData = {
     // - Starting values for each setting
     'initialValues': {
         // Video Settings
-        'screen': [1,4],
+        'screen':   [1,4,3,1],
         'advanced': [3,0,0,3,1,0,0,0,1,0],
-        'misc': [],
+        'misc':     [0],
     },
 
     // Build Values
@@ -100,6 +118,20 @@ const settingsData = {
                     name: 'Aspect Ratio',
                     type: 'change',
                 },
+            },
+            {
+                key: 2,
+                label: 'Refresh Rate',
+                type: 'select',
+                options: settingsValues.refreshRateOptions,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'Display Mode',
+                type: 'select',
+                options: settingsValues.displayModeOptions,
+                listensTo: false,
             },
         ],
         'advanced': [
@@ -175,7 +207,13 @@ const settingsData = {
             },
         ],
         'misc': [
-
+            {
+                key: 0,
+                label: 'Laptop Power Savings',
+                type: 'select',
+                options: settingsValues.laptopPowerSavingsOptions,
+                listensTo: false,
+            }
         ],
     },
 };
@@ -264,7 +302,7 @@ const VideoSettingsComponent = React.createClass({
                         }
                     });
                 } else if (setting.listensTo.type === '') {
-                    
+
                 }
             } else {
                 options = setting.options
