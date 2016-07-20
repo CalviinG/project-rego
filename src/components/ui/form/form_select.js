@@ -1,4 +1,5 @@
 import React      from 'react';
+import ReactDOM   from 'react-dom';
 import _          from 'underscore';
 import $          from 'jquery';
 import classNames from 'classnames';
@@ -37,6 +38,26 @@ const FormSelect = React.createClass({
         });
     },
 
+    componentWillUnmount() {
+        window.removeEventListener('mousedown', this._checkClick);
+    },
+
+    _onMouseDown() {
+        this.mouseIsDownOnComponent = true;
+    },
+
+    _onMouseUp() {
+        this.mouseIsDownOnComponent = false;
+    },
+
+    _checkClick(event) {
+        if (this.mouseIsDownOnComponent) {
+            return;
+        }
+
+        this._selectOption(this.state.selectedOptionIndex);
+    },
+
     _selectOption(index) {
         const $options = $(this.refs.optionsRef);
         $options.css({ height: 0 });
@@ -59,6 +80,8 @@ const FormSelect = React.createClass({
             height: (this.props.options.length * 40) + 10, // 10 is parent padding
         });
 
+        window.addEventListener('mousedown', this._checkClick);
+
         this.setState({ showOptions: true });
     },
 
@@ -79,7 +102,7 @@ const FormSelect = React.createClass({
 
         return (
             <FormBase label={this.props.label}>
-                <div className={parentClass}>
+                <div className={parentClass} onMouseDown={this._onMouseDown} onMouseUp={this._onMouseUp}>
                     <div className='select-label' onClick={this._showOptions}>
                         <p className='label-text'>{label}</p>
                         <i className='label-icon fa fa-chevron-down' />

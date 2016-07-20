@@ -16,19 +16,25 @@ const RuiSelect = React.createClass({
 		};
 	},
 
-	componentDidUpdate() {
-		window.addEventListener('click', this._checkClick);
+	componentWillUnmount() {
+        window.removeEventListener('mousedown', this._checkClick);
+    },
+
+	_onMouseDown() {
+		this.mouseIsDownOnComponent = true;
 	},
 
-	componentWillUnmount() {
-        window.removeEventListener('click', this._checkClick);
-    },
+	_onMouseUp() {
+		this.mouseIsDownOnComponent = false;
+	},
 
 	_toggleDropdown() {
 		const $oH = $(this.refs.optionsHolder);
 		if (!this.state.showOptions) {
+			window.addEventListener('mousedown', this._checkClick);
 			$oH.css({ 'height': $oH.children().length * 35 });
 		} else {
+			window.removeEventListener('mousedown', this._checkClick);
 			$oH.css({ 'height': 0 });
 		}
 		this.setState({ showOptions: !this.state.showOptions });
@@ -41,7 +47,7 @@ const RuiSelect = React.createClass({
 				this.props.onChange(option);
 			}
 
-			this.setState({ 
+			this.setState({
 				selectedOption: option,
 				seleclectionMade: (option != this.props.options[0]) ? true : false,
 			});
@@ -49,13 +55,19 @@ const RuiSelect = React.createClass({
 	},
 
 	_checkClick(e) {
-		const $target = $(e.target);
+		// const $target = $(e.target);
+		//
+		// if (this.state.showOptions) {
+		// 	if (!($target.parents().is('.rui-select-wrapper'))) {
+		// 		this._toggleDropdown();
+		// 	}
+		// }
 
-		if (this.state.showOptions) {
-			if (!($target.parents().is('.rui-select-wrapper'))) {
-				this._toggleDropdown();
-			}
-		}
+		if (this.mouseIsDownOnComponent) {
+            return;
+        }
+
+		this._toggleDropdown();
 	},
 
 	render() {
@@ -75,12 +87,12 @@ const RuiSelect = React.createClass({
 			return (
 				<div className='dropdown-option' key={index} onClick={this._changeOption.bind(this, option)}>
 					<p className='option-label'>{option}</p>
-				</div> 
+				</div>
 			);
 		});
 
 		return (
-			<div className={parentClass}>
+			<div className={parentClass} onMouseDown={this._onMouseDown} onMouseUp={this._onMouseUp}>
 				<div className='select-button-holder' onClick={this._toggleDropdown}>
 					<div className='button-icon'><i className={'select-type-icon fa ' + this.props.icon} /></div>
 					<div className='button-label'>{this.state.selectedOption}</div>
