@@ -22,7 +22,6 @@ $disabledTextColor: $grey-700
   @extend .clear-after
   padding: 15px 20px
   background-color: $mainColor
-  cursor: pointer
 
 .rui-form-base
   @extend .clear-after
@@ -46,6 +45,7 @@ $disabledTextColor: $grey-700
     position: relative
     .select-label
       @extend %form-component-base
+      cursor: pointer
       &:hover
         .label-icon
           opacity: 1
@@ -87,6 +87,7 @@ $disabledTextColor: $grey-700
 
   .rui-form-toggle
     @extend %form-component-base
+    cursor: pointer
     transition: $formTransition
     .toggle-label
       float: left
@@ -123,6 +124,58 @@ $disabledTextColor: $grey-700
     &:hover
       .animation-circle
         background-color: white
+
+  /* [Slider] */
+
+  .rui-form-slider
+    @extend %form-component-base
+    position: relative
+    .slider-holder
+      .slider-icon,
+      .slider-value,
+      .slider-range
+        float: left
+      .slider-icon
+        @extend %icon-base
+        opacity: .25
+        cursor: pointer
+        transition: $formTransition
+        &:hover
+          opacity: 1
+      .slider-value
+        width: 52px
+        text-align: right
+      .slider-range
+        -webkit-appearance: none
+        width: calc(100% - 96px)
+        height: 8px
+        margin: 6px 2px
+        border-radius: 4px
+        cursor: pointer
+        background-color: $formDarkOverlay
+        transition: $formTransition
+        &:hover
+          background-color: rgba(black, .35)
+        &:focus
+          outline: none
+        &::-webkit-slider-thumb
+          -webkit-appearance: none
+          background-color: white
+          height: 16px
+          width: 16px
+          border-radius: 100%
+        &::-moz-range-thumb
+          -webkit-appearance: none
+          background-color: white
+          height: 16px
+          width: 16px
+          border-radius: 100%
+        &::-ms-thumb
+          -webkit-appearance: none
+          background-color: white
+          height: 16px
+          width: 16px
+          border-radius: 100%
 
 /*
  * Form Button

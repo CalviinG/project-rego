@@ -8,6 +8,13 @@ import {FormSelect, FormSlider, FormToggle} from '../../ui';
 const settingsValues = {
     // Video Settings
     // Screen
+    brightnessOptions: {
+        value: 1.6,
+        min: 1.6,
+        max: 2.6,
+        interval: 0.1,
+        decimals: 1,
+    },
     aspectRatioOptions: [
         'Normal 4:3',
         'Widescreen 16:9',
@@ -104,9 +111,8 @@ const settingsData = {
                 key: 0,
                 label: 'Brightness',
                 type: 'slider',
-                options: null,
+                options: settingsValues.brightnessOptions,
                 listensTo: false,
-
             },
             {
                 key: 1,
@@ -321,7 +327,7 @@ const VideoSettingsComponent = React.createClass({
                 const enabled = (value === 0) ? false : true ;
                 return <FormToggle {...settingProps} enabled={enabled} />
             } else if (setting.type === 'slider') {
-                return <FormSlider {...settingProps} />
+                return <FormSlider {...settingProps} {...options} />
             }
         });
 
