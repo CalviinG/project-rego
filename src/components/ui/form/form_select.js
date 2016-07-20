@@ -27,9 +27,13 @@ const FormSelect = React.createClass({
     },
 
     componentWillReceiveProps(newProps) {
+        const selectValue = (newProps.selectedOption > newProps.options.length)
+            ? newProps.options.length - 1
+            : newProps.selectedOption ;
+
         this.setState({
-            selectedOptionIndex: newProps.selectedOption,
-            selectedOptionLabel: this.props.options[newProps.selectedOption],
+            selectedOptionIndex: selectValue,
+            selectedOptionLabel: this.props.options[selectValue],
         });
     },
 
@@ -51,7 +55,7 @@ const FormSelect = React.createClass({
     _showOptions() {
         const $options = $(this.refs.optionsRef);
 
-        $options.css({ 
+        $options.css({
             height: (this.props.options.length * 40) + 10, // 10 is parent padding
         });
 
@@ -60,7 +64,7 @@ const FormSelect = React.createClass({
 
     render() {
         const label = (this.props.selectedOption)
-            ? this.props.options[this.props.selectedOption]
+            ? this.props.options[this.state.selectedOptionIndex]
             : this.state.selectedOptionLabel ;
 
         const options = _.map(this.props.options, (option, index) => {
