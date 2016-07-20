@@ -96,7 +96,10 @@ const settingsData = {
                 label: 'Resolution',
                 type: 'select',
                 options: settingsValues.resolutionOptions[1],
-                listensTo: 'Aspect Ratio',
+                listensTo: {
+                    name: 'Aspect Ratio',
+                    type: 'change',
+                },
             },
         ],
         'advanced': [
@@ -251,14 +254,18 @@ const VideoSettingsComponent = React.createClass({
             // Checks if one setting responds to another
             let options;
             if (setting.listensTo !== false) {
-                _.each(settingsData.buildValues[view], (matchingSetting, i) => {
-                    if (matchingSetting.label === setting.listensTo) {
-                        const objValue = (this.state.newValues !== null)
-                            ? this.state.newValues[i]
-                            : this.state.initialValues[i];
-                        options = settingsValues.resolutionOptions[objValue];
-                    }
-                });
+                if (setting.listensTo.type === 'change') {
+                    _.each(settingsData.buildValues[view], (matchingSetting, i) => {
+                        if (matchingSetting.label === setting.listensTo.name) {
+                            const objValue = (this.state.newValues !== null)
+                                ? this.state.newValues[i]
+                                : this.state.initialValues[i];
+                            options = settingsValues.resolutionOptions[objValue];
+                        }
+                    });
+                } else if (setting.listensTo.type === '') {
+                    
+                }
             } else {
                 options = setting.options
             }
