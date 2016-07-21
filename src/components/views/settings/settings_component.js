@@ -6,7 +6,25 @@ import {FormSelect, FormSlider, FormToggle} from '../../ui';
 
 // Setting Values
 const settingsValues = {
-    // Video Settings
+    //// In-Game Settings
+    //// Controls Settings
+    //// Audio Settings
+    // Sound
+    audioOptions: {
+        value: 0.65,
+        min: 0.00,
+        max: 1.00,
+        interval: 0.01,
+        decimals: 2,
+    },
+    speakerConfigurationOptions: [
+        'Headphones',
+        '2 Speakers',
+        '4 Speakers',
+        '5.1 Speakers',
+    ],
+    // Music
+    //// Video Settings
     // Screen
     brightnessOptions: {
         value: 1.6,
@@ -96,8 +114,13 @@ const settingsData = {
     // Initial Values
     // - Starting values for each setting
     'initialValues': {
+        // In-Game Settings
+        // Controls Settings
+        // Audio Settings
+        'sound': [0.65,0.55,0,0.28,1,0],
+        'music': [0.52,0.26,0.41,0.70,0.22,0.61,0.45,0.25],
         // Video Settings
-        'screen':   [0,1,4,3,1],
+        'screen':   [1.6,1,4,3,1],
         'advanced': [3,0,0,3,1,0,0,0,1,0],
         'misc':     [0],
     },
@@ -105,6 +128,111 @@ const settingsData = {
     // Build Values
     // - Data for building the settings
     'buildValues': {
+        // In-Game Settings
+        // Controls Settings
+        // Audio Settings
+        'sound': [
+            {
+                key: 0,
+                label: 'Master Volume',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'GOTV Caster Volume',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 2,
+                label: 'Speaker Configuration',
+                type: 'select',
+                options: settingsValues.speakerConfigurationOptions,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'VOIP Volume',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 4,
+                label: 'Enable Voice In-Game',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 4,
+                label: 'Play Audio When Game In Background',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+        ],
+        'music': [
+            {
+                key: 0,
+                label: 'Master Music Volume',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'Main Menu Volume',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 2,
+                label: 'Round Start Volume',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'Round End Volume',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 4,
+                label: 'Bomb/Hostage Volume',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 5,
+                label: 'Ten Second Warning Volume',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 6,
+                label: 'Death Camera Volume',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 7,
+                label: 'Music Volume In Steam Overlay',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+        ],
         // Video Settings
         'screen': [
             {
@@ -233,6 +361,13 @@ const settingsData = {
 const VideoSettingsComponent = React.createClass({
     propTypes: {
         view: React.PropTypes.oneOf([
+            // Controls Settings
+            'Keyboard',
+            'Mouse',
+            'Binds',
+            // Audio Settings
+            'sound',
+            'music',
             // Video Settings
             'screen',
             'advanced',
