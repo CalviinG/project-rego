@@ -29,6 +29,10 @@ const FormSlider = React.createClass({
 		};
 	},
 
+	componentWillReceiveProps(newProps) {
+		this.setState({ value: newProps.value });
+	},
+
 	_onChange(event) {
 		this._changeValue(this._round(event.target.value, this.props.decimals));
 	},

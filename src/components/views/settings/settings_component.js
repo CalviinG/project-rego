@@ -327,6 +327,9 @@ const VideoSettingsComponent = React.createClass({
                 const enabled = (value === 0) ? false : true ;
                 return <FormToggle {...settingProps} enabled={enabled} />
             } else if (setting.type === 'slider') {
+                options.value = (this.state.newValues !== null)
+                    ? this.state.newValues[index]
+                    : this.state.initialValues[index];
                 return <FormSlider {...settingProps} {...options} />
             }
         });
