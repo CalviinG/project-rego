@@ -30,7 +30,7 @@ const FormSlider = React.createClass({
 	},
 
 	componentWillReceiveProps(newProps) {
-		this.setState({ value: newProps.value });
+		this.setState({ value: (newProps.value < this.props.min) ? this.props.min : newProps.value });
 	},
 
 	_onChange(event) {
