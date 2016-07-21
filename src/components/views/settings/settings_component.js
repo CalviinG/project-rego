@@ -7,7 +7,159 @@ import {FormSelect, FormSlider, FormToggle} from '../../ui';
 // Setting Values
 const settingsValues = {
     //// In-Game Settings
+    // Game
+    maxPingOptions: {
+        value: 75,
+        min: 50,
+        max: 500,
+        interval: 5,
+        decimals: 0,
+    },
+    steamNotificationLocationOptions: [
+        'Top Left',
+        'Top Right',
+        'Bottom Left',
+        'Bottom Right',
+    ],
+    csgoTwitchOptions: [
+        'Only Steam Status',
+        'Always Shared',
+        'Disabled',
+    ],
+    // HUD
+    hudScaleOptions: {
+        value: 0.95,
+        min: 0.50,
+        max: 0.95,
+        interval: 0.01,
+        decimals: 2,
+    },
+    hudColorOptions: [
+        'White',
+        'Blue',
+        'Purple',
+        'Green',
+        'Yellow',
+        'Orange',
+        'Red',
+    ],
+    healthAmmoOptions: [
+        'Default',
+        'Simple',
+    ],
+    bombHudPositionOptions: [
+        'Show In Inventory',
+        'Show Under Radar',
+    ],
+    miniScoreboardPositionOptions: [
+        'Top of Screen',
+        'Bottom of Screen',
+    ],
+    miniScoreboardStyleOptions: [
+        'Show Avatars',
+        'Show Player Count',
+    ],
+    scoreboardMouseEnableOptions: [
+        'Secondary Fire',
+        'Jump',
+        'Duck',
+        'Use',
+        'Drop Weapon',
+        'Last Weapon Used',
+    ],
+    // Crosshair
+    crosshairStyleOptions: [
+        'Default',
+        'Classic',
+        'Dynamic',
+        'Static',
+    ],
+    crosshairAlphaOptions: {
+        value: 255,
+        min: 0,
+        max: 255,
+        interval: 1,
+        decimals: 0,
+    },
+    crosshairThicknessOptions: {
+        value: 1,
+        min: 0,
+        max: 100,
+        interval: 0.5,
+        decimals: 1,
+    },
+    crosshairSizeOptions: {
+        value: 5,
+        min: 0,
+        max: 100,
+        interval: 1,
+        decimals: 0,
+    },
+    crosshairGapOptions: {
+        value: 0,
+        min: -100,
+        max: 100,
+        interval: 1,
+        decimals: 0,
+    },
+    // Team
+    teamTagOptions: [
+        'No Team Tag',
+        'Fnatic',
+        'Liquid.HyperX',
+    ],
+    teamTagDeathNoticesOptions: [
+        'No',
+        'Yes',
+        'Minified Tags',
+    ],
+    teamColorsCompetativeOptions: [
+        'No',
+        'Show Colors',
+        'Colors and Letters',
+    ],
+    // Spectator
+    spectatorMapVoteOptions: [
+        'Use Number Keys',
+        'Use Weapon Slots',
+    ],
+    spectatorCameraSpeedOptions: {
+        value: 0.22,
+        min: 0.05,
+        max: 0.40,
+        interval: 0.01,
+        decimals: 2,
+    },
+    spectatorFollowGrendadeOptions: [
+        'Left Alt',
+        'Left Shift',
+        'Reload Key',
+    ],
+    // Items
+    itemsViewmodelPositionOptions: [
+        'Desktop',
+        'Couch',
+        'Classic',
+    ],
+    // Radar
+    radarHudSizeOptions: {
+        value: 1.00,
+        min: 0.80,
+        max: 1.30,
+        interval: 0.01,
+        decimals: 2,
+    },
+    radarMapZoomOptions: {
+        value: 0.55,
+        min: 0.25,
+        max: 1.00,
+        interval: 0.05,
+        decimals: 2,
+    },
     //// Controls Settings
+    // Keyboard
+    // Mouse
+    // Binds
     //// Audio Settings
     // Sound
     audioOptions: {
@@ -115,7 +267,17 @@ const settingsData = {
     // - Starting values for each setting
     'initialValues': {
         // In-Game Settings
+        'game': [0,75,3,1,0],
+        'hud': [0.95,0.75,3,0,1,0,1,0],
+        'crosshair': [3,255,1,5,0,0],
+        'team': [2,0,1],
+        'spectator': [0,1,0.22,0,0,1],
+        'items': [0,0,1,1,0],
+        'radar': [1.00,0.55,0,1],
         // Controls Settings
+        'keyboard': [],
+        'mouse': [],
+        'binds': [],
         // Audio Settings
         'sound': [0.65,0.55,0,0.28,1,0],
         'music': [0.52,0.26,0.41,0.70,0.22,0.61,0.45,0.25],
@@ -129,7 +291,294 @@ const settingsData = {
     // - Data for building the settings
     'buildValues': {
         // In-Game Settings
+        'game': [
+            {
+                key: 0,
+                label: 'Game Instructor Messages',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'Max Acceptable Matchmaking Ping',
+                type: 'slider',
+                options: settingsValues.maxPingOptions,
+                listensTo: false,
+            },
+            {
+                key: 2,
+                label: 'Steam Notification Location',
+                type: 'select',
+                options: settingsValues.steamNotificationLocationOptions,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'Developer Console',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 4,
+                label: 'CS:GO & Twitch.tv Profile Sharing',
+                type: 'select',
+                options: settingsValues.csgoTwitchOptions,
+                listensTo: false,
+            },
+        ],
+        'hud': [
+            {
+                key: 0,
+                label: 'HUD Scale',
+                type: 'slider',
+                options: settingsValues.hudScaleOptions,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'HUD Transparancy',
+                type: 'slider',
+                options: settingsValues.audioOptions,
+                listensTo: false,
+            },
+            {
+                key: 2,
+                label: 'HUD Color',
+                type: 'select',
+                options: settingsValues.hudColorOptions,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'Health/Ammo Style',
+                type: 'select',
+                options: settingsValues.healthAmmoOptions,
+                listensTo: false,
+            },
+            {
+                key: 4,
+                label: 'Bomb HUD Position',
+                type: 'select',
+                options: settingsValues.bombHudPositionOptions,
+                listensTo: false,
+            },
+            {
+                key: 5,
+                label: 'Scoreboard Mouse Enable',
+                type: 'select',
+                options: settingsValues.scoreboardMouseEnableOptions,
+                listensTo: false,
+            },
+            {
+                key: 6,
+                label: 'Mini-Scoreboard Position',
+                type: 'select',
+                options: settingsValues.miniScoreboardPositionOptions,
+                listensTo: false,
+            },
+            {
+                key: 7,
+                label: 'Mini-Scoreboard Style',
+                type: 'select',
+                options: settingsValues.miniScoreboardStyleOptions,
+                listensTo: false,
+            },
+
+        ],
+        'crosshair': [
+            {
+                key: 0,
+                label: 'Crosshair Style',
+                type: 'select',
+                options: settingsValues.crosshairStyleOptions,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'Crosshair Alpha',
+                type: 'slider',
+                options: settingsValues.crosshairAlphaOptions,
+                listensTo: {
+                    name: 'Crosshair Style',
+                    type: 'block',
+                    blockedByValue: 0,
+                },
+            },
+            {
+                key: 2,
+                label: 'Crosshair Thickness',
+                type: 'slider',
+                options: settingsValues.crosshairThicknessOptions,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'Crosshair Alpha',
+                type: 'slider',
+                options: settingsValues.crosshairSizeOptions,
+                listensTo: false,
+            },
+            {
+                key: 4,
+                label: 'Crosshair Gap',
+                type: 'slider',
+                options: settingsValues.crosshairGapOptions,
+                listensTo: false,
+            },
+            {
+                key: 5,
+                label: 'Crosshair Dot',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+        ],
+        'team': [
+            {
+                key: 0,
+                label: 'Team Tag (From Steam Groups)',
+                type: 'select',
+                options: settingsValues.teamTagOptions,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'Show Team Tags In Death Notices',
+                type: 'select',
+                options: settingsValues.teamTagDeathNoticesOptions,
+                listensTo: false,
+            },
+            {
+                key: 2,
+                label: 'Show Teammate Colors In Competative',
+                type: 'select',
+                options: settingsValues.teamColorsCompetativeOptions,
+                listensTo: false,
+            },
+        ],
+        'spectator': [
+            {
+                key: 0,
+                label: 'Spectator Map Vote Selection Method',
+                type: 'select',
+                options: settingsValues.spectatorMapVoteOptions,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'Smooth Spectator Camera',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 2,
+                label: 'Smooth Spectator Camera Speed',
+                type: 'slider',
+                options: settingsValues.spectatorCameraSpeedOptions,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'Disable Caster Control On User Control',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 4,
+                label: 'Automatic Killer Replay',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 5,
+                label: 'Follow Grenade Key',
+                type: 'select',
+                options: settingsValues.spectatorFollowGrendadeOptions,
+                listensTo: false,
+            },
+        ],
+        'items': [
+            {
+                key: 0,
+                label: 'Switch Weapon On Pickup',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'Viewmodel Position',
+                type: 'select',
+                options: settingsValues.itemsViewmodelPositionOptions,
+                listensTo: false,
+            },
+            {
+                key: 2,
+                label: 'Always Show Inventory',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'Close Buy Menu After Purchase',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 4,
+                label: 'Open Buy Menu With Use Key',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+        ],
+        'radar': [
+            {
+                key: 0,
+                label: 'Radar HUD Size',
+                type: 'slider',
+                options: settingsValues.radarHudSizeOptions,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'Radar Map Zoom',
+                type: 'slider',
+                options: settingsValues.radarMapZoomOptions,
+                listensTo: false,
+            },
+            {
+                key: 2,
+                label: 'Rotate The Radar',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'Toggle Shape With Scoreboard',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+        ],
         // Controls Settings
+        'keyboard': [
+
+        ],
+        'mouse': [
+
+        ],
+        'binds': [
+
+        ],
         // Audio Settings
         'sound': [
             {
@@ -361,10 +810,18 @@ const settingsData = {
 const VideoSettingsComponent = React.createClass({
     propTypes: {
         view: React.PropTypes.oneOf([
+            // In-Game Settings
+            'game',
+            'hud',
+            'crosshair',
+            'team',
+            'spectator',
+            'items',
+            'radar',
             // Controls Settings
-            'Keyboard',
-            'Mouse',
-            'Binds',
+            'keyboard',
+            'mouse',
+            'binds',
             // Audio Settings
             'sound',
             'music',
@@ -448,8 +905,19 @@ const VideoSettingsComponent = React.createClass({
                             options = settingsValues.resolutionOptions[objValue];
                         }
                     });
-                } else if (setting.listensTo.type === '') {
-
+                } else if (setting.listensTo.type === 'block') {
+                    options = setting.options;
+                    options.disabled = false;
+                    _.each(settingsData.buildValues[view], (matchingSetting, i) => {
+                        if (matchingSetting.label === setting.listensTo.name) {
+                            const objValue = (this.state.newValues !== null)
+                                ? this.state.newValues[i]
+                                : this.state.initialValues[i];
+                            if (objValue === setting.listensTo.blockedByValue) {
+                                options.disabled = true;
+                            }
+                        }
+                    });
                 }
             } else {
                 options = setting.options
@@ -468,6 +936,8 @@ const VideoSettingsComponent = React.createClass({
                 return <FormSlider {...settingProps} {...options} />
             }
         });
+
+        console.log('RENDER');
 
         return (
             <div className='video-settings-wrapper'>

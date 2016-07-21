@@ -29,6 +29,14 @@ $disabledTextColor: $grey-700
   line-height: 20px
   color: white
 
+  .form-disable-overlay
+    position: absolute
+    z-index: 2
+    right: 0
+    height: 50px
+    width: $formWidth
+    background-color: $formDarkOverlay
+
   .form-left
     float: left
     font-weight: 400
@@ -58,7 +66,7 @@ $disabledTextColor: $grey-700
         transition: $formTransition
     .select-options
       position: absolute
-      z-index: 2
+      z-index: 3
       height: 0
       width: 100%
       left: 0

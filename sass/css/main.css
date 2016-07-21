@@ -606,43 +606,52 @@ body {
   /* [Slider] */
 }
 /* line 32, ../sass/ui/rui_form_base.sass */
+.rui-form-base .form-disable-overlay {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  height: 50px;
+  width: 260px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 40, ../sass/ui/rui_form_base.sass */
 .rui-form-base .form-left {
   float: left;
   font-weight: 400;
   padding: 15px 0;
 }
-/* line 37, ../sass/ui/rui_form_base.sass */
+/* line 45, ../sass/ui/rui_form_base.sass */
 .rui-form-base .form-right {
   float: right;
   width: 260px;
   font-weight: 700;
 }
-/* line 44, ../sass/ui/rui_form_base.sass */
+/* line 52, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select {
   position: relative;
 }
-/* line 46, ../sass/ui/rui_form_base.sass */
+/* line 54, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label {
   cursor: pointer;
 }
-/* line 50, ../sass/ui/rui_form_base.sass */
+/* line 58, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label:hover .label-icon {
   opacity: 1;
 }
-/* line 52, ../sass/ui/rui_form_base.sass */
+/* line 60, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-text {
   float: left;
 }
-/* line 54, ../sass/ui/rui_form_base.sass */
+/* line 62, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-label .label-icon {
   float: right;
   opacity: 0.25;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 59, ../sass/ui/rui_form_base.sass */
+/* line 67, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   height: 0;
   width: 100%;
   left: 0;
@@ -655,39 +664,39 @@ body {
   box-shadow: 0 0 0px 0px transparent;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 73, ../sass/ui/rui_form_base.sass */
+/* line 81, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options .option-button {
   padding: 10px 20px;
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-/* line 77, ../sass/ui/rui_form_base.sass */
+/* line 85, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select .select-options .option-button:hover {
   color: white;
 }
-/* line 81, ../sass/ui/rui_form_base.sass */
+/* line 89, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-select.options-is-showing .select-options {
   padding: 5px 0;
   opacity: 1;
   box-shadow: 0 0 24px 6px rgba(0, 0, 0, 0.5);
 }
-/* line 88, ../sass/ui/rui_form_base.sass */
+/* line 96, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle {
   cursor: pointer;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 92, ../sass/ui/rui_form_base.sass */
+/* line 100, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-label {
   float: left;
 }
-/* line 94, ../sass/ui/rui_form_base.sass */
+/* line 102, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-animation {
   float: right;
   position: relative;
   width: 40px;
   height: 20px;
 }
-/* line 99, ../sass/ui/rui_form_base.sass */
+/* line 107, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-animation .animation-circle {
   position: absolute;
   z-index: 1;
@@ -699,7 +708,7 @@ body {
   background-color: #00B0FF;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 109, ../sass/ui/rui_form_base.sass */
+/* line 117, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle .toggle-animation .animation-background {
   position: relative;
   width: 100%;
@@ -707,49 +716,49 @@ body {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 116, ../sass/ui/rui_form_base.sass */
+/* line 124, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle.is-disabled {
   background-color: #22272A;
 }
-/* line 118, ../sass/ui/rui_form_base.sass */
+/* line 126, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle.is-disabled .toggle-label {
   color: #616161;
 }
-/* line 120, ../sass/ui/rui_form_base.sass */
+/* line 128, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle.is-disabled .animation-circle {
   left: 2px;
   background-color: #424242;
 }
-/* line 125, ../sass/ui/rui_form_base.sass */
+/* line 133, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-toggle:hover .animation-circle {
   background-color: white;
 }
-/* line 130, ../sass/ui/rui_form_base.sass */
+/* line 138, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider {
   position: relative;
 }
-/* line 134, ../sass/ui/rui_form_base.sass */
+/* line 142, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider .slider-holder .slider-icon,
 .rui-form-base .rui-form-slider .slider-holder .slider-value,
 .rui-form-base .rui-form-slider .slider-holder .slider-range {
   float: left;
 }
-/* line 138, ../sass/ui/rui_form_base.sass */
+/* line 146, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider .slider-holder .slider-icon {
   opacity: 0.25;
   cursor: pointer;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 143, ../sass/ui/rui_form_base.sass */
+/* line 151, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider .slider-holder .slider-icon:hover {
   opacity: 1;
 }
-/* line 145, ../sass/ui/rui_form_base.sass */
+/* line 153, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider .slider-holder .slider-value {
   width: 52px;
   text-align: right;
 }
-/* line 148, ../sass/ui/rui_form_base.sass */
+/* line 156, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider .slider-holder .slider-range {
   -webkit-appearance: none;
   width: calc(100% - 96px);
@@ -760,15 +769,15 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 157, ../sass/ui/rui_form_base.sass */
+/* line 165, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider .slider-holder .slider-range:hover {
   background-color: rgba(0, 0, 0, 0.35);
 }
-/* line 159, ../sass/ui/rui_form_base.sass */
+/* line 167, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider .slider-holder .slider-range:focus {
   outline: none;
 }
-/* line 161, ../sass/ui/rui_form_base.sass */
+/* line 169, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider .slider-holder .slider-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   background-color: white;
@@ -776,7 +785,7 @@ body {
   width: 16px;
   border-radius: 100%;
 }
-/* line 167, ../sass/ui/rui_form_base.sass */
+/* line 175, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider .slider-holder .slider-range::-moz-range-thumb {
   -webkit-appearance: none;
   background-color: white;
@@ -784,7 +793,7 @@ body {
   width: 16px;
   border-radius: 100%;
 }
-/* line 173, ../sass/ui/rui_form_base.sass */
+/* line 181, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-slider .slider-holder .slider-range::-ms-thumb {
   -webkit-appearance: none;
   background-color: white;
@@ -795,61 +804,61 @@ body {
 
 /* Form Button
  */
-/* line 184, ../sass/ui/rui_form_base.sass */
+/* line 192, ../sass/ui/rui_form_base.sass */
 .rui-form-button {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 2px;
   color: white;
 }
-/* line 189, ../sass/ui/rui_form_base.sass */
+/* line 197, ../sass/ui/rui_form_base.sass */
 .rui-form-button,
 .rui-form-button .button-icon,
 .rui-form-button .button-label {
   display: inline-block;
   transition: all 0.1s ease;
 }
-/* line 196, ../sass/ui/rui_form_base.sass */
+/* line 204, ../sass/ui/rui_form_base.sass */
 .rui-form-button .button-label {
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
 }
-/* line 201, ../sass/ui/rui_form_base.sass */
+/* line 209, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-primary {
   background-color: rgba(76, 175, 80, 0.9);
 }
-/* line 203, ../sass/ui/rui_form_base.sass */
+/* line 211, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-primary:hover {
   background-color: #4caf50;
 }
-/* line 205, ../sass/ui/rui_form_base.sass */
+/* line 213, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-primary:active {
   background-color: rgba(76, 175, 80, 0.8);
 }
-/* line 208, ../sass/ui/rui_form_base.sass */
+/* line 216, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-secondary {
   background-color: rgba(66, 66, 66, 0.9);
 }
-/* line 210, ../sass/ui/rui_form_base.sass */
+/* line 218, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-secondary:hover {
   background-color: #424242;
 }
-/* line 212, ../sass/ui/rui_form_base.sass */
+/* line 220, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-secondary:active {
   background-color: rgba(66, 66, 66, 0.8);
 }
-/* line 215, ../sass/ui/rui_form_base.sass */
+/* line 223, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-disabled {
   background-color: #22272A;
   color: #616161;
   cursor: default;
 }
-/* line 219, ../sass/ui/rui_form_base.sass */
+/* line 227, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-disabled:hover {
   background-color: #22272A;
 }
-/* line 223, ../sass/ui/rui_form_base.sass */
+/* line 231, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-disabled:hover:hover .button-label {
   color: #616161;
 }

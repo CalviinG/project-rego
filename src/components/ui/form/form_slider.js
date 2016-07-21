@@ -60,7 +60,7 @@ const FormSlider = React.createClass({
 
 	render() {
 		return (
-			<FormBase label={this.props.label}>
+			<FormBase label={this.props.label} disabled={this.props.disabled}>
 				<div className='rui-form-slider'>
 					<div className='slider-holder'>
 						<i className='slider-icon fa fa-chevron-left' onClick={this._excrementValue} />

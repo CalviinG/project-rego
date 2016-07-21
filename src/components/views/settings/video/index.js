@@ -46,7 +46,7 @@ const VideoView = React.createClass({
         ];
 
         return (
-            <div className='settings-video-view'>
+            <div className='settings-view'>
                 <AnimationHolder>
                     <SettingsHolder labels={settingsLabels} changesMade={this.state.changesMade} onEdit={this._onEdit} />
                 </AnimationHolder>

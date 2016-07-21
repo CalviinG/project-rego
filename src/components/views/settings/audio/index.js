@@ -40,7 +40,7 @@ const AudioView = React.createClass({
         ];
 
         return (
-            <div className='settings-audio-view'>
+            <div className='settings-view'>
                 <AnimationHolder>
                     <SettingsHolder labels={settingsLabels} changesMade={this.state.changesMade} onEdit={this._onEdit} />
                 </AnimationHolder>

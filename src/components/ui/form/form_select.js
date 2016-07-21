@@ -51,6 +51,8 @@ const FormSelect = React.createClass({
     },
 
     _checkClick(event) {
+        window.removeEventListener('mousedown', this._checkClick);
+        
         if (this.mouseIsDownOnComponent) {
             return;
         }
