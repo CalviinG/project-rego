@@ -924,7 +924,7 @@ const VideoSettingsComponent = React.createClass({
                         }
                     });
                 } else if (setting.listensTo.type === 'block') {
-                    options = setting.options;    
+                    options = setting.options;
                     _.each(settingsData.buildValues[view], (matchingSetting, i) => {
                         if (matchingSetting.label === setting.listensTo.name) {
                             const objValue = (this.state.newValues !== null)
@@ -953,8 +953,6 @@ const VideoSettingsComponent = React.createClass({
                 return <FormSlider {...settingProps} {...options} />
             }
         });
-
-        console.log('RENDER');
 
         return (
             <div className='video-settings-wrapper'>
