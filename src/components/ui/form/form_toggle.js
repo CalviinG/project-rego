@@ -6,7 +6,8 @@ import FormBase from './form_base.js';
 const FormToggle = React.createClass({
 	propTypes: {
         label: React.PropTypes.string.isRequired,
-        enabled: React.PropTypes.bool, 
+        enabled: React.PropTypes.bool,
+		disabled: React.PropTypes.bool,
     },
 
     getInitialState() {
@@ -41,7 +42,7 @@ const FormToggle = React.createClass({
 		const toggleLabel = (this.state.enabled) ? 'Enabled' : 'Disabled' ;
 
 		return (
-			<FormBase label={this.props.label}>
+			<FormBase label={this.props.label} disabled={this.props.disabled}>
 				<div className={parentClass} onClick={this._toggle}>
 					<div className='toggle-label'>{toggleLabel}</div>
 					<div className='toggle-animation'>

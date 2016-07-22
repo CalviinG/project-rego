@@ -11,6 +11,7 @@ const FormSlider = React.createClass({
 		value: React.PropTypes.number,
 		interval: React.PropTypes.number,
 		decimals: React.PropTypes.number,
+		disabled: React.PropTypes.bool,
     },
 
 	getInitialState() {

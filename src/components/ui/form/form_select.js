@@ -11,6 +11,7 @@ const FormSelect = React.createClass({
         label: React.PropTypes.string.isRequired,
         options: React.PropTypes.array.isRequired,
         selectedOption: React.PropTypes.number,
+        disabled: React.PropTypes.bool,
     },
 
     getInitialState() {
@@ -52,7 +53,7 @@ const FormSelect = React.createClass({
 
     _checkClick(event) {
         window.removeEventListener('mousedown', this._checkClick);
-        
+
         if (this.mouseIsDownOnComponent) {
             return;
         }
@@ -103,7 +104,7 @@ const FormSelect = React.createClass({
         });
 
         return (
-            <FormBase label={this.props.label}>
+            <FormBase label={this.props.label} disabled={this.props.disabled}>
                 <div className={parentClass} onMouseDown={this._onMouseDown} onMouseUp={this._onMouseUp}>
                     <div className='select-label' onClick={this._showOptions}>
                         <p className='label-text'>{label}</p>
