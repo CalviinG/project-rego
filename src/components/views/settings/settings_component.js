@@ -411,7 +411,11 @@ const settingsData = {
                 label: 'Crosshair Thickness',
                 type: 'slider',
                 options: settingsValues.crosshairThicknessOptions,
-                listensTo: false,
+                listensTo: {
+                    name: 'Crosshair Style',
+                    type: 'block',
+                    blockedByValue: 0,
+                },
             },
             {
                 key: 3,
@@ -419,6 +423,11 @@ const settingsData = {
                 type: 'slider',
                 options: settingsValues.crosshairSizeOptions,
                 listensTo: false,
+                listensTo: {
+                    name: 'Crosshair Style',
+                    type: 'block',
+                    blockedByValue: 0,
+                },
             },
             {
                 key: 4,
@@ -426,13 +435,22 @@ const settingsData = {
                 type: 'slider',
                 options: settingsValues.crosshairGapOptions,
                 listensTo: false,
+                listensTo: {
+                    name: 'Crosshair Style',
+                    type: 'block',
+                    blockedByValue: 0,
+                },
             },
             {
                 key: 5,
                 label: 'Crosshair Dot',
                 type: 'toggle',
                 options: null,
-                listensTo: false,
+                listensTo: {
+                    name: 'Crosshair Style',
+                    type: 'block',
+                    blockedByValue: 0,
+                },
             },
         ],
         'team': [
@@ -882,7 +900,7 @@ const VideoSettingsComponent = React.createClass({
         const view = this.props.view;
         const settingsToRender = _.map(settingsData.buildValues[view], (setting, index) => {
             // Base props
-            const settingProps = {
+            let settingProps = {
                 key: `${this.props.view}Key${index}`,
                 label: setting.label,
                 onChange: this._onChange.bind(this, index),
@@ -906,15 +924,14 @@ const VideoSettingsComponent = React.createClass({
                         }
                     });
                 } else if (setting.listensTo.type === 'block') {
-                    options = setting.options;
-                    options.disabled = false;
+                    options = setting.options;    
                     _.each(settingsData.buildValues[view], (matchingSetting, i) => {
                         if (matchingSetting.label === setting.listensTo.name) {
                             const objValue = (this.state.newValues !== null)
                                 ? this.state.newValues[i]
                                 : this.state.initialValues[i];
                             if (objValue === setting.listensTo.blockedByValue) {
-                                options.disabled = true;
+                                settingProps.disabled = true;
                             }
                         }
                     });
