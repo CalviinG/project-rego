@@ -5,6 +5,7 @@ import Table from './table';
 
 import {
 	FormButton,
+	FormKeyInput,
 	FormSelect,
 	FormSlider,
 	FormToggle,
@@ -16,6 +17,7 @@ export {
 	Table,
 
 	FormButton,
+	FormKeyInput,
 	FormSelect,
 	FormSlider,
 	FormToggle,

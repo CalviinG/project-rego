@@ -9,9 +9,10 @@ import TimerMixin from 'react-timer-mixin';
 // Play
 import BrowseView from './views/play/browse';
 // Settings
-import InGameView from './views/settings/ingame';
-import AudioView  from './views/settings/audio';
-import VideoView  from './views/settings/video';
+import InGameView   from './views/settings/ingame';
+import ControlsView from './views/settings/controls';
+import AudioView    from './views/settings/audio';
+import VideoView    from './views/settings/video';
 
 const ViewComponent = React.createClass({
 	mixins: [TimerMixin],
@@ -112,7 +113,7 @@ const ViewComponent = React.createClass({
 			[
 				/* Settings */
 				<InGameView />,
-				null,
+				<ControlsView />,
 				<AudioView />,
 				<VideoView />,
 			],

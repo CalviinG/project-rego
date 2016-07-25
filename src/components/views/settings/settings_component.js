@@ -2,7 +2,7 @@ import React from 'react';
 import _     from 'underscore';
 
 // Rui
-import {FormSelect, FormSlider, FormToggle} from '../../ui';
+import {FormSelect, FormSlider, FormToggle, FormKeyInput} from '../../ui';
 
 // Setting Values
 const settingsValues = {
@@ -275,7 +275,7 @@ const settingsData = {
         'items': [0,0,1,1,0],
         'radar': [1.00,0.55,0,1],
         // Controls Settings
-        'keyboard': [],
+        'keyboard': ['W','D','A','S','Shift','Space','Ctrl','Left Mouse','Right Mouse','R','Q','G','E','F','U','Y','B','Tab','1','2','3','4','5'],
         'mouse': [],
         'binds': [],
         // Audio Settings
@@ -589,7 +589,167 @@ const settingsData = {
         ],
         // Controls Settings
         'keyboard': [
-
+            {
+                key: 0,
+                label: 'Move Forward',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'Move Backward',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 2,
+                label: 'Move Left (Strafe)',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'Move Right (Strafe)',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 4,
+                label: 'Walk',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 5,
+                label: 'Jump',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 6,
+                label: 'Duck',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 7,
+                label: 'Fire',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 8,
+                label: 'Secondary Fire',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 9,
+                label: 'Reload',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 10,
+                label: 'Last Weapon Used',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 11,
+                label: 'Drop Weapon',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 12,
+                label: 'Use',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 13,
+                label: 'Inspect Weapon',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 14,
+                label: 'Team Message',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 15,
+                label: 'Chat Message',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 16,
+                label: 'Buy Menu',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 17,
+                label: 'Scoreboard',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 18,
+                label: 'Primary Weapon',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 19,
+                label: 'Secondary Weapon',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 20,
+                label: 'Knife',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 21,
+                label: 'Cycle Grenades',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 22,
+                label: 'Bomb',
+                type: 'key-input',
+                options: null,
+                listensTo: false,
+            },
         ],
         'mouse': [
 
@@ -892,6 +1052,26 @@ const VideoSettingsComponent = React.createClass({
             }
         });
 
+        // Key-Input Component Fix
+        // Check for multiple choices of same key
+        if (this.props.view === 'keyboard') {
+            let keyboardValues = undefined;
+            _.each(newValues, (key, i) => {
+                if (value === key && index !== i) {
+                    keyboardValues = {
+                        emptyKeyIndex: i, //This is the index of the component which have the inputed key
+                        replacingKeyIndex: index, //This is the index of the new component with the matching key
+                        replacingKeyValue: key, // The new value of the replacingKeyIndex
+                    };
+                }
+            });
+
+            if (keyboardValues !== undefined) {
+                newValues[keyboardValues.emptyKeyIndex] = '';
+                newValues[keyboardValues.replacingKeyIndex] = keyboardValues.replacingKeyValue;
+            }
+        }
+
         this.props.onChange(changesMade);
         this.setState({ newValues: newValues });
     },
@@ -951,6 +1131,8 @@ const VideoSettingsComponent = React.createClass({
                     ? this.state.newValues[index]
                     : this.state.initialValues[index];
                 return <FormSlider {...settingProps} {...options} />
+            } else if (setting.type === 'key-input') {
+                return <FormKeyInput {...settingProps} input={value} />
             }
         });
 
