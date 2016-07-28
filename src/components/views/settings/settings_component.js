@@ -159,6 +159,31 @@ const settingsValues = {
     //// Controls Settings
     // Keyboard
     // Mouse
+    mouseHoldModeOptions: [
+        'Hold',
+        'Toggle',
+    ],
+    mouseSensitivityOptions: {
+        value: 1.25,
+        min: 0.00,
+        max: 10.00,
+        interval: 0.01,
+        decimals: 2,
+    },
+    mouseZoomSensitivityOptions: {
+        value: 1.00,
+        min: 0.10,
+        max: 1.00,
+        interval: 0.01,
+        decimals: 2,
+    },
+    mouseAccelerationOptions: {
+        value: 0.01,
+        min: 0.01,
+        max: 10.00,
+        interval: 0.01,
+        decimals: 2,
+    },
     // Binds
     //// Audio Settings
     // Sound
@@ -276,7 +301,7 @@ const settingsData = {
         'radar': [1.00,0.55,0,1],
         // Controls Settings
         'keyboard': ['W','D','A','S','Shift','Space','Ctrl','Left Mouse','Right Mouse','R','Q','G','E','F','U','Y','B','Tab','1','2','3','4','5'],
-        'mouse': [],
+        'mouse': [0,0,0,1.25,1.00,1,0,0.01],
         'binds': [],
         // Audio Settings
         'sound': [0.65,0.55,0,0.28,1,0],
@@ -752,7 +777,66 @@ const settingsData = {
             },
         ],
         'mouse': [
-
+            {
+                key: 0,
+                label: 'Reverse Mouse',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 1,
+                label: 'Duck Mode',
+                type: 'select',
+                options: settingsValues.mouseHoldModeOptions,
+                listensTo: false,
+            },
+            {
+                key: 2,
+                label: 'Crouch Mode',
+                type: 'select',
+                options: settingsValues.mouseHoldModeOptions,
+                listensTo: false,
+            },
+            {
+                key: 3,
+                label: 'Mouse Sensitivity',
+                type: 'slider',
+                options: settingsValues.mouseSensitivityOptions,
+                listensTo: false,
+            },
+            {
+                key: 4,
+                label: 'Zoom Sensitivity',
+                type: 'slider',
+                options: settingsValues.mouseZoomSensitivityOptions,
+                listensTo: false,
+            },
+            {
+                key: 5,
+                label: 'Raw Input',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 6,
+                label: 'Mouse Acceleration',
+                type: 'toggle',
+                options: null,
+                listensTo: false,
+            },
+            {
+                key: 7,
+                label: 'Acceleration Amount',
+                type: 'slider',
+                options: settingsValues.mouseAccelerationOptions,
+                listensTo: {
+                    name: 'Mouse Acceleration',
+                    type: 'block',
+                    blockedByValue: 0,
+                },
+            },
         ],
         'binds': [
 

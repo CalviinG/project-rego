@@ -4,6 +4,12 @@ import $ 	 from 'jquery';
 const ScrollHolder = React.createClass({
 	componentDidMount() {
 		this._setBarHeight();
+		window.addEventListener('resize', this._setBarHeight);
+	},
+
+	componentWillUnmount() {
+		$(this.refs.contentRef)[0].removeEventListener('scroll', this._listenOnScroll);
+		window.removeEventListener('resize', this._setBarHeight);
 	},
 
 	_listenOnScroll(e) {
