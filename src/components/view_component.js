@@ -9,7 +9,10 @@ import TimerMixin from 'react-timer-mixin';
 // Play
 import BrowseView from './views/play/browse';
 // Settings
-import VideoView from './views/settings/video';
+import InGameView   from './views/settings/ingame';
+import ControlsView from './views/settings/controls';
+import AudioView    from './views/settings/audio';
+import VideoView    from './views/settings/video';
 
 const ViewComponent = React.createClass({
 	mixins: [TimerMixin],
@@ -27,7 +30,7 @@ const ViewComponent = React.createClass({
     },
 
     componentWillReceiveProps(nextProps) {
-    	this.setState({ 
+    	this.setState({
     		fading: true,
     		nextView: [nextProps.activeMain, nextProps.activeSub],
     		prevView: this.state.nextView,
@@ -40,7 +43,7 @@ const ViewComponent = React.createClass({
 
     componentDidUpdate() {
     	if (this.state.fading) {
-    		console.log('fade out'); 
+    		console.log('fade out');
     		this._fadingPhase('out');
     	} else {
     		console.log('fade in');
@@ -109,8 +112,9 @@ const ViewComponent = React.createClass({
 			],
 			[
 				/* Settings */
-				null,
-				null,
+				<InGameView />,
+				<ControlsView />,
+				<AudioView />,
 				<VideoView />,
 			],
 		];

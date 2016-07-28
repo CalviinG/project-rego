@@ -4,7 +4,7 @@
  *
  */
 
-$formWidth: 240px
+$formWidth: 260px
 $formDarkOverlay: rgba(black, .5)
 $formTransition: all .185s cubic-bezier( 0.25 , 0.95 , 0.15 , 1.0 )
 
@@ -22,13 +22,28 @@ $disabledTextColor: $grey-700
   @extend .clear-after
   padding: 15px 20px
   background-color: $mainColor
-  cursor: pointer
 
 .rui-form-base
   @extend .clear-after
   font-size: 18px
   line-height: 20px
   color: white
+
+  .form-disable-overlay
+    position: absolute
+    z-index: 2
+    right: 0
+    height: 50px
+    width: $formWidth
+    background-color: rgba(black, .25)
+    &::after
+      position: absolute
+      top: 0
+      display: block
+      content: ''
+      width: 100%
+      height: 100%
+      background-color: rgba($dark-2, .75)
 
   .form-left
     float: left
@@ -46,6 +61,7 @@ $disabledTextColor: $grey-700
     position: relative
     .select-label
       @extend %form-component-base
+      cursor: pointer
       &:hover
         .label-icon
           opacity: 1
@@ -58,7 +74,7 @@ $disabledTextColor: $grey-700
         transition: $formTransition
     .select-options
       position: absolute
-      z-index: 2
+      z-index: 3
       height: 0
       width: 100%
       left: 0
@@ -87,6 +103,7 @@ $disabledTextColor: $grey-700
 
   .rui-form-toggle
     @extend %form-component-base
+    cursor: pointer
     transition: $formTransition
     .toggle-label
       float: left
@@ -124,6 +141,74 @@ $disabledTextColor: $grey-700
       .animation-circle
         background-color: white
 
+  /* [Slider] */
+
+  .rui-form-slider
+    @extend %form-component-base
+    position: relative
+    .slider-holder
+      .slider-icon,
+      .slider-value,
+      .slider-range
+        float: left
+      .slider-icon
+        @extend %icon-base
+        opacity: .25
+        cursor: pointer
+        transition: $formTransition
+        &:hover
+          opacity: 1
+      .slider-value
+        width: 52px
+        text-align: right
+      .slider-range
+        -webkit-appearance: none
+        width: calc(100% - 96px)
+        height: 8px
+        margin: 6px 2px
+        border-radius: 4px
+        cursor: pointer
+        background-color: $formDarkOverlay
+        transition: $formTransition
+        &:hover
+          background-color: rgba(black, .35)
+        &:focus
+          outline: none
+        &::-webkit-slider-thumb
+          -webkit-appearance: none
+          background-color: white
+          height: 16px
+          width: 16px
+          border-radius: 100%
+        &::-moz-range-thumb
+          -webkit-appearance: none
+          background-color: white
+          height: 16px
+          width: 16px
+          border-radius: 100%
+        &::-ms-thumb
+          -webkit-appearance: none
+          background-color: white
+          height: 16px
+          width: 16px
+          border-radius: 100%
+
+  /* [Key Input] */
+  .rui-form-key-input
+    @extend %form-component-base
+    cursor: pointer
+    text-align: center
+    height: 50px
+    transition: $formTransition
+    &.input-mode
+      .input-text
+        animation-name: keyInputActiveAnimation
+        animation-duration: .5s
+        animation-iteration-count: infinite
+        animation-direction: alternate
+    &:hover
+      background-color: $mainColorDark
+
 /*
  * Form Button
  */
@@ -151,10 +236,10 @@ $disabledTextColor: $grey-700
       background-color: rgba($c-green, 1)
     &:active
       background-color: rgba($c-green, .8)
-  
+
   &.is-secondary
     background-color: rgba($grey-800, .9)
-    &:hover 
+    &:hover
       background-color: rgba($grey-800, 1)
     &:active
       background-color: rgba($grey-800, .8)
@@ -169,3 +254,14 @@ $disabledTextColor: $grey-700
         .button-icon
         .button-label
           color: $disabledTextColor
+
+
+/*
+ * Animation
+ */
+
+@keyframes keyInputActiveAnimation
+  0%
+    opacity: .25
+  100%
+    opacity: .65

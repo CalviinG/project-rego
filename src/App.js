@@ -34,7 +34,7 @@ const App = React.createClass({
             if (type === 'main') {
                 /* Update with latest view */
                 this._saveViewHistory(index, 0);
-                this.setState({ 
+                this.setState({
                     activeMain: index,
                     activeSub: 0,
                     viewHistory: (updatedViewHistory !== undefined)
@@ -86,7 +86,7 @@ const App = React.createClass({
             historyState.stopBack = false;
             historyState.stopForward = false;
         }
-        
+
         return historyState;
     },
 
@@ -134,6 +134,7 @@ const App = React.createClass({
                 'Settings',
                 'In-Game',
                 'Controls',
+                'Audio',
                 'Video',
             ],
         ];

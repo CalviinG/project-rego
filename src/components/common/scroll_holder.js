@@ -3,7 +3,13 @@ import $ 	 from 'jquery';
 
 const ScrollHolder = React.createClass({
 	componentDidMount() {
-		this._setBarHeight();	
+		this._setBarHeight();
+		window.addEventListener('resize', this._setBarHeight);
+	},
+
+	componentWillUnmount() {
+		$(this.refs.contentRef)[0].removeEventListener('scroll', this._listenOnScroll);
+		window.removeEventListener('resize', this._setBarHeight);
 	},
 
 	_listenOnScroll(e) {
@@ -31,6 +37,7 @@ const ScrollHolder = React.createClass({
 		// Check if content is bigger than holder
 		// If not, then hide the scroll bar
 		$scroll.css({ display: (cH < sH) ? 'none' : 'block' });
+		$(this.refs.contentRef).css({ paddingRight: (cH < sH) ? 0 : 13 });
 
 		if (cH > sH) {
 			const newHeight = `${(sH / cH) * 100}%`
@@ -38,7 +45,7 @@ const ScrollHolder = React.createClass({
 
 			// Add event listener to scroll
 			$(this.refs.contentRef)[0].addEventListener('scroll', this._listenOnScroll);
-		}	
+		}
 	},
 
 	render() {

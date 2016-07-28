@@ -1,4 +1,5 @@
 import React      from 'react';
+import ReactDOM   from 'react-dom';
 import _          from 'underscore';
 import $          from 'jquery';
 import classNames from 'classnames';
@@ -10,6 +11,7 @@ const FormSelect = React.createClass({
         label: React.PropTypes.string.isRequired,
         options: React.PropTypes.array.isRequired,
         selectedOption: React.PropTypes.number,
+        disabled: React.PropTypes.bool,
     },
 
     getInitialState() {
@@ -27,10 +29,36 @@ const FormSelect = React.createClass({
     },
 
     componentWillReceiveProps(newProps) {
+        const selectValue = (newProps.selectedOption > newProps.options.length)
+            ? newProps.options.length - 1
+            : newProps.selectedOption ;
+
         this.setState({
-            selectedOptionIndex: newProps.selectedOption,
-            selectedOptionLabel: this.props.options[newProps.selectedOption],
+            selectedOptionIndex: selectValue,
+            selectedOptionLabel: this.props.options[selectValue],
         });
+    },
+
+    componentWillUnmount() {
+        window.removeEventListener('mousedown', this._checkClick);
+    },
+
+    _onMouseDown() {
+        this.mouseIsDownOnComponent = true;
+    },
+
+    _onMouseUp() {
+        this.mouseIsDownOnComponent = false;
+    },
+
+    _checkClick(event) {
+        window.removeEventListener('mousedown', this._checkClick);
+
+        if (this.mouseIsDownOnComponent) {
+            return;
+        }
+
+        this._selectOption(this.state.selectedOptionIndex);
     },
 
     _selectOption(index) {
@@ -51,16 +79,18 @@ const FormSelect = React.createClass({
     _showOptions() {
         const $options = $(this.refs.optionsRef);
 
-        $options.css({ 
+        $options.css({
             height: (this.props.options.length * 40) + 10, // 10 is parent padding
         });
+
+        window.addEventListener('mousedown', this._checkClick);
 
         this.setState({ showOptions: true });
     },
 
     render() {
         const label = (this.props.selectedOption)
-            ? this.props.options[this.props.selectedOption]
+            ? this.props.options[this.state.selectedOptionIndex]
             : this.state.selectedOptionLabel ;
 
         const options = _.map(this.props.options, (option, index) => {
@@ -74,8 +104,8 @@ const FormSelect = React.createClass({
         });
 
         return (
-            <FormBase label={this.props.label}>
-                <div className={parentClass}>
+            <FormBase label={this.props.label} disabled={this.props.disabled}>
+                <div className={parentClass} onMouseDown={this._onMouseDown} onMouseUp={this._onMouseUp}>
                     <div className='select-label' onClick={this._showOptions}>
                         <p className='label-text'>{label}</p>
                         <i className='label-icon fa fa-chevron-down' />

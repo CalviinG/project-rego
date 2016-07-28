@@ -7,7 +7,7 @@ import SettingsComponent from '../settings_component.js';
 import AnimationHolder from '../../../common/animation_holder.js';
 import SettingsHolder  from '../../../common/settings_holder.js';
 
-const VideoView = React.createClass({
+const AudioView = React.createClass({
     getInitialState() {
         return {
             changesMade: false,
@@ -21,27 +21,21 @@ const VideoView = React.createClass({
 
     // This function runs when you press 'Cancel' or 'Save Changes'
     _onEdit(type) {
-        this.refs.screen.updateValues(type);
-        this.refs.advanced.updateValues(type);
-        this.refs.misc.updateValues(type);
+        this.refs.sound.updateValues(type);
+        this.refs.music.updateValues(type);
     },
 
     render() {
         const settingsLabels = [
             {
-                label: 'Screen',
-                icon: 'fa-desktop',
-                block: <SettingsComponent ref='screen' view='screen' onChange={this._onChange} />,
+                label: 'Sound',
+                icon: 'fa-headphones',
+                block: <SettingsComponent ref='sound' view='sound' onChange={this._onChange} />,
             },
             {
-                label: 'Advanced',
-                icon: 'fa-flash',
-                block: <SettingsComponent ref='advanced' view='advanced' onChange={this._onChange} />,
-            },
-            {
-                label: 'Misc.',
-                icon: 'fa-gears',
-                block: <SettingsComponent ref='misc' view='misc' onChange={this._onChange} />,
+                label: 'Music',
+                icon: 'fa-music',
+                block: <SettingsComponent ref='music' view='music' onChange={this._onChange} />,
             },
         ];
 
@@ -55,4 +49,4 @@ const VideoView = React.createClass({
     },
 });
 
-export default VideoView;
+export default AudioView;
