@@ -812,82 +812,82 @@ body {
   width: 16px;
   border-radius: 100%;
 }
-/* line 197, ../sass/ui/rui_form_base.sass */
+/* line 198, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-key-input {
   cursor: pointer;
   text-align: center;
   height: 50px;
   transition: all 0.185s cubic-bezier(0.25, 0.95, 0.15, 1);
 }
-/* line 204, ../sass/ui/rui_form_base.sass */
+/* line 205, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-key-input.input-mode .input-text {
   animation-name: keyInputActiveAnimation;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-/* line 209, ../sass/ui/rui_form_base.sass */
+/* line 210, ../sass/ui/rui_form_base.sass */
 .rui-form-base .rui-form-key-input:hover {
   background-color: #0082D2;
 }
 
 /* Form Button
  */
-/* line 216, ../sass/ui/rui_form_base.sass */
+/* line 217, ../sass/ui/rui_form_base.sass */
 .rui-form-button {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 2px;
   color: white;
 }
-/* line 221, ../sass/ui/rui_form_base.sass */
+/* line 222, ../sass/ui/rui_form_base.sass */
 .rui-form-button,
 .rui-form-button .button-icon,
 .rui-form-button .button-label {
   display: inline-block;
   transition: all 0.1s ease;
 }
-/* line 228, ../sass/ui/rui_form_base.sass */
+/* line 229, ../sass/ui/rui_form_base.sass */
 .rui-form-button .button-label {
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
 }
-/* line 233, ../sass/ui/rui_form_base.sass */
+/* line 234, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-primary {
   background-color: rgba(76, 175, 80, 0.9);
 }
-/* line 235, ../sass/ui/rui_form_base.sass */
+/* line 236, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-primary:hover {
   background-color: #4caf50;
 }
-/* line 237, ../sass/ui/rui_form_base.sass */
+/* line 238, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-primary:active {
   background-color: rgba(76, 175, 80, 0.8);
 }
-/* line 240, ../sass/ui/rui_form_base.sass */
+/* line 241, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-secondary {
   background-color: rgba(66, 66, 66, 0.9);
 }
-/* line 242, ../sass/ui/rui_form_base.sass */
+/* line 243, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-secondary:hover {
   background-color: #424242;
 }
-/* line 244, ../sass/ui/rui_form_base.sass */
+/* line 245, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-secondary:active {
   background-color: rgba(66, 66, 66, 0.8);
 }
-/* line 247, ../sass/ui/rui_form_base.sass */
+/* line 248, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-disabled {
   background-color: #22272A;
   color: #616161;
   cursor: default;
 }
-/* line 251, ../sass/ui/rui_form_base.sass */
+/* line 252, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-disabled:hover {
   background-color: #22272A;
 }
-/* line 255, ../sass/ui/rui_form_base.sass */
+/* line 256, ../sass/ui/rui_form_base.sass */
 .rui-form-button.is-disabled:hover:hover .button-label {
   color: #616161;
 }
