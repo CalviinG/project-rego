@@ -1,0 +1,13 @@
+/*
+ * Home View
+ *
+ */
+/* line 7, ../../sass/views/home_view.sass */
+.home-view {
+  /* Left Column */
+  /* Right Column */
+}
+/* line 11, ../../sass/views/home_view.sass */
+.home-view > .home-view-left-column {
+  padding-left: 100px;
+}

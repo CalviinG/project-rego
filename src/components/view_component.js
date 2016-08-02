@@ -6,6 +6,8 @@ import _     from 'underscore';
 import TimerMixin from 'react-timer-mixin';
 
 // ** Views **
+// Home
+import HomeView from './views/home';
 // Play
 import BrowseView from './views/play/browse';
 // Settings
@@ -81,7 +83,7 @@ const ViewComponent = React.createClass({
 		const viewLibrary = [
 			[
 				/* Home */
-				null,
+				<HomeView />,
 			],
 			[
 				/* Play */

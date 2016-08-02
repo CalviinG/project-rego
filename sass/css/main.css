@@ -35,7 +35,7 @@ body {
 }
 
 /* line 22, ../sass/base.sass */
-.clear-after:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base .rui-form-slider:after, .rui-form-base .rui-form-key-input:after, .rui-form-base:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
+.clear-after:after, .user-profile-card-wrapper .profile-card-content .profile-card-stats:after, .user-profile-card-wrapper .profile-card-content .profile-card-images:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base .rui-form-slider:after, .rui-form-base .rui-form-key-input:after, .rui-form-base:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
   content: "";
   display: block;
   clear: both;
@@ -52,6 +52,182 @@ body {
 }
 
 /* Common */
+/*
+ * User Profile Card
+ *
+ */
+/* line 9, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  background: linear-gradient(45deg, #0E161B, #191D1F);
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+  /* Corner Effects */
+  /* Content */
+}
+/* line 19, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-corners-top,
+.user-profile-card-wrapper .profile-card-corners-bottom {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 28, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-corners-top::before,
+.user-profile-card-wrapper .profile-card-corners-top::after,
+.user-profile-card-wrapper .profile-card-corners-bottom::before,
+.user-profile-card-wrapper .profile-card-corners-bottom::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+}
+/* line 38, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-corners-top::before,
+.user-profile-card-wrapper .profile-card-corners-bottom::before {
+  left: 0px;
+  border-left: 1px solid #0091ea;
+}
+/* line 43, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-corners-top::after,
+.user-profile-card-wrapper .profile-card-corners-bottom::after {
+  right: 0px;
+  border-right: 1px solid #0091ea;
+}
+/* line 48, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-corners-top::before,
+.user-profile-card-wrapper .profile-card-corners-top::after {
+  top: 0px;
+  border-top: 1px solid #0091ea;
+}
+/* line 53, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-corners-bottom::before,
+.user-profile-card-wrapper .profile-card-corners-bottom::after {
+  bottom: 0px;
+  border-bottom: 1px solid #0091ea;
+}
+/* line 60, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content {
+  position: relative;
+  z-index: 2;
+  /* Team */
+  /* Stats */
+  /* Name */
+  /* Level */
+  /* Images */
+}
+/* line 66, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-team {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(0, 0, 0, 0.25);
+  /* No Team */
+}
+/* line 77, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-team .team-no-team {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  color: #424242;
+  font-size: 14px;
+  font-weight: 700;
+}
+/* line 87, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-stats {
+  margin: 20px 0;
+}
+/* line 90, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block {
+  position: relative;
+  float: left;
+  width: 33.33%;
+  text-align: center;
+}
+/* line 95, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block .stats-block-desc {
+  color: #0091EA;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* line 101, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block .stats-block-data {
+  color: white;
+  font-size: 22px;
+  font-weight: 700px;
+  line-height: 20px;
+}
+/* line 109, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-name {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+/* line 119, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-level {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+/* line 123, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-level .level-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0091EA;
+  margin-bottom: 6px;
+}
+/* line 128, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-level .level-progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+/* line 133, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-level .level-progress-bar .bar-experience {
+  position: relative;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(90deg, #0082D2, #00B0FF);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 4px 0 16px rgba(0, 145, 234, 0.65);
+}
+/* line 142, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-images {
+  margin-bottom: 10px;
+}
+/* line 145, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-images .images-solo-rank,
+.user-profile-card-wrapper .profile-card-content .profile-card-images .images-team-rank {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 15px 20px;
+}
+/* line 151, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-images .images-profile-image {
+  float: left;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 3px solid #191D1F;
+  box-sizing: border-box;
+  box-shadow: 0 0 150px rgba(0, 145, 234, 0.35);
+}
+
 /*
  * Animation Holder Component
  *
@@ -490,6 +666,20 @@ body {
 }
 
 /* Views */
+/*
+ * Home View
+ *
+ */
+/* line 7, ../sass/views/home_view.sass */
+.home-view {
+  /* Left Column */
+  /* Right Column */
+}
+/* line 11, ../sass/views/home_view.sass */
+.home-view > .home-view-left-column {
+  padding-left: 100px;
+}
+
 /*
  * Play Browse View
  *

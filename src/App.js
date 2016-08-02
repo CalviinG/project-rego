@@ -106,8 +106,6 @@ const App = React.createClass({
             [
                 'Play',
                 'Casual',
-                'Arms Race',
-                'Demolition',
                 'Deathmatch',
                 'Matchmaking',
                 'Competative Play',
