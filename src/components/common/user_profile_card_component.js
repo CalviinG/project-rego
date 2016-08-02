@@ -42,7 +42,7 @@ const UserProfileCardComponent = React.createClass({
 			<div className='user-profile-card-wrapper'>
 				<div className='profile-card-content'>
 					<div className='profile-card-images'>
-						<img className='images-solo-rank' src={`../../../sass/images/user_images/${user.image}.png`} />
+						<img className='images-solo-rank' src={`../../../sass/images/solo_ranks/rank_${user.rankData.rank}.png`} />
 						<img className='images-profile-image' src={`../../../sass/images/user_images/${user.image}.png`} />
 						{teamRankImageRender}
 					</div>
