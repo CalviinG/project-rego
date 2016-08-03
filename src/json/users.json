@@ -16,7 +16,21 @@
 			"curExp": 7000,
 			"maxExp": 10000
 		},
-		"statsData": null,
+		"statsData": {
+			"fragStats": {
+				"kills": 52421,
+				"deaths": 38693,
+				"headshots": 28634,
+				"headshotsPercent": 54.6
+			},
+			"matchStats": {
+				"matchesPlayed": 1365,
+				"matchesWon": 674,
+				"roundsPlayed": 35253,
+				"roundsWon": 18429,
+				"mvpStars": 5320
+			}
+		},
 		"teamData": null,
 		"friendsData": null
 	},

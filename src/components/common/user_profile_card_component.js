@@ -66,15 +66,15 @@ const UserProfileCardComponent = React.createClass({
 					<div className='profile-card-stats'>
 						<div className='stats-block'>
 							<p className='stats-block-desc'>Games</p>
-							<p className='stats-block-data'>0</p>
+							<p className='stats-block-data'>{user.statsData.matchStats.matchesPlayed}</p>
 						</div>
 						<div className='stats-block'>
 							<p className='stats-block-desc'>Wins</p>
-							<p className='stats-block-data'>0</p>
+							<p className='stats-block-data'>{user.statsData.matchStats.matchesWon}</p>
 						</div>
 						<div className='stats-block'>
 							<p className='stats-block-desc'>Kills</p>
-							<p className='stats-block-data'>0</p>
+							<p className='stats-block-data'>{user.statsData.fragStats.kills}</p>
 						</div>
 					</div>
 					{teamRender}
