@@ -35,7 +35,7 @@ body {
 }
 
 /* line 22, ../sass/base.sass */
-.clear-after:after, .user-profile-card-wrapper .profile-card-content .profile-card-stats:after, .user-profile-card-wrapper .profile-card-content .profile-card-images:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base .rui-form-slider:after, .rui-form-base .rui-form-key-input:after, .rui-form-base:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
+.clear-after:after, .user-profile-card-wrapper .profile-card-content .profile-card-team:after, .user-profile-card-wrapper .profile-card-content .profile-card-stats:after, .user-profile-card-wrapper .profile-card-content .profile-card-images:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base .rui-form-slider:after, .rui-form-base .rui-form-key-input:after, .rui-form-base:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
   content: "";
   display: block;
   clear: both;
@@ -127,33 +127,75 @@ body {
   position: relative;
   width: 100%;
   height: 40px;
-  line-height: 40px;
+  padding: 1px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), inset 0 1px 0 rgba(0, 0, 0, 0.25);
   /* No Team */
 }
-/* line 77, ../sass/common/user_profile_card.sass */
+/* line 75, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-team .team-name,
+.user-profile-card-wrapper .profile-card-content .profile-card-team .team-league {
+  height: 38px;
+  line-height: 38px;
+  font-weight: 600;
+  padding: 0 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  background: linear-gradient(#22272A, #191D1F);
+  cursor: pointer;
+  transition: all 0.125s ease;
+}
+/* line 85, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-team .team-name:hover,
+.user-profile-card-wrapper .profile-card-content .profile-card-team .team-league:hover {
+  background: linear-gradient(#2A3135, #191D1F);
+}
+/* line 87, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-team .team-name {
+  float: left;
+  width: calc(100% - 95px - 1px);
+  color: white;
+  font-size: 14px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+/* line 94, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-team .team-league {
+  float: right;
+  width: 95px;
+  color: #0091EA;
+  font-size: 12px;
+  text-align: center;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+/* line 102, ../sass/common/user_profile_card.sass */
+.user-profile-card-wrapper .profile-card-content .profile-card-team .team-league .team-league-icon {
+  font-size: 14px;
+  margin-right: 5px;
+}
+/* line 108, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-no-team {
   position: relative;
   width: 100%;
+  line-height: 40px;
   text-align: center;
   color: #424242;
   font-size: 14px;
   font-weight: 700;
 }
-/* line 87, ../sass/common/user_profile_card.sass */
+/* line 119, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats {
   margin: 20px 0;
 }
-/* line 90, ../sass/common/user_profile_card.sass */
+/* line 122, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block {
   position: relative;
   float: left;
   width: 33.33%;
   text-align: center;
 }
-/* line 95, ../sass/common/user_profile_card.sass */
+/* line 127, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block .stats-block-desc {
   color: #0091EA;
   font-size: 10px;
@@ -161,14 +203,14 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* line 101, ../sass/common/user_profile_card.sass */
+/* line 133, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block .stats-block-data {
   color: white;
   font-size: 22px;
   font-weight: 700px;
   line-height: 20px;
 }
-/* line 109, ../sass/common/user_profile_card.sass */
+/* line 141, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-name {
   position: relative;
   width: 100%;
@@ -177,27 +219,27 @@ body {
   font-weight: 600;
   color: white;
 }
-/* line 119, ../sass/common/user_profile_card.sass */
+/* line 151, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level {
   position: relative;
   width: 100%;
   text-align: center;
 }
-/* line 123, ../sass/common/user_profile_card.sass */
+/* line 155, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-text {
   font-size: 14px;
   font-weight: 600;
   color: #0091EA;
   margin-bottom: 6px;
 }
-/* line 128, ../sass/common/user_profile_card.sass */
+/* line 160, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-progress-bar {
   width: 100%;
   height: 4px;
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(0, 0, 0, 0.25);
 }
-/* line 133, ../sass/common/user_profile_card.sass */
+/* line 165, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-progress-bar .bar-experience {
   position: relative;
   height: 100%;
@@ -205,11 +247,11 @@ body {
   background: linear-gradient(90deg, #0082D2, #00B0FF);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 4px 0 16px rgba(0, 145, 234, 0.65);
 }
-/* line 142, ../sass/common/user_profile_card.sass */
+/* line 174, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images {
   margin-bottom: 10px;
 }
-/* line 145, ../sass/common/user_profile_card.sass */
+/* line 177, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-solo-rank,
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-team-rank {
   float: left;
@@ -217,7 +259,7 @@ body {
   height: 50px;
   margin: 15px 20px;
 }
-/* line 151, ../sass/common/user_profile_card.sass */
+/* line 183, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-profile-image {
   float: left;
   width: 80px;

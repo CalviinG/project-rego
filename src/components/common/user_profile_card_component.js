@@ -2,6 +2,9 @@ import React from 'react';
 import $	 from 'jquery';
 import _	 from 'underscore';
 
+// Json
+import Leagues from '../../json/leagues.json';
+
 const UserProfileCardComponent = React.createClass({
 	propTypes: {
         userData: React.PropTypes.object.isRequired,
@@ -23,8 +26,11 @@ const UserProfileCardComponent = React.createClass({
 		} else {
 			return (
 				<div className='profile-card-team'>
-					<div className='team-name'>Team Name</div>
-					<div className='team-league'>League</div>
+					<div className='team-name'>{team.name}</div>
+					<div className='team-league'>
+						<i className="fa fa-trophy team-league-icon" />
+						{team.leagueData.shortName}
+					</div>
 				</div>
 			);
 		}
@@ -32,10 +38,12 @@ const UserProfileCardComponent = React.createClass({
 
 	render() {
 		const user = this.props.userData;
+		const leagueData = _.findWhere(Leagues, {leagueId: user.teamData.leagueId} );
 		const teamRankImageRender = (user.teamData !== null)
-			? <img className='images-team-rank' />
+			? <img className='images-team-rank' src={`../../../sass/images/${leagueData.emblemSmall}`} />
 			: <div className='images-team-rank' />
 		const levelString = `Level ${user.levelData.level} ${user.levelData.name}`;
+		user.teamData.leagueData = leagueData;
 		const teamRender = this._buildTeam(user.teamData);
 
 		return (

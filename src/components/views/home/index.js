@@ -2,6 +2,7 @@ import React from 'react';
 
 // Json
 import Users from '../../../json/users.json';
+import Teams from '../../../json/teams.json';
 
 // Components
 import AnimationHolder          from '../../common/animation_holder.js';
@@ -9,8 +10,10 @@ import UserProfileCardComponent from '../../common/user_profile_card_component.j
 
 const HomeView = React.createClass({
     render() {
-        const mainUser = Users[0];
-        console.log('mainUser', mainUser);
+        const users = JSON.parse(JSON.stringify(Users));
+        const mainUser = users[0];
+        
+        mainUser.teamData = Teams[0];
 
         return (
             <div className='home-view'>
