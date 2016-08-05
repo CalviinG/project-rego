@@ -1,0 +1,44 @@
+[
+	{
+		"leagueId": 1,
+		"fullName": "Open League",
+		"shortName": "Open",
+		"emblemSmall": "league_emblems/league_1_small.png",
+		"emblemBig": "league_emblems/league_1_big.png"
+	},
+	{
+		"leagueId": 2,
+		"fullName": "Silver League",
+		"shortName": "Silver",
+		"emblemSmall": "league_emblems/league_2_small.png",
+		"emblemBig": "league_emblems/league_2_big.png"
+	},
+	{
+		"leagueId": 3,
+		"fullName": "Gold League",
+		"shortName": "Gold",
+		"emblemSmall": "league_emblems/league_3_small.png",
+		"emblemBig": "league_emblems/league_3_big.png"
+	},
+	{
+		"leagueId": 4,
+		"fullName": "Diamond League",
+		"shortName": "Diamond",
+		"emblemSmall": "league_emblems/league_4_small.png",
+		"emblemBig": "league_emblems/league_4_big.png"
+	},
+	{
+		"leagueId": 5,
+		"fullName": "Elite League",
+		"shortName": "Elite",
+		"emblemSmall": "league_emblems/league_5_small.png",
+		"emblemBig": "league_emblems/league_5_big.png"
+	},
+	{
+		"leagueId": 6,
+		"fullName": "Master League",
+		"shortName": "Master",
+		"emblemSmall": "league_emblems/league_6_small.png",
+		"emblemBig": "league_emblems/league_6_big.png"
+	}
+]

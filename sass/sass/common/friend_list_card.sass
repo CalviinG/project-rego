@@ -1,0 +1,74 @@
+/*
+ *
+ * Friend List Card
+ *
+ */
+
+.friend-list-card-wrapper
+  position: relative
+  width: 100%
+
+  /* Toggle Block Component */
+
+  .friend-list-toggle-block
+    position: relative
+    width: 100%
+    &:not(:last-of-type)
+      margin-bottom: 10px
+    .toggle-block-head
+      @extend .clear-after
+      cursor: pointer
+      color: white
+      margin-bottom: 10px
+      .head-label,
+      .head-icon
+        line-height: 20px
+      .head-label
+        float: left
+        font-size: 18px
+      .head-icon
+        float: right
+        font-size: 20px
+        transform: rotate(0deg)
+        transition: transform .25s ease
+      &:hover
+        color: $mainColor
+    .toggle-block-list
+      overflow: hidden
+      transition: height .25s cubic-bezier(0.1, 1, 0.5, 1)
+      color: white
+    &.is-closed
+      .head-icon
+        transform: rotate(-90deg)
+
+  /* Friend List User Block */
+
+  .friend-list-user-block
+    @extend .clear-after
+    &:not(:last-of-type)
+      margin-bottom: 10px
+    .user-block-avatar,
+    .user-block-text
+      float: left
+    .user-block-avatar
+      width: 40px
+      height: 40px
+      border-radius: 100%
+      margin-right: 5px
+      background-color: $mainColor
+    .user-block-text
+      margin: 5px 0
+      .header-text
+        font-size: 15px
+        line-height: 17px
+        font-weight: 600
+      .desc-text
+        font-size: 13px
+        line-height: 13px
+        &.is-in-match
+          color: $c-green
+        &.is-in-game
+          color: $mainColor
+        &.is-online,
+        &.is-offline
+          color: $grey-600

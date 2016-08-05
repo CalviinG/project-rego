@@ -6,6 +6,8 @@ import _     from 'underscore';
 import TimerMixin from 'react-timer-mixin';
 
 // ** Views **
+// Home
+import HomeView from './views/home';
 // Play
 import BrowseView from './views/play/browse';
 // Settings
@@ -17,8 +19,9 @@ import VideoView    from './views/settings/video';
 const ViewComponent = React.createClass({
 	mixins: [TimerMixin],
 	propTypes: {
-        activeMain:  React.PropTypes.number.isRequired,
-        activeSub:   React.PropTypes.number.isRequired,
+        activeMain: React.PropTypes.number.isRequired,
+        activeSub:  React.PropTypes.number.isRequired,
+		users: 		React.PropTypes.object.isRequired,
     },
 
     getInitialState() {
@@ -78,10 +81,12 @@ const ViewComponent = React.createClass({
 
 	render() {
 		const view = this.props;
+		const users = this.props.users;
+
 		const viewLibrary = [
 			[
 				/* Home */
-				null,
+				<HomeView users={users} />,
 			],
 			[
 				/* Play */

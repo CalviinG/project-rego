@@ -1,0 +1,25 @@
+/*
+ *
+ * Home View
+ *
+ */
+
+.home-view
+  @extend .clear-after
+  height: 100%
+
+  & > .home-view-left-column,
+  & > .home-view-right-column
+    float: left
+    height: 100%
+
+  /* Left Column */
+
+  & > .home-view-left-column
+    padding-left: 100px
+    .user-profile-card-wrapper
+      margin-bottom: 20px
+
+  /* Right Column */
+
+  & > .home-view-right-column

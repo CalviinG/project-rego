@@ -79,7 +79,7 @@ const RuiSearch = React.createClass({
 			newKeywords.push(keyword.toLowerCase());
 			if (typeof this.props.onUpdate === 'function') this.props.onUpdate(newKeywords);
 			this.setState({ keywords: newKeywords });
-		} 
+		}
 	},
 
 	_removeKeyword(label) {
@@ -99,17 +99,21 @@ const RuiSearch = React.createClass({
 		};
 
 		// Keywords
+
+		// Gör detta till en prop istället. Man skickar med vilka ord som ska highlighteas i en array
+		// Mycket mer logiskt än att komponenten ska lagra allt.
+		
 		const mapKeys = [
-			'de_aztec', 
-			'de_dust', 
-			'de_dust2', 
-			'de_cache', 
-			'de_cobblestone', 
-			'de_inferno', 
-			'de_mirage', 
-			'de_nuke', 
-			'de_overpass', 
-			'de_train', 
+			'de_aztec',
+			'de_dust',
+			'de_dust2',
+			'de_cache',
+			'de_cobblestone',
+			'de_inferno',
+			'de_mirage',
+			'de_nuke',
+			'de_overpass',
+			'de_train',
 			'de_vertigo',
 		];
 

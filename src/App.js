@@ -1,14 +1,25 @@
-import React, { Component } from 'react';
-import _                    from 'underscore';
+import React from 'react';
+import _     from 'underscore';
+
+// Json
+import Friends from './json/friends.json';
+
+// Mixins
+import TimerMixin from 'react-timer-mixin';
 
 // Components
-import NavigationComponent from './components/navigation_component.js';
-import ViewComponent       from './components/view_component.js';
-import BackgroundComponent from './components/background_component.js';
+import NavigationComponent  from './components/navigation_component.js';
+import ViewComponent        from './components/view_component.js';
+import BackgroundComponent  from './components/background_component.js';
+import RandomStatsGenerator from './components/common/random_stats_generator.js';
 
 const App = React.createClass({
+    mixins: [TimerMixin],
+
     getInitialState() {
         return {
+            initializing: true,
+            users: this._buildUsersObject('CalvinG', Friends),
             activeMain: 0,
             activeSub: 0,
             viewHistory: {
@@ -18,6 +29,10 @@ const App = React.createClass({
                 stopForward: true,
             },
         };
+    },
+
+    componentDidMount() {
+        this.setState({ initialRender: false });
     },
 
     _onViewChange(type, index) {
@@ -98,6 +113,47 @@ const App = React.createClass({
         this.setState({ viewHistory: historyArray });
     },
 
+    _buildUsersObject(main, friends) {
+        // Build User Data
+        let mainUser;
+        let friendsArray = [];
+
+        _.each(friends, (friend, i) => {
+            const data = RandomStatsGenerator.generateUserData();
+            const user = {
+                userId: i,
+                name: (i > 0) ? friend : main,
+                image: `user_images/user_image_${i + 1}.png`,
+                teamData: null,
+                ...data,
+            };
+
+            if (i > 0) {
+                friendsArray.push(user);
+            } else {
+                user.gameData.status = 'In-Game';
+                user.gameData.inGameStatus = 'Idle';
+                mainUser = user;
+            }
+        });
+
+        // Returning object
+        const rObject = {
+            mainUser: mainUser,
+            friends: friendsArray,
+        };
+
+        return rObject;
+    },
+
+    _loadingScreen() {
+        const loadingScreenTime = 5000;
+
+        this.setTimeout(() => {
+            this.setState({ initializing: false });
+        }, loadingScreenTime);
+    },
+
   	render() {
   		const linksData = [
             [
@@ -106,8 +162,6 @@ const App = React.createClass({
             [
                 'Play',
                 'Casual',
-                'Arms Race',
-                'Demolition',
                 'Deathmatch',
                 'Matchmaking',
                 'Competative Play',
@@ -139,6 +193,15 @@ const App = React.createClass({
             ],
         ];
 
+        // Loading Screen
+        if (this.state.initializing) {
+            this._loadingScreen();
+
+            return (
+                <BackgroundComponent initialize={true} />
+            );
+        }
+
 	    return (
 	      	<div className='app-wrapper'>
 	      		<NavigationComponent
@@ -148,9 +211,10 @@ const App = React.createClass({
                     activeSub={this.state.activeSub}
                     onChange={this._onViewChange} />
                 <ViewComponent
+                    users={this.state.users}
                     activeMain={this.state.activeMain}
                     activeSub={this.state.activeSub} />
-                <BackgroundComponent />
+                <BackgroundComponent initialize={false} />
 	      	</div>
 	    );
   	},

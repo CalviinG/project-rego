@@ -68,10 +68,10 @@ const BrowseView = React.createClass({
             // Check for active server with open slots
             } else if (activeFilter.Server === 'Active & Not Full') {
                 if (!(server.curPlayers > 0 && server.curPlayers != server.maxPlayers)) { return false }
-            } 
+            }
         }
 
-        // Password 
+        // Password
         if (activeFilter.Password != undefined) {
             // Check for servers without password
             if (activeFilter.Password === 'With Password') {
@@ -269,7 +269,7 @@ const BrowseView = React.createClass({
                     'bad': (server.curPlayers === server.maxPlayers),
                 });
 
-                const latecncyStatus = classNames({
+                const latencyStatus = classNames({
                     'good': (server.latency < 100),
                     'normal': (server.latency > 99 && server.latency < 250),
                     'bad': (server.latency > 249),
@@ -287,7 +287,7 @@ const BrowseView = React.createClass({
                     map: server.map,
                     location: server.location,
                     players: [playersStatus, `${server.curPlayers} / ${server.maxPlayers}`],
-                    latency: [latecncyStatus, `${server.latency} MS`],
+                    latency: [latencyStatus, `${server.latency} MS`],
                     vac: [vacStatus, 'VAC', 'fa-shield'],
                     quickActions: rowQuickActions,
                 };
@@ -303,7 +303,7 @@ const BrowseView = React.createClass({
          *
          * Server Filter
          *
-         */ 
+         */
 
         // Filter Dropdowns
         const locationOptions = ['Location', 'Europe', 'America', 'Australia', 'Russia', 'Asia' ];
@@ -317,6 +317,8 @@ const BrowseView = React.createClass({
          * Server List Actions
          *
          */
+
+         console.log('severs', serverList);
 
         // List Label Buttons
         const listLabels = _.map(this.state.serverLabels, (label, index) => {
@@ -360,7 +362,7 @@ const BrowseView = React.createClass({
                         </div>
                         <div className='list-actions-right'>
                             {listLabels}
-                        </div>    
+                        </div>
                     </div>
                     <Table
                         header={tableHeader}
