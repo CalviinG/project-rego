@@ -2,8 +2,8 @@ import React from 'react';
 import $	 from 'jquery';
 import _	 from 'underscore';
 
-// Json
-import Leagues from '../../json/leagues.json';
+// Components
+import RandomStatsGenerator from '../common/random_stats_generator.js';
 
 const UserProfileCardComponent = React.createClass({
 	propTypes: {
@@ -38,12 +38,10 @@ const UserProfileCardComponent = React.createClass({
 
 	render() {
 		const user = this.props.userData;
-		const leagueData = _.findWhere(Leagues, {leagueId: user.teamData.leagueId} );
 		const teamRankImageRender = (user.teamData !== null)
-			? <img className='images-team-rank' src={`../../../sass/images/${leagueData.emblemSmall}`} />
-			: <div className='images-team-rank' />
-		const levelString = `Level ${user.levelData.level} ${user.levelData.name}`;
-		user.teamData.leagueData = leagueData;
+			? <img className='images-team-rank' src={`../../../sass/images/${user.teamData.emblemSmall}`} />
+			: <img className='images-team-rank' src={`../../../sass/images/league_emblems/no_league_small.png`} />
+		const levelString = user.levelData.name;
 		const teamRender = this._buildTeam(user.teamData);
 
 		return (
@@ -51,7 +49,7 @@ const UserProfileCardComponent = React.createClass({
 				<div className='profile-card-content'>
 					<div className='profile-card-images'>
 						<img className='images-solo-rank' src={`../../../sass/images/solo_ranks/rank_${user.rankData.rank}.png`} />
-						<img className='images-profile-image' src={`../../../sass/images/user_images/${user.image}.png`} />
+						<img className='images-profile-image' src={`../../../sass/images/${user.image}`} />
 						{teamRankImageRender}
 					</div>
 					<div className='profile-card-name'>
@@ -66,15 +64,15 @@ const UserProfileCardComponent = React.createClass({
 					<div className='profile-card-stats'>
 						<div className='stats-block'>
 							<p className='stats-block-desc'>Games</p>
-							<p className='stats-block-data'>{user.statsData.matchStats.matchesPlayed}</p>
+							<p className='stats-block-data'>{user.matchStats.matchesPlayed}</p>
 						</div>
 						<div className='stats-block'>
 							<p className='stats-block-desc'>Wins</p>
-							<p className='stats-block-data'>{user.statsData.matchStats.matchesWon}</p>
+							<p className='stats-block-data'>{user.matchStats.matchesWon}</p>
 						</div>
 						<div className='stats-block'>
 							<p className='stats-block-desc'>Kills</p>
-							<p className='stats-block-data'>{user.statsData.fragStats.kills}</p>
+							<p className='stats-block-data'>{user.fragStats.kills}</p>
 						</div>
 					</div>
 					{teamRender}

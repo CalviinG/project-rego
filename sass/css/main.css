@@ -1,7 +1,7 @@
 /* Main SASS Document */
 /* Base */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
 /* Lib */
 /*
  * Color Library
@@ -35,7 +35,7 @@ body {
 }
 
 /* line 22, ../sass/base.sass */
-.clear-after:after, .user-profile-card-wrapper .profile-card-content .profile-card-team:after, .user-profile-card-wrapper .profile-card-content .profile-card-stats:after, .user-profile-card-wrapper .profile-card-content .profile-card-images:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base .rui-form-slider:after, .rui-form-base .rui-form-key-input:after, .rui-form-base:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
+.clear-after:after, .friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head:after, .friend-list-card-wrapper .friend-list-user-block:after, .user-profile-card-wrapper .profile-card-content .profile-card-team:after, .user-profile-card-wrapper .profile-card-content .profile-card-stats:after, .user-profile-card-wrapper .profile-card-content .profile-card-images:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .home-view:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base .rui-form-slider:after, .rui-form-base .rui-form-key-input:after, .rui-form-base:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
   content: "";
   display: block;
   clear: both;
@@ -52,6 +52,108 @@ body {
 }
 
 /* Common */
+/*
+ * Friend List Card
+ *
+ */
+/* line 7, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper {
+  position: relative;
+  width: 100%;
+  /* Toggle Block Component */
+  /* Friend List User Block */
+}
+/* line 13, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-toggle-block {
+  position: relative;
+  width: 100%;
+}
+/* line 16, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-toggle-block:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+/* line 18, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head {
+  cursor: pointer;
+  color: white;
+  margin-bottom: 10px;
+}
+/* line 23, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head .head-label,
+.friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head .head-icon {
+  line-height: 20px;
+}
+/* line 26, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head .head-label {
+  float: left;
+  font-size: 18px;
+}
+/* line 29, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head .head-icon {
+  float: right;
+  font-size: 20px;
+  transform: rotate(0deg);
+  transition: transform 0.25s ease;
+}
+/* line 34, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head:hover {
+  color: #0091EA;
+}
+/* line 36, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-toggle-block .toggle-block-list {
+  overflow: hidden;
+  transition: height 0.25s cubic-bezier(0.1, 1, 0.5, 1);
+  color: white;
+}
+/* line 41, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-toggle-block.is-closed .head-icon {
+  transform: rotate(-90deg);
+}
+/* line 48, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+/* line 50, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-avatar,
+.friend-list-card-wrapper .friend-list-user-block .user-block-text {
+  float: left;
+}
+/* line 53, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-right: 5px;
+  background-color: #0091EA;
+}
+/* line 59, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-text {
+  margin: 5px 0;
+}
+/* line 61, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-text .header-text {
+  font-size: 15px;
+  line-height: 17px;
+  font-weight: 600;
+}
+/* line 65, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text {
+  font-size: 13px;
+  line-height: 13px;
+}
+/* line 68, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-in-match {
+  color: #4CAF50;
+}
+/* line 70, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-in-game {
+  color: #0091EA;
+}
+/* line 72, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-online, .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-offline {
+  color: #757575;
+}
+
 /*
  * User Profile Card
  *
@@ -714,12 +816,22 @@ body {
  */
 /* line 7, ../sass/views/home_view.sass */
 .home-view {
+  height: 100%;
   /* Left Column */
   /* Right Column */
 }
 /* line 11, ../sass/views/home_view.sass */
+.home-view > .home-view-left-column, .home-view > .home-view-right-column {
+  float: left;
+  height: 100%;
+}
+/* line 18, ../sass/views/home_view.sass */
 .home-view > .home-view-left-column {
   padding-left: 100px;
+}
+/* line 20, ../sass/views/home_view.sass */
+.home-view > .home-view-left-column .user-profile-card-wrapper {
+  margin-bottom: 20px;
 }
 
 /*

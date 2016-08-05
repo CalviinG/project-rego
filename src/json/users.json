@@ -20,8 +20,8 @@
 			"fragStats": {
 				"kills": 52421,
 				"deaths": 38693,
-				"headshots": 28634,
-				"headshotsPercent": 54.6
+				"accuracy": 18.9,
+				"headshots": 28634
 			},
 			"matchStats": {
 				"matchesPlayed": 1365,
@@ -129,6 +129,26 @@
 			},
 			"party": null
 		},
+		"rankData":	{
+			"rank": 1,
+			"name": "Bronze Novice"
+		},
+		"levelData": {
+			"level": 3,
+			"name": "Private",
+			"curExp": 9000,
+			"maxExp": 10000
+		},
+		"statsData": null,
+		"teamData": null,
+		"friendsData": null
+	},
+	{
+		"id": 10006,
+		"name":	"Elhajen",
+		"image": "user_image_6",
+		"status": "Online",
+		"gameData":	null,
 		"rankData":	{
 			"rank": 1,
 			"name": "Bronze Novice"

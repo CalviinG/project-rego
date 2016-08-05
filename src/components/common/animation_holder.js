@@ -5,6 +5,10 @@ import $		  from 'jquery';
 const AnimationHolder = React.createClass({
 	propTypes: {
         zIndex: React.PropTypes.number,
+		height: React.PropTypes.oneOfType([
+			React.PropTypes.string,
+			React.PropTypes.number,
+		]),
     },
 
     getDefaultProps() {
@@ -25,6 +29,7 @@ const AnimationHolder = React.createClass({
 		const animationStyle = ({
 			position: 'relative',
 			zIndex: this.props.zIndex,
+			height: (this.props.height) ? this.props.height : 'auto',
 		});
 
 		return (

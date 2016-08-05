@@ -1,25 +1,29 @@
 import React from 'react';
 
 // Json
-import Users from '../../../json/users.json';
 import Teams from '../../../json/teams.json';
 
 // Components
 import AnimationHolder          from '../../common/animation_holder.js';
 import UserProfileCardComponent from '../../common/user_profile_card_component.js';
+import FriendListCardComponent  from '../../common/friend_list_card_component.js';
 
 const HomeView = React.createClass({
+    propTypes: {
+        users: React.PropTypes.object.isRequired,
+    },
+
     render() {
-        const users = JSON.parse(JSON.stringify(Users));
-        const mainUser = users[0];
-        
-        mainUser.teamData = Teams[0];
+        const users = this.props.users;
 
         return (
             <div className='home-view'>
                 <div className='home-view-left-column'>
-                    <AnimationHolder zIndex={0}>
-                        <UserProfileCardComponent userData={mainUser} />
+                    <AnimationHolder>
+                        <UserProfileCardComponent userData={users.mainUser} />
+                    </AnimationHolder>
+                    <AnimationHolder height='calc(100% - 320px)'>
+                        <FriendListCardComponent friends={users.friends} />
                     </AnimationHolder>
                 </div>
                 <div className='home-view-right-column'>
