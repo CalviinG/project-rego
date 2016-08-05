@@ -769,6 +769,17 @@ body {
  *
  */
 /* line 7, ../sass/components/background.sass */
+.background .background-initialize .background-particle-overlay-one,
+.background .background-initialize .background-particle-overlay-two,
+.background .background-initialize .background-particle-overlay-three {
+  position: absolute;
+  top: -50000px;
+  left: -50000px;
+  width: 100000px;
+  height: 100000px;
+}
+
+/* line 14, ../sass/components/background.sass */
 .background {
   position: absolute;
   z-index: 0;
@@ -779,8 +790,10 @@ body {
   /* Base */
   /* Overlays */
   /* Background Image */
+  /* Initialize */
+  /* Project Is Loading Fixes */
 }
-/* line 16, ../sass/components/background.sass */
+/* line 23, ../sass/components/background.sass */
 .background .background-overlay-blue,
 .background .background-overlay-black,
 .background .background-image {
@@ -790,25 +803,140 @@ body {
   top: 0;
   left: 0;
 }
-/* line 27, ../sass/components/background.sass */
+/* line 34, ../sass/components/background.sass */
 .background .background-overlay-blue {
   z-index: 3;
   background-color: rgba(0, 145, 234, 0.075);
 }
-/* line 31, ../sass/components/background.sass */
+/* line 38, ../sass/components/background.sass */
 .background .background-overlay-black {
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.85);
 }
-/* line 37, ../sass/components/background.sass */
+/* line 44, ../sass/components/background.sass */
 .background .background-image {
   z-index: 1;
-  background-image: url("../images/background.png");
+  background-image: url("../images/background/background.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
+/* line 53, ../sass/components/background.sass */
+.background .background-initialize {
+  position: absolute;
+  height: 100vh;
+  z-index: 4;
+}
+/* line 57, ../sass/components/background.sass */
+.background .background-initialize .background-particle-overlay-one,
+.background .background-initialize .background-particle-overlay-two,
+.background .background-initialize .background-particle-overlay-three {
+  background-repeat: repeat;
+}
+/* line 62, ../sass/components/background.sass */
+.background .background-initialize .background-particle-overlay-one {
+  z-index: 1;
+  opacity: 0.2;
+  background-image: url("../images/background/particle_overlay_1.jpg");
+  animation: overlay-one 750s infinite cubic-bezier(0.25, 0.25, 0.75, 0.75);
+}
+/* line 67, ../sass/components/background.sass */
+.background .background-initialize .background-particle-overlay-two {
+  z-index: 2;
+  opacity: 0.1;
+  background-image: url("../images/background/particle_overlay_2.jpg");
+  animation: overlay-two 650s infinite cubic-bezier(0.25, 0.25, 0.75, 0.75);
+}
+/* line 72, ../sass/components/background.sass */
+.background .background-initialize .background-particle-overlay-three {
+  z-index: 3;
+  opacity: 0.15;
+  background-image: url("../images/background/particle_overlay_3.jpg");
+  animation: overlay-three 800s infinite cubic-bezier(0.25, 0.25, 0.75, 0.75);
+}
+/* line 77, ../sass/components/background.sass */
+.background .background-initialize .background-logotype,
+.background .background-initialize .background-fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+/* line 84, ../sass/components/background.sass */
+.background .background-initialize .background-logotype {
+  z-index: 5;
+  background-image: url("../images/misc/project_rego_logo.png");
+  background-size: 387px 102px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/* line 90, ../sass/components/background.sass */
+.background .background-initialize .background-fade-overlay {
+  z-index: 7;
+  animation: fade-overlay 5s ease;
+  background-color: black;
+}
+/* line 94, ../sass/components/background.sass */
+.background .background-initialize .background-made-by {
+  position: absolute;
+  bottom: 100px;
+  left: 0px;
+  z-index: 6;
+  width: 100vw;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+}
+/* line 103, ../sass/components/background.sass */
+.background .background-initialize .background-made-by .made-by-icon {
+  font-size: 14px;
+  color: #F44336;
+}
+/* line 111, ../sass/components/background.sass */
+.background.project-is-loading .background-overlay-blue {
+  background-color: rgba(0, 145, 234, 0.15);
+}
 
+/* Particle Animations */
+@keyframes overlay-one {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(50000px, 5000px);
+  }
+}
+@keyframes overlay-two {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(25000px, 0px);
+  }
+}
+@keyframes overlay-three {
+  0% {
+    transform: translate(25000px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes fade-overlay {
+  0% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* Views */
 /*
  * Home View

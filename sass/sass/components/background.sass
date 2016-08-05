@@ -4,6 +4,13 @@
  *
  */
 
+%particleBase
+  position: absolute
+  top:   -50000px
+  left:  -50000px
+  width:  100000px
+  height: 100000px
+
 .background
   position: absolute
   z-index: 0
@@ -36,8 +43,100 @@
 
   .background-image
     z-index: 1
-    background-image: url('../images/background.png')
+    background-image: url('../images/background/background.png')
     background-repeat: no-repeat
     background-position: center center
     background-size: cover
-    
+
+  /* Initialize */
+
+  .background-initialize
+    position: absolute
+    height: 100vh
+    z-index: 4
+    .background-particle-overlay-one,
+    .background-particle-overlay-two,
+    .background-particle-overlay-three
+      @extend %particleBase
+      background-repeat: repeat
+    .background-particle-overlay-one
+      z-index: 1
+      opacity: 0.2
+      background-image: url('../images/background/particle_overlay_1.jpg')
+      animation: overlay-one 750s infinite cubic-bezier(0.250, 0.250, 0.750, 0.750)
+    .background-particle-overlay-two
+      z-index: 2
+      opacity: 0.1
+      background-image: url('../images/background/particle_overlay_2.jpg')
+      animation: overlay-two 650s infinite cubic-bezier(0.250, 0.250, 0.750, 0.750)
+    .background-particle-overlay-three
+      z-index: 3
+      opacity: 0.15
+      background-image: url('../images/background/particle_overlay_3.jpg')
+      animation: overlay-three 800s infinite cubic-bezier(0.250, 0.250, 0.750, 0.750)
+    .background-logotype,
+    .background-fade-overlay
+      position: absolute
+      top: 0
+      left: 0
+      width: 100vw
+      height: 100vh
+    .background-logotype
+      z-index: 5
+      background-image: url('../images/misc/project_rego_logo.png')
+      background-size: 387px 102px
+      background-repeat: no-repeat
+      background-position: center center
+    .background-fade-overlay
+      z-index: 7
+      animation: fade-overlay 5s ease
+      background-color: black
+    .background-made-by
+      position: absolute
+      bottom: 100px
+      left: 0px
+      z-index: 6
+      width: 100vw
+      text-align: center
+      font-size: 12px
+      color: white
+      .made-by-icon
+        font-size: 14px
+        color: $c-red
+
+  /* Project Is Loading Fixes */
+
+  &.project-is-loading
+    .background-overlay-black
+    .background-overlay-blue
+      background-color: rgba($mainColor, .15)
+
+/* Particle Animations */
+
+@keyframes overlay-one
+  0%
+    transform: translate(0px, 0px)
+  100%
+    transform: translate(50000px, 5000px)
+
+@keyframes overlay-two
+  0%
+    transform: translate(0px, 0px)
+  100%
+    transform: translate(25000px, 0px)
+
+@keyframes overlay-three
+  0%
+    transform: translate(25000px, 0px)
+  100%
+    transform: translate(0px, 0px)
+
+@keyframes fade-overlay
+  0%
+    opacity: 1
+  35%
+    opacity: 0
+  75%
+    opacity: 0
+  100%
+    opacity: 1
