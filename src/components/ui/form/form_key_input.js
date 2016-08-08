@@ -24,6 +24,9 @@ const FormKeyInput = React.createClass({
 	},
 
 	componentDidMount() {
+		window.addEventListener('keypress', this._cancelPropagations);
+		window.addEventListener('keydown', this._cancelPropagations);
+
 		this.recordClick = false;
 	},
 
@@ -31,6 +34,16 @@ const FormKeyInput = React.createClass({
 		if (newProps.input !== this.state.key) {
 			this.setState({ key: newProps.input });
 		}
+	},
+
+	componentWillUnmount() {
+		window.removeEventListener('keypress', this._cancelPropagations);
+		window.removeEventListener('keydown', this._cancelPropagations);
+	},
+
+	_cancelPropagations() {
+		console.log('CANCEL THAT SHIT!');
+		event.preventDefault();
 	},
 
 	_startInputMode() {
@@ -80,8 +93,6 @@ const FormKeyInput = React.createClass({
 
 	_inputMode(event) {
 		let key;
-
-		console.log(event.keyCode);
 
 		if (event.keyCode === 32) {
 			key = 'Space';
