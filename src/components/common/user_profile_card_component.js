@@ -39,8 +39,8 @@ const UserProfileCardComponent = React.createClass({
 	render() {
 		const user = this.props.userData;
 		const teamRankImageRender = (user.teamData !== null)
-			? <img className='images-team-rank' src={`../../../sass/images/${user.teamData.emblemSmall}`} />
-			: <img className='images-team-rank' src={`../../../sass/images/league_emblems/no_league_small.png`} />
+			? <img className='images-team-rank' src={`sass/images/${user.teamData.emblemSmall}`} />
+			: <img className='images-team-rank' src={`sass/images/league_emblems/no_league_small.png`} />
 		const levelString = user.levelData.name;
 		const teamRender = this._buildTeam(user.teamData);
 
@@ -48,8 +48,8 @@ const UserProfileCardComponent = React.createClass({
 			<div className='user-profile-card-wrapper'>
 				<div className='profile-card-content'>
 					<div className='profile-card-images'>
-						<img className='images-solo-rank' src={`../../../sass/images/solo_ranks/rank_${user.rankData.rank}.png`} />
-						<img className='images-profile-image' src={`../../../sass/images/${user.image}`} />
+						<img className='images-solo-rank' src={`sass/images/solo_ranks/rank_${user.rankData.rank}.png`} />
+						<img className='images-profile-image' src={`sass/images/${user.image}`} />
 						{teamRankImageRender}
 					</div>
 					<div className='profile-card-name'>
