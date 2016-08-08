@@ -24,8 +24,6 @@ const ScrollHolder = React.createClass({
 	},
 
 	updateScrollBar(delay) {
-		console.log('updateScrollBar()');
-
 		setTimeout(() => {
 			this._setBarHeight();
 			this.forceUpdate();
