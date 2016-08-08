@@ -41,9 +41,28 @@
       z-index: 2
       transform: translate(0px, 0px)
       background-color: rgba($dark-1, .85)
+      transition: height .25s ease
 
     .indicator-area
       z-index: 1
       top: 0
       height: 100%
       background-color: rgba($dark-2, .85)
+
+  /* showScrollOnHover property style */
+
+  &.show-on-hover
+    .scroll-content
+      padding-right: 0
+    .scroll-indicator
+      width: 4px
+      .indicator-bar
+        opacity: 0
+        background-color: rgba($dark-1, .6)
+        transition: opacity .15s ease, height .25s ease
+      .indicator-area
+        display: none
+    &:hover
+      .scroll-indicator
+        .indicator-bar
+          opacity: 1

@@ -540,6 +540,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  /* showScrollOnHover property style */
 }
 /* line 13, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-content,
@@ -579,13 +580,36 @@ body {
   z-index: 2;
   transform: translate(0px, 0px);
   background-color: rgba(34, 39, 42, 0.85);
+  transition: height 0.25s ease;
 }
-/* line 45, ../sass/common/scroll_holder.sass */
+/* line 46, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-indicator .indicator-area {
   z-index: 1;
   top: 0;
   height: 100%;
   background-color: rgba(25, 29, 31, 0.85);
+}
+/* line 55, ../sass/common/scroll_holder.sass */
+.scroll-holder.show-on-hover .scroll-content {
+  padding-right: 0;
+}
+/* line 57, ../sass/common/scroll_holder.sass */
+.scroll-holder.show-on-hover .scroll-indicator {
+  width: 4px;
+}
+/* line 59, ../sass/common/scroll_holder.sass */
+.scroll-holder.show-on-hover .scroll-indicator .indicator-bar {
+  opacity: 0;
+  background-color: rgba(34, 39, 42, 0.6);
+  transition: opacity 0.15s ease, height 0.25s ease;
+}
+/* line 63, ../sass/common/scroll_holder.sass */
+.scroll-holder.show-on-hover .scroll-indicator .indicator-area {
+  display: none;
+}
+/* line 67, ../sass/common/scroll_holder.sass */
+.scroll-holder.show-on-hover:hover .scroll-indicator .indicator-bar {
+  opacity: 1;
 }
 
 /* Components */

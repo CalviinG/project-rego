@@ -30,6 +30,10 @@ const ToggleBlock = React.createClass({
 
 		$el.css({ height: (this.state.open) ? 0 : (this.props.amount * 50 ) - 10 });
 
+		if (typeof this.props.onToggle === 'function') {
+			this.props.onToggle();
+		}
+
 		this.setState({ open: !this.state.open });
 	},
 
@@ -89,6 +93,10 @@ const FriendListCardComponent = React.createClass({
 		friends: React.PropTypes.array.isRequired,
 	},
 
+	_onToggle() {
+		this.refs.scrollHolderRef.updateScrollBar(250);
+	},
+
 	render() {
 		const friends = this.props.friends;
 
@@ -110,15 +118,15 @@ const FriendListCardComponent = React.createClass({
 		// const onlineList = this._buildOnlineList(onlineFriends);
 
 		return (
-			<ScrollHolder>
+			<ScrollHolder showScrollOnHover={true} ref='scrollHolderRef'>
 				<div className='friend-list-card-wrapper'>
-					<ToggleBlock open={true} label='In-Game' amount={inGameFriends.length}>
+					<ToggleBlock open={true} label='In-Game' amount={inGameFriends.length} onToggle={this._onToggle}>
 						{inGameFriends}
 					</ToggleBlock>
-					<ToggleBlock open={true} label='Online' amount={onlineFriends.length}>
+					<ToggleBlock open={true} label='Online' amount={onlineFriends.length} onToggle={this._onToggle}>
 						{onlineFriends}
 					</ToggleBlock>
-					<ToggleBlock open={false} label='Offline' amount={offlineFriends.length}>
+					<ToggleBlock open={false} label='Offline' amount={offlineFriends.length} onToggle={this._onToggle}>
 						{offlineFriends}
 					</ToggleBlock>
 				</div>
