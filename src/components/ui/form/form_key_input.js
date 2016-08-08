@@ -42,7 +42,6 @@ const FormKeyInput = React.createClass({
 	},
 
 	_cancelPropagations() {
-		console.log('CANCEL THAT SHIT!');
 		event.preventDefault();
 	},
 
