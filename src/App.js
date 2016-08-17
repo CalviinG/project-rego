@@ -123,16 +123,17 @@ const App = React.createClass({
             const user = {
                 userId: i,
                 name: (i > 0) ? friend : main,
-                image: `user_images/user_image_${i + 1}.png`,
+                image: `user_images/user_image_${i}.jpg`,
                 teamData: null,
                 ...data,
             };
 
             if (i > 0) {
                 friendsArray.push(user);
+
             } else {
-                user.gameData.status = 'In-Game';
-                user.gameData.inGameStatus = 'Idle';
+                user.gameData.status = 'Idle';
+                user.gameData.inGameStatus = null;
                 mainUser = user;
             }
         });
@@ -164,7 +165,7 @@ const App = React.createClass({
                 'Casual',
                 'Deathmatch',
                 'Matchmaking',
-                'Competative Play',
+                'Competitive Play',
                 'Browse',
             ],
             [

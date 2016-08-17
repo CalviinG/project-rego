@@ -1,0 +1,158 @@
+{
+	"Maps": {
+		"Defusal": [
+			{
+				"name": "Aztec",
+				"abbreviation": "de",
+				"image": "defusal/aztec.png"
+			},
+			{
+				"name": "Dust",
+				"abbreviation": "de",
+				"image": "defusal/dust.png"
+			},
+			{
+				"name": "Dust2",
+				"abbreviation": "de",
+				"image": "defusal/dust2.png"
+			},
+			{
+				"name": "Cache",
+				"abbreviation": "de",
+				"image": "defusal/cache.png"
+			},
+			{
+				"name": "Cobblestone",
+				"abbreviation": "de",
+				"image": "defusal/cobblestone.png"
+			},
+			{
+				"name": "Inferno",
+				"abbreviation": "de",
+				"image": "defusal/inferno.png"
+			},
+			{
+				"name": "Mirage",
+				"abbreviation": "de",
+				"image": "defusal/mirage.png"
+			},
+			{
+				"name": "Nuke",
+				"abbreviation": "de",
+				"image": "defusal/nuke.png"
+			},
+			{
+				"name": "Overpass",
+				"abbreviation": "de",
+				"image": "defusal/overpass.png"
+			},
+			{
+				"name": "Train",
+				"abbreviation": "de",
+				"image": "defusal/train.png"
+			},
+			{
+				"name": "Vertigo",
+				"abbreviation": "de",
+				"image": "defusal/vertigo.png"
+			}
+		],
+		"Hostage": [
+			{
+				"name": "Assault",
+				"abbreviation": "cs",
+				"image": "hostage/assault.png"
+			},
+			{
+				"name": "Italy",
+				"abbreviation": "cs",
+				"image": "hostage/italy.png"
+			},
+			{
+				"name": "Militia",
+				"abbreviation": "cs",
+				"image": "hostage/militia.png"
+			},
+			{
+				"name": "Office",
+				"abbreviation": "cs",
+				"image": "hostage/office.png"
+			}
+		],
+		"Demolition": [
+			{
+				"name": "Bank",
+				"abbreviation": "de",
+				"image": "casual/bank.png"
+			},
+			{
+				"name": "Lake",
+				"abbreviation": "de",
+				"image": "casual/lake.png"
+			},
+			{
+				"name": "Safehouse",
+				"abbreviation": "de",
+				"image": "casual/safehouse.png"
+			},
+			{
+				"name": "Shortdust",
+				"abbreviation": "de",
+				"image": "casual/shortdust.png"
+			},
+			{
+				"name": "Shorttrain",
+				"abbreviation": "de",
+				"image": "casual/shorttrain.png"
+			},
+			{
+				"name": "St. Marc",
+				"abbreviation": "de",
+				"image": "casual/stmarc.png"
+			},
+			{
+				"name": "Sugarcane",
+				"abbreviation": "de",
+				"image": "casual/sugarcane.png"
+			}
+		],
+		"ArmsRace": [
+			{
+				"name": "Baggage",
+				"abbreviation": "ar",
+				"image": "casual/baggage.png"
+			},
+			{
+				"name": "Lake",
+				"abbreviation": "ar",
+				"image": "casual/lake.png"
+			},
+			{
+				"name": "Monastery",
+				"abbreviation": "ar",
+				"image": "casual/monastery.png"
+			},
+			{
+				"name": "Safehouse",
+				"abbreviation": "ar",
+				"image": "casual/safehouse.png"
+			},
+			{
+				"name": "Shoots",
+				"abbreviation": "ar",
+				"image": "casual/shoots.png"
+			},
+			{
+				"name": "St. Marc",
+				"abbreviation": "ar",
+				"image": "casual/stmarc.png"
+			}
+		]
+	},
+	"GameModes": [
+		"Casual",
+		"Deathmatch",
+		"Matchmaking",
+		"Competitive Play"
+	]
+}

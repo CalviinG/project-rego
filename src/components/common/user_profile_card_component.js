@@ -67,7 +67,7 @@ const UserProfileCardComponent = React.createClass({
 							<p className='stats-block-data'>{user.matchStats.matchesPlayed}</p>
 						</div>
 						<div className='stats-block'>
-							<p className='stats-block-desc'>Wins</p>
+							<p className='stats-block-desc'>Victories</p>
 							<p className='stats-block-data'>{user.matchStats.matchesWon}</p>
 						</div>
 						<div className='stats-block'>

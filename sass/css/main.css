@@ -101,56 +101,61 @@ body {
 }
 /* line 36, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-toggle-block .toggle-block-list {
+  height: 0px;
   overflow: hidden;
-  transition: height 0.25s cubic-bezier(0.1, 1, 0.5, 1);
+  transition: height 0.25s cubic-bezier(0.7, 0, 0.5, 1);
   color: white;
 }
-/* line 41, ../sass/common/friend_list_card.sass */
+/* line 42, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-toggle-block.is-closed .head-icon {
   transform: rotate(-90deg);
 }
-/* line 48, ../sass/common/friend_list_card.sass */
+/* line 47, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block {
+  position: relative;
+}
+/* line 50, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block:not(:last-of-type) {
   margin-bottom: 10px;
 }
-/* line 50, ../sass/common/friend_list_card.sass */
+/* line 52, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-avatar,
 .friend-list-card-wrapper .friend-list-user-block .user-block-text {
   float: left;
 }
-/* line 53, ../sass/common/friend_list_card.sass */
+/* line 55, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-avatar {
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  margin-right: 5px;
-  background-color: #0091EA;
+  margin-right: 10px;
 }
-/* line 59, ../sass/common/friend_list_card.sass */
+/* line 60, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-text {
+  width: calc(100% - 50px);
   margin: 5px 0;
 }
-/* line 61, ../sass/common/friend_list_card.sass */
+/* line 63, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-text .header-text {
   font-size: 15px;
   line-height: 17px;
   font-weight: 600;
 }
-/* line 65, ../sass/common/friend_list_card.sass */
+/* line 67, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text {
   font-size: 13px;
   line-height: 13px;
 }
-/* line 68, ../sass/common/friend_list_card.sass */
+/* line 70, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-in-match {
   color: #4CAF50;
 }
-/* line 70, ../sass/common/friend_list_card.sass */
-.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-in-game {
+/* line 72, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-in-lobby, .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-idle, .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-online {
   color: #0091EA;
 }
-/* line 72, ../sass/common/friend_list_card.sass */
-.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-online, .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-offline {
+/* line 76, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-offline {
   color: #757575;
 }
 
