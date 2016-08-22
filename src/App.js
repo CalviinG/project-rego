@@ -1,5 +1,6 @@
-import React from 'react';
-import _     from 'underscore';
+import React      from 'react';
+import _          from 'underscore';
+import classNames from 'classnames';
 
 // Json
 import Friends from './json/friends.json';
@@ -203,8 +204,13 @@ const App = React.createClass({
             );
         }
 
+        // Small nav
+        const appClass = classNames('app-wrapper', {
+            'minified-nav': this.state.activeMain === 0,
+        });
+
 	    return (
-	      	<div className='app-wrapper'>
+	      	<div className={appClass}>
 	      		<NavigationComponent
                     linksData={linksData}
                     linkHistory={this.state.viewHistory}

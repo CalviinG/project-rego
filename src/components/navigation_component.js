@@ -32,7 +32,7 @@ const NavigationComponent = React.createClass({
         for (let i = 0; i < showingSubrefs; i++) {
             setTimeout(() => {
                 $animateRef = $(this.refs['subLinkRef' + i]);
-                $animateRef.addClass('sub-link-is-showing'); 
+                $animateRef.addClass('sub-link-is-showing');
             }, (i + 1) * 75);
         };
     },
@@ -64,7 +64,7 @@ const NavigationComponent = React.createClass({
                 if (!this.props.linkHistory.stopBack) {
                     this.props.onChange('back', this.props.linkHistory.history[this.props.linkHistory.position - 1]);
                     upcomingMain = parseInt(_.first(this.props.linkHistory.history[this.props.linkHistory.position]));
-                } 
+                }
             // Browsing forward
             } else if (type === 'forward') {
                 if (!this.props.linkHistory.stopForward) {
@@ -84,7 +84,7 @@ const NavigationComponent = React.createClass({
             } else {
                 this.setState({ sameMain: true });
             }
-        } 
+        }
     },
 
     render() {
@@ -95,7 +95,7 @@ const NavigationComponent = React.createClass({
             });
             if (value > 0) {
                 return <p className={mainClass} key={value} onClick={this._onMainClick.bind(this, value)}>{key[0]}</p>;
-            }    
+            }
         });
 
         /* Sub Navigation Links */
@@ -104,13 +104,13 @@ const NavigationComponent = React.createClass({
             if (value === this.props.activeMain) {
                 subLinks = _(key).map((value, index) => {
                     if (index > 0) {
-                        let i = index - 1
+                        let i = index - 1;
                         const subClass = classNames('sub-link', {
                             'active-link': (i === this.props.activeSub),
                             'sub-link-is-showing': this.state.sameMain,
                         });
                         return <p ref={'subLinkRef' + i} className={subClass} key={value+index} onClick={this._onSubClick.bind(this, i)}>{value}</p>;
-                    }  
+                    }
                 });
             }
         });
@@ -123,8 +123,13 @@ const NavigationComponent = React.createClass({
             'browse-is-disabled': this.props.linkHistory.stopForward,
         });
 
+        // Minified nav
+        const navigationClass = classNames('navigation', {
+            'is-minified': this.props.activeMain === 0,
+        });
+
         return (
-            <div className='navigation'>
+            <div className={navigationClass}>
                 <div className='navigation__main'>
                     <div className='navigation__wrapper'>
                         <i className={browseBackClass} onClick={this._browseHistory.bind(this, 'back')} />

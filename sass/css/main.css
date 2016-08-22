@@ -11,6 +11,11 @@
  * Variable Library
  *
  */
+/* line 11, ../sass/lib/variables.sass */
+.app-wrapper .content, .navigation, .navigation .navigation__sub {
+  transition: height 0.125s ease;
+}
+
 /* Base */
 /*
  * Base Sass Document
@@ -49,6 +54,10 @@ body {
   height: calc(100vh - 160px);
   margin: 0 auto;
   padding: 40px 0;
+}
+/* line 37, ../sass/base.sass */
+.app-wrapper.minified-nav .content {
+  height: calc(100vh - (160px / 2));
 }
 
 /* Common */
@@ -630,26 +639,27 @@ body {
     box-shadow: 0 0 0 15px white;
   }
 }
-/* line 15, ../sass/components/navigation.sass */
+/* line 14, ../sass/components/navigation.sass */
 .navigation {
+  overflow: hidden;
   position: relative;
   z-index: 2;
   height: 160px;
   width: 100%;
   /* Nav Icons */
 }
-/* line 21, ../sass/components/navigation.sass */
+/* line 22, ../sass/components/navigation.sass */
 .navigation .navigation__main,
 .navigation .navigation__sub,
 .navigation .navigation__wrapper {
   height: calc(160px / 2);
 }
-/* line 26, ../sass/components/navigation.sass */
+/* line 27, ../sass/components/navigation.sass */
 .navigation .navigation__wrapper {
   width: 1200px;
   margin: 0 auto;
 }
-/* line 32, ../sass/components/navigation.sass */
+/* line 33, ../sass/components/navigation.sass */
 .navigation .home-button {
   display: block;
   float: left;
@@ -661,13 +671,13 @@ body {
   margin: 0 20px;
   cursor: pointer;
 }
-/* line 42, ../sass/components/navigation.sass */
+/* line 43, ../sass/components/navigation.sass */
 .navigation .home-button .home-icon {
   font-size: 28px;
   line-height: calc(160px / 2);
   color: white;
 }
-/* line 46, ../sass/components/navigation.sass */
+/* line 47, ../sass/components/navigation.sass */
 .navigation .home-button:before, .navigation .home-button:after {
   position: absolute;
   display: block;
@@ -680,25 +690,25 @@ body {
   border-left: calc(160px / 16) solid #0091EA;
   border-right: calc(160px / 16) solid transparent;
 }
-/* line 58, ../sass/components/navigation.sass */
+/* line 59, ../sass/components/navigation.sass */
 .navigation .home-button:before {
   right: 100%;
   transform: rotate(180deg);
 }
-/* line 61, ../sass/components/navigation.sass */
+/* line 62, ../sass/components/navigation.sass */
 .navigation .home-button:after {
   left: 100%;
 }
-/* line 63, ../sass/components/navigation.sass */
+/* line 64, ../sass/components/navigation.sass */
 .navigation .home-button:hover {
   background-color: #00B0FF;
 }
-/* line 65, ../sass/components/navigation.sass */
+/* line 66, ../sass/components/navigation.sass */
 .navigation .home-button:hover:before, .navigation .home-button:hover:after {
   border-top-color: #00B0FF;
   border-left-color: #00B0FF;
 }
-/* line 70, ../sass/components/navigation.sass */
+/* line 71, ../sass/components/navigation.sass */
 .navigation .nav-icon {
   position: relative;
   display: block;
@@ -707,35 +717,35 @@ body {
   color: #757575;
   cursor: pointer;
 }
-/* line 77, ../sass/components/navigation.sass */
+/* line 78, ../sass/components/navigation.sass */
 .navigation .nav-icon:hover {
   color: #BDBDBD;
 }
-/* line 79, ../sass/components/navigation.sass */
+/* line 80, ../sass/components/navigation.sass */
 .navigation .nav-icon.exit-button, .navigation .nav-icon.profile-button {
   float: right;
   margin: 28px 20px;
 }
-/* line 83, ../sass/components/navigation.sass */
+/* line 84, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button {
   float: left;
   margin: 28px 5px;
   padding: 0 5px;
 }
-/* line 87, ../sass/components/navigation.sass */
+/* line 88, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button.back-browse {
   margin-left: 20px;
 }
-/* line 89, ../sass/components/navigation.sass */
+/* line 90, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button.forward-browse {
   margin-right: 20px;
 }
-/* line 91, ../sass/components/navigation.sass */
+/* line 92, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button.browse-is-disabled {
   cursor: default;
   color: #424242;
 }
-/* line 95, ../sass/components/navigation.sass */
+/* line 96, ../sass/components/navigation.sass */
 .navigation .main-link,
 .navigation .sub-link {
   text-transform: uppercase;
@@ -744,30 +754,30 @@ body {
   font-weight: 700;
   cursor: pointer;
 }
-/* line 103, ../sass/components/navigation.sass */
+/* line 104, ../sass/components/navigation.sass */
 .navigation .navigation__main {
   background-color: #22272A;
 }
-/* line 105, ../sass/components/navigation.sass */
+/* line 106, ../sass/components/navigation.sass */
 .navigation .navigation__main .main-link {
   color: #616161;
   font-size: 26px;
   margin: 20px;
 }
-/* line 109, ../sass/components/navigation.sass */
+/* line 110, ../sass/components/navigation.sass */
 .navigation .navigation__main .main-link:hover {
   color: #9E9E9E;
 }
-/* line 111, ../sass/components/navigation.sass */
+/* line 112, ../sass/components/navigation.sass */
 .navigation .navigation__main .main-link.active-link {
   color: #E0E0E0;
   cursor: default;
 }
-/* line 115, ../sass/components/navigation.sass */
+/* line 116, ../sass/components/navigation.sass */
 .navigation .navigation__sub {
   background-color: #191D1F;
 }
-/* line 117, ../sass/components/navigation.sass */
+/* line 119, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link {
   position: relative;
   color: #424242;
@@ -778,19 +788,27 @@ body {
   opacity: 0;
   transition: opacity 0.125s cubic-bezier(0.17, 0.67, 0.21, 1), left 0.135s cubic-bezier(0.17, 0.67, 0.21, 1);
 }
-/* line 126, ../sass/components/navigation.sass */
+/* line 128, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link:hover {
   color: #757575;
 }
-/* line 128, ../sass/components/navigation.sass */
+/* line 130, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link.active-link {
   color: #0091EA;
   cursor: default;
 }
-/* line 132, ../sass/components/navigation.sass */
+/* line 134, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link.sub-link-is-showing {
   left: 0;
   opacity: 1;
+}
+/* line 138, ../sass/components/navigation.sass */
+.navigation.is-minified {
+  height: calc(160px / 2);
+}
+/* line 140, ../sass/components/navigation.sass */
+.navigation.is-minified .navigation__sub {
+  height: 0;
 }
 
 /*

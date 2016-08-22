@@ -94,8 +94,6 @@ const ViewComponent = React.createClass({
 				null,
 				null,
 				null,
-				null,
-				null,
 				<BrowseView />,
 			],
 			[
