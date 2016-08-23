@@ -172,7 +172,7 @@ body {
  * User Profile Card
  *
  */
-/* line 9, ../sass/common/user_profile_card.sass */
+/* line 7, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper {
   position: relative;
   width: 300px;
@@ -183,7 +183,7 @@ body {
   /* Corner Effects */
   /* Content */
 }
-/* line 19, ../sass/common/user_profile_card.sass */
+/* line 17, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top,
 .user-profile-card-wrapper .profile-card-corners-bottom {
   position: absolute;
@@ -193,7 +193,7 @@ body {
   width: 100%;
   height: 100%;
 }
-/* line 28, ../sass/common/user_profile_card.sass */
+/* line 26, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::before,
 .user-profile-card-wrapper .profile-card-corners-top::after,
 .user-profile-card-wrapper .profile-card-corners-bottom::before,
@@ -204,31 +204,31 @@ body {
   width: 10px;
   height: 10px;
 }
-/* line 38, ../sass/common/user_profile_card.sass */
+/* line 36, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::before,
 .user-profile-card-wrapper .profile-card-corners-bottom::before {
   left: 0px;
   border-left: 1px solid #0091ea;
 }
-/* line 43, ../sass/common/user_profile_card.sass */
+/* line 41, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::after,
 .user-profile-card-wrapper .profile-card-corners-bottom::after {
   right: 0px;
   border-right: 1px solid #0091ea;
 }
-/* line 48, ../sass/common/user_profile_card.sass */
+/* line 46, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::before,
 .user-profile-card-wrapper .profile-card-corners-top::after {
   top: 0px;
   border-top: 1px solid #0091ea;
 }
-/* line 53, ../sass/common/user_profile_card.sass */
+/* line 51, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-bottom::before,
 .user-profile-card-wrapper .profile-card-corners-bottom::after {
   bottom: 0px;
   border-bottom: 1px solid #0091ea;
 }
-/* line 60, ../sass/common/user_profile_card.sass */
+/* line 58, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content {
   position: relative;
   z-index: 2;
@@ -238,7 +238,7 @@ body {
   /* Level */
   /* Images */
 }
-/* line 66, ../sass/common/user_profile_card.sass */
+/* line 64, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team {
   position: relative;
   width: 100%;
@@ -249,7 +249,7 @@ body {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), inset 0 1px 0 rgba(0, 0, 0, 0.25);
   /* No Team */
 }
-/* line 75, ../sass/common/user_profile_card.sass */
+/* line 73, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-name,
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league {
   height: 38px;
@@ -261,12 +261,12 @@ body {
   cursor: pointer;
   transition: all 0.125s ease;
 }
-/* line 85, ../sass/common/user_profile_card.sass */
+/* line 83, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-name:hover,
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league:hover {
   background: linear-gradient(#2A3135, #191D1F);
 }
-/* line 87, ../sass/common/user_profile_card.sass */
+/* line 85, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-name {
   float: left;
   width: calc(100% - 95px - 1px);
@@ -275,7 +275,7 @@ body {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
-/* line 94, ../sass/common/user_profile_card.sass */
+/* line 92, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league {
   float: right;
   width: 95px;
@@ -285,12 +285,12 @@ body {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-/* line 102, ../sass/common/user_profile_card.sass */
+/* line 100, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league .team-league-icon {
   font-size: 14px;
   margin-right: 5px;
 }
-/* line 108, ../sass/common/user_profile_card.sass */
+/* line 106, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-no-team {
   position: relative;
   width: 100%;
@@ -300,18 +300,18 @@ body {
   font-size: 14px;
   font-weight: 700;
 }
-/* line 119, ../sass/common/user_profile_card.sass */
+/* line 117, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats {
   margin: 20px 0;
 }
-/* line 122, ../sass/common/user_profile_card.sass */
+/* line 120, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block {
   position: relative;
   float: left;
   width: 33.33%;
   text-align: center;
 }
-/* line 127, ../sass/common/user_profile_card.sass */
+/* line 125, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block .stats-block-desc {
   color: #0091EA;
   font-size: 10px;
@@ -319,14 +319,14 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* line 133, ../sass/common/user_profile_card.sass */
+/* line 131, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block .stats-block-data {
   color: white;
   font-size: 22px;
   font-weight: 700px;
   line-height: 20px;
 }
-/* line 141, ../sass/common/user_profile_card.sass */
+/* line 139, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-name {
   position: relative;
   width: 100%;
@@ -335,27 +335,27 @@ body {
   font-weight: 600;
   color: white;
 }
-/* line 151, ../sass/common/user_profile_card.sass */
+/* line 149, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level {
   position: relative;
   width: 100%;
   text-align: center;
 }
-/* line 155, ../sass/common/user_profile_card.sass */
+/* line 153, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-text {
   font-size: 14px;
   font-weight: 600;
   color: #0091EA;
   margin-bottom: 6px;
 }
-/* line 160, ../sass/common/user_profile_card.sass */
+/* line 158, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-progress-bar {
   width: 100%;
   height: 4px;
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(0, 0, 0, 0.25);
 }
-/* line 165, ../sass/common/user_profile_card.sass */
+/* line 163, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-progress-bar .bar-experience {
   position: relative;
   height: 100%;
@@ -363,11 +363,11 @@ body {
   background: linear-gradient(90deg, #0082D2, #00B0FF);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 4px 0 16px rgba(0, 145, 234, 0.65);
 }
-/* line 174, ../sass/common/user_profile_card.sass */
+/* line 172, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images {
   margin-bottom: 10px;
 }
-/* line 177, ../sass/common/user_profile_card.sass */
+/* line 175, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-solo-rank,
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-team-rank {
   float: left;
@@ -375,7 +375,7 @@ body {
   height: 50px;
   margin: 15px 20px;
 }
-/* line 183, ../sass/common/user_profile_card.sass */
+/* line 181, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-profile-image {
   float: left;
   width: 80px;
