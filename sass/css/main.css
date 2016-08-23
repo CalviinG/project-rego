@@ -40,7 +40,7 @@ body {
 }
 
 /* line 22, ../sass/base.sass */
-.clear-after:after, .friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head:after, .friend-list-card-wrapper .friend-list-user-block:after, .user-profile-card-wrapper .profile-card-content .profile-card-team:after, .user-profile-card-wrapper .profile-card-content .profile-card-stats:after, .user-profile-card-wrapper .profile-card-content .profile-card-images:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .home-view:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base .rui-form-slider:after, .rui-form-base .rui-form-key-input:after, .rui-form-base:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
+.clear-after:after, .bulletin-card-wrapper .bulletin-slider-controls:after, .friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head:after, .friend-list-card-wrapper .friend-list-user-block:after, .user-profile-card-wrapper .profile-card-content .profile-card-team:after, .user-profile-card-wrapper .profile-card-content .profile-card-stats:after, .user-profile-card-wrapper .profile-card-content .profile-card-images:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .home-view:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base .rui-form-slider:after, .rui-form-base .rui-form-key-input:after, .rui-form-base:after, .rui-card-base .card-header:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
   content: "";
   display: block;
   clear: both;
@@ -61,6 +61,57 @@ body {
 }
 
 /* Common */
+/*
+ * Bulletin Card
+ *
+ */
+/* line 9, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper {
+  width: 520px;
+  height: 225px;
+}
+/* line 13, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content {
+  @extend. clear-after;
+  height: calc(100% - 10px);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 19, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+/* line 26, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-controls {
+  height: 10px;
+  display: flex;
+  justify-content: center;
+}
+/* line 31, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-controls .controller-button {
+  float: left;
+  margin: 2px 4px;
+  width: calc(10px - 4px);
+  height: calc(10px - 4px);
+  border-radius: 100%;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+/* line 40, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-controls .controller-button.is-active {
+  margin: 0px 2px;
+  width: 10px;
+  height: 10px;
+  background-color: #0091EA;
+  cursor: default;
+}
+
 /*
  * Friend List Card
  *
@@ -1000,16 +1051,21 @@ body {
 .home-view {
   height: 100%;
   /* Left Column */
+  /* Middle Column */
   /* Right Column */
 }
 /* line 11, ../sass/views/home_view.sass */
-.home-view > .home-view-left-column, .home-view > .home-view-right-column {
+.home-view > .home-view-left-column, .home-view > .home-view-middle-column, .home-view > .home-view-right-column {
   float: left;
   height: 100%;
 }
-/* line 19, ../sass/views/home_view.sass */
+/* line 20, ../sass/views/home_view.sass */
 .home-view > .home-view-left-column .user-profile-card-wrapper {
   margin-bottom: 20px;
+}
+/* line 25, ../sass/views/home_view.sass */
+.home-view > .home-view-middle-column {
+  margin: 0 20px;
 }
 
 /*
@@ -1435,6 +1491,23 @@ body {
   padding: 20px;
   background: linear-gradient(45deg, #0E161B, #191D1F);
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+}
+/* line 15, ../sass/ui/rui_card.sass */
+.rui-card-base .card-header .card-header-label,
+.rui-card-base .card-header .card-header-extra {
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* line 22, ../sass/ui/rui_card.sass */
+.rui-card-base .card-header .card-header-label {
+  float: left;
+}
+/* line 24, ../sass/ui/rui_card.sass */
+.rui-card-base .card-header .card-header-extra {
+  float: right;
 }
 
 /*

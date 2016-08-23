@@ -1,0 +1,45 @@
+/*
+ *
+ * Bulletin Card
+ *
+ */
+
+$sliderButtonHeight: 10px
+
+.bulletin-card-wrapper
+  width: 520px
+  height: 225px
+
+  .bulletin-slider-content
+    @extend. clear-after
+    height: calc(100% - #{$sliderButtonHeight})
+    width: 100%
+    white-space: nowrap
+    overflow: hidden
+    .slider-box
+      display: inline-block
+      position: relative
+      height: 100%
+      width: 100%
+      transition: opacity .2s ease, transform .2s ease
+
+  .bulletin-slider-controls
+    @extend .clear-after
+    height: $sliderButtonHeight
+    display: flex
+    justify-content: center
+    .controller-button
+      float: left
+      margin: 2px 4px
+      width: calc(#{$sliderButtonHeight} - 4px)
+      height: calc(#{$sliderButtonHeight} - 4px)
+      border-radius: 100%
+      background-color: white
+      cursor: pointer
+      transition: all .1s ease
+      &.is-active
+        margin: 0px 2px
+        width: $sliderButtonHeight
+        height: $sliderButtonHeight
+        background-color: $mainColor
+        cursor: default
