@@ -5,11 +5,13 @@ import classNames from 'classnames';
 const ScrollHolder = React.createClass({
 	propTypes: {
 		showScrollOnHover: React.PropTypes.bool,
+		friendListStyle: React.PropTypes.bool,
 	},
 
 	getDefaultProps() {
 		return {
 			showScrollOnHover: false,
+			friendListStyle: false,
 		};
 	},
 
@@ -75,6 +77,7 @@ const ScrollHolder = React.createClass({
 	render() {
 		const parentclass = classNames('scroll-holder', {
 			'show-on-hover': this.props.showScrollOnHover,
+			'friend-list-style': this.props.friendListStyle,
 		});
 
 		return (

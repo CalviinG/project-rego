@@ -7,6 +7,9 @@ import classNames from 'classnames';
 // Components
 import ScrollHolder from './scroll_holder.js';
 
+// Rui
+import {Card} from '../ui';
+
 const ToggleBlock = React.createClass({
 	propTypes: {
 		label: React.PropTypes.string.isRequired,
@@ -161,19 +164,21 @@ const FriendListCardComponent = React.createClass({
 		});
 
 		return (
-			<ScrollHolder showScrollOnHover={true} ref='scrollHolderRef'>
-				<div className='friend-list-card-wrapper'>
-					<ToggleBlock open={true} label='In-Game' amount={inGameFriends.length} onToggle={this._onToggle}>
-						{inGameFriendList}
-					</ToggleBlock>
-					<ToggleBlock open={true} label='Online' amount={onlineFriends.length} onToggle={this._onToggle}>
-						{onlineFriends}
-					</ToggleBlock>
-					<ToggleBlock open={false} label='Offline' amount={offlineFriends.length} onToggle={this._onToggle}>
-						{offlineFriends}
-					</ToggleBlock>
-				</div>
-			</ScrollHolder>
+			<Card style={{height: '100%'}}>
+				<ScrollHolder showScrollOnHover={true} friendListStyle={true} ref='scrollHolderRef'>
+					<div className='friend-list-card-wrapper'>
+						<ToggleBlock open={true} label='In-Game' amount={inGameFriends.length} onToggle={this._onToggle}>
+							{inGameFriendList}
+						</ToggleBlock>
+						<ToggleBlock open={true} label='Online' amount={onlineFriends.length} onToggle={this._onToggle}>
+							{onlineFriends}
+						</ToggleBlock>
+						<ToggleBlock open={false} label='Offline' amount={offlineFriends.length} onToggle={this._onToggle}>
+							{offlineFriends}
+						</ToggleBlock>
+					</div>
+				</ScrollHolder>
+			</Card>
 		);
 	},
 });

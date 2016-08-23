@@ -178,12 +178,10 @@ body {
   width: 300px;
   height: 300px;
   padding: 20px;
-  background: linear-gradient(45deg, #0E161B, #191D1F);
-  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.035);
   /* Corner Effects */
   /* Content */
 }
-/* line 17, ../sass/common/user_profile_card.sass */
+/* line 15, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top,
 .user-profile-card-wrapper .profile-card-corners-bottom {
   position: absolute;
@@ -193,7 +191,7 @@ body {
   width: 100%;
   height: 100%;
 }
-/* line 26, ../sass/common/user_profile_card.sass */
+/* line 24, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::before,
 .user-profile-card-wrapper .profile-card-corners-top::after,
 .user-profile-card-wrapper .profile-card-corners-bottom::before,
@@ -204,31 +202,31 @@ body {
   width: 10px;
   height: 10px;
 }
-/* line 36, ../sass/common/user_profile_card.sass */
+/* line 34, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::before,
 .user-profile-card-wrapper .profile-card-corners-bottom::before {
   left: 0px;
   border-left: 1px solid #0091ea;
 }
-/* line 41, ../sass/common/user_profile_card.sass */
+/* line 39, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::after,
 .user-profile-card-wrapper .profile-card-corners-bottom::after {
   right: 0px;
   border-right: 1px solid #0091ea;
 }
-/* line 46, ../sass/common/user_profile_card.sass */
+/* line 44, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::before,
 .user-profile-card-wrapper .profile-card-corners-top::after {
   top: 0px;
   border-top: 1px solid #0091ea;
 }
-/* line 51, ../sass/common/user_profile_card.sass */
+/* line 49, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-bottom::before,
 .user-profile-card-wrapper .profile-card-corners-bottom::after {
   bottom: 0px;
   border-bottom: 1px solid #0091ea;
 }
-/* line 58, ../sass/common/user_profile_card.sass */
+/* line 56, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content {
   position: relative;
   z-index: 2;
@@ -238,7 +236,7 @@ body {
   /* Level */
   /* Images */
 }
-/* line 64, ../sass/common/user_profile_card.sass */
+/* line 62, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team {
   position: relative;
   width: 100%;
@@ -249,7 +247,7 @@ body {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), inset 0 1px 0 rgba(0, 0, 0, 0.25);
   /* No Team */
 }
-/* line 73, ../sass/common/user_profile_card.sass */
+/* line 71, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-name,
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league {
   height: 38px;
@@ -261,12 +259,12 @@ body {
   cursor: pointer;
   transition: all 0.125s ease;
 }
-/* line 83, ../sass/common/user_profile_card.sass */
+/* line 81, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-name:hover,
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league:hover {
   background: linear-gradient(#2A3135, #191D1F);
 }
-/* line 85, ../sass/common/user_profile_card.sass */
+/* line 83, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-name {
   float: left;
   width: calc(100% - 95px - 1px);
@@ -275,7 +273,7 @@ body {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
-/* line 92, ../sass/common/user_profile_card.sass */
+/* line 90, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league {
   float: right;
   width: 95px;
@@ -285,12 +283,12 @@ body {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-/* line 100, ../sass/common/user_profile_card.sass */
+/* line 98, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league .team-league-icon {
   font-size: 14px;
   margin-right: 5px;
 }
-/* line 106, ../sass/common/user_profile_card.sass */
+/* line 104, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-no-team {
   position: relative;
   width: 100%;
@@ -300,18 +298,18 @@ body {
   font-size: 14px;
   font-weight: 700;
 }
-/* line 117, ../sass/common/user_profile_card.sass */
+/* line 115, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats {
   margin: 20px 0;
 }
-/* line 120, ../sass/common/user_profile_card.sass */
+/* line 118, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block {
   position: relative;
   float: left;
   width: 33.33%;
   text-align: center;
 }
-/* line 125, ../sass/common/user_profile_card.sass */
+/* line 123, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block .stats-block-desc {
   color: #0091EA;
   font-size: 10px;
@@ -319,14 +317,14 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* line 131, ../sass/common/user_profile_card.sass */
+/* line 129, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block .stats-block-data {
   color: white;
   font-size: 22px;
   font-weight: 700px;
   line-height: 20px;
 }
-/* line 139, ../sass/common/user_profile_card.sass */
+/* line 137, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-name {
   position: relative;
   width: 100%;
@@ -335,27 +333,27 @@ body {
   font-weight: 600;
   color: white;
 }
-/* line 149, ../sass/common/user_profile_card.sass */
+/* line 147, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level {
   position: relative;
   width: 100%;
   text-align: center;
 }
-/* line 153, ../sass/common/user_profile_card.sass */
+/* line 151, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-text {
   font-size: 14px;
   font-weight: 600;
   color: #0091EA;
   margin-bottom: 6px;
 }
-/* line 158, ../sass/common/user_profile_card.sass */
+/* line 156, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-progress-bar {
   width: 100%;
   height: 4px;
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(0, 0, 0, 0.25);
 }
-/* line 163, ../sass/common/user_profile_card.sass */
+/* line 161, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-progress-bar .bar-experience {
   position: relative;
   height: 100%;
@@ -363,11 +361,11 @@ body {
   background: linear-gradient(90deg, #0082D2, #00B0FF);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 4px 0 16px rgba(0, 145, 234, 0.65);
 }
-/* line 172, ../sass/common/user_profile_card.sass */
+/* line 170, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images {
   margin-bottom: 10px;
 }
-/* line 175, ../sass/common/user_profile_card.sass */
+/* line 173, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-solo-rank,
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-team-rank {
   float: left;
@@ -375,7 +373,7 @@ body {
   height: 50px;
   margin: 15px 20px;
 }
-/* line 181, ../sass/common/user_profile_card.sass */
+/* line 179, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-profile-image {
   float: left;
   width: 80px;
@@ -555,6 +553,7 @@ body {
   height: 100%;
   overflow: hidden;
   /* showScrollOnHover property style */
+  /* Friend List Style property style */
 }
 /* line 13, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-content,
@@ -624,6 +623,14 @@ body {
 /* line 67, ../sass/common/scroll_holder.sass */
 .scroll-holder.show-on-hover:hover .scroll-indicator .indicator-bar {
   opacity: 1;
+}
+/* line 72, ../sass/common/scroll_holder.sass */
+.scroll-holder.friend-list-style {
+  overflow: visible;
+}
+/* line 74, ../sass/common/scroll_holder.sass */
+.scroll-holder.friend-list-style .scroll-indicator {
+  right: -12px;
 }
 
 /* Components */
@@ -1000,11 +1007,7 @@ body {
   float: left;
   height: 100%;
 }
-/* line 18, ../sass/views/home_view.sass */
-.home-view > .home-view-left-column {
-  padding-left: 100px;
-}
-/* line 20, ../sass/views/home_view.sass */
+/* line 19, ../sass/views/home_view.sass */
 .home-view > .home-view-left-column .user-profile-card-wrapper {
   margin-bottom: 20px;
 }
@@ -1422,6 +1425,18 @@ body {
     opacity: 0.65;
   }
 }
+/*
+ * Rui Search
+ *
+ */
+/* line 7, ../sass/ui/rui_card.sass */
+.rui-card-base {
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(45deg, #0E161B, #191D1F);
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+}
+
 /*
  * Rui Select
  *

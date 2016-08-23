@@ -5,6 +5,9 @@ import _	 from 'underscore';
 // Components
 import RandomStatsGenerator from '../common/random_stats_generator.js';
 
+// Rui
+import {Card} from '../ui';
+
 const UserProfileCardComponent = React.createClass({
 	propTypes: {
         userData: React.PropTypes.object.isRequired,
@@ -45,41 +48,43 @@ const UserProfileCardComponent = React.createClass({
 		const teamRender = this._buildTeam(user.teamData);
 
 		return (
-			<div className='user-profile-card-wrapper'>
-				<div className='profile-card-content'>
-					<div className='profile-card-images'>
-						<img className='images-solo-rank' src={`sass/images/solo_ranks/rank_${user.rankData.rank}.png`} />
-						<img className='images-profile-image' src={`sass/images/${user.image}`} />
-						{teamRankImageRender}
-					</div>
-					<div className='profile-card-name'>
-						{user.name}
-					</div>
-					<div className='profile-card-level'>
-						<p className='level-text'>{levelString}</p>
-						<div className='level-progress-bar'>
-							<div className='bar-experience' ref='experienceBarRef' />
+			<Card noPadding={true}>
+				<div className='user-profile-card-wrapper'>
+					<div className='profile-card-content'>
+						<div className='profile-card-images'>
+							<img className='images-solo-rank' src={`sass/images/solo_ranks/rank_${user.rankData.rank}.png`} />
+							<img className='images-profile-image' src={`sass/images/${user.image}`} />
+							{teamRankImageRender}
 						</div>
+						<div className='profile-card-name'>
+							{user.name}
+						</div>
+						<div className='profile-card-level'>
+							<p className='level-text'>{levelString}</p>
+							<div className='level-progress-bar'>
+								<div className='bar-experience' ref='experienceBarRef' />
+							</div>
+						</div>
+						<div className='profile-card-stats'>
+							<div className='stats-block'>
+								<p className='stats-block-desc'>Games</p>
+								<p className='stats-block-data'>{user.matchStats.matchesPlayed}</p>
+							</div>
+							<div className='stats-block'>
+								<p className='stats-block-desc'>Victories</p>
+								<p className='stats-block-data'>{user.matchStats.matchesWon}</p>
+							</div>
+							<div className='stats-block'>
+								<p className='stats-block-desc'>Kills</p>
+								<p className='stats-block-data'>{user.fragStats.kills}</p>
+							</div>
+						</div>
+						{teamRender}
 					</div>
-					<div className='profile-card-stats'>
-						<div className='stats-block'>
-							<p className='stats-block-desc'>Games</p>
-							<p className='stats-block-data'>{user.matchStats.matchesPlayed}</p>
-						</div>
-						<div className='stats-block'>
-							<p className='stats-block-desc'>Victories</p>
-							<p className='stats-block-data'>{user.matchStats.matchesWon}</p>
-						</div>
-						<div className='stats-block'>
-							<p className='stats-block-desc'>Kills</p>
-							<p className='stats-block-data'>{user.fragStats.kills}</p>
-						</div>
-					</div>
-					{teamRender}
+					<div className='profile-card-corners-top' />
+					<div className='profile-card-corners-bottom' />
 				</div>
-				<div className='profile-card-corners-top' />
-				<div className='profile-card-corners-bottom' />
-			</div>
+			</Card>
 		);
 	},
 });

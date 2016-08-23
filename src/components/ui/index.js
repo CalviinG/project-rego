@@ -1,4 +1,5 @@
 //Load Rui components
+import Card from './card';
 import Search from './search';
 import Select from './select';
 import Table from './table';
@@ -12,6 +13,7 @@ import {
 } from './form';
 
 export {
+	Card,
 	Search,
 	Select,
 	Table,

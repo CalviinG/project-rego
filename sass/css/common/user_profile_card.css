@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$mainColor".
-        on line 39 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/user_profile_card.sass
+        on line 37 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/user_profile_card.sass
 
-34:     height: 10px
-35: 
-36:   .profile-card-corners-top::before,
-37:   .profile-card-corners-bottom::before
-38:     left: 0px
-39:     border-left: 1px solid rgba($mainColor, 1)
-40: 
-41:   .profile-card-corners-top::after,
-42:   .profile-card-corners-bottom::after
-43:     right: 0px
-44:     border-right: 1px solid rgba($mainColor, 1)
+32:     height: 10px
+33: 
+34:   .profile-card-corners-top::before,
+35:   .profile-card-corners-bottom::before
+36:     left: 0px
+37:     border-left: 1px solid rgba($mainColor, 1)
+38: 
+39:   .profile-card-corners-top::after,
+40:   .profile-card-corners-bottom::after
+41:     right: 0px
+42:     border-right: 1px solid rgba($mainColor, 1)
 
 Backtrace:
-C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/user_profile_card.sass:39
+C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/user_profile_card.sass:37
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/variable.rb:49:in `_perform'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/node.rb:50:in `perform'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:170:in `perform_arg'
@@ -92,4 +92,4 @@ D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/vendor/listen/lib/lis
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$mainColor\".\A         on line 39 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/user_profile_card.sass\A \A 34:     height: 10px\A 35: \A 36:   .profile-card-corners-top::before,\A 37:   .profile-card-corners-bottom::before\A 38:     left: 0px\A 39:     border-left: 1px solid rgba($mainColor, 1)\A 40: \A 41:   .profile-card-corners-top::after,\A 42:   .profile-card-corners-bottom::after\A 43:     right: 0px\A 44:     border-right: 1px solid rgba($mainColor, 1)"; }
+  content: "Error: Undefined variable: \"$mainColor\".\A         on line 37 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/user_profile_card.sass\A \A 32:     height: 10px\A 33: \A 34:   .profile-card-corners-top::before,\A 35:   .profile-card-corners-bottom::before\A 36:     left: 0px\A 37:     border-left: 1px solid rgba($mainColor, 1)\A 38: \A 39:   .profile-card-corners-top::after,\A 40:   .profile-card-corners-bottom::after\A 41:     right: 0px\A 42:     border-right: 1px solid rgba($mainColor, 1)"; }
