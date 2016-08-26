@@ -18,10 +18,53 @@ $sliderButtonHeight: 10px
     overflow: hidden
     .slider-box
       display: inline-block
+      vertical-align: top
       position: relative
       height: 100%
       width: 100%
       transition: opacity .2s ease, transform .2s ease
+      color: white
+
+      /* Slider Content */
+
+      /* Slide #1 */
+
+      .box-content-one
+        text-align: center
+        .content-one-header
+          color: $grey-700
+          font-size: 14px
+          font-weight: 700
+          text-transform: uppercase
+          letter-spacing: 2px
+          margin-bottom: 5px
+        .content-one-big
+          position: relative
+          display: inline-block
+          margin-bottom: 20px
+          .big-label
+            color: white
+            font-size: 36px
+            font-weight: 300
+            padding: 8px 16px
+            display: inline-block
+            background-color: $mainColor
+          .big-date
+            position: absolute
+            top: calc(100% - 8px)
+            right: -8px
+            color: $dark-1
+            font-size: 14px
+            font-weight: 700
+            padding: 4px 8px
+            background-color: white
+        .content-one-teams
+        .content-one-sponsors
+          color: $grey-700
+          font-size: 12px
+          font-weight: 600
+          .sponsor
+            margin: 0 10px
 
   .bulletin-slider-controls
     @extend .clear-after

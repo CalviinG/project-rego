@@ -1,20 +1,35 @@
 /*
-Error: Undefined variable: "$mainColor".
-        on line 44 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/bulletin_card.sass
+Error: Undefined variable: "$grey-700".
+        on line 35 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/bulletin_card.sass
 
-39:       transition: all .1s ease
-40:       &.is-active
-41:         margin: 0px 2px
-42:         width: $sliderButtonHeight
-43:         height: $sliderButtonHeight
-44:         background-color: $mainColor
-45:         cursor: default
+30:       /* Slide #1 *\/
+31: 
+32:       .box-content-one
+33:         text-align: center
+34:         .content-one-header
+35:           color: $grey-700
+36:           font-size: 14px
+37:           font-weight: 700
+38:           text-transform: uppercase
+39:           letter-spacing: 2px
+40:           margin-bottom: 5px
 
 Backtrace:
-C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/bulletin_card.sass:44
+C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/bulletin_card.sass:35
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/variable.rb:49:in `_perform'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/node.rb:50:in `perform'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `map'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
@@ -98,4 +113,4 @@ D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/vendor/listen/lib/lis
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$mainColor\".\A         on line 44 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/bulletin_card.sass\A \A 39:       transition: all .1s ease\A 40:       &.is-active\A 41:         margin: 0px 2px\A 42:         width: $sliderButtonHeight\A 43:         height: $sliderButtonHeight\A 44:         background-color: $mainColor\A 45:         cursor: default"; }
+  content: "Error: Undefined variable: \"$grey-700\".\A         on line 35 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/bulletin_card.sass\A \A 30:       /* Slide #1 */\A 31: \A 32:       .box-content-one\A 33:         text-align: center\A 34:         .content-one-header\A 35:           color: $grey-700\A 36:           font-size: 14px\A 37:           font-weight: 700\A 38:           text-transform: uppercase\A 39:           letter-spacing: 2px\A 40:           margin-bottom: 5px"; }

@@ -21,9 +21,9 @@ const BulletinCardComponent = React.createClass({
 	},
 
 	_sliderAutomaticRun() {
-		const sliderRunMs = 7500;
+		const sliderRunMs = 75000;
 
-		this.setTimeout(() => {
+		this.sliderTimeout = setTimeout(() => {
 			this.setState({
 				sliderIndex: (this.state.sliderIndex === this.sliderLength - 1) ? 0 : this.state.sliderIndex + 1 ,
 			});
@@ -36,45 +36,72 @@ const BulletinCardComponent = React.createClass({
 		const sliders = [];
 
 		// Slide #1 - ESL Pro League Season 4
-		sliders.push(
-			<div className=''>
-				Slide #1 - ESL Pro League Season 4
-			</div>
-		);
+		sliders.push({
+			content: (
+				<div className='box-content-one'>
+					<div className='content-one-header'>ESL & ESEA Presents</div>
+					<div className='content-one-big'>
+						<div className='big-label'>ESL Pro League Season 4</div>
+						<div className='big-date'>2016-08-17 to 2016-10-13</div>
+					</div>
+					<div className='content-one-teams'></div>
+					<div className='content-one-sponsors'>
+						<span className='sponsor'>BenQ</span>
+						<span className='sponsor'>Alienware</span>
+						<span className='sponsor'>Logitech</span>
+						<span className='sponsor'>G2A.com</span>
+						<span className='sponsor'>gamed!de</span>
+					</div>
+				</div>
+			),
+			date: '2016-08-10',
+		});
 
-		// Slide #2 - Cologne 2016 Champions
-		sliders.push(
-			<div className=''>
-				Slide #2 - Cologne 2016 Champions
-			</div>
-		);
+		// Slide #2 - CS:GO Patch - Second Shot
+		sliders.push({
+			content: (
+				<div className=''>
+					Slide #2
+				</div>
+			),
+			date: '2016-08-03',
+		});
 
-		// Slide #3 - CS:GO Weapon Finish Contest Winners
-		sliders.push(
-			<div className=''>
-				Slide #3 - CS:GO Weapon Finish Contest Winners
-			</div>
-		);
+		// Slide #3 - Cologne 2016 Champions
+		sliders.push({
+			content: (
+				<div className=''>
+					Slide #3
+				</div>
+			),
+			date: '2016-07-10',
+		});
 
-		// Slide #4 - CS:GO Game Patch
-		sliders.push(
-			<div className=''>
-				Slide #4 - CS:GO Game Patch
-			</div>
-		);
+		// Slide #4 - CS:GO Game Patch - Gamma Exposure
+		sliders.push({
+			content: (
+				<div className=''>
+					Slide #4
+				</div>
+			),
+			date: '2016-06-15',
+		});
 
 		return sliders;
 	},
 
 	_changeSlider(index) {
 		if (index != this.state.sliderIndex) {
+			clearTimeout(this.sliderTimeout);
+			this._sliderAutomaticRun();
 			this.setState({ sliderIndex: index });
 		}
 	},
 
 	render() {
 		// Build Bulletin Sliders
-		const bulletinSliders = _.map(this._buildSliders(), (slider, i) => {
+		const bulletinObjects = this._buildSliders();
+		const bulletinSliders = _.map(bulletinObjects, (slider, i) => {
 			const sliderStyle = {
 				transform: `translate(-${(100 * this.state.sliderIndex)}%, 0)`,
 				opacity: (i === this.state.sliderIndex) ? 1 : 0,
@@ -82,7 +109,7 @@ const BulletinCardComponent = React.createClass({
 
 			return (
 				<div key={'SliderKey' + i} style={sliderStyle} className='slider-box'>
-					{slider}
+					{slider.content}
 				</div>
 			);
 		});
@@ -101,8 +128,11 @@ const BulletinCardComponent = React.createClass({
 		// Set Slider Length For _sliderAutomaticRun()
 		this.sliderLength = bulletinSliders.length;
 
+		// Slider Date
+		const sliderDate = bulletinObjects[this.state.sliderIndex].date;
+
 		return (
-			<Card label='News & Updates'>
+			<Card label='News & Updates' extra={sliderDate}>
 				<div className='bulletin-card-wrapper'>
 					<div className='bulletin-slider-content'>
 						{bulletinSliders}
