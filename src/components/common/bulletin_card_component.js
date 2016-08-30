@@ -44,13 +44,13 @@ const BulletinCardComponent = React.createClass({
 						<div className='big-label'>ESL Pro League Season 4</div>
 						<div className='big-date'>2016-08-17 to 2016-10-13</div>
 					</div>
-					<div className='content-one-teams'></div>
+					<div className='content-one-locations'>North America & Europe</div>
 					<div className='content-one-sponsors'>
-						<span className='sponsor'>BenQ</span>
-						<span className='sponsor'>Alienware</span>
-						<span className='sponsor'>Logitech</span>
-						<span className='sponsor'>G2A.com</span>
-						<span className='sponsor'>gamed!de</span>
+						<span className='sponsor'>ESEA</span>
+						<span className='sponsor'>Logitech G</span>
+						<span className='sponsor'>theScore esports</span>
+						<span className='sponsor'>xfinity</span>
+						<span className='sponsor'>Mountain Dew</span>
 					</div>
 				</div>
 			),
@@ -60,8 +60,12 @@ const BulletinCardComponent = React.createClass({
 		// Slide #2 - CS:GO Patch - Second Shot
 		sliders.push({
 			content: (
-				<div className=''>
-					Slide #2
+				<div className='box-content-two patch-content'>
+					<div className='patch-header'>Second Shot</div>
+					<div className='patch-note'>Game Patch</div>
+					<div className='patch-text'>
+						Today we’re shipping a new accuracy recovery method and new recovery rates for the AK-47, M4A1-S, and M4A4. The goal is to allow players to develop and express their skill using a variety of methods of firing a weapon, by increasing the effectiveness of tapping/bursting relative to that of spraying.
+					</div>
 				</div>
 			),
 			date: '2016-08-03',
@@ -70,8 +74,12 @@ const BulletinCardComponent = React.createClass({
 		// Slide #3 - Cologne 2016 Champions
 		sliders.push({
 			content: (
-				<div className=''>
-					Slide #3
+				<div className='box-content-three'>
+					<div className='content-three-title'>Cologne 2016 <span className='bold-title'>Champions</span></div>
+					<div className='content-three-team'>SK-Gaming</div>
+					<div className='content-three-text'>
+						Congratulations to SK Gaming on winning the The ESL One Cologne 2016 Championship! They take home $500,000 of the $1,000,000 prize pool. This is their second consecutive Major title.
+					</div>
 				</div>
 			),
 			date: '2016-07-10',
@@ -80,8 +88,12 @@ const BulletinCardComponent = React.createClass({
 		// Slide #4 - CS:GO Game Patch - Gamma Exposure
 		sliders.push({
 			content: (
-				<div className=''>
-					Slide #4
+				<div className='box-content-four patch-content'>
+					<div className='patch-header'>Gamma Exposure</div>
+					<div className='patch-note'>Game Patch</div>
+					<div className='patch-text'>
+						Today’s update includes some new sounds, the Gamma Case (featuring community designs and knives with the all-new Gamma finishes), and adjustments to the Prime Account Matchmaking beta. In addition, we’re extending Operation Wildfire for one month so you’ve still got time to finish up your missions and upgrade your Challenge Coin!
+					</div>
 				</div>
 			),
 			date: '2016-06-15',

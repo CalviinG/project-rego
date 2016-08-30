@@ -89,6 +89,8 @@ body {
   color: white;
   /* Slider Content */
   /* Slide #1 */
+  /* Slide #3 */
+  /* Game Patch Styling */
 }
 /* line 32, ../sass/common/bulletin_card.sass */
 .bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one {
@@ -129,23 +131,92 @@ body {
   padding: 4px 8px;
   background-color: white;
 }
-/* line 62, ../sass/common/bulletin_card.sass */
+/* line 61, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one .content-one-locations {
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0091EA;
+  letter-spacing: 2px;
+}
+/* line 68, ../sass/common/bulletin_card.sass */
 .bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one .content-one-sponsors {
   color: #616161;
   font-size: 12px;
   font-weight: 600;
 }
-/* line 66, ../sass/common/bulletin_card.sass */
+/* line 72, ../sass/common/bulletin_card.sass */
 .bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one .content-one-sponsors .sponsor {
   margin: 0 10px;
 }
-/* line 69, ../sass/common/bulletin_card.sass */
+/* line 77, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-three {
+  margin: 18px 0;
+  text-align: center;
+}
+/* line 80, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-three .content-three-title {
+  color: #0091EA;
+  font-size: 18px;
+  font-weight: 400;
+}
+/* line 84, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-three .content-three-title .bold-title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+/* line 87, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-three .content-three-team {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 10px 0;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+/* line 96, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-three .content-three-text {
+  white-space: normal;
+  font-size: 13px;
+  color: #757575;
+}
+/* line 103, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .patch-content {
+  text-align: center;
+}
+/* line 105, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .patch-content .patch-header {
+  font-size: 30px;
+  font-weight: 300;
+  color: #0091EA;
+}
+/* line 109, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .patch-content .patch-note {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #22272A;
+  margin: 10px 0;
+  padding: 5px 10px;
+  display: inline-block;
+  background-color: white;
+}
+/* line 118, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .patch-content .patch-text {
+  white-space: normal;
+  font-size: 13px;
+  color: #757575;
+}
+/* line 123, ../sass/common/bulletin_card.sass */
 .bulletin-card-wrapper .bulletin-slider-controls {
   height: 10px;
   display: flex;
   justify-content: center;
 }
-/* line 74, ../sass/common/bulletin_card.sass */
+/* line 128, ../sass/common/bulletin_card.sass */
 .bulletin-card-wrapper .bulletin-slider-controls .controller-button {
   float: left;
   margin: 2px 4px;
@@ -156,7 +227,7 @@ body {
   cursor: pointer;
   transition: all 0.1s ease;
 }
-/* line 83, ../sass/common/bulletin_card.sass */
+/* line 137, ../sass/common/bulletin_card.sass */
 .bulletin-card-wrapper .bulletin-slider-controls .controller-button.is-active {
   margin: 0px 2px;
   width: 10px;
