@@ -21,7 +21,7 @@ const BulletinCardComponent = React.createClass({
 	},
 
 	_sliderAutomaticRun() {
-		const sliderRunMs = 75000;
+		const sliderRunMs = 7500;
 
 		this.sliderTimeout = setTimeout(() => {
 			this.setState({

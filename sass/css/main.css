@@ -85,7 +85,7 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.25s ease, transform 0.75s cubic-bezier(0.5, 1, 0, 1);
   color: white;
   /* Slider Content */
   /* Slide #1 */
