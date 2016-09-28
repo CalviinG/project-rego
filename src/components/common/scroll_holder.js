@@ -1,7 +1,20 @@
-import React from 'react';
-import $ 	 from 'jquery';
+import React	  from 'react';
+import $ 	 	  from 'jquery';
+import classNames from 'classnames';
 
 const ScrollHolder = React.createClass({
+	propTypes: {
+		showScrollOnHover: React.PropTypes.bool,
+		friendListStyle: React.PropTypes.bool,
+	},
+
+	getDefaultProps() {
+		return {
+			showScrollOnHover: false,
+			friendListStyle: false,
+		};
+	},
+
 	componentDidMount() {
 		this._setBarHeight();
 		window.addEventListener('resize', this._setBarHeight);
@@ -10,6 +23,13 @@ const ScrollHolder = React.createClass({
 	componentWillUnmount() {
 		$(this.refs.contentRef)[0].removeEventListener('scroll', this._listenOnScroll);
 		window.removeEventListener('resize', this._setBarHeight);
+	},
+
+	updateScrollBar(delay) {
+		setTimeout(() => {
+			this._setBarHeight();
+			this.forceUpdate();
+		}, delay);
 	},
 
 	_listenOnScroll(e) {
@@ -39,6 +59,7 @@ const ScrollHolder = React.createClass({
 		$scroll.css({ display: (cH < sH) ? 'none' : 'block' });
 		$(this.refs.contentRef).css({ paddingRight: (cH < sH) ? 0 : 13 });
 
+		// If the content is longer than the scroll
 		if (cH > sH) {
 			const newHeight = `${(sH / cH) * 100}%`
 			$bar.css({ height: newHeight });
@@ -46,11 +67,21 @@ const ScrollHolder = React.createClass({
 			// Add event listener to scroll
 			$(this.refs.contentRef)[0].addEventListener('scroll', this._listenOnScroll);
 		}
+
+		// showScrollOnHover Property
+		if (this.props.showScrollOnHover) {
+			$(this.refs.contentRef).css({ paddingRight: 0 });
+		}
 	},
 
 	render() {
+		const parentclass = classNames('scroll-holder', {
+			'show-on-hover': this.props.showScrollOnHover,
+			'friend-list-style': this.props.friendListStyle,
+		});
+
 		return (
-			<div className='scroll-holder'>
+			<div className={parentclass}>
 				<div className='scroll-content' ref='contentRef'>
 					{this.props.children}
 				</div>

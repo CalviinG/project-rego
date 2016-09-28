@@ -1,5 +1,6 @@
-import React from 'react';
-import _     from 'underscore';
+import React      from 'react';
+import _          from 'underscore';
+import classNames from 'classnames';
 
 // Json
 import Friends from './json/friends.json';
@@ -123,16 +124,17 @@ const App = React.createClass({
             const user = {
                 userId: i,
                 name: (i > 0) ? friend : main,
-                image: `user_images/user_image_${i + 1}.png`,
+                image: `user_images/user_image_${i}.jpg`,
                 teamData: null,
                 ...data,
             };
 
             if (i > 0) {
                 friendsArray.push(user);
+
             } else {
-                user.gameData.status = 'In-Game';
-                user.gameData.inGameStatus = 'Idle';
+                user.gameData.status = 'Idle';
+                user.gameData.inGameStatus = null;
                 mainUser = user;
             }
         });
@@ -164,7 +166,7 @@ const App = React.createClass({
                 'Casual',
                 'Deathmatch',
                 'Matchmaking',
-                'Competative Play',
+                'Competitive Play',
                 'Browse',
             ],
             [
@@ -202,8 +204,13 @@ const App = React.createClass({
             );
         }
 
+        // Small nav
+        const appClass = classNames('app-wrapper', {
+            'minified-nav': this.state.activeMain === 0,
+        });
+
 	    return (
-	      	<div className='app-wrapper'>
+	      	<div className={appClass}>
 	      		<NavigationComponent
                     linksData={linksData}
                     linkHistory={this.state.viewHistory}

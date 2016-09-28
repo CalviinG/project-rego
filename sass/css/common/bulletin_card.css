@@ -1,36 +1,57 @@
 /*
-Error: Undefined variable: "$mainColor".
-        on line 37 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/user_profile_card.sass
+Error: Undefined variable: "$grey-700".
+        on line 35 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/bulletin_card.sass
 
-32:     height: 10px
-33: 
-34:   .profile-card-corners-top::before,
-35:   .profile-card-corners-bottom::before
-36:     left: 0px
-37:     border-left: 1px solid rgba($mainColor, 1)
-38: 
-39:   .profile-card-corners-top::after,
-40:   .profile-card-corners-bottom::after
-41:     right: 0px
-42:     border-right: 1px solid rgba($mainColor, 1)
+30:       /* Slide #1 *\/
+31: 
+32:       .box-content-one
+33:         text-align: center
+34:         .content-one-header
+35:           color: $grey-700
+36:           font-size: 14px
+37:           font-weight: 700
+38:           text-transform: uppercase
+39:           letter-spacing: 2px
+40:           margin-bottom: 5px
 
 Backtrace:
-C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/user_profile_card.sass:37
+C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/bulletin_card.sass:35
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/variable.rb:49:in `_perform'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/node.rb:50:in `perform'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:170:in `perform_arg'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `each'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `each_with_index'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `each'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `map'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/funcall.rb:124:in `_perform'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/node.rb:50:in `perform'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/list_literal.rb:63:in `map'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/list_literal.rb:63:in `_perform'
-D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/script/tree/node.rb:50:in `perform'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `map'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `map'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `map'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
@@ -92,4 +113,4 @@ D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/vendor/listen/lib/lis
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$mainColor\".\A         on line 37 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/user_profile_card.sass\A \A 32:     height: 10px\A 33: \A 34:   .profile-card-corners-top::before,\A 35:   .profile-card-corners-bottom::before\A 36:     left: 0px\A 37:     border-left: 1px solid rgba($mainColor, 1)\A 38: \A 39:   .profile-card-corners-top::after,\A 40:   .profile-card-corners-bottom::after\A 41:     right: 0px\A 42:     border-right: 1px solid rgba($mainColor, 1)"; }
+  content: "Error: Undefined variable: \"$grey-700\".\A         on line 35 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/bulletin_card.sass\A \A 30:       /* Slide #1 */\A 31: \A 32:       .box-content-one\A 33:         text-align: center\A 34:         .content-one-header\A 35:           color: $grey-700\A 36:           font-size: 14px\A 37:           font-weight: 700\A 38:           text-transform: uppercase\A 39:           letter-spacing: 2px\A 40:           margin-bottom: 5px"; }

@@ -11,8 +11,9 @@ $subBezier: cubic-bezier(.17,.67,.21,1)
   100%
     box-shadow: 0 0 0 15px white
 
-
 .navigation
+  @extend %navHeightTransition
+  overflow: hidden
   position: relative
   z-index: 2
   height: $navigationHeight
@@ -65,7 +66,7 @@ $subBezier: cubic-bezier(.17,.67,.21,1)
       &:before,
       &:after
         border-top-color: $mainColorLight
-        border-left-color: $mainColorLight       
+        border-left-color: $mainColorLight
 
   .nav-icon
     position: relative
@@ -113,6 +114,7 @@ $subBezier: cubic-bezier(.17,.67,.21,1)
         cursor: default
 
   .navigation__sub
+    @extend %navHeightTransition
     background-color: $dark-2
     .sub-link
       position: relative
@@ -132,3 +134,8 @@ $subBezier: cubic-bezier(.17,.67,.21,1)
       &.sub-link-is-showing
         left: 0
         opacity: 1
+
+  &.is-minified
+    height: calc(#{$navigationHeight} / 2)
+    .navigation__sub
+      height: 0

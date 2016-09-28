@@ -9,10 +9,10 @@ Error: Undefined variable: "$mainColor".
 34:       &:hover
 35:         color: $mainColor
 36:     .toggle-block-list
-37:       overflow: hidden
-38:       transition: height .25s cubic-bezier(0.1, 1, 0.5, 1)
-39:       color: white
-40:     &.is-closed
+37:       height: 0px
+38:       overflow: hidden
+39:       transition: height 0.25s cubic-bezier(0.7, 0, 0.5, 1)
+40:       color: white
 
 Backtrace:
 C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/friend_list_card.sass:35
@@ -102,4 +102,4 @@ D:/Program/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/vendor/listen/lib/lis
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$mainColor\".\A         on line 35 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/friend_list_card.sass\A \A 30:         float: right\A 31:         font-size: 20px\A 32:         transform: rotate(0deg)\A 33:         transition: transform .25s ease\A 34:       &:hover\A 35:         color: $mainColor\A 36:     .toggle-block-list\A 37:       overflow: hidden\A 38:       transition: height .25s cubic-bezier(0.1, 1, 0.5, 1)\A 39:       color: white\A 40:     &.is-closed"; }
+  content: "Error: Undefined variable: \"$mainColor\".\A         on line 35 of C:/Users/Dan e cool/Documents/GitHub/project-rego/sass/sass/common/friend_list_card.sass\A \A 30:         float: right\A 31:         font-size: 20px\A 32:         transform: rotate(0deg)\A 33:         transition: transform .25s ease\A 34:       &:hover\A 35:         color: $mainColor\A 36:     .toggle-block-list\A 37:       height: 0px\A 38:       overflow: hidden\A 39:       transition: height 0.25s cubic-bezier(0.7, 0, 0.5, 1)\A 40:       color: white"; }

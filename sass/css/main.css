@@ -11,6 +11,11 @@
  * Variable Library
  *
  */
+/* line 11, ../sass/lib/variables.sass */
+.app-wrapper .content, .navigation, .navigation .navigation__sub {
+  transition: height 0.125s ease;
+}
+
 /* Base */
 /*
  * Base Sass Document
@@ -35,7 +40,7 @@ body {
 }
 
 /* line 22, ../sass/base.sass */
-.clear-after:after, .friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head:after, .friend-list-card-wrapper .friend-list-user-block:after, .user-profile-card-wrapper .profile-card-content .profile-card-team:after, .user-profile-card-wrapper .profile-card-content .profile-card-stats:after, .user-profile-card-wrapper .profile-card-content .profile-card-images:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .home-view:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base .rui-form-slider:after, .rui-form-base .rui-form-key-input:after, .rui-form-base:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
+.clear-after:after, .bulletin-card-wrapper .bulletin-slider-controls:after, .friend-list-card-wrapper .friend-list-toggle-block .toggle-block-head:after, .friend-list-card-wrapper .friend-list-user-block:after, .user-profile-card-wrapper .profile-card-content .profile-card-team:after, .user-profile-card-wrapper .profile-card-content .profile-card-stats:after, .user-profile-card-wrapper .profile-card-content .profile-card-images:after, .settings-holder-wrapper:after, .settings-holder-wrapper .left-settings-labels .label-button:after, .home-view:after, .play-browse-view .browse-filter-block:after, .play-browse-view .browse-list-actions-block:after, .play-browse-view .browse-list-actions-block .list-actions-right:after, .rui-form-base .rui-form-select .select-label:after, .rui-form-base .rui-form-toggle:after, .rui-form-base .rui-form-slider:after, .rui-form-base .rui-form-key-input:after, .rui-form-base:after, .rui-card-base .card-header:after, .rui-select-wrapper .select-button-holder:after, .rui-search-wrapper:after, .rui-search-wrapper .search-keywords-holder:after, .rui-search-wrapper .search-keywords-holder .search-keyword:after, .rui-table-wrapper .table-header:after, .rui-table-wrapper .table-body .body-row:after, .rui-table-wrapper .table-quick-actions-wrapper .quick-actions-popup-button:after {
   content: "";
   display: block;
   clear: both;
@@ -50,8 +55,187 @@ body {
   margin: 0 auto;
   padding: 40px 0;
 }
+/* line 37, ../sass/base.sass */
+.app-wrapper.minified-nav .content {
+  height: calc(100vh - (160px / 2));
+}
 
 /* Common */
+/*
+ * Bulletin Card
+ *
+ */
+/* line 9, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper {
+  width: 520px;
+  height: 225px;
+}
+/* line 13, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content {
+  @extend. clear-after;
+  height: calc(100% - 10px);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 19, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.25s ease, transform 0.75s cubic-bezier(0.5, 1, 0, 1);
+  color: white;
+  /* Slider Content */
+  /* Slide #1 */
+  /* Slide #3 */
+  /* Game Patch Styling */
+}
+/* line 32, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one {
+  text-align: center;
+}
+/* line 34, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one .content-one-header {
+  color: #616161;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+/* line 41, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one .content-one-big {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+/* line 45, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one .content-one-big .big-label {
+  color: white;
+  font-size: 36px;
+  font-weight: 300;
+  padding: 8px 16px;
+  display: inline-block;
+  background-color: #0091EA;
+}
+/* line 52, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one .content-one-big .big-date {
+  position: absolute;
+  top: calc(100% - 8px);
+  right: -8px;
+  color: #22272A;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px 8px;
+  background-color: white;
+}
+/* line 61, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one .content-one-locations {
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0091EA;
+  letter-spacing: 2px;
+}
+/* line 68, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one .content-one-sponsors {
+  color: #616161;
+  font-size: 12px;
+  font-weight: 600;
+}
+/* line 72, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-one .content-one-sponsors .sponsor {
+  margin: 0 10px;
+}
+/* line 77, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-three {
+  margin: 18px 0;
+  text-align: center;
+}
+/* line 80, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-three .content-three-title {
+  color: #0091EA;
+  font-size: 18px;
+  font-weight: 400;
+}
+/* line 84, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-three .content-three-title .bold-title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+/* line 87, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-three .content-three-team {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 10px 0;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+/* line 96, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .box-content-three .content-three-text {
+  white-space: normal;
+  font-size: 13px;
+  color: #757575;
+}
+/* line 103, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .patch-content {
+  text-align: center;
+}
+/* line 105, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .patch-content .patch-header {
+  font-size: 30px;
+  font-weight: 300;
+  color: #0091EA;
+}
+/* line 109, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .patch-content .patch-note {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #22272A;
+  margin: 10px 0;
+  padding: 5px 10px;
+  display: inline-block;
+  background-color: white;
+}
+/* line 118, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-content .slider-box .patch-content .patch-text {
+  white-space: normal;
+  font-size: 13px;
+  color: #757575;
+}
+/* line 123, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-controls {
+  height: 10px;
+  display: flex;
+  justify-content: center;
+}
+/* line 128, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-controls .controller-button {
+  float: left;
+  margin: 2px 4px;
+  width: calc(10px - 4px);
+  height: calc(10px - 4px);
+  border-radius: 100%;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+/* line 137, ../sass/common/bulletin_card.sass */
+.bulletin-card-wrapper .bulletin-slider-controls .controller-button.is-active {
+  margin: 0px 2px;
+  width: 10px;
+  height: 10px;
+  background-color: #0091EA;
+  cursor: default;
+}
+
 /*
  * Friend List Card
  *
@@ -101,56 +285,61 @@ body {
 }
 /* line 36, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-toggle-block .toggle-block-list {
+  height: 0px;
   overflow: hidden;
-  transition: height 0.25s cubic-bezier(0.1, 1, 0.5, 1);
+  transition: height 0.25s cubic-bezier(0.7, 0, 0.5, 1);
   color: white;
 }
-/* line 41, ../sass/common/friend_list_card.sass */
+/* line 42, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-toggle-block.is-closed .head-icon {
   transform: rotate(-90deg);
 }
-/* line 48, ../sass/common/friend_list_card.sass */
+/* line 47, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block {
+  position: relative;
+}
+/* line 50, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block:not(:last-of-type) {
   margin-bottom: 10px;
 }
-/* line 50, ../sass/common/friend_list_card.sass */
+/* line 52, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-avatar,
 .friend-list-card-wrapper .friend-list-user-block .user-block-text {
   float: left;
 }
-/* line 53, ../sass/common/friend_list_card.sass */
+/* line 55, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-avatar {
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  margin-right: 5px;
-  background-color: #0091EA;
+  margin-right: 10px;
 }
-/* line 59, ../sass/common/friend_list_card.sass */
+/* line 60, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-text {
+  width: calc(100% - 50px);
   margin: 5px 0;
 }
-/* line 61, ../sass/common/friend_list_card.sass */
+/* line 63, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-text .header-text {
   font-size: 15px;
   line-height: 17px;
   font-weight: 600;
 }
-/* line 65, ../sass/common/friend_list_card.sass */
+/* line 67, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 13px;
 }
-/* line 68, ../sass/common/friend_list_card.sass */
+/* line 70, ../sass/common/friend_list_card.sass */
 .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-in-match {
   color: #4CAF50;
 }
-/* line 70, ../sass/common/friend_list_card.sass */
-.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-in-game {
+/* line 72, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-in-lobby, .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-idle, .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-online {
   color: #0091EA;
 }
-/* line 72, ../sass/common/friend_list_card.sass */
-.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-online, .friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-offline {
+/* line 76, ../sass/common/friend_list_card.sass */
+.friend-list-card-wrapper .friend-list-user-block .user-block-text .desc-text.is-offline {
   color: #757575;
 }
 
@@ -158,18 +347,16 @@ body {
  * User Profile Card
  *
  */
-/* line 9, ../sass/common/user_profile_card.sass */
+/* line 7, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper {
   position: relative;
   width: 300px;
   height: 300px;
   padding: 20px;
-  background: linear-gradient(45deg, #0E161B, #191D1F);
-  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.035);
   /* Corner Effects */
   /* Content */
 }
-/* line 19, ../sass/common/user_profile_card.sass */
+/* line 15, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top,
 .user-profile-card-wrapper .profile-card-corners-bottom {
   position: absolute;
@@ -179,7 +366,7 @@ body {
   width: 100%;
   height: 100%;
 }
-/* line 28, ../sass/common/user_profile_card.sass */
+/* line 24, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::before,
 .user-profile-card-wrapper .profile-card-corners-top::after,
 .user-profile-card-wrapper .profile-card-corners-bottom::before,
@@ -190,31 +377,31 @@ body {
   width: 10px;
   height: 10px;
 }
-/* line 38, ../sass/common/user_profile_card.sass */
+/* line 34, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::before,
 .user-profile-card-wrapper .profile-card-corners-bottom::before {
   left: 0px;
   border-left: 1px solid #0091ea;
 }
-/* line 43, ../sass/common/user_profile_card.sass */
+/* line 39, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::after,
 .user-profile-card-wrapper .profile-card-corners-bottom::after {
   right: 0px;
   border-right: 1px solid #0091ea;
 }
-/* line 48, ../sass/common/user_profile_card.sass */
+/* line 44, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-top::before,
 .user-profile-card-wrapper .profile-card-corners-top::after {
   top: 0px;
   border-top: 1px solid #0091ea;
 }
-/* line 53, ../sass/common/user_profile_card.sass */
+/* line 49, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-corners-bottom::before,
 .user-profile-card-wrapper .profile-card-corners-bottom::after {
   bottom: 0px;
   border-bottom: 1px solid #0091ea;
 }
-/* line 60, ../sass/common/user_profile_card.sass */
+/* line 56, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content {
   position: relative;
   z-index: 2;
@@ -224,7 +411,7 @@ body {
   /* Level */
   /* Images */
 }
-/* line 66, ../sass/common/user_profile_card.sass */
+/* line 62, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team {
   position: relative;
   width: 100%;
@@ -235,7 +422,7 @@ body {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), inset 0 1px 0 rgba(0, 0, 0, 0.25);
   /* No Team */
 }
-/* line 75, ../sass/common/user_profile_card.sass */
+/* line 71, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-name,
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league {
   height: 38px;
@@ -247,12 +434,12 @@ body {
   cursor: pointer;
   transition: all 0.125s ease;
 }
-/* line 85, ../sass/common/user_profile_card.sass */
+/* line 81, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-name:hover,
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league:hover {
   background: linear-gradient(#2A3135, #191D1F);
 }
-/* line 87, ../sass/common/user_profile_card.sass */
+/* line 83, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-name {
   float: left;
   width: calc(100% - 95px - 1px);
@@ -261,7 +448,7 @@ body {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
-/* line 94, ../sass/common/user_profile_card.sass */
+/* line 90, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league {
   float: right;
   width: 95px;
@@ -271,12 +458,12 @@ body {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-/* line 102, ../sass/common/user_profile_card.sass */
+/* line 98, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-league .team-league-icon {
   font-size: 14px;
   margin-right: 5px;
 }
-/* line 108, ../sass/common/user_profile_card.sass */
+/* line 104, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-team .team-no-team {
   position: relative;
   width: 100%;
@@ -286,18 +473,18 @@ body {
   font-size: 14px;
   font-weight: 700;
 }
-/* line 119, ../sass/common/user_profile_card.sass */
+/* line 115, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats {
   margin: 20px 0;
 }
-/* line 122, ../sass/common/user_profile_card.sass */
+/* line 118, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block {
   position: relative;
   float: left;
   width: 33.33%;
   text-align: center;
 }
-/* line 127, ../sass/common/user_profile_card.sass */
+/* line 123, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block .stats-block-desc {
   color: #0091EA;
   font-size: 10px;
@@ -305,14 +492,14 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* line 133, ../sass/common/user_profile_card.sass */
+/* line 129, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-stats .stats-block .stats-block-data {
   color: white;
   font-size: 22px;
   font-weight: 700px;
   line-height: 20px;
 }
-/* line 141, ../sass/common/user_profile_card.sass */
+/* line 137, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-name {
   position: relative;
   width: 100%;
@@ -321,27 +508,27 @@ body {
   font-weight: 600;
   color: white;
 }
-/* line 151, ../sass/common/user_profile_card.sass */
+/* line 147, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level {
   position: relative;
   width: 100%;
   text-align: center;
 }
-/* line 155, ../sass/common/user_profile_card.sass */
+/* line 151, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-text {
   font-size: 14px;
   font-weight: 600;
   color: #0091EA;
   margin-bottom: 6px;
 }
-/* line 160, ../sass/common/user_profile_card.sass */
+/* line 156, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-progress-bar {
   width: 100%;
   height: 4px;
   background-color: rgba(0, 0, 0, 0.4);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(0, 0, 0, 0.25);
 }
-/* line 165, ../sass/common/user_profile_card.sass */
+/* line 161, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-level .level-progress-bar .bar-experience {
   position: relative;
   height: 100%;
@@ -349,11 +536,11 @@ body {
   background: linear-gradient(90deg, #0082D2, #00B0FF);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 4px 0 16px rgba(0, 145, 234, 0.65);
 }
-/* line 174, ../sass/common/user_profile_card.sass */
+/* line 170, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images {
   margin-bottom: 10px;
 }
-/* line 177, ../sass/common/user_profile_card.sass */
+/* line 173, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-solo-rank,
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-team-rank {
   float: left;
@@ -361,7 +548,7 @@ body {
   height: 50px;
   margin: 15px 20px;
 }
-/* line 183, ../sass/common/user_profile_card.sass */
+/* line 179, ../sass/common/user_profile_card.sass */
 .user-profile-card-wrapper .profile-card-content .profile-card-images .images-profile-image {
   float: left;
   width: 80px;
@@ -540,6 +727,8 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  /* showScrollOnHover property style */
+  /* Friend List Style property style */
 }
 /* line 13, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-content,
@@ -579,13 +768,44 @@ body {
   z-index: 2;
   transform: translate(0px, 0px);
   background-color: rgba(34, 39, 42, 0.85);
+  transition: height 0.25s ease;
 }
-/* line 45, ../sass/common/scroll_holder.sass */
+/* line 46, ../sass/common/scroll_holder.sass */
 .scroll-holder .scroll-indicator .indicator-area {
   z-index: 1;
   top: 0;
   height: 100%;
   background-color: rgba(25, 29, 31, 0.85);
+}
+/* line 55, ../sass/common/scroll_holder.sass */
+.scroll-holder.show-on-hover .scroll-content {
+  padding-right: 0;
+}
+/* line 57, ../sass/common/scroll_holder.sass */
+.scroll-holder.show-on-hover .scroll-indicator {
+  width: 4px;
+}
+/* line 59, ../sass/common/scroll_holder.sass */
+.scroll-holder.show-on-hover .scroll-indicator .indicator-bar {
+  opacity: 0;
+  background-color: rgba(34, 39, 42, 0.6);
+  transition: opacity 0.15s ease, height 0.25s ease;
+}
+/* line 63, ../sass/common/scroll_holder.sass */
+.scroll-holder.show-on-hover .scroll-indicator .indicator-area {
+  display: none;
+}
+/* line 67, ../sass/common/scroll_holder.sass */
+.scroll-holder.show-on-hover:hover .scroll-indicator .indicator-bar {
+  opacity: 1;
+}
+/* line 72, ../sass/common/scroll_holder.sass */
+.scroll-holder.friend-list-style {
+  overflow: visible;
+}
+/* line 74, ../sass/common/scroll_holder.sass */
+.scroll-holder.friend-list-style .scroll-indicator {
+  right: -12px;
 }
 
 /* Components */
@@ -601,26 +821,27 @@ body {
     box-shadow: 0 0 0 15px white;
   }
 }
-/* line 15, ../sass/components/navigation.sass */
+/* line 14, ../sass/components/navigation.sass */
 .navigation {
+  overflow: hidden;
   position: relative;
   z-index: 2;
   height: 160px;
   width: 100%;
   /* Nav Icons */
 }
-/* line 21, ../sass/components/navigation.sass */
+/* line 22, ../sass/components/navigation.sass */
 .navigation .navigation__main,
 .navigation .navigation__sub,
 .navigation .navigation__wrapper {
   height: calc(160px / 2);
 }
-/* line 26, ../sass/components/navigation.sass */
+/* line 27, ../sass/components/navigation.sass */
 .navigation .navigation__wrapper {
   width: 1200px;
   margin: 0 auto;
 }
-/* line 32, ../sass/components/navigation.sass */
+/* line 33, ../sass/components/navigation.sass */
 .navigation .home-button {
   display: block;
   float: left;
@@ -632,13 +853,13 @@ body {
   margin: 0 20px;
   cursor: pointer;
 }
-/* line 42, ../sass/components/navigation.sass */
+/* line 43, ../sass/components/navigation.sass */
 .navigation .home-button .home-icon {
   font-size: 28px;
   line-height: calc(160px / 2);
   color: white;
 }
-/* line 46, ../sass/components/navigation.sass */
+/* line 47, ../sass/components/navigation.sass */
 .navigation .home-button:before, .navigation .home-button:after {
   position: absolute;
   display: block;
@@ -651,25 +872,25 @@ body {
   border-left: calc(160px / 16) solid #0091EA;
   border-right: calc(160px / 16) solid transparent;
 }
-/* line 58, ../sass/components/navigation.sass */
+/* line 59, ../sass/components/navigation.sass */
 .navigation .home-button:before {
   right: 100%;
   transform: rotate(180deg);
 }
-/* line 61, ../sass/components/navigation.sass */
+/* line 62, ../sass/components/navigation.sass */
 .navigation .home-button:after {
   left: 100%;
 }
-/* line 63, ../sass/components/navigation.sass */
+/* line 64, ../sass/components/navigation.sass */
 .navigation .home-button:hover {
   background-color: #00B0FF;
 }
-/* line 65, ../sass/components/navigation.sass */
+/* line 66, ../sass/components/navigation.sass */
 .navigation .home-button:hover:before, .navigation .home-button:hover:after {
   border-top-color: #00B0FF;
   border-left-color: #00B0FF;
 }
-/* line 70, ../sass/components/navigation.sass */
+/* line 71, ../sass/components/navigation.sass */
 .navigation .nav-icon {
   position: relative;
   display: block;
@@ -678,35 +899,35 @@ body {
   color: #757575;
   cursor: pointer;
 }
-/* line 77, ../sass/components/navigation.sass */
+/* line 78, ../sass/components/navigation.sass */
 .navigation .nav-icon:hover {
   color: #BDBDBD;
 }
-/* line 79, ../sass/components/navigation.sass */
+/* line 80, ../sass/components/navigation.sass */
 .navigation .nav-icon.exit-button, .navigation .nav-icon.profile-button {
   float: right;
   margin: 28px 20px;
 }
-/* line 83, ../sass/components/navigation.sass */
+/* line 84, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button {
   float: left;
   margin: 28px 5px;
   padding: 0 5px;
 }
-/* line 87, ../sass/components/navigation.sass */
+/* line 88, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button.back-browse {
   margin-left: 20px;
 }
-/* line 89, ../sass/components/navigation.sass */
+/* line 90, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button.forward-browse {
   margin-right: 20px;
 }
-/* line 91, ../sass/components/navigation.sass */
+/* line 92, ../sass/components/navigation.sass */
 .navigation .nav-icon.browse-button.browse-is-disabled {
   cursor: default;
   color: #424242;
 }
-/* line 95, ../sass/components/navigation.sass */
+/* line 96, ../sass/components/navigation.sass */
 .navigation .main-link,
 .navigation .sub-link {
   text-transform: uppercase;
@@ -715,30 +936,30 @@ body {
   font-weight: 700;
   cursor: pointer;
 }
-/* line 103, ../sass/components/navigation.sass */
+/* line 104, ../sass/components/navigation.sass */
 .navigation .navigation__main {
   background-color: #22272A;
 }
-/* line 105, ../sass/components/navigation.sass */
+/* line 106, ../sass/components/navigation.sass */
 .navigation .navigation__main .main-link {
   color: #616161;
   font-size: 26px;
   margin: 20px;
 }
-/* line 109, ../sass/components/navigation.sass */
+/* line 110, ../sass/components/navigation.sass */
 .navigation .navigation__main .main-link:hover {
   color: #9E9E9E;
 }
-/* line 111, ../sass/components/navigation.sass */
+/* line 112, ../sass/components/navigation.sass */
 .navigation .navigation__main .main-link.active-link {
   color: #E0E0E0;
   cursor: default;
 }
-/* line 115, ../sass/components/navigation.sass */
+/* line 116, ../sass/components/navigation.sass */
 .navigation .navigation__sub {
   background-color: #191D1F;
 }
-/* line 117, ../sass/components/navigation.sass */
+/* line 119, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link {
   position: relative;
   color: #424242;
@@ -749,19 +970,27 @@ body {
   opacity: 0;
   transition: opacity 0.125s cubic-bezier(0.17, 0.67, 0.21, 1), left 0.135s cubic-bezier(0.17, 0.67, 0.21, 1);
 }
-/* line 126, ../sass/components/navigation.sass */
+/* line 128, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link:hover {
   color: #757575;
 }
-/* line 128, ../sass/components/navigation.sass */
+/* line 130, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link.active-link {
   color: #0091EA;
   cursor: default;
 }
-/* line 132, ../sass/components/navigation.sass */
+/* line 134, ../sass/components/navigation.sass */
 .navigation .navigation__sub .sub-link.sub-link-is-showing {
   left: 0;
   opacity: 1;
+}
+/* line 138, ../sass/components/navigation.sass */
+.navigation.is-minified {
+  height: calc(160px / 2);
+}
+/* line 140, ../sass/components/navigation.sass */
+.navigation.is-minified .navigation__sub {
+  height: 0;
 }
 
 /*
@@ -946,20 +1175,21 @@ body {
 .home-view {
   height: 100%;
   /* Left Column */
+  /* Middle Column */
   /* Right Column */
 }
 /* line 11, ../sass/views/home_view.sass */
-.home-view > .home-view-left-column, .home-view > .home-view-right-column {
+.home-view > .home-view-left-column, .home-view > .home-view-middle-column, .home-view > .home-view-right-column {
   float: left;
   height: 100%;
-}
-/* line 18, ../sass/views/home_view.sass */
-.home-view > .home-view-left-column {
-  padding-left: 100px;
 }
 /* line 20, ../sass/views/home_view.sass */
 .home-view > .home-view-left-column .user-profile-card-wrapper {
   margin-bottom: 20px;
+}
+/* line 25, ../sass/views/home_view.sass */
+.home-view > .home-view-middle-column {
+  margin: 0 20px;
 }
 
 /*
@@ -1375,6 +1605,35 @@ body {
     opacity: 0.65;
   }
 }
+/*
+ * Rui Search
+ *
+ */
+/* line 7, ../sass/ui/rui_card.sass */
+.rui-card-base {
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(45deg, #0E161B, #191D1F);
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+}
+/* line 15, ../sass/ui/rui_card.sass */
+.rui-card-base .card-header .card-header-label,
+.rui-card-base .card-header .card-header-extra {
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* line 22, ../sass/ui/rui_card.sass */
+.rui-card-base .card-header .card-header-label {
+  float: left;
+}
+/* line 24, ../sass/ui/rui_card.sass */
+.rui-card-base .card-header .card-header-extra {
+  float: right;
+}
+
 /*
  * Rui Select
  *

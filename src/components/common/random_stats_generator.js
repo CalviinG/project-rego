@@ -1,8 +1,9 @@
 import _ from 'underscore';
 
 // Json
-import Ranks  from '../../json/ranks.json';
-import Levels from '../../json/levels.json';
+import CsgoData from '../../json/csgo_data.json';
+import Ranks 	from '../../json/ranks.json';
+import Levels 	from '../../json/levels.json';
 
 class RandomStatsGenerator {
 	static generateUserData() {
@@ -76,32 +77,80 @@ class RandomStatsGenerator {
 		return data;
 	}
 
+	/**
+	 * _buildGame()
+	 * This function builds data for a game or a lobby
+	 */
+
+	static _buildGame(type) {
+		const game = {
+			map: null,
+			score: null,
+			type: null,
+			desc: null,
+			stats: null,
+		}
+
+		if (type === 'Match') {
+			game.map = CsgoData.Maps.Defusal[_.random(0, CsgoData.Maps.Defusal.length - 1)];
+			game.score = `${_.random(0, 15)} - ${_.random(0, 14)}`;
+			game.type = (_.random(0, 1) === 0)
+				? 'Competitive Play'
+				: 'Matchmaking';
+		} else if (type === 'Lobby') {
+			game.type = CsgoData.GameModes[_.random(0, CsgoData.GameModes.length - 1)];
+			game.desc = (_.random(0, 1) === 0)
+			 	? 'Looking for players'
+				: null;
+		}
+
+		return game;
+	}
+
+	/**
+	 * _buildOnlineMetaData()
+	 * This function randoms the users game status.
+	 */
+
 	static _buildOnlineMetaData() {
 		const gameMeta = {
 			status: 'Offline',
 			inGameStatus: null,
 		};
 
-		// 70% to put a user online
+		// 70% - User is Online
 		if (this._getRandomInt(1, 100) > 30) {
 			gameMeta.status = 'Online';
 
+			// 70% - User is Idle
 			if (this._getRandomInt(1, 100) > 30) {
-				gameMeta.status = 'In-Game';
-				gameMeta.inGameStatus = 'Idle';
+				gameMeta.status = 'Idle';
 
-				if (this._getRandomInt(1, 100) > 50) {
-					gameMeta.inGameStatus = {
-						map: 'Map',
-						score: 'Score',
-						desc: 'Description',
-					};
+				// 50% - User is In-Match
+				if (this._getRandomInt(1, 100) > 55) {
+					gameMeta.status = 'Match';
+					gameMeta.inGameStatus = this._buildGame('Match');
+
+					return gameMeta;
 				}
+
+				// 50% - User is In-Lobby
+				if (this._getRandomInt(1, 100) > 65) {
+					gameMeta.status = 'Lobby';
+					gameMeta.inGameStatus = this._buildGame('Lobby')
+
+					return gameMeta;
+				}
+
 			}
 		}
 
 		return gameMeta;
 	}
+
+	/**
+	 * Functions to determine random data for the user object.
+	 */
 
 	static _getRandomInt(min, max) {
   		return parseFloat((Math.floor(Math.random() * (max - min + 1)) + min).toFixed(0));

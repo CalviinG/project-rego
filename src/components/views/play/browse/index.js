@@ -10,9 +10,6 @@ import AnimationHolder from '../../../common/animation_holder.js';
 
 // Rui
 import {Select, Search, Table} from '../../../ui';
-// import RuiSelect from '../../../ui/select';
-// import RuiSearch from '../../../ui/search';
-// import RuiTable  from '../../../ui/table';
 
 const BrowseView = React.createClass({
     getInitialState() {
